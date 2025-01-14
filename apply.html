@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Admission Form</title>
+    <link rel="stylesheet" href="apply.css">
+    <script src="apply.js" defer></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <img width="10%" src="logo.jpg" alt="University Logo" class="logo">
+            <h1>Welcome to Dania College</h1>
+            <p>We are excited to have you apply to our institution. Please fill out the admission form below.</p>
+        </header>
+
+        <form id="admissionForm">
+            <section class="form-section">
+                <h2>Personal Information</h2>
+                <label for="name">Full Name*</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="dob">Date of Birth*</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label>Gender*</label>
+                <div class="gender">
+                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                </div>
+
+                <label for="phone">Contact Number*</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email Address*</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="address">Permanent Address*</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="city">City/Town*</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="state">State/Province*</label>
+                <select id="state" name="state" required>
+                    <option value="">Select State</option>
+                    <option value="California">California</option>
+                    <option value="New York">New York</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Florida">Florida</option>
+                </select>
+
+                <label for="postal">Postal Code*</label>
+                <input type="text" id="postal" name="postal" required>
+            </section>
+
+            <section class="form-section">
+                <h2>Program Information</h2>
+                <label for="program">Choose Program*</label>
+                <select id="program" name="program" required>
+                    <option value="">Select Program</option>
+                    <option value="Arts">Arts</option>
+                    <option value="Science">Science</option>
+                    <option value="Business">Business</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Medicine">Medicine</option>
+                    <option value="Law">Law</option>
+                </select>
+
+                <label for="startDate">Preferred Start Date*</label>
+                <input type="date" id="startDate" name="startDate" required>
+
+                <label for="school">Previous School/College*</label>
+                <input type="text" id="school" name="school" required>
+
+                <label for="degree">Degree/Certificate Obtained*</label>
+                <input type="text" id="degree" name="degree" required>
+            </section>
+
+            <section class="form-section">
+                <h2>Parent/Guardian Information</h2>
+                <label for="guardianName">Name of Parent/Guardian*</label>
+                <input type="text" id="guardianName" name="guardianName" required>
+
+                <label for="relationship">Relationship to Applicant*</label>
+                <input type="text" id="relationship" name="relationship" required>
+
+                <label for="guardianPhone">Contact Number*</label>
+                <input type="tel" id="guardianPhone" name="guardianPhone" required>
+
+                <label for="guardianEmail">Email Address</label>
+                <input type="email" id="guardianEmail" name="guardianEmail">
+            </section>
+
+            <section class="form-section">
+                <h2>Supporting Documents</h2>
+                <label for="transcripts">High School/College Transcripts*</label>
+                <input type="file" id="transcripts" name="transcripts" required>
+
+                <label for="documents">Other Supporting Documents (Optional)</label>
+                <input type="file" id="documents" name="documents">
+
+                <label for="documents">Other Student Photograph</label>
+                <input type="file" id="documents" name="documents">
+            </section>
+
+            <section class="form-section">
+                <h2>Declaration</h2>
+                <label><input type="checkbox" id="declaration" required> I hereby declare that the information provided
+                    is correct to the best of my knowledge.</label>
+                <label><input type="checkbox" id="terms" required> I agree to abide by the rules and regulations of the
+                    university.</label>
+
+                <label for="signature">Signature*</label>
+                <input type="text" id="signature" name="signature" placeholder="Type your Full Name" required>
+
+                <label for="date">Date*</label>
+                <input type="date" id="date" name="date" required>
+            </section>
+
+            <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

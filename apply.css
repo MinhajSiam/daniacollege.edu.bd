@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #3c4a6b;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+    color: #666;
+}
+
+form {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.form-section {
+    border-top: 2px solid #ddd;
+    padding-top: 20px;
+}
+
+.form-section h2 {
+    font-size: 24px;
+    color: #3c4a6b;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+input[type="file"] {
+    padding: 6px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.gender label {
+    margin-right: 15px;
+}
+
+button.submit-btn {
+    background-color: #3c4a6b;
+    color: white;
+    font-size: 18px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button.submit-btn:hover {
+    background-color: #1f2a44;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    form {
+        grid-gap: 15px;
+    }
+}

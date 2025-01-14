@@ -1,0 +1,3279 @@
+<style>
+    /*! CSS Used from: /css/app.css */
+    *,
+    :after,
+    :before {
+        box-sizing: border-box;
+    }
+
+    a {
+        color: #1d7099;
+        text-decoration: none;
+        background-color: transparent;
+    }
+
+    a:hover {
+        color: #1d7099;
+        text-decoration: underline;
+    }
+
+    @media print {
+
+        *,
+        :after,
+        :before {
+            text-shadow: none !important;
+            box-shadow: none !important;
+        }
+
+        a:not(.btn) {
+            text-decoration: underline;
+        }
+    }
+
+    /*! CSS Used from: /css/styles1.css */
+    marquee a {
+        color: #fff !important;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    /*! CSS Used from: /css/styles1_responsive.css */
+    @media screen and (max-width:1023px) {
+        a {
+            font-size: 13px;
+        }
+
+        marquee {
+            margin-top: 6px;
+        }
+    }
+
+    a {
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+    a:active,
+    a:hover {
+        outline-width: 0;
+    }
+
+    .whats_new_icon {
+        width: 999;
+        background: #8AC53C;
+        color: black;
+        position: absolute;
+        margin-top: -36.5px;
+        z-index: 99;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 5.7px;
+    }
+
+    @media only screen and (max-width: 1026px) {
+        .whats_new_icon {
+            margin-top: -35.5px !important;
+        }
+    }
+
+    .owl-carousel: {
+        height: auto;
+    }
+
+    .owl-theme .owl-nav {
+        margin-top: 0px !important;
+    }
+
+    .researchCarousel .owl-item {
+        height: 34.5rem !important;
+    }
+
+    @media only screen and (max-width: 768px) {
+        #marquee .whats_new_icon .update_text_news {
+            display: none;
+            width: 700;
+        }
+    }
+
+    @media only screen and (min-width: 1399px) {
+        #about-section {
+            padding-bottom: 4rem;
+        }
+    }
+
+    #exampleModal {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(2px);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-content {
+        border: none !important;
+    }
+
+    .modal-body p {
+        text-align: justify;
+    }
+
+    .header-ticker {
+        position: relative;
+        height: 37px;
+        background: #179bd7;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    }
+
+    #ticker {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding-top: 7px;
+        padding-bottom: 5px;
+        z-index: 998;
+    }
+
+    #ticker p {
+        margin: 0;
+        display: inline-block;
+        padding-left: 100%;
+        animation: ticker-tape 30s linear infinite;
+    }
+
+    #ticker p a {
+        font-size: 14px;
+        color: #fff;
+        font-weight: 600;
+        margin-right: 5px;
+    }
+
+    #ticker p .dot {
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #fff;
+        margin-right: 5px;
+    }
+
+    #ticker p:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes ticker-tape {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        100% {
+            transform: translate(-100%, 0);
+        }
+    }
+
+    .card {
+        border: 2px solid #dddddd;
+        background-color: #f5f5f5;
+    }
+
+    table,
+    th,
+    td {
+        border: 0px solid !important;
+    }
+
+    li {
+        font-size: 15px;
+    }
+
+    strong {
+        font-size: 18px;
+        color: green;
+    }
+
+    a {
+        color: black;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    ul li::before {
+        color: green;
+    }
+
+    .my_icon::marker {
+        color: #2BC945;
+        content: "►";
+    }
+
+    .text-color-one {
+        color: #00b2ff;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $(".shadow-sm").hover(
+            function () {
+                $(this)
+                    .addClass("shadow")
+                    .css("cursor", "pointer");
+            },
+            function () {
+                $(this).removeClass("shadow");
+            }
+        );
+    });
+</script>
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://bup.edu.bd/public/images/logo/favicon.ico" />
+    <title>Bangladesh University of Professionals | Home Page
+    </title>
+    <meta name="keywords" content="Bangladesh University OF Professionals, BUP" />
+    <meta name="description" content="" />
+    <meta name='subject' content='' subject=''>
+    <meta name="copyright" content="" />
+    <meta name="language" content="EN" />
+    <meta name="robots" content="index,no-follow" />
+    <meta name="abstract" content="" />
+    <meta name="topic" content="" />
+    <meta name="summary" content="" />
+    <meta name="Classification" content="" />
+    <meta name="author" content="Nanosoft" />
+    <meta name="og:title" content="" />
+    <meta name="og:type" content="" />
+    <meta name="og:url" content="" />
+    <meta name="og:image" content="" />
+    <meta name="og:site_name" content="" />
+    <meta name="og:description" content="" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- ====Css Link==== -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://bup.edu.bd/public/frontend/assets/owl_carousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://bup.edu.bd/public/frontend/assets/owl_carousel/css/owl.theme.default.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://bup.edu.bd/public/backend/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://bup.edu.bd/public/frontend/node_modules/aos/dist/aos.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://bup.edu.bd/public/backend/plugins/datatables/dataTables.bootstrap4.css">
+
+
+
+    <link rel="stylesheet" href="https://bup.edu.bd/public/frontend/css/main.min.css">
+    <link rel="stylesheet" href="https://bup.edu.bd/public/frontend/assets/css/style.css">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+</head>
+
+<body>
+
+    <!-- Header Section Start From Here -->
+    <style type="text/css">
+        .navbar-nav {
+            font-size: 15px !important;
+        }
+
+        .dropdown-large {
+            padding: 1rem;
+        }
+
+        .dropdown-menu h6 {
+            font-weight: 600 !important;
+        }
+
+        #main_nav .nav-link {
+            color: #fff !important;
+        }
+
+        .list-unstyled a {
+            color: #000;
+            font-weight: 400;
+            line-height: 32px;
+        }
+
+        .list-unstyled a:hover {
+            color: #ffb606 !important;
+        }
+
+        .dropdown-menu a:hover {
+            color: #ffb606 !important;
+        }
+
+        .dropdown-item:active {
+            background-color: #01803d !important;
+        }
+
+        /* ============ desktop view ============ */
+        @media all and (min-width: 992px) {
+            .dropdown-large {
+                min-width: 991px;
+            }
+        }
+
+        /* ============ desktop view .end// ============ */
+
+        @media (min-width: 768px) {
+            .no-wrap {
+                white--space: nowrap;
+            }
+        }
+    </style>
+
+    <div class="header">
+        <div class="fixed-top">
+            <!-- Top Bar -->
+            <section id="topbar" class="d-flex justify-content-center align-items-center d-md-block"
+                style="background: #179bd7 !important">
+                <div class="topbar text-end container-fluid">
+                    <a href="https://forms.office.com/r/0VeZTuBMEZ" target="_blank">Alumni</a>
+                    <a href="https://webportal.bup.edu.bd/" target="_blank">UCAM</a>
+                    <a href="https://login.microsoftonline.com/" target="_blank">Webmail</a>
+                    <a href="https://bup.edu.bd/career">Career</a>
+                    <a href="https://bup.edu.bd/contact">Contact</a>
+                    <a href="https://bup.edu.bd/suggestion">Suggestion</a>
+                    <a href="https://bup.edu.bd/noc" target="_blank">NOC</a>
+                    <a href="https://bup.edu.bd/downloads" target="_blank">Downloads</a>
+                    <a href="https://admission.bup.edu.bd" target="_blank">BUP Admission website</a>
+                    <a href="https://bup.edu.bd/storage/app/public/media/form/1706599107.pdf" target="_blank">Academic
+                        Calendar 2024</a>
+                    <a href="https://certificateverification.bup.edu.bd/" target="_blank">Certificate Verification</a>
+                </div>
+
+            </section>
+
+            <div class="">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-light py-0 shadow"
+                    style="background: #253b80 !important">
+                    <div class="container-fluid">
+                        <div class="logo">
+                            <div class="navbar-brand d-flex align-items-center">
+                                <a href="https://bup.edu.bd"><img
+                                        src="https://bup.edu.bd/public/upload/logo/202306071686132726.svg" alt="Logo"
+                                        class="d-inline-block align-text-top me-2" />
+                                </a>
+                                <a href="https://bup.edu.bd"
+                                    class="common-font-color fs-6 fw-bold mb-0 logo-title  me-2"><span
+                                        class="text-white">BANGLADESH UNIVERSITY OF
+                                        <br />PROFESSIONALS</span></a>
+
+                            </div>
+                        </div>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#main_nav" style="background: #16501d;" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="main_nav">
+                            <ul class="navbar-nav ms-auto align-items-center">
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark " href="#" data-bs-toggle="dropdown">
+                                        Academics </a>
+                                    <div class="dropdown-menu dropdown-large" style="left: -359px !important;">
+                                        <div class="row g-3">
+                                            <div class="col-lg-5 col-sm-12 col-md-12">
+                                                <h6 class="title">Faculties</h6>
+                                                <ul class="list-unstyled">
+                                                    <li>
+                                                        <a href="https://bup.edu.bd/faculty_home/1">Faculty of Arts
+                                                            &amp; Social Science (FASS)</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://bup.edu.bd/faculty_home/2">Faculty of Security
+                                                            &amp; Strategic Studies (FSSS)</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://bup.edu.bd/faculty_home/3">Faculty of Science
+                                                            &amp; Technology (FST)</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://bup.edu.bd/faculty_home/4">Faculty of Business
+                                                            Studies (FBS)</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://bup.edu.bd/faculty_home/7">Faculty of Medical
+                                                            Studies (FMS)</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://bup.edu.bd/faculty_home/8">Centre for Modern
+                                                            Languages (CML)</a>
+                                                    </li>
+                                                    <li><a href="https://bup.edu.bd/chsr"> Centre for Higher Studies
+                                                            and Research (CHSR)</a></li>
+                                                    <li><a href="https://bup.edu.bd/office/office_details/40"> BUP
+                                                            Research
+                                                            Centre</a></li>
+                                                </ul>
+                                            </div><!-- end col-3 -->
+                                            <div class="col-lg-3 col-sm-12 col-md-12">
+                                                <h6 class="title">Academic Programs</h6>
+                                                <ul class="list-unstyled">
+                                                    <li><a class="" href="https://bup.edu.bd/academics/1">Undergraduate
+                                                        </a></li>
+                                                    <li><a class="" href="https://bup.edu.bd/academics/2">Graduate
+                                                        </a></li>
+
+
+                                                </ul>
+                                            </div><!-- end col-3 -->
+                                            <div class="col-lg-4 col-sm-12 col-md-12">
+                                                <h6 class="title">Important Links</h6>
+                                                <ul class="list-unstyled">
+                                                    <li><a href="https://bup.edu.bd/oefcd">Office of the Evaluation,
+                                                            Faculty
+                                                            & Curriculum Development (OEFCD) </a></li>
+
+                                                    <li><a href="https://bup.edu.bd/office/office_details/17">Office of
+                                                            the
+                                                            International Affairs </a></li>
+                                                    <li><a href="https://internationalstudents.bup.edu.bd/">International
+                                                            Students </a></li>
+                                                    <li><a href="https://bup.edu.bd/iqac">Institutional of Quality
+                                                            Assurance
+                                                            Cell (IQAC) </a></li>
+                                                    <li><a href="https://bup.edu.bd/cpc">Counselling & Placement Center
+                                                            (CPC) </a></li>
+                                                    <li><a href="https://bup.edu.bd/office/office_details/11">Library
+                                                        </a>
+                                                    </li>
+                                                    <li><a href="https://bup.edu.bd/clubs"> All Clubs </a></li>
+                                                    <li><a href="https://bup.edu.bd/labs"> All Labs </a></li>
+                                                    <li><a href="https://bup.edu.bd/academic-calender">Academic Calender
+                                                        </a></li>
+                                                    <li><a href="https://forms.office.com/r/0VeZTuBMEZ"
+                                                            target="_blank">Alumni</a></li>
+                                                </ul>
+                                            </div><!-- end col-3 -->
+                                        </div><!-- end row -->
+                                    </div> <!-- dropdown-large.// -->
+                                </li>
+
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark  " href="#" data-bs-toggle="dropdown">
+                                        Affiliated Inst. </a>
+
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item"
+                                                href="https://bup.edu.bd/affiliate-institutes-by-type?All">
+                                                All Affiliated
+                                                institutes&nbsp</a>
+
+                                        </li>
+
+
+                                        <li><a class="dropdown-item"
+                                                href="https://bup.edu.bd/affiliate-institutes-by-type?Armed%20Forces">
+                                                Armed Forces Affiliated
+                                                institutes&nbsp</a>
+
+                                        </li>
+
+                                        <li><a class="dropdown-item"
+                                                href="https://bup.edu.bd/affiliate-institutes-by-type?Army">
+                                                Army Affiliated
+                                                institutes&nbsp</a>
+
+                                        </li>
+
+                                        <li><a class="dropdown-item"
+                                                href="https://bup.edu.bd/affiliate-institutes-by-type?Navy">
+                                                Navy Affiliated
+                                                institutes&nbsp</a>
+
+                                        </li>
+
+                                        <li><a class="dropdown-item"
+                                                href="https://bup.edu.bd/affiliate-institutes-by-type?Air%20Force">
+                                                Air Force Affiliated
+                                                institutes&nbsp</a>
+
+                                        </li>
+
+                                        <li><a class="dropdown-item"
+                                                href="https://bup.edu.bd/affiliate-institutes-by-type?BGB">
+                                                BGB Affiliated
+                                                institutes&nbsp</a>
+
+                                        </li>
+
+
+                                        <!-- <li><a class="dropdown-item" href="https://bup.edu.bd/all-affiliate-institutes">All
+                                                Affiliated
+                                                Institutes</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="https://bup.edu.bd/all-affiliate-institutes">Armed Forces
+                                                Affiliated Institutes</a></li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/all-affiliate-institutes">Army
+                                                Affiliated
+                                                Institutes</a></li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/all-affiliate-institutes">Navy
+                                                Affiliated
+                                                Institutes</a></li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/all-affiliate-institutes">Air
+                                                Force
+                                                Affiliated Institutes</a></li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/all-affiliate-institutes">BGB
+                                                Affiliated Institutes</a></li> -->
+
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark  " href="#" data-bs-toggle="dropdown">
+                                        Research </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/chsr"> Centre for Higher
+                                                Studies and Research (CHSR)</a></li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/office/office_details/40">
+                                                BUP Research Centre</a></li>
+
+
+
+
+
+
+                                        <li><a class="dropdown-item" href="http://journal.bup.edu.bd/" target="_blank">
+                                                BUP Journal </a></li>
+                                        <li><a class="dropdown-item"
+                                                href="http://journal.bup.edu.bd/Journals/Category/Arts-and-Social-Science"
+                                                target="_blank"> Faculty Arts and Social Sciences Inquest Journal </a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://journal.bup.edu.bd/Journals/Category/Science-and-Technology"
+                                                target="_blank"> Journal of Faculty of Science and Technology </a></li>
+                                        <li><a class="dropdown-item"
+                                                href="http://journal.bup.edu.bd/Journals/Category/Business-and-Management"
+                                                target="_blank"> Journal of Innovation in Business Studies </a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark " href="#" data-bs-toggle="dropdown">
+                                        Admission </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/academics/admission/1">
+                                                Undergraduate Program </a></li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/academics/admission/2">
+                                                Graduate Program </a></li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/academics/admission/3">
+                                                Postgraduate Program </a></li>
+
+                                    </ul>
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark  " href="#" data-bs-toggle="dropdown">
+                                        On Campus </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+
+                                        <li> <a href="https://bup.edu.bd/office/office_details/11"
+                                                class="dropdown-item">Library and Archive</a></li>
+
+
+
+
+                                        <li> <a href="https://bup.edu.bd/office/office_details/20"
+                                                class="dropdown-item">Accommodation/Halls</a></li>
+
+
+
+                                        <li> <a href="https://bup.edu.bd/office/office_details/13"
+                                                class="dropdown-item">Sports and Fitness</a></li>
+
+
+
+
+                                        <li> <a href="https://bup.edu.bd/office/office_details/9"
+                                                class="dropdown-item">ICT Services</a></li>
+
+
+
+                                        <li> <a href="https://bup.edu.bd/office/office_details/36"
+                                                class="dropdown-item">Cafeteria</a></li>
+
+
+
+
+                                        <li> <a href="https://bup.edu.bd/office/office_details/26"
+                                                class="dropdown-item">Safety and Support</a></li>
+
+
+
+                                        <li> <a href="https://bup.edu.bd/office/office_details/10"
+                                                class="dropdown-item">Medical</a></li>
+
+
+
+
+                                        <li> <a href="https://bup.edu.bd/office/office_details/19"
+                                                class="dropdown-item">Parking and Transportation</a></li>
+
+
+
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark   " href="#" data-bs-toggle="dropdown">
+                                        Announcements
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/news/all"> News</a></li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/events/all"> Upcoming
+                                                Events
+                                            </a></li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/notice/all"> Notice </a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/career"> Career </a></li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/procurement"> Procurement
+                                            </a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/result"> Results </a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark   " href="#" data-bs-toggle="dropdown">
+                                        Publications
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+
+                                        <li><a class="dropdown-item" href="http://journal.bup.edu.bd/"
+                                                target="_blank">Journal </a></li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/magazine"> Magazine </a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="https://bup.edu.bd/newsletter"> Newsletter
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark " href="#" data-bs-toggle="dropdown">
+                                        About </a>
+                                    <div class="dropdown-menu dropdown-large" style="left: -900px !important;">
+                                        <div class="container">
+                                            <div class="row g-3">
+                                                <div class="col-lg-3 col-sm-12 col-md-12">
+                                                    <h6 class="title">About BUP</h6>
+                                                    <ul class="list-unstyled">
+                                                        <li><a href="https://bup.edu.bd/about">History </a></li>
+                                                        <li><a href="https://bup.edu.bd/facts-figures">Facts & Figures
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="https://bup.edu.bd/citizen-charter">Citizen Charter
+                                                            </a></li>
+                                                        <li><a href="https://bup.edu.bd/annual-report">Annual Report
+                                                            </a>
+                                                        </li>
+
+                                                        <li><a href="https://bup.edu.bd/contact">Contact Us </a></li>
+                                                    </ul>
+                                                </div><!-- end col-3 -->
+                                                <div class="col-lg-3 col-sm-12 col-md-12">
+                                                    <h6 class="title">Administration</h6>
+                                                    <ul class="list-unstyled">
+                                                        <li><a href="https://bup.edu.bd/chancellor">The Chancellor </a>
+                                                        </li>
+                                                        <li><a href="https://bup.edu.bd/vc_information">Vice Chancellor
+                                                            </a></li>
+                                                        <li><a href="https://bup.edu.bd/pro-vc-information">Pro-Vice
+                                                                Chancellor
+                                                            </a></li>
+                                                        <li><a href="https://bup.edu.bd/treasurer-information">Treasurer
+                                                            </a></li>
+                                                        <li><a href="https://bup.edu.bd/registrar-information">Registrar
+                                                            </a></li>
+                                                        <li><a href="https://bup.edu.bd/officers">All Officers </a></li>
+                                                        <li><a href="https://bup.edu.bd/office">All Offices </a></li>
+                                                    </ul>
+                                                </div><!-- end col-3 -->
+                                                <div class="col-lg-3 col-sm-12 col-md-12">
+                                                    <h6 class="title">Regulatory Bodies</h6>
+                                                    <ul class="list-unstyled">
+                                                        <li><a href="https://bup.edu.bd/regulatory-body/1">Senate
+                                                            </a></li>
+                                                        <li><a href="https://bup.edu.bd/regulatory-body/2">Syndicate
+                                                            </a></li>
+                                                        <li><a href="https://bup.edu.bd/regulatory-body/3">Academic
+                                                                Council
+                                                            </a></li>
+                                                        <li><a href="https://bup.edu.bd/regulatory-body/4">Finance
+                                                                Committee
+                                                            </a></li>
+
+                                                    </ul>
+                                                </div><!-- end col-3 -->
+                                                <div class="col-lg-3 col-sm-12 col-md-12">
+                                                    <h6 class="title">Academic Personnels</h6>
+                                                    <ul class="list-unstyled">
+
+                                                        <li><a href="https://bup.edu.bd/all-department-chairman">Chairman
+                                                                of the
+                                                                Departments </a></li>
+                                                        <li><a href="https://bup.edu.bd/faculty-members">All Faculty
+                                                                Members
+                                                            </a></li>
+                                                        <li><a href="https://bup.edu.bd/faculty-officers">All Faculty
+                                                                Officers
+                                                            </a></li>
+                                                        <li><a href="https://bup.edu.bd/department-officers">All
+                                                                Department
+                                                                Officers </a></li>
+                                                    </ul>
+                                                </div><!-- end col-3 -->
+                                            </div><!-- end row -->
+                                        </div><!-- end row -->
+                                    </div> <!-- dropdown-large.// -->
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark" href="#"> <i class="fas fa-search"></i> </a>
+                                </li>
+                            </ul>
+                        </div> <!-- navbar-collapse.// -->
+                    </div>
+
+
+
+
+
+
+                </nav>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            var href = "https://bup.edu.bd";
+            var thisUrl = $('.dropdown-item[href="' + href + '"]');
+            $(thisUrl).parents('.highlight-nav').find('.nav-bar-item-menu').css('borderBottom',
+                '3px solid #006a4e');
+            $(thisUrl).css('backgroundColor', '#006a4e').css('color', '#fff');
+        });
+
+    </script>
+
+
+
+    <!-- ===== Header section end ===== -->
+    <!-- Header Section End Here -->
+
+    <section id="marquee" style="display: none">
+        <div class="" style="max-width: 100%;">
+
+            <marquee style="background:#006c32; color:white;font-weight:600;position:relative;z-index:1;height: 30px;"
+                onmouseover="stop()" onmouseout="start()">
+                <a href="" style="font-size: 17px; font-family: Tahoma;">LLM-Professional Admission Test Result of 23rd
+                    Batch (January-April 2025)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">LLM-Professional Extended Admission Circular
+                    for January-April 2025 (23rd Batch)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Test Result MPCHRS Batch 13</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BUP Admission Test Final Result (MESM
+                    program)(22-12-2024)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">List of Eligible Candidate (MESM Admission
+                    Test-2025)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">List of Eligible Candidates (Updated only viva
+                    date)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">List of Eligible Candidates (Updated only viva
+                    date)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">List of Eligible Candidates MPCHRS Batch 13</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">International Interdisciplinary Conference</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Deadline Extension: Admission Circular MPCHRS
+                    Batch 13</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MICT Admission Circular (Session: January-June
+                    2025)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Auction Notice</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Circular MPCHRS Batch 13 Updated</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Board of Advance Studies (BOAS) Meeting</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">LLM (Professional) Admission Circular for
+                    Jan-Apr 2025 Session (23rd Batch)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Field Visit by MPH Batch-2 to Rohingya Refugee
+                    Camp of Cox’s Bazar, Bangladesh</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Auction Notice, October 2024</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MICT Admission Circular (Session: January-June
+                    2025)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MISS Admission Circular (Session: January-June
+                    2025)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Announcement of Masters in
+                    Environmental Science and Management (Session: 2024-2025)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Call for Papers for Journal of FST (Volume-3,
+                    Issue-1)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Master of Public Health (MPH) Admission
+                    Advertisement (Session: January-June 2025)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Auction Notice</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Final Result of PhD and MPhil Programme
+                    (SESSION: 2024-2025B)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Call for writeups for BUP Annual Magazine
+                    &#039;Cadence-2024&#039;</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BUP Successfully Concludes Viva-Voce
+                    Examinations for MPhil and PhD Programmes (2024-2025B Session)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Notice: MPCHRS Professional Program
+                    Batch 13 (Jan 2025)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">LLM-Professional Admission Test Result of 22nd
+                    Batch (September-December 2024)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Selected Candidates for 43rd Permanent
+                    Recruitment Viva Examination</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">LLM-Professional Extended Admission Circular
+                    (September-December 2024)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">List of Preliminary Eligible Candidates for
+                    viva voce of MPhil and PhD Programme (Session: 2024 – 2025B)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">LLM-Professional Extended Admission Circular
+                    (September-December 2024)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Important Notice: The application submission
+                    deadline for the admission of MPhil &amp; PhD programs (session 2024-2025B) has been extended until
+                    July 31, 2024.</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Circular of Digital Content Creation Course</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">45th Permanent Recruitment – ​​Eligible
+                    Candidates for Written Exam.</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">LLM-Professional Admission Circular Sep-Dec
+                    2024 (22nd Batch)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Test Result: MPCHRS Batch 12</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MBA (Professional) Admission Notice-September
+                    2024</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">List of Eligible Candidates: MPCHRS Batch
+                    12</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Distinguished Scholars Gather for BUP Research
+                    Proposal Presentation</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission MPCHRS 12 Batch Deadline
+                    Extension</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">3rd National Research Project Contest 2024</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MPH Admission Test Result 2024-2025 (A) (May
+                    2024)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Green Industrialization for Sustainable
+                    Development: Prospects, Challenges, and Strategies in the Context of Bangladesh</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Recent Trends in Global Development and Their
+                    Relevance for Development Studies in Bangladesh</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Notice MPCHRS: 12 Batch Deadline
+                    Extension (2nd Time)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Guidelines for Research Synopsis Submission
+                    MPhil and PhD Programme (Session: 2024-2025B)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">ADMISSION: MPhil &amp; PhD PROGRAMMES (SESSION:
+                    2024-2025B)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Signing of Memorandum of Understanding (MoU)
+                    between Rural Development Academy (RDA), Bogura and Bangladesh University of Professionals (BUP)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Notice MPCHRS 12 Batch: Deadline
+                    Extension</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Scholarly Reflections: BUP Faculty Present
+                    Research Insights</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Advent HR 3.0</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">&quot;BOAS Meeting at BUP: Finalising
+                    Supervisors for MPhil and PhD Scholars&quot;</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Test Result ( LLM-Professional) 21st
+                    Batch</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">PhD AND MPhil ADMISSION TEST RESULT (SESSION:
+                    2024-2025A)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BUP Conducts Selection Program for Research
+                    Projects, Promoting Academic Excellence</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BUP&#039;s Annual Research Presentation
+                    Spotlight Academic Achievements</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BUP Successfully Concludes Viva-Voce for MPhil
+                    and PhD Programmes Admission</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Meeting between FBS, BUP and School of
+                    Management, University of Michigan-Flint.</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Notice_MPCHRS 12 Batch: May 2024</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Interactive Session between RDA and BUP</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Seminar on &quot;Action Against Single Use
+                    Plastic&quot; Held in BUP</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Extended LLM (Prof) Circular for May-August
+                    2024 (21st Batch)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">&quot;Showcasing Excellence: BUP&#039;s
+                    Research Project Presentations Highlight Academic Innovation&quot;</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MPhil and PhD Programme (Session: 2024 – 2025A)
+                    NOTICE FOR VIVA-VOCE</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">LLM-Professional Admission Circular of
+                    May-August 2024 Session (21st Batch)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MBA (Professional) Admission Circular for
+                    May-Aug 2024 Session (36th Batch)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">&#039;Call for Papers&#039; for FASS INQUEST (
+                    Volume-4, Issue-1)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">&#039;Call for Papers&#039; for Journal of
+                    Innovation in Business Studies (JIBS)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">LLM (Prof) Admission Test Result of
+                    January-April 2024 Session(Batch-20)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Circular Session 2023-2024</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Test Final Result_ MESM 2024</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">LLM-Professional Extended Admission Circular
+                    for Jan-Apr 2024 Session (20th Batch)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MESM 2024_List of Eligible Candidates for
+                    Admission Test</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">&#039;Call for Papers&#039; for BUP Journal (
+                    Volume-10, Issue-2)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Circular for MESM 2024: Deadline
+                    Extended</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MICT Admission Circular- 2024 (Extended)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Circular of LLM-Professional in
+                    Jan-April 2024 Session (20th Batch)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Notice -Master of Peace, Conflict and
+                    Human Rights (Jan-Apr 2024)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Notice -Diploma in Organisational
+                    Security Management(Jul-Dec: 2023)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Notice -Diploma in Organisational
+                    Security Management(July-Decm 2023)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">93rd Birth Anniversary of Bangamata Sheikh
+                    Fojilatunnesa Mujib</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Observance of the 48th Martyrdom Anniversary of
+                    Bangabandhu Sheikh Mujibur Rahman with Dignity and Reverence</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Field Visit of MPH Professional Students</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">&quot;ACCA Bangladesh Seminar at BUP: Exploring
+                    Opportunities in Finance and Accounting&quot;</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">DMX-3.0</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">2nd International Conference on Information and
+                    Communication Technology for Sustainable Development (ICICT4SD) 2023</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MICT Admission Circular- 2024</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Board of Advanced Studies(BOAS) Meeting</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MPhil and PhD Result Session:2023-2024B</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">List of Preliminary Eligible Candidates for
+                    viva-voce of MPhil and PhD Programme (Session: 2023 – 2024B).</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">List of Preliminary Eligible Candidates for
+                    viva-voce of MPhil and PhD Programme (Session: 2023 – 2024B).</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">List of Preliminary Eligible Candidates for
+                    viva-voce of MPhil and PhD Programme (Session: 2023 – 2024B).</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BUP FINANCE SOCIETY CONCLUDES THEIR INFLOW 2023
+                    RECRUITMENT WITH A GRAND ORIENTATION PROGRAM</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BUP FINANCE SOCIETY CONCLUDES THEIR INFLOW 2023
+                    RECRUITMENT WITH A GRAND ORIENTATION PROGRAM</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BUP FINANCE SOCIETY CONCLUDES THEIR INFLOW 2023
+                    RECRUITMENT WITH A GRAND ORIENTATION PROGRAM</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BUP FINANCE SOCIETY CONCLUDES THEIR INFLOW 2023
+                    RECRUITMENT WITH A GRAND ORIENTATION PROGRAM</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Grand Finale of BUP Capitalizer 2022 Held</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">&quot;Overview of the Capital Market: Education
+                    for the Future Leaders&quot;</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Exam Schedule for MDS (Prof)-9, 2nd Trimester
+                    May-Aug 2023</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">বিইউপি আন্তঃবিভাগ ফুটবল প্রতিযোগিতা-২০২৩</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Cybersecurity Awareness training held in
+                    BUP</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Call for BUP Research Project FY 2023-2024</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BUP Career Edge 2021</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BUPGAC presents BUP International Model United
+                    Nations Conference 2021</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MIC- Make It Count 2022</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BUP Film Fest, 22 ( opening)</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BA-BSS Admission Circular and Regulation
+                    2022-23</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MPH (Master of Public Health) Program Admission
+                    Sessio...</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">LLM Professional Extended Admission Circular
+                    2023</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Test Final Result_ MBA(Professional)
+                    Program...</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Convocation Registration Notice - 2023</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MPH (Master of Public Health) Program Admission
+                    Sessio...</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MPH Batch-2 Result</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Admission Circular of PhD &amp; MPhil Program
+                    (Session: 20...</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Visit of DA, UK to BUP</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">MoU signed between Three Departments of FBS of
+                    BUP and ACCA Held</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">Uniquely Unilever Campus Session</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">DMX 02/2022</a>
+                |
+                <a href="" style="font-size: 17px; font-family: Tahoma;">BUP film Fest-2022 (closing)</a>
+
+            </marquee>
+            <div class="whats_new_icon"
+                style="border-top-right-radius: 5px !important;border-bottom-right-radius: 5px !important;white-space: nowrap;">
+                News<span class="update_text_news"> Update</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-slider position-relative" style="height: 600px">
+        <div class="row" style="--bs-gutter-x: 0; margin-top:110px;">
+            <div class="col-md-12 col-sm-12 col-lg-12 " id="home-slider" style="height: 600px">
+
+                <section>
+                    <style>
+                        .carousel-inner .carousel-item .carousel-caption {
+                            position: absolute;
+                            max-width: max-content;
+                            max-height: max-content;
+                            top: 70%;
+                            left: 10%;
+                            transform: translateY(-50%);
+                            background-color: rgba(255, 255, 255, 0.7);
+                            padding: 15px;
+                            color: rgb(0, 0, 0);
+                            display: inline-block;
+                            text-align: left;
+                        }
+
+                        .carousel-caption p {
+                            font-size: 20px;
+                            font-weight: 600;
+                            display: inline;
+                        }
+
+                        .carousel-fade .carousel-item {
+                            opacity: 0;
+                            transition: transform 5s ease, opacity .5s linear;
+                        }
+                    </style>
+                    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active h-100 banner-slider" style="background: #000">
+                                <img src="https://bup.edu.bd/public/upload/slider/20240820_172412286416.jpg"
+                                    class="d-block w-100 h-100 object-cover" alt="...">
+                            </div>
+                            <div class="carousel-item  h-100 banner-slider" style="background: #000">
+                                <img src="https://bup.edu.bd/public/upload/slider/20240821_1724244888223.jpg"
+                                    class="d-block w-100 h-100 object-cover" alt="...">
+                            </div>
+                            <div class="carousel-item  h-100 banner-slider" style="background: #000">
+                                <img src="https://bup.edu.bd/public/upload/slider/20230525_1684988164650.jpg"
+                                    class="d-block w-100 h-100 object-cover" alt="...">
+                            </div>
+                            <div class="carousel-item  h-100 banner-slider" style="background: #000">
+                                <img src="https://bup.edu.bd/public/upload/slider/20230724_1690183467424.jpg"
+                                    class="d-block w-100 h-100 object-cover" alt="...">
+                                <div class="carousel-caption d-none d-md-inline-block rounded shadow">
+                                    <p>Bangladesh University of Professionals (BUP)</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </section>
+                <!-- ===== slider section end ===== -->
+
+            </div>
+
+        </div>
+    </section>
+    <!-- About -->
+    <section class="my-5 home-about">
+        <div class="container">
+            <h1 class="text-uppercase mt-3 mb-0 home-content-heading">About University</h1>
+
+            <div class="position-relative w-100 common-bg-color mt-1" style="height: 4px;">
+
+            </div>
+            <div class="row justify-content-between pt-4" id="about-section">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                    <div class="position-relative h-100">
+                        <div class="about-img1-div" data-aos="zoom-in-right" data-aos-delay="50"
+                            data-aos-duration="1000" data-aos-easing="ease-in-out">
+                            <img class="img-fluid rounded shadow" id="about-img1"
+                                src="https://bup.edu.bd/public/upload/about/202304020513.jpg" />
+                        </div>
+                        <div class="position-absolute about-img2-div" data-aos="zoom-in-left" data-aos-delay="50"
+                            data-aos-duration="1000" data-aos-easing="ease-in-out">
+                            <img class="d-sm-block rounded shadow-lg" id="about-img2"
+                                src="https://bup.edu.bd/public/upload/about/202302080922DJI_0496-HDR.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="col-xs-12 col-sm-12 col-md-12 col-lg-6 about_overview d-flex flex-column justify-content-between">
+                    <div class="about-overview-text bg-light p-3 shadow rounded mb-4">
+                        <p style="text-align:justify">Establishment of a university for the armed forces educational and
+                            training institutes was a long felt need. National security, war strategy, medical,
+                            engineering and technology related to higher studies are in high demand at present. To keep
+                            pace and to be at par with the fast developing world, the national higher studies, research
+                            enabling modern knowledge and creating scope for education and studies are the obligations
+                            to be fulfilled. In order to expand and integrate the existing educational and training
+                            institutes of the armed forces, they were needed to be brought under a single umbrella or
+                            authority. Thereby, the establishment of &quot;Bangladesh University of Professionals,&quot;
+                            (BUP) took place in that process and came in to being as 31st public university of
+                            Bangladesh on 05 June 2008. BUP is a unique public university run by the armed forces with
+                            upholding the motto &quot;EXCELLENCE THROUGH KNOWLEDGE&quot;. The youngest university is
+                            confident in furthering the knowledge in the field of national security, technology and
+                            modern science to achieve the desired human resources development of the country.</p>
+                    </div>
+                    <div class="text-center w-100">
+                        <a href="https://bup.edu.bd/about" type="button"
+                            class="btn shadow about-btn text-white px-5 py-2">Find More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="my-5 py-5 home-message" style="background-color: #2d3e50;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md col-lg-8 d-flex flex-column justify-content-center" style="color:#fff">
+                    <h1 class="text-uppercase fs-3 mb-0" style="color:#86BC42; font-weight:600 !important;">Message from
+                        the
+                        vice chancellor</h1>
+                    <div class="mb-0 mt-0 d-inline-block mx-auto"
+                        style="width: 100%; background-color: #86BC42; height: 4px">
+                    </div>
+                    <p>
+                    <p style="text-align:justify">Welcome to the website of Bangladesh University of Professionals
+                        (BUP). BUP is one of the leading public universities established on June 5, 2008 with it&rsquo;s
+                        motto &quot;Excellence Through Knowledge&quot;. BUP is established in a lush green landscape
+                        with own unique features located away from busy life of metropolitan city. The university
+                        provides a tranquil, pollution free, secured campus life, with uninterrupted congenial academic
+                        atmosphere. BUP welcomes students who will dedicate their attention and devotion to serious
+                        academic pursuit to build up better tomorrow for the nation. We are committed to providing high
+                        quality education in attaining meaningful benefits for the students. In addition to its
+                        fifty-six well reputed affiliated colleges and institutes, the university has five faculties
+                        such as Faculty of Business Studies (FBS), Faculty of Security and Strategic Studies (FSSS),
+                        Faculty of Arts and Social Sciences (FASS), Faculty of Science &amp; Technology (FST), and
+                        Faculty of Medical Studies (FMS). BUP has already commenced MPhil and Doctoral programmes
+                        conducted under Center for Higher Studies and Research (CHSR) while its Centre for Modern
+                        Language (CML) launched certificate courses in Arabic, Chinese, Turkish, Burmese and French
+                        lang...
+                        <a href="https://bup.edu.bd/vc_information" style="color: #86BC42;">Read More</a>
+                    </p>
+                </div>
+                <div class="col-md col-lg-4">
+                    <div class="text-center pt-3">
+                        <img style="border:8px solid #86BC42;"
+                            src="https://bup.edu.bd/public/upload/profiles/202402131332al 2.jpg"
+                            onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/user-dummy.jpeg';"
+                            height="300" width="300" alt="vc_image" data-aos-easing="ease-in-out" data-aos="fade-right"
+                            data-aos-duration="500">
+                        <div class="px-4">
+                            <h5 class="card-title text-white fs-5 mt-3">
+                                Major General Md Mahbub-ul Alam, BSP, ndc, afwc, psc, MPhil, PhD
+                            </h5>
+                            <h6 class="card-title fs-6 mt-2" style="color: #86BC42;">
+                                Vice Chancellor
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Academics -->
+    <section class="my-5 home-academics">
+        <div class="" style="background:
+        #57a8dc33">
+            <div class="home-academics py-5">
+                <div class=" container">
+                    <div class="d-flex justify-content-between align-items-end">
+                        <h1 class="text-uppercase mb-0 home-content-heading">
+                            Academics
+                        </h1>
+                        <div class="">
+                            <a href="https://bup.edu.bd/all-academics"
+                                class="text-uppercase text-decoration-none fw-bold common-font-color">All</a>
+
+                        </div>
+                    </div>
+                    <div class="position-relative w-100 common-bg-color mt-1" style="height: 4px;">
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="owl-carousel" id="academicCarousel">
+                                <div class="faculties">
+                                    <div class="mx-2 mt-4">
+                                        <div class="common-bg-color card rounded-0 overflow-hidden">
+                                            <img class="academic-image"
+                                                src="https://bup.edu.bd/public/upload/faculty/202305250254illustration_of_two_peoples_thought.jpg"
+                                                onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                                alt="" />
+                                            <div class="card-body academicAbout">
+                                                <a class="faculty_title" href="https://bup.edu.bd/faculty_home/1">
+                                                    <h3 class="card-title text-white fs-5 text-center"
+                                                        style="text-shadow: 0px 3px 4px rgb(0 0 0 / 25%);">
+                                                        Faculty of Arts &amp; Social Science (FASS)
+                                                    </h3>
+                                                </a>
+
+                                                <div class="pt-3" style="color: #ffffffc7;">
+                                                    <p style="text-align:justify">Faculty of Arts and Social Sciences
+                                                        (FASS) started its journ...
+                                                </div>
+                                                <a class="text-white academics_details"
+                                                    href="https://bup.edu.bd/faculty_home/1">
+                                                    <h3
+                                                        class="text-uppercase d-flex align-items-center justify-content-end mb-0">
+                                                        Find More<i class="bi bi-arrow-right mx-2"></i>
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faculties">
+                                    <div class="mx-2 mt-4">
+                                        <div class="common-bg-color card rounded-0 overflow-hidden">
+                                            <img class="academic-image"
+                                                src="https://bup.edu.bd/public/upload/faculty/2023052502551c6a8ee2-slider-security-1024x541.jpg"
+                                                onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                                alt="" />
+                                            <div class="card-body academicAbout">
+                                                <a class="faculty_title" href="https://bup.edu.bd/faculty_home/2">
+                                                    <h3 class="card-title text-white fs-5 text-center"
+                                                        style="text-shadow: 0px 3px 4px rgb(0 0 0 / 25%);">
+                                                        Faculty of Security &amp; Strategic Studies (FSSS)
+                                                    </h3>
+                                                </a>
+
+                                                <div class="pt-3" style="color: #ffffffc7;">
+                                                    <p>Faculty of Security &amp; Strategic Studies (FSSS) started its
+                                                        journey from mid- 2013....
+                                                </div>
+                                                <a class="text-white academics_details"
+                                                    href="https://bup.edu.bd/faculty_home/2">
+                                                    <h3
+                                                        class="text-uppercase d-flex align-items-center justify-content-end mb-0">
+                                                        Find More<i class="bi bi-arrow-right mx-2"></i>
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faculties">
+                                    <div class="mx-2 mt-4">
+                                        <div class="common-bg-color card rounded-0 overflow-hidden">
+                                            <img class="academic-image"
+                                                src="https://bup.edu.bd/public/upload/faculty/202412041408ict 2.jpg"
+                                                onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                                alt="" />
+                                            <div class="card-body academicAbout">
+                                                <a class="faculty_title" href="https://bup.edu.bd/faculty_home/3">
+                                                    <h3 class="card-title text-white fs-5 text-center"
+                                                        style="text-shadow: 0px 3px 4px rgb(0 0 0 / 25%);">
+                                                        Faculty of Science &amp; Technology (FST)
+                                                    </h3>
+                                                </a>
+
+                                                <div class="pt-3" style="color: #ffffffc7;">
+                                                    <p>Faculty of Science and Technology (FST) started as Faculty of
+                                                        Technical and Engineering...
+                                                </div>
+                                                <a class="text-white academics_details"
+                                                    href="https://bup.edu.bd/faculty_home/3">
+                                                    <h3
+                                                        class="text-uppercase d-flex align-items-center justify-content-end mb-0">
+                                                        Find More<i class="bi bi-arrow-right mx-2"></i>
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faculties">
+                                    <div class="mx-2 mt-4">
+                                        <div class="common-bg-color card rounded-0 overflow-hidden">
+                                            <img class="academic-image"
+                                                src="https://bup.edu.bd/public/upload/faculty/202412041422Marketing.png"
+                                                onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                                alt="" />
+                                            <div class="card-body academicAbout">
+                                                <a class="faculty_title" href="https://bup.edu.bd/faculty_home/4">
+                                                    <h3 class="card-title text-white fs-5 text-center"
+                                                        style="text-shadow: 0px 3px 4px rgb(0 0 0 / 25%);">
+                                                        Faculty of Business Studies (FBS)
+                                                    </h3>
+                                                </a>
+
+                                                <div class="pt-3" style="color: #ffffffc7;">
+                                                    <p>The Faculty of Business Studies (FBS) at Bangladesh University of
+                                                        Professionals (BUP) i...
+                                                </div>
+                                                <a class="text-white academics_details"
+                                                    href="https://bup.edu.bd/faculty_home/4">
+                                                    <h3
+                                                        class="text-uppercase d-flex align-items-center justify-content-end mb-0">
+                                                        Find More<i class="bi bi-arrow-right mx-2"></i>
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faculties">
+                                    <div class="mx-2 mt-4">
+                                        <div class="common-bg-color card rounded-0 overflow-hidden">
+                                            <img class="academic-image"
+                                                src="https://bup.edu.bd/public/upload/faculty/202412041429WhatsApp Image 2024-12-04 at 14.28.02_f0b23611.jpg"
+                                                onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                                alt="" />
+                                            <div class="card-body academicAbout">
+                                                <a class="faculty_title" href="https://bup.edu.bd/faculty_home/7">
+                                                    <h3 class="card-title text-white fs-5 text-center"
+                                                        style="text-shadow: 0px 3px 4px rgb(0 0 0 / 25%);">
+                                                        Faculty of Medical Studies (FMS)
+                                                    </h3>
+                                                </a>
+
+                                                <div class="pt-3" style="color: #ffffffc7;">
+                                                    <p>The Faculty of Medical Studies (FMS) at Bangladesh University of
+                                                        Professionals (BUP) is...
+                                                </div>
+                                                <a class="text-white academics_details"
+                                                    href="https://bup.edu.bd/faculty_home/7">
+                                                    <h3
+                                                        class="text-uppercase d-flex align-items-center justify-content-end mb-0">
+                                                        Find More<i class="bi bi-arrow-right mx-2"></i>
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faculties">
+                                    <div class="mx-2 mt-4">
+                                        <div class="common-bg-color card rounded-0 overflow-hidden">
+                                            <img class="academic-image"
+                                                src="https://bup.edu.bd/public/upload/faculty/202412041330languages_bangladesh.png"
+                                                onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                                alt="" />
+                                            <div class="card-body academicAbout">
+                                                <a class="faculty_title" href="https://bup.edu.bd/faculty_home/8">
+                                                    <h3 class="card-title text-white fs-5 text-center"
+                                                        style="text-shadow: 0px 3px 4px rgb(0 0 0 / 25%);">
+                                                        Centre for Modern Languages (CML)
+                                                    </h3>
+                                                </a>
+
+                                                <div class="pt-3" style="color: #ffffffc7;">
+                                                    <p style="text-align:justify">Centre for Modern Languages (CML) was
+                                                        established in 2011 as...
+                                                </div>
+                                                <a class="text-white academics_details"
+                                                    href="https://bup.edu.bd/faculty_home/8">
+                                                    <h3
+                                                        class="text-uppercase d-flex align-items-center justify-content-end mb-0">
+                                                        Find More<i class="bi bi-arrow-right mx-2"></i>
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faculties">
+                                    <div class="mx-2 mt-4">
+                                        <div class="common-bg-color card rounded-0 overflow-hidden">
+                                            <img class="academic-image"
+                                                src="https://bup.edu.bd/public/upload/faculty/202412041424research-consulting-services.jpg"
+                                                onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                                alt="" />
+                                            <div class="card-body academicAbout">
+                                                <a class="faculty_title" href="https://bup.edu.bd/faculty_home/9">
+                                                    <h3 class="card-title text-white fs-5 text-center"
+                                                        style="text-shadow: 0px 3px 4px rgb(0 0 0 / 25%);">
+                                                        Centre for Higher Studies and Research (CHSR)
+                                                    </h3>
+                                                </a>
+
+                                                <div class="pt-3" style="color: #ffffffc7;">
+                                                    <p>Centre for Higher Studies and Research (CHSR) is mainly
+                                                        responsible for conducting the...
+                                                </div>
+                                                <a class="text-white academics_details"
+                                                    href="https://bup.edu.bd/faculty_home/9">
+                                                    <h3
+                                                        class="text-uppercase d-flex align-items-center justify-content-end mb-0">
+                                                        Find More<i class="bi bi-arrow-right mx-2"></i>
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Admissions -->
+
+    <!-- Current Admissions -->
+    <section class="my-5 home-admission">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end">
+                <h1 class="text-uppercase  mb-0 home-content-heading">Current Admissions</h1>
+
+            </div>
+            <div class="position-relative w-100 common-bg-color mt-1" style="height: 4px;">
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-3">
+                    <div class="card mt-3 current-admission"
+                        style="height: 230px; background-color: #1d1f37; position:relative">
+                        <h3 class="fs-5 text-white font-work-sans text-center current-admission-program"><span
+                                class="fw-bold fs-4 font-work-sans">Bachelors<br> Program</span></h3>
+                    </div>
+                    <div class="d-flex justify-content-center current-admission">
+                        <div class="d-block p-3 text-white text-center position-absolute admission_details rounded"
+                            style="background-color: #1d7099">
+                            <a href="https://admission.bup.edu.bd/Admission/Candidate/SelectProgramV3?ecat=4"
+                                class="card-title my-2 text-uppercase">
+                                Apply Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card mt-3 current-admission"
+                        style="height: 230px; background-color: #1d7099; position:relative">
+                        <h3 class="fs-5 text-white font-work-sans text-center current-admission-program"><span
+                                class="fw-bold fs-4 font-work-sans">Masters Program</span></h3>
+                    </div>
+                    <div class="d-flex justify-content-center current-admission">
+                        <div class="d-block p-3 text-white text-center position-absolute admission_details rounded"
+                            style="background-color: #1d1f37">
+                            <a href="https://admission.bup.edu.bd/Admission/Candidate/SelectProgram?ecat=6"
+                                class="card-title my-2 text-uppercase">
+                                Apply Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card mt-3 current-admission"
+                        style="height: 230px; background-color: #1d1f37; position:relative">
+                        <h3 class="fs-5 text-white font-work-sans text-center current-admission-program"><span
+                                class="fw-bold fs-4 font-work-sans">MPhil And PhD Programs</span></h3>
+                    </div>
+                    <div class="d-flex justify-content-center current-admission">
+                        <div class="d-block p-3 rounded text-white text-center position-absolute admission_details"
+                            style="background-color: #1d7099">
+                            <a href="https://admission.bup.edu.bd/Admission/Candidate/SelectProgramPhd"
+                                class="card-title my-2 text-uppercase">
+                                Apply Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card mt-3 current-admission"
+                        style="height: 230px; background-color: #1d7099; position:relative">
+                        <h3 class="fs-5 text-white font-work-sans text-center current-admission-program"><span
+                                class="fw-bold fs-4 font-work-sans">International Students Only</span></h3>
+                    </div>
+                    <div class="d-flex justify-content-center current-admission">
+                        <div class="d-block p-3 rounded text-white text-center position-absolute admission_details"
+                            style="background-color: #1d1f37">
+                            <a href="https://internationalstudents.bup.edu.bd/" class="card-title my-2 text-uppercase">
+                                Apply Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Affiliations -->
+    <section class="my-5 home-affiliations">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end">
+                <h1 class="text-uppercase  mb-0 home-content-heading">
+                    Affiliated Institutes
+                </h1>
+                <a href="https://bup.edu.bd/all-affiliate-institutes"
+                    class="text-uppercase text-decoration-none fw-bold common-font-color">All</a>
+            </div>
+
+            <div class="position-relative w-100 common-bg-color mt-1" style="height: 4px;">
+            </div>
+        </div>
+        <div id="carouselExample" class="container carousel slide mt-3">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="affiliations-container bg-light rounded-2 mb-3">
+                        <div class="row d-flex justify-content-around flex-sm-row align-items-center">
+                            <div class="col-lg-2 my-3 affiliation_item">
+                                <div class="text-center">
+                                    <img src="https://bup.edu.bd/public/upload/affiliation/20240516_171584681527.png"
+                                        onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                        alt="">
+
+                                    <p class="text-center pt-1"><a href="https://bup.edu.bd/affiliate-institute/3"
+                                            style="text-decoration: none; font-weight: 600;"
+                                            class="affiliation_items_btn fs-6">National Defence College (NDC)</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 my-3 affiliation_item">
+                                <div class="text-center">
+                                    <img src="https://bup.edu.bd/public/upload/affiliation/20240625_1719307549173.png"
+                                        onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                        alt="">
+
+                                    <p class="text-center pt-1"><a href="https://bup.edu.bd/affiliate-institute/11"
+                                            style="text-decoration: none; font-weight: 600;"
+                                            class="affiliation_items_btn fs-6">Armed Forces Institute of Pathology
+                                            (AFIP)</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 my-3 affiliation_item">
+                                <div class="text-center">
+                                    <img src="https://bup.edu.bd/public/upload/affiliation/20240625_1719306706913.png"
+                                        onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                        alt="">
+
+                                    <p class="text-center pt-1"><a href="https://bup.edu.bd/affiliate-institute/12"
+                                            style="text-decoration: none; font-weight: 600;"
+                                            class="affiliation_items_btn fs-6">Armed Forces Medical College (AFMC)</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 my-3 affiliation_item">
+                                <div class="text-center">
+                                    <img src="https://bup.edu.bd/public/upload/affiliation/20240625_1719306538881.png"
+                                        onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                        alt="">
+
+                                    <p class="text-center pt-1"><a href="https://bup.edu.bd/affiliate-institute/13"
+                                            style="text-decoration: none; font-weight: 600;"
+                                            class="affiliation_items_btn fs-6">Armed Forces Medical Institute (AFMI)</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 my-3 affiliation_item">
+                                <div class="text-center">
+                                    <img src="https://bup.edu.bd/public/upload/affiliation/20240625_1719307215373.png"
+                                        onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                        alt="">
+
+                                    <p class="text-center pt-1"><a href="https://bup.edu.bd/affiliate-institute/2"
+                                            style="text-decoration: none; font-weight: 600;"
+                                            class="affiliation_items_btn fs-6">Defense Services Command and Staff
+                                            College (DSCSC)</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 my-3 affiliation_item">
+                                <div class="text-center">
+                                    <img src="https://bup.edu.bd/public/upload/affiliation/20240516_1715848003869.png"
+                                        onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                        alt="">
+
+                                    <p class="text-center pt-1"><a href="https://bup.edu.bd/affiliate-institute/10"
+                                            style="text-decoration: none; font-weight: 600;"
+                                            class="affiliation_items_btn fs-6">Bangladesh Military Academy (BMA)</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research in BUP -->
+    <section class="my-5 home-research" style="background: #57a8dc33;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end pt-5">
+                <h1 class="text-uppercase mb-0 home-content-heading">
+                    Research in Bup
+                </h1>
+                <a href="https://bup.edu.bd/research-list"
+                    class="text-uppercase text-decoration-none fw-bold common-font-color">All</a>
+            </div>
+            <div class="position-relative w-100 common-bg-color mt-1" style="height: 4px;">
+            </div>
+            <div class="row  research-div pb-5">
+                <div class="col-lg-6 col-md mt-3">
+                    <div class="bg-light pb-2 shadow research-card">
+                        <div>
+                            <h2 class="text-white text-uppercase fw-bold p-3 fs-5 my-0"
+                                style="width: 100%; background-color: #006c32">Research <br>Under CHSR
+                            </h2>
+                        </div>
+                        <div class="m-3 border-bottom">
+                            <a href="https://bup.edu.bd/research/270">
+                                <p class="mb-1 fs-7" style="color: #006c32;"><i class="fas fa-calendar-alt pe-1"></i>
+                                    2024</p>
+
+                                <h3 class="fs-6 research_title" style="">
+                                    Dietary Habit and Lifestyle Practice of Patient with Irritable Bowel Syndrome: A
+                                    Case-Cont...</h3>
+                            </a>
+                        </div>
+                        <div class="m-3 border-bottom">
+                            <a href="https://bup.edu.bd/research/269">
+                                <p class="mb-1 fs-7" style="color: #006c32;"><i class="fas fa-calendar-alt pe-1"></i>
+                                    2024</p>
+
+                                <h3 class="fs-6 research_title" style="">
+                                    Medicinal Plants and Formulations Used by Alternative Medicine Practitioner for
+                                    Treatment...</h3>
+                            </a>
+                        </div>
+                        <div class="m-3 border-bottom">
+                            <a href="https://bup.edu.bd/research/268">
+                                <p class="mb-1 fs-7" style="color: #006c32;"><i class="fas fa-calendar-alt pe-1"></i>
+                                    2024</p>
+
+                                <h3 class="fs-6 research_title" style="">
+                                    E-Accounting Practice and Its Effects on Financial Performance of Readymade Garments
+                                    Ind...</h3>
+                            </a>
+                        </div>
+                        <div class="m-3 border-bottom">
+                            <a href="https://bup.edu.bd/research/267">
+                                <p class="mb-1 fs-7" style="color: #006c32;"><i class="fas fa-calendar-alt pe-1"></i>
+                                    2024</p>
+
+                                <h3 class="fs-6 research_title" style="">
+                                    Ownership Structure, Dividend Payout Policy and Stock Price Volatility: A Study on
+                                    List...</h3>
+                            </a>
+                        </div>
+                        <div class="m-3 border-bottom">
+                            <a href="https://bup.edu.bd/research/266">
+                                <p class="mb-1 fs-7" style="color: #006c32;"><i class="fas fa-calendar-alt pe-1"></i>
+                                    2024</p>
+
+                                <h3 class="fs-6 research_title" style="">
+                                    Impact of Human Resource Management Practices on Employee Engagement with Moderating
+                                    Ef...</h3>
+                            </a>
+                        </div>
+
+                        <div class="ps-3 pb-2">
+                            <a href="https://bup.edu.bd/chsr-research-list" type="button"
+                                class="btn text-white shadow fs-7" style="background-color:#006c32">See More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md mt-3">
+                    <div class="bg-light pb-2 shadow research-card">
+                        <div>
+                            <h2 class="text-white text-uppercase fw-bold p-3 fs-5 my-0"
+                                style="width: 100%; background-color: #1d7099">Published<br>Faculty Research
+                            </h2>
+                        </div>
+
+
+
+                        <div class="m-3 border-bottom">
+                            <a href="https://bup.edu.bd/research/19">
+                                <p class="mb-1 fs-7" style="color: #1d7099;"><i class="fas fa-calendar-alt pe-1"></i>
+                                    2024</p>
+                                <h3 class="fs-6 research_title" style="">
+                                    M.N. Uddin, K.E. Hoque, M.M. Billah, The impact of multiple stenosis and aneurysms
+                                    on arte...</h3>
+                            </a>
+                        </div>
+                        <div class="m-3 border-bottom">
+                            <a href="https://bup.edu.bd/research/15">
+                                <p class="mb-1 fs-7" style="color: #1d7099;"><i class="fas fa-calendar-alt pe-1"></i>
+                                    2021</p>
+                                <h3 class="fs-6 research_title" style="">
+                                    Barman, N., Dhali, M.N. and Hasan, M.B., 2021. Finding Appropriate Smoothing
+                                    Constant for...</h3>
+                            </a>
+                        </div>
+                        <div class="m-3 border-bottom">
+                            <a href="https://bup.edu.bd/research/14">
+                                <p class="mb-1 fs-7" style="color: #1d7099;"><i class="fas fa-calendar-alt pe-1"></i>
+                                    2022</p>
+                                <h3 class="fs-6 research_title" style="">
+                                    Saima, F.N. and Ghosh, R. (2024), &quot;Is the capital market of Bangladesh ready to
+                                    reap the b...</h3>
+                            </a>
+                        </div>
+                        <div class="m-3 border-bottom">
+                            <a href="https://bup.edu.bd/research/9">
+                                <p class="mb-1 fs-7" style="color: #1d7099;"><i class="fas fa-calendar-alt pe-1"></i>
+                                    2019</p>
+                                <h3 class="fs-6 research_title" style="">
+                                    Uddin N, and Ullah, MN, (2019), “Maiden Zola Parishad Election in the History of
+                                    Banglades...</h3>
+                            </a>
+                        </div>
+
+                        <div class="ps-3 pb-2">
+                            <a href="https://bup.edu.bd/faculty-research-list" type="button"
+                                class="btn text-white shadow fs-7" style="background-color:#1d7099">See More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+    <!-- On Campus Gallery -->
+    <section class="home-gallery my-5">
+        <div class=""
+            style="background-image: url(https://bup.edu.bd/public/frontend/assets/img/bup/oncampus_banner.png); background-repeat: no-repeat; background-position: center; background-size: cover;">
+            <div class="container">
+                <h1 class="text-uppercase mb-0 home-content-heading">On Campus </h1>
+                <div class="position-relative w-100 common-bg-color mt-1" style="height: 4px;">
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 ">
+                        <a href="https://bup.edu.bd/office/office_details/11">
+                            <div class="over-container">
+                                <img src="https://bup.edu.bd/public/upload/on_campus/20241204_1733288722629.jpg"
+                                    onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                    class=" shadow-1-strong mb-4 over-img" alt="Student Life" />
+                                <div class="position-absolute campus-title" style="right:0px; bottom:20px">
+                                    <div class=" text-white d-flex justify-content-center"
+                                        style="width: 200px; height: 40px; background: #B60404; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                        <p class="mt-2 text-right"> Library and Archive </p>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">Library and Archive</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 ">
+                        <a href="https://bup.edu.bd/office/office_details/20">
+                            <div class="over-container">
+                                <img src="https://bup.edu.bd/public/upload/on_campus/20230516_16842179821.jpg"
+                                    onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                    class=" shadow-1-strong mb-4 over-img" alt="Student Life" />
+                                <div class="position-absolute campus-title" style="right:0px; bottom:20px">
+                                    <div class=" text-white d-flex justify-content-center"
+                                        style="width: 200px; height: 40px; background: #B60404; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                        <p class="mt-2 text-right"> Accommodation/Halls </p>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">Accommodation/Halls</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 ">
+                        <a href="https://bup.edu.bd/office/office_details/13">
+                            <div class="over-container">
+                                <img src="https://bup.edu.bd/public/upload/on_campus/20241204_1733288971994.jpg"
+                                    onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                    class=" shadow-1-strong mb-4 over-img" alt="Student Life" />
+                                <div class="position-absolute campus-title" style="right:0px; bottom:20px">
+                                    <div class=" text-white d-flex justify-content-center"
+                                        style="width: 200px; height: 40px; background: #B60404; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                        <p class="mt-2 text-right"> Sports and Fitness </p>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">Sports and Fitness</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 ">
+                        <a href="https://bup.edu.bd/office/office_details/9">
+                            <div class="over-container">
+                                <img src="https://bup.edu.bd/public/upload/on_campus/20230516_1684218063375.jpg"
+                                    onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                    class=" shadow-1-strong mb-4 over-img" alt="Student Life" />
+                                <div class="position-absolute campus-title" style="right:0px; bottom:20px">
+                                    <div class=" text-white d-flex justify-content-center"
+                                        style="width: 200px; height: 40px; background: #B60404; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                        <p class="mt-2 text-right"> ICT Services </p>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">ICT Services</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 ">
+                        <a href="https://bup.edu.bd/office/office_details/36">
+                            <div class="over-container">
+                                <img src="https://bup.edu.bd/public/upload/on_campus/20241204_1733289611169.jpg"
+                                    onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                    class=" shadow-1-strong mb-4 over-img" alt="Student Life" />
+                                <div class="position-absolute campus-title" style="right:0px; bottom:20px">
+                                    <div class=" text-white d-flex justify-content-center"
+                                        style="width: 200px; height: 40px; background: #B60404; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                        <p class="mt-2 text-right"> Cafeteria </p>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">Cafeteria</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 ">
+                        <a href="https://bup.edu.bd/office/office_details/26">
+                            <div class="over-container">
+                                <img src="https://bup.edu.bd/public/upload/on_campus/20241204_1733297186208.jpg"
+                                    onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                    class=" shadow-1-strong mb-4 over-img" alt="Student Life" />
+                                <div class="position-absolute campus-title" style="right:0px; bottom:20px">
+                                    <div class=" text-white d-flex justify-content-center"
+                                        style="width: 200px; height: 40px; background: #B60404; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                        <p class="mt-2 text-right"> Safety and Support </p>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">Safety and Support</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 ">
+                        <a href="https://bup.edu.bd/office/office_details/10">
+                            <div class="over-container">
+                                <img src="https://bup.edu.bd/public/upload/on_campus/20241215_1734232558211.jpg"
+                                    onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                    class=" shadow-1-strong mb-4 over-img" alt="Student Life" />
+                                <div class="position-absolute campus-title" style="right:0px; bottom:20px">
+                                    <div class=" text-white d-flex justify-content-center"
+                                        style="width: 200px; height: 40px; background: #B60404; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                        <p class="mt-2 text-right"> Medical </p>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">Medical</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 ">
+                        <a href="https://bup.edu.bd/office/office_details/19">
+                            <div class="over-container">
+                                <img src="https://bup.edu.bd/public/upload/on_campus/20230516_1684218119979.jpg"
+                                    onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';"
+                                    class=" shadow-1-strong mb-4 over-img" alt="Student Life" />
+                                <div class="position-absolute campus-title" style="right:0px; bottom:20px">
+                                    <div class=" text-white d-flex justify-content-center"
+                                        style="width: 200px; height: 40px; background: #B60404; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                        <p class="mt-2 text-right"> Parking and Transportation </p>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">Parking and Transportation</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Glance -->
+    <section class="counter-numbers-2 home-glance">
+        <div class="" style="background-image:linear-gradient(
+          rgba(0, 0, 0, 0.75),
+          rgba(0, 0, 0, 0.75)
+        ), url(https://bup.edu.bd/public/frontend/assets/img/bup/banner.jpg); background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;">
+            <div class=" container">
+                <h1 class="text-white fs-2 mb-0 text-center pt-5 pb-3 fw-bold">We are in <span
+                        class="text-primary">Numbers
+                    </span> at a glance
+                </h1>
+                <div class="row pb-5">
+                    <div class="col-12 col-md-3 my-3">
+                        <div class="inside bg-info bg-opacity-50 card rounded-0 glance-div">
+                            <div class="text-center card-body">
+                                <img class="pt-3" src="https://bup.edu.bd/public/frontend/assets/img/bup/glance1.svg"
+                                    alt="" />
+                                <h2 class="count text-white fw-bold pt-3" data-count="9720">0</h2>
+                                <h5 class="text-white fw-bold">Students</h5>
+                                <p class="text-white fw-bold fs-7">
+                                    International Students : <span class="count" data-count="115">0</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3 my-3">
+                        <div class="inside bg-info bg-opacity-50 card rounded-0 glance-div">
+                            <div class="text-center card-body">
+                                <img class="pt-3" src="https://bup.edu.bd/public/frontend/assets/img/bup/glance2.svg"
+                                    alt="" />
+                                <h2 class="count text-white fw-bold pt-3" data-count="515">0</h2>
+                                <h5 class="text-white fw-bold">Faculty Members</h5>
+                                <p class="text-white fw-bold fs-7">
+                                    PhDs : <span class="count" data-count="188">0</span>,
+                                    Foreign Faculty :
+                                    <span class="count" data-count="1">0</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3 my-3">
+                        <div class="inside bg-info bg-opacity-50 card rounded-0 glance-div">
+                            <div class="text-center card-body">
+                                <img class="pt-3" src="https://bup.edu.bd/public/frontend/assets/img/bup/glance3.svg"
+                                    alt="" />
+                                <h2 class="count text-white fw-bold pt-3" data-count="310">0</h2>
+                                <h5 class="text-white fw-bold">Officers</h5>
+                                <p class="text-white fw-bold fs-7" style="visibility: hidden">I'm hidden</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3 my-3">
+                        <div class="inside bg-info bg-opacity-50 card rounded-0 glance-div">
+                            <div class="text-center card-body">
+                                <img class="pt-3" src="https://bup.edu.bd/public/frontend/assets/img/bup/glance4.svg"
+                                    alt="" />
+                                <h2 class="count text-white fw-bold pt-3" data-count="650">
+                                    0</h2>
+                                <h5 class="text-white fw-bold">Staffs</h5>
+                                <p class="text-white fw-bold fs-7" style="visibility: hidden">I'm hidden</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- News & Events -->
+    <section class="my-5 home-news">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                    <div class="d-flex justify-content-between align-items-end">
+                        <h1 class="text-uppercase home-content-heading mb-0">
+                            News
+                        </h1>
+                        <a href="https://bup.edu.bd/news/all"
+                            class="text-uppercase text-decoration-none fw-bold common-font-color">All</a>
+                    </div>
+                    <div class="position-relative w-100 common-bg-color mt-1" style="height: 4px;">
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3 upcoming-events mt-3">
+
+                        <style>
+                            .upcoming-events img {
+                                width: 100%;
+                                object-fit: cover;
+                            }
+
+                            .upcoming-events .card {
+                                border: none;
+                                border-radius: 0;
+                            }
+
+                            .upcoming-event-date-time {
+                                text-transform: uppercase;
+                                font-weight: 900;
+                                font-size: 0.8rem;
+                                letter-spacing: 0.25rem;
+                                color: #2b292a;
+                                border: 1px solid #2b292a;
+                            }
+
+
+                            .upcoming-event-link {
+                                font-weight: 700;
+                                display: inline-block;
+                            }
+
+                            .news-card {
+                                background-color: #e9ecef !important;
+                                position: relative;
+                                margin-bottom: 10px;
+                                background-color: #ffffff;
+                                -webkit-transition: all 800ms ease;
+                                -moz-transition: all 800ms ease;
+                                -ms-transition: all 800ms ease;
+                                -o-transition: all 800ms ease;
+                                transition: all 800ms ease;
+
+                            }
+
+                            .news-card:before {
+                                position: absolute;
+                                content: '';
+                                left: 0px;
+                                bottom: 0px;
+                                width: 0px;
+                                height: 5px;
+                                background-color: #006c32;
+                                -webkit-transition: all 800ms ease;
+                                -moz-transition: all 800ms ease;
+                                -ms-transition: all 800ms ease;
+                                -o-transition: all 800ms ease;
+                                transition: all 800ms ease;
+                            }
+
+                            .news-card:after {
+                                position: absolute;
+                                content: '';
+                                right: 0px;
+                                bottom: 0px;
+                                width: 0px;
+                                height: 5px;
+                                background-color: #006c32;
+                                -webkit-transition: all 800ms ease;
+                                -moz-transition: all 800ms ease;
+                                -ms-transition: all 800ms ease;
+                                -o-transition: all 800ms ease;
+                                transition: all 800ms ease;
+                            }
+
+                            .news-card:hover {
+                                -webkit-transform: translateY(10px);
+                                -moz-transform: translateY(10px);
+                                -ms-transform: translateY(10px);
+                                -o-transform: translateY(10px);
+                                transform: translateY(10px);
+                            }
+
+                            .news-card:hover::before,
+                            .news-card:hover::after {
+                                width: 100%;
+                            }
+
+                            .news-card img {
+                                height: 200px !important;
+                            }
+
+                            .news-card a {
+                                color: #275D38;
+                                -webkit-transition: all 800ms ease;
+                                -moz-transition: all 800ms ease;
+                                -ms-transition: all 800ms ease;
+                                -o-transition: all 800ms ease;
+                                transition: all 800ms ease;
+
+                            }
+
+                            .news-card a:hover {
+                                color: #047C3B;
+                            }
+
+
+
+
+                            /* Medium devices (tablets, 768px and up) */
+                            @media (min-width: 768px) {
+                                .upcoming-event-date-time {
+                                    font-weight: 900;
+                                    font-size: 0.8rem;
+                                    letter-spacing: 0.125rem;
+                                }
+
+                                .upcoming-event-link {
+                                    font-weight: 600;
+                                    font-size: 1rem;
+                                    letter-spacing: 0.02rem;
+                                }
+                            }
+
+                            /* Large devices (desktops, 992px and up) */
+                            @media (min-width: 992px) {
+                                .upcoming-event-date-time {
+                                    font-weight: 900;
+                                    font-size: 0.8rem;
+                                    letter-spacing: 0.24rem;
+                                }
+
+                                .upcoming-event-link {
+                                    font-weight: 600;
+                                    font-size: 1rem;
+                                    letter-spacing: 0.02rem;
+                                }
+                            }
+
+                            /* X-Large devices (large desktops, 1200px and up) */
+                            @media (min-width: 1200px) {
+                                .upcoming-event-date-time {
+                                    font-weight: 900;
+                                    font-size: 0.8rem;
+                                    letter-spacing: 0.25rem;
+                                }
+
+                                .upcoming-event-link {
+                                    font-weight: 700;
+                                }
+                            }
+                        </style>
+
+                        <div class="col mb-3 home-news-card">
+                            <div class="card h-100 news-card">
+                                <div><img alt="" src="https://bup.edu.bd/public/upload/news/20241225_1735067143.jpg"
+                                        onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';" />
+                                </div>
+                                <div class="py-3 px-2">
+                                    <div class="mt-0 mb-3 "><span class="upcoming-event-date-time py-1 px-2">Dec 24,
+                                            2024</span>
+                                    </div>
+                                    <a class="stretched-link upcoming-event-link"
+                                        href="https://bup.edu.bd/news/details/540">MoU Signing Ceremony between
+                                        Bangladesh University of Professionals (BUP) and Barishal University (BU) </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-3 home-news-card">
+                            <div class="card h-100 news-card">
+                                <div><img alt="" src="https://bup.edu.bd/public/upload/news/20241223_1734974273.jpg"
+                                        onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';" />
+                                </div>
+                                <div class="py-3 px-2">
+                                    <div class="mt-0 mb-3 "><span class="upcoming-event-date-time py-1 px-2">Dec 23,
+                                            2024</span>
+                                    </div>
+                                    <a class="stretched-link upcoming-event-link"
+                                        href="https://bup.edu.bd/news/details/538">Prize Giving Ceremony of ‘DEVTHON
+                                        5.0’ </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-3 home-news-card">
+                            <div class="card h-100 news-card">
+                                <div><img alt="" src="https://bup.edu.bd/public/upload/news/20250108_1736303037.jpg"
+                                        onerror="this.onerror=null;this.src='https://bup.edu.bd/public/upload/no-image.png';" />
+                                </div>
+                                <div class="py-3 px-2">
+                                    <div class="mt-0 mb-3 "><span class="upcoming-event-date-time py-1 px-2">Dec 05,
+                                            2024</span>
+                                    </div>
+                                    <a class="stretched-link upcoming-event-link"
+                                        href="https://bup.edu.bd/news/details/506">Memorial Ceremony held at BUP </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div class="d-flex justify-content-between align-items-end">
+                        <h1 class="text-uppercase home-content-heading mb-0"> Upcoming Events </h1>
+                        <a href="https://bup.edu.bd/events/all"
+                            class="text-uppercase text-decoration-none fw-bold common-font-color">All</a>
+                    </div>
+                    <div class="position-relative w-100 common-bg-color mt-1" style="height: 4px;">
+                    </div>
+                    <style>
+                        .dates-calendardate {
+                            font-family: "PT Sans", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+                            background: #002147;
+                            color: #fff;
+                            float: left;
+                            line-height: 1.2;
+                            padding: .7em .5em;
+                            text-align: center;
+                            text-transform: uppercase;
+                            width: 3em;
+                            /* top: 2px; */
+                            /* position: absolute; */
+                        }
+
+                        .event-title {
+                            /* max-height: 40px; */
+                            /* min-height: 40px; */
+                            overflow: hidden;
+                            font-weight: 700;
+                            color: #000;
+                            -webkit-transition: all 0.2s linear;
+                            -moz-transition: all 0.2s linear;
+                            -ms-transition: all 0.2s linear;
+                            -o-transition: all 0.2s linear;
+                            transition: all 0.2s linear;
+                        }
+
+                        .event-title:hover {
+                            color: #047C3B;
+                            padding-left: 5px;
+                        }
+                    </style>
+                    <h2 class="fs-5 p-3 mt-3  mb-0 bg-light rounded">There are no upcoming events at the moment..</h2>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Notice -->
+    <section class="home-notice">
+        <div style="background: #00b2ff0d;" class="pt-5">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-5 col-md pb-5">
+                        <div class="notice_main shadow-sm border">
+                            <div class="d-flex justify-content-between align-items-end common-bg-color">
+                                <h1 class="text-white text-uppercase fw-bolder p-3 fs-3 m-0 ">Notices</h1>
+                                <a href="https://bup.edu.bd/notice/all"
+                                    class="text-uppercase text-decoration-none text-white text-uppercase p-3 fs-6 m-0 fw-bolder">All</a>
+                            </div>
+
+                            <div class="col-md m-3 notice-div border-bottom">
+
+                                <a href="https://bup.edu.bd/public/upload/news/20250112_1736668247.pdf" target="_blank">
+                                    <p class="mb-2 fs-7"><i class="fas fa-calendar-alt"></i>
+                                        Jan 12, 2025</p>
+                                    <h3 class="fs-6 hover-on-text">LLM-Professional Admission Test Result of 23rd Batch
+                                        (January-April 2025)</h3>
+                                </a>
+                            </div>
+                            <div class="col-md m-3 notice-div border-bottom">
+
+                                <a href="https://bup.edu.bd/public/upload/news/20250112_1736662765.pdf" target="_blank">
+                                    <p class="mb-2 fs-7"><i class="fas fa-calendar-alt"></i>
+                                        Jan 12, 2025</p>
+                                    <h3 class="fs-6 hover-on-text">Supplementary Instruction for FSSS Admission.</h3>
+                                </a>
+                            </div>
+                            <div class="col-md m-3 notice-div border-bottom">
+
+                                <a href="https://bup.edu.bd/public/upload/news/20250109_1736410604.pdf" target="_blank">
+                                    <p class="mb-2 fs-7"><i class="fas fa-calendar-alt"></i>
+                                        Jan 09, 2025</p>
+                                    <h3 class="fs-6 hover-on-text">Routine for MA in Eng of Batch-5 (2nd Sem) Jul-Dec
+                                        2024 Semester Final Exam</h3>
+                                </a>
+                            </div>
+                            <div class="col-md m-3 notice-div border-bottom">
+
+                                <a href="https://bup.edu.bd/public/upload/news/20250109_1736410560.pdf" target="_blank">
+                                    <p class="mb-2 fs-7"><i class="fas fa-calendar-alt"></i>
+                                        Jan 09, 2025</p>
+                                    <h3 class="fs-6 hover-on-text">Routine for BA (Hos) in Eng of Batch-6 (7th Sem),
+                                        Batch-7 (5th Sem), Batch-8 (3rd Sem) &amp; Batch-9 (2n...</h3>
+                                </a>
+                            </div>
+                            <div class="col-md m-3 notice-div border-bottom">
+
+                                <a href="https://bup.edu.bd/public/upload/news/20250108_1736309468.pdf" target="_blank">
+                                    <p class="mb-2 fs-7"><i class="fas fa-calendar-alt"></i>
+                                        Jan 08, 2025</p>
+                                    <h3 class="fs-6 hover-on-text">Exam Routine for DS &amp; MSS in DS Jan-Jun 2024
+                                        &amp; July-Dec 2024</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 pb-5">
+
+
+
+                        <iframe src="https://www.youtube.com/embed/qv7C_yp3h5E" max-width="90%" width="100%;"
+                            height="100%" frameborder="0" style="border:0;max-width: 100%;" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Achievments -->
+    <!-- Important Links -->
+
+    <section class="my-5 home-links">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end">
+                <h1 class="text-uppercase mb-0 home-content-heading common-font-color">
+                    Important Links
+                </h1>
+
+            </div>
+
+            <div class="position-relative w-100 common-bg-color mt-1" style="height: 4px;">
+            </div>
+        </div>
+        <div id="carouselExample" class="container carousel slide mt-3">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="affiliations-container bg-light rounded-2 mb-3">
+                        <div class="row d-flex justify-content-around flex-sm-row align-items-center">
+
+                            <div class="col-lg-2 my-3 important_links">
+                                <div class="text-center">
+                                    <img src="https://bup.edu.bd/public/frontend/assets/img/home/education.jpg"
+                                        height="60" width="60" alt="">
+                                    <p class="text-center pt-1"><a href="http://www.moedu.gov.bd/"
+                                            style="text-decoration: none; font-weight: 600;"
+                                            class="important_links_btn fs-6">Ministry Of Education</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 my-3 important_links">
+                                <div class="text-center">
+                                    <img src="https://bup.edu.bd/public/frontend/assets/img/home/defence.jpg"
+                                        height="60" width="60" alt="">
+                                    <p class="text-center pt-1"><a href="http://www.mod.gov.bd/"
+                                            style="text-decoration: none; font-weight: 600;"
+                                            class="important_links_btn fs-6">Ministry Of Defense</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2  my-3 important_links">
+                                <div class="text-center">
+                                    <img src="https://bup.edu.bd/public/frontend/assets/img/home/ugc.jpg" height="60"
+                                        width="60" alt="">
+                                    <p class="text-center pt-1"><a href="http://www.ugc.gov.bd/"
+                                            style="text-decoration: none; font-weight: 600;"
+                                            class="important_links_btn fs-6">University Grants Commission
+                                            (UGC)</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 my-3 important_links">
+                                <div class="text-center">
+                                    <img src="https://bup.edu.bd/public/frontend/assets/img/home/army.jpg" height="60"
+                                        width="60" alt="">
+                                    <p class="text-center pt-1"><a href="https://www.army.mil.bd/"
+                                            style="text-decoration: none; font-weight: 600;"
+                                            class="important_links_btn fs-6">Bangladesh Army</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 my-3 important_links">
+                                <div class="text-center">
+                                    <img src="https://bup.edu.bd/public/frontend/assets/img/home/president.jpg"
+                                        height="60" width="60" alt="">
+                                    <p class="text-center pt-1"><a href="http://www.bangabhaban.gov.bd/"
+                                            style="text-decoration: none; font-weight: 600;"
+                                            class="important_links_btn fs-6">Office of the President of
+                                            Bangladesh</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="my-5 home-affiliations">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end">
+                <h1 class="text-uppercase  mb-0 home-content-heading">
+                    Annual Performance Agreement
+                </h1>
+                <a href="" class="text-uppercase text-decoration-none fw-bold common-font-color">All</a>
+            </div>
+
+            <div class="position-relative w-100 common-bg-color mt-1" style="height: 4px;">
+            </div>
+        </div>
+        <div id="carouselExample" class="container carousel slide mt-3">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="affiliations-container rounded-2 mb-3">
+                        <div class="row d-flex justify-content-around flex-sm-row align-items-center">
+                            <div class="row" style="padding:0px;">
+                                <div class="col-md-4 pb-3">
+                                    <div class="card shadow-sm p-2" style="height: 200px; cursor: pointer;">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2"><strong style="color:#00b2ff !important;">জাতীয়
+                                                            শুদ্ধাচার কৌশল</strong>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><img src="https://bup.edu.bd/public/upload/apa_category/20240122_1705895174.png"
+                                                            width="80px">
+                                                    </td>
+                                                    <td>
+                                                        <ul class="list-group" style="list-style-type:disc;">
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="http://apa.bup.edu.bd/get_content/1/1">শুদ্ধাচার
+                                                                    কৌশল কর্মপরিকল্পনা</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="http://apa.bup.edu.bd/get_content/1/2">ফোকাল
+                                                                    পয়েন্ট কর্মকর্তা ও বিকল্প কর্মকর্তা</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="http://apa.bup.edu.bd/get_content/1/3">ত্রৈমাসিক/ষান্মাসিক
+                                                                    পরিবীক্ষণ/মূল্যায়ন প্রতিবেদন</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a
+                                                                    href="http://apa.bup.edu.bd/get_content/1/4">প্রজ্ঞাপন/পরিপত্র/নীতিমালা</a>
+                                                            </li>
+                                                            <!-- <li style="list-style-type: circle;color:#00b2ff !important;"> &nbsp;&nbsp; <a href="http://apa.bup.edu.bd/get_content/1/2">ফোকাল পয়েন্ট কর্মকর্তা ও বিকল্প কর্মকর্তা</a></li> -->
+
+                                                            <!-- <li style="list-style-type: circle;"> &nbsp;&nbsp; <a href="http://apa.bup.edu.bd/get_content/1/3">ত্রৈমাসিক/ষান্মাসিক পরিবীক্ষণ/মূল্যায়ন প্রতিবেদন</a></li> -->
+
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pb-3">
+                                    <div class="card shadow-sm p-2" style="height: 200px; cursor: pointer;">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2"><strong style="color:#00b2ff !important;">বার্ষিক
+                                                            কর্মসম্পাদন চুক্তি</strong>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><img src="https://bup.edu.bd/public/upload/apa_category/20240122_1705895209.png"
+                                                            width="80px">
+                                                    </td>
+                                                    <td>
+                                                        <ul class="list-group" style="list-style-type:disc;">
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="http://apa.bup.edu.bd/get_content/2/5">এপিএ
+                                                                    নির্দেশিকা/পরিপত্র/এপিএ টিম</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="http://apa.bup.edu.bd/get_content/2/6">বার্ষিক
+                                                                    কর্মসম্পাদন চুক্তিসমূহ</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="http://apa.bup.edu.bd/get_content/2/7">অফিস
+                                                                    আদেশ/পরিবীক্ষণ ও মূল্যায়ন প্রতিবেদন</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="http://apa.bup.edu.bd/get_content/2/8">এপিএ
+                                                                    এমএস সফটওয়্যার লিংক</a>
+                                                            </li>
+                                                            <!-- <li style="list-style-type: circle;color:#00b2ff !important;"> &nbsp;&nbsp; <a href="http://apa.bup.edu.bd/get_content/1/2">ফোকাল পয়েন্ট কর্মকর্তা ও বিকল্প কর্মকর্তা</a></li> -->
+
+                                                            <!-- <li style="list-style-type: circle;"> &nbsp;&nbsp; <a href="http://apa.bup.edu.bd/get_content/1/3">ত্রৈমাসিক/ষান্মাসিক পরিবীক্ষণ/মূল্যায়ন প্রতিবেদন</a></li> -->
+
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pb-3">
+                                    <div class="card shadow-sm p-2" style="height: 200px; cursor: pointer;">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2"><strong style="color:#00b2ff !important;">উদ্ভাবনী
+                                                            কার্যক্রম</strong>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><img src="https://bup.edu.bd/public/upload/apa_category/20240122_1705895241.png"
+                                                            width="80px">
+                                                    </td>
+                                                    <td>
+                                                        <ul class="list-group" style="list-style-type:disc;">
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="https://apa.bup.edu.bd/get_content/3/9">ইনোভেশন
+                                                                    টীম</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="https://apa.bup.edu.bd/get_content/3/10">প্রজ্ঞাপন/নীতিমালা/অফিস
+                                                                    আদেশ</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="https://apa.bup.edu.bd/get_content/3/11">বার্ষিক
+                                                                    উদ্ভাবনী কর্মপরিকল্পনা/কার্যবিবরণী</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="https://apa.bup.edu.bd/get_content/3/12">শ্রেষ্ঠ
+                                                                    উদ্ভাবনী ধারণা/বাস্তবায়ন ও শোকেসিং</a>
+                                                            </li>
+                                                            <!-- <li style="list-style-type: circle;color:#00b2ff !important;"> &nbsp;&nbsp; <a href="http://apa.bup.edu.bd/get_content/1/2">ফোকাল পয়েন্ট কর্মকর্তা ও বিকল্প কর্মকর্তা</a></li> -->
+
+                                                            <!-- <li style="list-style-type: circle;"> &nbsp;&nbsp; <a href="http://apa.bup.edu.bd/get_content/1/3">ত্রৈমাসিক/ষান্মাসিক পরিবীক্ষণ/মূল্যায়ন প্রতিবেদন</a></li> -->
+
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pb-3">
+                                    <div class="card shadow-sm p-2" style="height: 200px; cursor: pointer;">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2"><strong style="color:#00b2ff !important;">অভিযোগ
+                                                            প্রতিকার ব্যবস্থাপনা</strong>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><img src="https://bup.edu.bd/public/upload/apa_category/20240122_1705895277.png"
+                                                            width="80px">
+                                                    </td>
+                                                    <td>
+                                                        <ul class="list-group" style="list-style-type:disc;">
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="https://apa.bup.edu.bd/get_content/4/13">অনিক ও
+                                                                    আপিল কর্মকর্তা</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="https://apa.bup.edu.bd/get_content/4/14">মাসিক/ত্রৈমাসিক/বার্ষিক
+                                                                    পরিবীক্ষণ/মূল্যায়ন প্রতিবেদন</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="https://apa.bup.edu.bd/get_content/4/15">অভিযোগ
+                                                                    দাখিল (অনলাইন/সরাসরি)</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a
+                                                                    href="https://apa.bup.edu.bd/get_content/4/16">আইন/বিধি/পরি-পত্র/নীতিমালা/নির্দেশিকা</a>
+                                                            </li>
+                                                            <!-- <li style="list-style-type: circle;color:#00b2ff !important;"> &nbsp;&nbsp; <a href="http://apa.bup.edu.bd/get_content/1/2">ফোকাল পয়েন্ট কর্মকর্তা ও বিকল্প কর্মকর্তা</a></li> -->
+
+                                                            <!-- <li style="list-style-type: circle;"> &nbsp;&nbsp; <a href="http://apa.bup.edu.bd/get_content/1/3">ত্রৈমাসিক/ষান্মাসিক পরিবীক্ষণ/মূল্যায়ন প্রতিবেদন</a></li> -->
+
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pb-3">
+                                    <div class="card shadow-sm p-2" style="height: 200px; cursor: pointer;">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2"><strong style="color:#00b2ff !important;">তথ্য
+                                                            অধিকার</strong>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><img src="https://bup.edu.bd/public/upload/apa_category/20240122_1705895324.png"
+                                                            width="80px">
+                                                    </td>
+                                                    <td>
+                                                        <ul class="list-group" style="list-style-type:disc;">
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="https://apa.bup.edu.bd/get_content/5/17">দায়িত্বপ্রাপ্ত
+                                                                    কর্মকর্তা ও আপিল কর্তৃপক্ষ</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="https://apa.bup.edu.bd/get_content/5/18">আবেদন
+                                                                    ও আপিল ফরম</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a
+                                                                    href="https://apa.bup.edu.bd/get_content/5/20">আইন/বিধি/পরি-পত্র/নীতিমালা/নির্দেশিকা</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="http://apa.bup.edu.bd/get_content/5/19">স্বপ্রণোদিতভাবে
+                                                                    প্রকাশযোগ্য তথ্যসমূহ</a>
+                                                            </li>
+                                                            <!-- <li style="list-style-type: circle;color:#00b2ff !important;"> &nbsp;&nbsp; <a href="http://apa.bup.edu.bd/get_content/1/2">ফোকাল পয়েন্ট কর্মকর্তা ও বিকল্প কর্মকর্তা</a></li> -->
+
+                                                            <!-- <li style="list-style-type: circle;"> &nbsp;&nbsp; <a href="http://apa.bup.edu.bd/get_content/1/3">ত্রৈমাসিক/ষান্মাসিক পরিবীক্ষণ/মূল্যায়ন প্রতিবেদন</a></li> -->
+
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pb-3">
+                                    <div class="card shadow-sm p-2" style="height: 200px; cursor: pointer;">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2"><strong style="color:#00b2ff !important;">সেবা
+                                                            প্রদান প্রতিশ্রুতি (সিটিজেনস চার্টার)</strong>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><img src="https://bup.edu.bd/public/upload/apa_category/20240122_1705895355.png"
+                                                            width="80px">
+                                                    </td>
+                                                    <td>
+                                                        <ul class="list-group" style="list-style-type:disc;">
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="https://apa.bup.edu.bd/get_content/6/21">সিটিজেন
+                                                                    চার্টার</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="https://apa.bup.edu.bd/get_content/6/22">ফোকাল
+                                                                    পয়েন্ট কর্মকর্তা/পরিবীক্ষণ কমিটি</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="https://apa.bup.edu.bd/get_content/6/23">ত্রৈমাসিক/বার্ষিক
+                                                                    পরিবীক্ষণ/মূল্যায়ন প্রতিবেদন</a>
+                                                            </li>
+                                                            <li class="my_icon"
+                                                                style="list-style-type: circle;font-size:14px !important">
+                                                                &nbsp;&nbsp;
+                                                                <a href="https://apa.bup.edu.bd/get_content/6/24">আইন/বিধি/নীতিমালা
+                                                                    ও পরিপত্র</a>
+                                                            </li>
+                                                            <!-- <li style="list-style-type: circle;color:#00b2ff !important;"> &nbsp;&nbsp; <a href="http://apa.bup.edu.bd/get_content/1/2">ফোকাল পয়েন্ট কর্মকর্তা ও বিকল্প কর্মকর্তা</a></li> -->
+
+                                                            <!-- <li style="list-style-type: circle;"> &nbsp;&nbsp; <a href="http://apa.bup.edu.bd/get_content/1/3">ত্রৈমাসিক/ষান্মাসিক পরিবীক্ষণ/মূল্যায়ন প্রতিবেদন</a></li> -->
+
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Here -->
+
+    <!-- Footer Area Start -->
+    <!-- ===== Footer section start ===== -->
+    <style>
+        .home-footer-banner {
+            background-color: #253b80;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            z-index: 1;
+
+        }
+
+        .home-footer-banner::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            background: #253b80;
+            opacity: .8;
+        }
+    </style>
+    <footer>
+        <div class="footer-top text-white home-footer-banner pb-5"
+            style=" background-image: url( https://bup.edu.bd/public/frontend/assets/img/bup/banner.jpg ) ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 footer-contact mt-5">
+                        <div class="d-flex justify-content-center align-items-center ">
+                            <a href="https://bup.edu.bd">
+                                <img src="https://bup.edu.bd/public/upload/logo/202306071686132726.svg" alt="Logo"
+                                    class="me-2" width="72px" />
+                            </a>
+                            <h3 class="fs-6 fw-bolder">
+                                BANGLADESH UNIVERSITY OF PROFESSIONALS
+                            </h3>
+                        </div>
+                        <div class="mt-3">
+                            <p class="mb-0">Mirpur Cantonment, Dhaka-1216, Bangladesh</p>
+                            <p class="mb-0">Phone: +8809666790799</p>
+                            <p class="mb-0">Fax: +88-02-223373197</p>
+                            <p class="mb-0">Email: info@bup.edu.bd</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links mt-5">
+                        <li><a href="https://bup.edu.bd/about">About the University</a></li>
+                        <li><a href="https://bup.edu.bd/career">Career</a></li>
+                        <li><a href="https://bup.edu.bd/procurement">Procurement</a></li>
+                        <li><a href="https://bup.edu.bd/noc">NOC</a></li>
+                        <li><a href="https://admission.bup.edu.bd/Admission/Home">Admission</a></li>
+
+
+                        <li><a href="https://bup.edu.bd/chsr">CHSR</a></li>
+                        <li><a href="https://bup.edu.bd/office/office_details/40"> BUP Research Centre</a></li>
+
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links mt-5">
+
+
+
+                        <li><a href="https://bup.edu.bd/custom-page/11">Anti Sexual Harassment</a></li>
+                        <li><a href="https://login.microsoftonline.com/">Web Mail</a></li>
+                        <li><a href="https://bup.edu.bd/downloads">Downloads</a></li>
+                        <li><a href="https://bup.edu.bd/facts-figures">FAQ</a></li>
+                        <li><a href="https://bup.edu.bd/office/office_details/11">Library</a></li>
+                        <li><a href="http://apa.bup.edu.bd/" target="_blank">APA</a></li>
+                        <li><a href="https://bup.edu.bd/privacy-policy">Privacy Policy</a></li>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links mt-5">
+                        <div class="p-3 shadow-lg rounded">
+                            <div class="social-icon d-flex">
+                                <a href="https://www.facebook.com/BUPOfficialPage" target="_blank">
+                                    <i class="bi bi-facebook rounded"></i>
+                                </a>
+                                <a href="https://www.youtube.com/@bangladeshuniversityofprof9662/videos"
+                                    target="_blank">
+                                    <i class="bi bi-youtube rounded m-0"></i>
+                                </a>
+                            </div>
+                            <div class="number d-flex justify-content-between mt-3">
+                                <img src="https://bup.edu.bd/public/frontend/assets/img/bup/number1.jpg"
+                                    style="width: 45%" class="rounded" />
+                                <img src="https://bup.edu.bd/public/frontend/assets/img/bup/number2.jpg"
+                                    style="width: 45%" class="rounded" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-2 align-items-center" style="background: #179bd7 ">
+            <div class="container text-white d-flex justify-content-between align-items-center">
+                <div>
+                    <p class="mb-0 fs-7">All Rights Reserved &copy; BUP, 2025</p>
+                </div>
+                <div>
+                    <p class="mb-0 fs-7">
+                        Developed by
+                        <a rel="nofollow" href="http://www.nanoit.biz/" target="_blank" class="text-white fw-bold">
+                            <span>Nanosoft</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ===== Footer section end ===== -->
+    <!-- Footer Area End -->
+    <!-- Modal -->
+    <!-- ////////something here -->
+    <!-- ==== Jquery Link ==== -->
+
+    <script src="https://bup.edu.bd/public/frontend/node_modules/aos/dist/aos.js"></script>
+    <script src="https://bup.edu.bd/public/frontend/js/bootstrap.bundle.min.js"></script>
+    <script src="https://bup.edu.bd/public/frontend/assets/owl_carousel/js/owl.carousel.js"></script>
+
+    <!-- DataTables -->
+    <script src="https://bup.edu.bd/public/backend/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="https://bup.edu.bd/public/backend/plugins/datatables/dataTables.bootstrap4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+
+
+
+    <script>
+        $('#researchCarousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            autoplay: true,
+            autoPlaySpeed: 5000,
+            autoPlayTimeout: 5000,
+            autoplayHoverPause: true,
+            navText: ["<div class='nav-btn prev-slide' style='top: 50% !important;'></div>",
+                "<div class='nav-btn next-slide' style='top: 50% !important;'></div>"
+            ],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+    </script>
+    <script>
+        $('#achievementCarousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            // autoplay: true,
+            autoPlaySpeed: 5000,
+            autoPlayTimeout: 5000,
+            autoplayHoverPause: true,
+            navText: ["<div class='nav-btn prev-slide' style='top: 50% !important;'></div>",
+                "<div class='nav-btn next-slide' style='top: 50% !important;'></div>"
+            ],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+    </script>
+
+    <script>
+        //  Count Up
+        function counter() {
+            var oTop;
+            if ($('.count').length !== 0) {
+                oTop = $('.count').offset().top - window.innerHeight;
+            }
+            if ($(window).scrollTop() > oTop) {
+                $('.count').each(function () {
+                    var $this = $(this),
+                        countTo = $this.attr('data-count');
+                    $({
+                        countNum: $this.text()
+                    }).animate({
+                        countNum: countTo
+                    }, {
+                        duration: 1000,
+                        easing: 'swing',
+                        step: function () {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function () {
+                            $this.text(this.countNum);
+                        }
+                    });
+                });
+            }
+        }
+        $(window).on('scroll', function () {
+            counter();
+        });
+    </script>
+    <script>
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+            var height = $('#topbar').innerHeight();
+
+
+            if (scroll >= 15) {
+                // console.log('object');
+                // $("header").addClass("fixed-top");
+                $('#topbar').addClass('hide');
+                $('#main-menu').removeClass('nav-bg');
+                $('#main-menu').css('margin-top', '-' + height + 'px');
+
+            } else {
+                // $("header").removeClass("fixed-top");
+                $('#topbar').removeClass('hide');
+                $('#main-menu').addClass('nav-bg');
+                $('#main-menu').css('margin-top', '-' + 0 + 'px');
+            }
+            // Show button after 100px
+            var showAfter = 100;
+            if ($(this).scrollTop() > showAfter) {
+                $('.back-to-top').fadeIn();
+            } else {
+                $('.back-to-top').fadeOut();
+            }
+
+
+
+        });
+    </script>
+
+    <script>
+        function stickyPaddingTop(id, paddingTopValue) {
+            var element = document.getElementById(id);
+            element.style.paddingTop = paddingTopValue + "px";
+
+            var allElements = document.querySelectorAll(".rightSidebar .sticky-content");
+            for (var i = 0; i < allElements.length; i++) {
+                var currentElement = allElements[i];
+                if (currentElement.id !== id) {
+                    currentElement.style.paddingTop = 0;
+                }
+            }
+        }
+    </script>
+
+    <script>
+        AOS.init();
+
+        $('#dataTable').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": false,
+            "info": true,
+            "autoWidth": true,
+
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $('#academicCarousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                // autoplay: true,
+                responsiveClass: true,
+                nav: true,
+                navText: ["<div class='nav-btn prev-slide' style='top: 50% !important;'></div>",
+                    "<div class='nav-btn next-slide' style='top: 50% !important;'></div>"
+                ],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+
+            $('#admissionCarousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                autoplay: true,
+                autoPlaySpeed: 5000,
+                autoPlayTimeout: 5000,
+                autoplayHoverPause: true,
+                navText: ["<div class='nav-btn prev-slide' style='top: 135px !important;'></div>",
+                    "<div class='nav-btn next-slide' style='top: 135px !important;'></div>"
+                ],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 4
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+
+            $('#gallerySlider').owlCarousel({
+                loop: true,
+                // margin: 24,
+                nav: true,
+                navText: ["<div class='nav-btn prev-slide' style='top: 50% !important; transform: translateY(-50%);'></div>",
+                    "<div class='nav-btn next-slide' style='top: 50% !important; transform: translateY(-50%);'></div>"
+                ],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 4
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+
+            $('.researchCarousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                navText: ["<div class='nav-btn prev-slide'></div>",
+                    "<div class='nav-btn next-slide'></div>"
+                ],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+
+            $('#qouteCarousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                navText: ["<div class='nav-btn prev-slide'></div>",
+                    "<div class='nav-btn next-slide'></div>"
+                ],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 1
+                    }
+                }
+            });
+
+            $('#departmentCarousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+
+            $('#vcHonorBoardCarousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                navText: ["<div class='nav-btn prev-slide' style='top: 50% !important;'></div>",
+                    "<div class='nav-btn next-slide' style='top: 50% !important;'></div>"
+                ],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        //  Count Up
+        function counter() {
+            var oTop;
+            if ($('.count').length !== 0) {
+                oTop = $('.count').offset().top - window.innerHeight;
+            }
+            if ($(window).scrollTop() > oTop) {
+                $('.count').each(function () {
+                    var $this = $(this),
+                        countTo = $this.attr('data-count');
+                    $({
+                        countNum: $this.text()
+                    }).animate({
+                        countNum: countTo
+                    }, {
+                        duration: 1000,
+                        easing: 'swing',
+                        step: function () {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function () {
+                            $this.text(this.countNum);
+                        }
+                    });
+                });
+            }
+        }
+        $(window).on('scroll', function () {
+            counter();
+        });
+    </script>
+
+</body>
+
+</html>
