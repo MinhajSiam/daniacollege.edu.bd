@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        BUP Admission
+    </title>
+    <script src="/Scripts/modernizr-2.8.3.js"></script>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link href="/Content/ApplicationForm.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/formStyle.css" rel="stylesheet" />
+    <link href="/Content/Site.css" rel="stylesheet" />
+    <link href="../Images/Favicon/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+
+
+    <style type="text/css">
+        .floatLeft {
+            float: left;
+        }
+
+        .floatRight {
+            float: right;
+        }
+
+        .marginLeftRight_Zero {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .navMarginTop {
+            margin-top: 0.6%;
+        }
+
+        .hoverable {
+            border-radius: 5px !important;
+            transition: box-shadow 0.5s;
+        }
+
+        .hoverable:hover {
+            box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+        }
+    </style>
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css" rel="stylesheet"
+        type="text/css" />
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js"></script>
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+    <script src="../Scripts/jquery-3.1.1.js"></script>
+
+
+
+
+
+    <script src="../Scripts/Custom/fadeIn.js"></script>
+
+    <style type="text/css">
+        .maintanenceTextStyle {
+            font-size: 20pt;
+            font-weight: bold;
+            font-family: Verdana;
+        }
+
+        .customApplyDiv {
+            width: 100%;
+            height: 15%;
+            background-color: cornflowerblue;
+            color: white;
+            text-align: left;
+            padding: 2.8%;
+            font-size: 18pt;
+            margin-left: 0%;
+            margin-bottom: 3.3%;
+        }
+
+        .customApplyMastersDiv {
+            width: 100%;
+            height: 15%;
+            background-color: #ad49bb;
+            color: white;
+            text-align: left;
+            padding: 2.8%;
+            font-size: 18pt;
+            margin-left: 0%;
+            margin-bottom: 3.3%;
+        }
+
+        .customforeign {
+            width: 100%;
+            height: 15%;
+            background-color: #ca062de6;
+            text-align: left;
+            padding: 2.8%;
+            font-size: 18pt;
+            margin-left: 0%;
+        }
+
+        #MainContent_hrefApplyUndergrad {
+            color: white;
+            cursor: pointer;
+            /*text-decoration: none;*/
+        }
+
+        #MainContent_hrefApplyGrad {
+            color: white;
+            cursor: pointer;
+            /*text-decoration: none;*/
+        }
+
+        #MainContent_hrefApplyCertCourse {
+            color: white;
+            cursor: pointer;
+            /*text-decoration: none;*/
+        }
+
+        #topButtonHolder {
+            margin-left: 0%;
+            width: 100%;
+            margin-bottom: 2%;
+        }
+
+        .heightAdjustNoticePanel {
+            min-height: 140px;
+            max-height: 140px;
+        }
+
+        embed {
+            width: 1140px;
+            height: 650px;
+        }
+    </style>
+
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-669D3WSBE1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-669D3WSBE1');
+    </script>
+
+
+</head>
+
+<body>
+    <form method="post" action="./Home" id="ctl01">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                value="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" />
+        </div>
+
+        <script type="text/javascript">
+            //<![CDATA[
+            var theForm = document.forms['ctl01'];
+            if (!theForm) {
+                theForm = document.ctl01;
+            }
+            function __doPostBack(eventTarget, eventArgument) {
+                if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                    theForm.__EVENTTARGET.value = eventTarget;
+                    theForm.__EVENTARGUMENT.value = eventArgument;
+                    theForm.submit();
+                }
+            }
+            //]]>
+        </script>
+
+
+
+        <script src="/bundles/MsAjaxJs?v=D6VN0fHlwFSIWjbVzi6mZyE9Ls-4LNrSSYVGRU46XF81" type="text/javascript"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            if (typeof (Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+            //]]>
+        </script>
+
+        <script src="../Scripts/jquery-3.1.1.js" type="text/javascript"></script>
+        <script src="../Scripts/bootstrap.js" type="text/javascript"></script>
+        <script src="../Scripts/respond.js" type="text/javascript"></script>
+        <script src="/bundles/WebFormsJs?v=N8tymL9KraMLGAMFuPycfH3pXe6uUlRXdhtYv8A_jUU1"
+            type="text/javascript"></script>
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8C8F2C77" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+                value="QU4A7CfzbkhPKkd5Jac9VE12DzloakDJwtoJVBjagF4SVxxHl3wHxG4jkxsg8rHe86pBGSq0M65u6ffv9+uB2QX/8jhQSnlA3Xb+E/KITb+RRDZU6b9zbOaXo/RC/X4W" />
+        </div>
+        <script type="text/javascript">
+            //<![CDATA[
+            Sys.WebForms.PageRequestManager._initialize('ctl00$ctl12', 'ctl01', [], [], [], 90, 'ctl00');
+            //]]>
+        </script>
+
+        <div class="row marginLeftRight_Zero">
+            <div class="col-md-12 col-sm-12 col-xs-12"
+                style="text-align: center; margin-top: 0.25%; margin-bottom: 0.25%;">
+                <img id="bannerImage" class="img-responsive center-block"
+                    src="../ApplicationDocs/Institute/BUP_banner.jpg" align="middle" style="height:90px;width:650px;" />
+            </div>
+        </div>
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+
+                </div>
+                <div id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="Home.aspx" id="hrefHome">Home</a></li>
+                        <li><a href="FAQ.aspx" id="A1">FAQ</a></li>
+                        <li><a href="HowToApply.aspx" id="A2" target="_blank">How To Apply</a></li>
+                        <li><a href="AdmssionCircular.aspx" id="A3">Admission Circular (Session: 2024-2025)</a></li>
+
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" style="margin-top: 0.55%; margin-right: 0%;">
+
+
+                        <li>
+                            <span id="lblUserName" style="color:AliceBlue;"></span>&nbsp;
+
+
+
+                            <input type="submit" name="ctl00$btnLogin" value="Login" id="btnLogin"
+                                class="btn btn-info" />
+
+
+
+
+                        </li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+
+        <div class="row marginLeftRight_Zero">
+            <div class="container body-content">
+
+
+
+
+
+
+
+
+
+
+                <div id="MainContent_panel_ImportantNotice" style="display: none;">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-warning">
+                                <div class="panel-heading">
+                                    <span
+                                        style="font-weight: bold; font-size: 14pt; color: crimson; font-family: Calibri;">Important:
+                                    </span>&nbsp;
+                                    <span id="MainContent_lblImportantNoticeTitle" style="font-weight:bold;">Important
+                                        Notice Title.</span>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="alert alert-warning" role="alert"
+                                        style="margin: 0; text-align: center; font-weight: bold; font-size: 22px;">
+                                        <span id="MainContent_lblNoticeContent">Admit Card can be printed till the
+                                            written exam</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="row" style="display: none">
+                    <div class="col-lg-12 col-md-12 col-sm-12" style="text-align:center">
+                        <b style="font-weight:bold;color:blue;font-size:15px">Special Notice Regarding Admission Test
+                            2024-2025</b>
+                        <br />
+                        <embed src="../ApplicationDocs/AdmissionTestResultNotice.pdf" />
+                    </div>
+                </div>
+
+
+                <div class="row fadeInDiv1" style="display: none;">
+                    <div class="col-md-6">
+
+
+
+                        <div class="customforeign">
+
+
+                            <a id="MainContent_hrefApplyForeign" href="https://internationalstudents.bup.edu.bd/"
+                                style="text-align: left; color: white;">
+                                Apply (International Students Only) &nbsp;<span
+                                    class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                        <br />
+                        <div class="customApplyDiv">
+
+
+                            <a id="MainContent_hrefApplyUndergrad" href="Candidate/SelectProgramV3.aspx?ecat=4">
+                                Apply for Bachelors Program &nbsp;<span
+                                    class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+
+                        </div>
+                        <div class="customApplyMastersDiv">
+                            <a id="MainContent_hrefApplyGrad" href="Candidate/SelectProgram.aspx?ecat=6">
+                                Apply for Masters Program &nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                        <div class="customApplyDiv" style="background-color: darkslateblue">
+                            <a id="MainContent_hrefApplyCertCourse" href="Candidate/SelectProgramPhd.aspx">
+                                Apply for MPhil And PhD Programs &nbsp;<span
+                                    class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+
+                        <div class="customApplyDiv" style="background-color: navy">
+                            <a id="MainContent_HyperLink2" href="Candidate/SelectProgramDiploma.aspx"
+                                style="color: white">
+                                Apply for Diploma Programs &nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+
+                        <div class="customApplyDiv" style="background-color: darkslateblue; display: none;">
+                            <a id="MainContent_HyperLink1"
+                                href="CertificateCandidate/SelectCertificateProgram.aspx?ecat=1" style="color: white;">
+                                Apply for Certificate Course &nbsp;<span
+                                    class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+
+
+
+                    <div class="col-md-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <strong>Notices</strong>
+                                <span class="float-right">
+
+                                </span>
+                            </div>
+                            <div class="panel-body" style="overflow-y: auto; max-height: 273px; min-height: 187px;">
+
+
+
+                                <table id="tblNotices"
+                                    class="table table-hover table-condensed table-striped table-bordered"
+                                    style="width: 100%; text-align: center;">
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_0" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">Supplementary
+                                                Instruction for FSSS Admission</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_0"
+                                                href="../Upload/Notices/FSSS-Sup-Notice.pdf" target="_blank"
+                                                style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_1" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">Final Result
+                                                of MBA (Professional) Admission Test (Session: January
+                                                2025)</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_1"
+                                                href="../Upload/Notices/MBA%20(Professional)%20Admission%20Final%20Result%20January%202025.pdf"
+                                                target="_blank" style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_2" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">MICT: Final
+                                                Selected List for Admission (Session: 2024-2025) </a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_2"
+                                                href="../Upload/Notices/Notice_for_MICT%20admission-2025.pdf"
+                                                target="_blank" style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_3" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">MISS: Final
+                                                Selected List for Admission (Session: 2024-2025) </a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_3"
+                                                href="../Upload/Notices/Notice_for_MISS%20admission-2025.pdf"
+                                                target="_blank" style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_4" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">LLM
+                                                (Professional) Extended Admission Advertisement (Session: January-April
+                                                2025) </a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_4"
+                                                href="../Upload/Notices/Extended%20Circular.pdf" target="_blank"
+                                                style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_5" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">Admission
+                                                Test Result: MDS (Professional) Session: 2024-2025</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_5"
+                                                href="../Upload/Notices/Admission%20Test%20Result-MDS%20(%20Professional)%20Session%202024-25.pdf"
+                                                target="_blank" style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_6" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">FASS:
+                                                Admission Test Final Result, Session 2024-2025</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_6"
+                                                href="../Upload/Notices/FASS-2024-2025.pdf" target="_blank"
+                                                style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_7" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">FBS (BBA and
+                                                MBA): Admission Test Final Result, Session 2024-2025</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_7"
+                                                href="../Upload/Notices/FBS-BBA-MBA-2024-2025.pdf" target="_blank"
+                                                style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_8" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">FSSS:
+                                                Admission Test Final Result, Session 2024-2025</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_8"
+                                                href="../Upload/Notices/FSSS-2024-2025.pdf" target="_blank"
+                                                style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_9" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">FST:
+                                                Admission Test Final Result, Session 2024-2025</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_9"
+                                                href="../Upload/Notices/FST-2024-2025.pdf" target="_blank"
+                                                style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_10" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">MBA
+                                                (Professional): List of Eligible Candidates for Admission Test (Session:
+                                                January-2025)</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_10"
+                                                href="../Upload/Notices/MBA-Prof-Jan-2025-Eligible%20List.pdf"
+                                                target="_blank" style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_11" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">Special
+                                                Notice Regarding Admission Test 2024-2025</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_11"
+                                                href="../Upload/Notices/Admission%20Test%20Result%20Notice.pdf"
+                                                target="_blank" style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_12" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">Seat Plan
+                                                for Admission Test (Faculty of Arts and Social Sciences, Session:
+                                                2024-2025)</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_12"
+                                                href="../Upload/Notices/FASS-Seat-Plan-2024-2025.pdf" target="_blank"
+                                                style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_13" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">Location of
+                                                Exam Centres for BUP Admission Test 2024-2025</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_13"
+                                                href="../Upload/Notices/exam_center%202024-2025.pdf" target="_blank"
+                                                style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_14" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">Seat Plan
+                                                for Admission Test (Faculty of Business Studies, Session:
+                                                2024-2025)</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_14"
+                                                href="../Upload/Notices/FBS-Seat-Plan-2024-2025.pdf" target="_blank"
+                                                style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_15" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">Seat Plan
+                                                for Admission Test (Faculty of Security and Strategic Studies, Session:
+                                                2024-2025)</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_15"
+                                                href="../Upload/Notices/FSSS-Seat-Plan-2024-2025.pdf" target="_blank"
+                                                style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_16" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">Seat Plan
+                                                for Admission Test (Faculty of Science and Technology, Session:
+                                                2024-2025)</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_16"
+                                                href="../Upload/Notices/FST-Seat-Plan-2024-2025.pdf" target="_blank"
+                                                style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_17" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">Seat Plan
+                                                for Admission Test (Master of Business Administration, Session:
+                                                2024-2025)</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_17"
+                                                href="../Upload/Notices/MBA-Seat-Plan-2024-2025.pdf" target="_blank"
+                                                style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_18" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">MPH: Final
+                                                Selected List for Admission (Session: January-June
+                                                2025)</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_18"
+                                                href="../Upload/Notices/Merit%20List%20Admission%202024%20Batch%206.pdf"
+                                                target="_blank" style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td valign="middle" align="left" class="">
+                                            <a id="MainContent_lvNotice_lbNoticeTitle_19" class="aspNetDisabled"
+                                                style="color:#3C526F;font-size:Small;text-decoration:none;">List of
+                                                Eligible Candidates for Admission Test (Master of Business
+                                                Administration, Session: 2024-2025)</a>&nbsp;:&nbsp;
+                                            <a id="MainContent_lvNotice_hrefExternalUrl_19"
+                                                href="../Upload/Notices/MBA-Eligible-List-2024-2025.pdf" target="_blank"
+                                                style="font-size:Small;">Download</a>
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div style="text-align: center;">
+                            <br />
+                            <span style="font-weight: bold; font-size: 20pt; color: orangered;">Help Line: 09666790790,
+                                01769028540, 01769028541, 01769028542</span><br />
+                            <span style="color: chocolate;">From 0900 hours to 1700 hours (Working Days Only) </span>
+                            <br />
+                            <span style="color: green;">E-mail: admission@bup.edu.bd</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <hr />
+                <div class="row fadeInDiv1" style="display: none">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <ul class="list-unstyled">
+                            <li>
+                                <h3>
+                                    <span id="MainContent_lblInsName">Bangladesh University of Professionals
+                                        (BUP)</span>
+                                </h3>
+                            </li>
+                            <li>
+                                <strong>Address: </strong>
+                                <span id="MainContent_lblInsAddress">Mirpur Cantonment, Dhaka-1216</span>
+                            </li>
+                            <li>
+                                <strong>Telephone: </strong>
+                                <span id="MainContent_lblInsTel1">+8809666790799, </span>
+                            </li>
+                            <li style="display: none;">
+                                <strong>Mobile: </strong>
+                                <span id="MainContent_lblInsMobile">N/A</span>
+                            </li>
+                            <li>
+                                <strong>Fax: </strong>
+                                <span id="MainContent_lblInsFax">+88-02-223373197</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div style="display: none;">
+                            <iframe width="100%" height="250" src="https://www.youtube.com/embed/jCxbaikdJx8"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <hr />
+                <footer class="fadeInDivLast" style="display: none">
+                    <p style="text-align: center">&copy; 2025 - Bangladesh University of Professionals</p>
+                </footer>
+            </div>
+        </div>
+
+    </form>
+</body>
+
+</html>
