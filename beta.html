@@ -254,35 +254,39 @@
             /* Space between columns */
         }
 
-        /* Department Column */
-        .department-column {
-            flex: 1;
-            /* Takes 1 part of the available space */
+        /* Department Cards */
+        .department-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            /* Space between cards */
         }
 
-        .department-column h2 {
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        .department-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .department-table td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .department-table a {
+        .department-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
             text-decoration: none;
-            color: #3498db;
+            border-radius: 10px;
+            text-align: center;
             font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
-        .department-table a:hover {
-            color: #2980b9;
+        .department-card:hover {
+            background-color: #2980b9;
+            transform: translateY(-5px);
+            /* Lift effect on hover */
+        }
+
+        /* Responsive Design for Department Cards */
+        @media (max-width: 768px) {
+            .department-cards {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
         }
 
         /* Notice Board Column */
@@ -309,7 +313,7 @@
         }
 
         .notice-board-table th {
-            background-color: #3498db;
+            background-color: #2c3e50;
             color: white;
         }
 
@@ -342,7 +346,7 @@
         }
 
         .notice-board-table th {
-            background-color: #3498db;
+            background-color: #2c3e50;
             color: white;
         }
 
@@ -372,7 +376,7 @@
         }
 
         .view-all-notices .btn {
-            background-color: #3498db;
+            background-color: #2c3e50;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -473,26 +477,14 @@
         <!-- Department Names Column -->
         <div class="department-column">
             <h2>Departments</h2>
-            <table class="department-table">
-                <tr>
-                    <td><a href="#">Computer Science</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Business Administration</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Electrical Engineering</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Mechanical Engineering</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Civil Engineering</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Mathematics</a></td>
-                </tr>
-            </table>
+            <div class="department-cards">
+                <a href="#" class="department-card">Dept. of Bangla</a>
+                <a href="#" class="department-card">Dept. of English</a>
+                <a href="#" class="department-card">Dept. of Accounting</a>
+                <a href="#" class="department-card">Dept. of of Finance</a>
+                <a href="#" class="department-card">Dept. of Marketing</a>
+                <a href="#" class="department-card">Dept. of Management</a>
+            </div>
         </div>
 
         <!-- Notice Board Column -->
@@ -536,6 +528,21 @@
                         <td>2023-10-25</td>
                         <td>Workshop on Career Development</td>
                         <td><a href="notice6.pdf" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>2023-10-01</td>
+                        <td>Admission Open for Fall 2023</td>
+                        <td><a href="notice1.pdf" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>2023-10-05</td>
+                        <td>Scholarship Application Deadline Extended</td>
+                        <td><a href="notice2.pdf" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>2023-10-10</td>
+                        <td>Exam Schedule Released</td>
+                        <td><a href="notice3.pdf" download><i class="fas fa-download"></i></a></td>
                     </tr>
                 </tbody>
             </table>
