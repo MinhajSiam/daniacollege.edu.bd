@@ -100,6 +100,39 @@
             display: block;
         }
 
+        /* Sub-Dropdown Menu */
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu-list {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: #53cc40;
+            list-style: none;
+            padding: 0;
+            min-width: 150px;
+            z-index: 1;
+        }
+
+        .dropdown-submenu:hover .dropdown-submenu-list {
+            display: block;
+        }
+
+        .dropdown-submenu-list li a {
+            padding: 10px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .dropdown-submenu-list li a:hover {
+            background-color: #34495e;
+        }
+
         /* Right Side Options */
         .right-options {
             display: flex;
@@ -527,10 +560,16 @@
             <li class="dropdown">
                 <a href="#">Programs <i class="fa-solid fa-angle-down" style="color: #ffffff;"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">BBA</a></li>
-                    <li><a href="#">MBA</a></li>
                     <li><a href="#">Hon's</a></li>
-                    <li><a href="#">HSC</a></li>
+                    <li class="dropdown-submenu">
+                        <a href="#">HSC <i class="fa-solid fa-angle-right"
+                                style="color: #ffffff; float: right;"></i></a>
+                        <ul class="dropdown-submenu-list">
+                            <li><a href="#">Science</a></li>
+                            <li><a href="#">Business Studies</a></li>
+                            <li><a href="#">Humanities</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             <li class="dropdown">
