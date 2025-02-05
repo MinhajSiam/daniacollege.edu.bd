@@ -70,10 +70,13 @@
             padding: 10px 15px;
             display: block;
             transition: background 0.3s;
+            font-weight: 700;
+            font-size: 17px;
         }
 
         .nav-links a:hover {
             background-color: #34495e;
+            border-radius: 5px;
         }
 
         /* Dropdown Menu */
@@ -82,10 +85,11 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #2c3e50;
+            background-color: #53cc40;
             list-style: none;
             padding: 0;
             min-width: 150px;
+            z-index: 1;
         }
 
         .dropdown-menu li a {
@@ -112,7 +116,7 @@
         }
 
         .right-options .btn:hover {
-            background-color: #2980b9;
+            background-color: #2c3e50 !important;
         }
 
         /* Responsive Design */
@@ -521,7 +525,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li class="dropdown">
-                <a href="#">Programs</a>
+                <a href="#">Programs <i class="fa-solid fa-angle-down" style="color: #ffffff;"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="#">BBA</a></li>
                     <li><a href="#">MBA</a></li>
@@ -530,12 +534,21 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#">Departments</a>
+                <a href="#">Departments <i class="fa-solid fa-angle-down" style="color: #ffffff;"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="#">Accounting</a></li>
                     <li><a href="#">Finance</a></li>
                     <li><a href="#">Bangla</a></li>
                     <li><a href="#">English</a></li>
+                    <li><a href="#">Economics</a></li>
+                    <li><a href="#">Islamic History</a></li>
+                    <li><a href="#">Islamic Studies</a></li>
+                    <li><a href="#">Political Science</a></li>
+                    <li><a href="#">Geography</a></li>
+                    <li><a href="#">Philosophy</a></li>
+                    <li><a href="#">Management</a></li>
+                    <li><a href="#">Marketing</a></li>
+                    <li><a href="#">BBA Professional</a></li>
                 </ul>
             </li>
             <li><a href="#">Academic Calender</a></li>
@@ -545,8 +558,8 @@
 
         <!-- Right Side Options -->
         <div class="right-options">
-            <a href="apply.html" class="btn" style="background-color: #FFA516;">Admission</a>
-            <a href="#" class="btn" style="background-color: #53cc40;">Portal</a>
+            <a href="apply.html" class="btn" style="background-color: #FFA516; font-weight: 700;">Admission</a>
+            <a href="#" class="btn" style="background-color: #53cc40; font-weight: 700;">Portal</a>
         </div>
     </nav>
 
