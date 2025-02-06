@@ -32,8 +32,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #2c3e50;
-            background-color: #53cc40;
+            /* background-color: #2c3e50; */
+            background-color: #16A34A;
             ;
             padding: 10px 20px;
             color: white;
@@ -85,7 +85,7 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #53cc40;
+            background-color: #16A34A;
             list-style: none;
             padding: 0;
             min-width: 150px;
@@ -94,6 +94,7 @@
 
         .dropdown-menu li a {
             padding: 10px;
+            border-bottom: 1px solid #fff;
         }
 
         .dropdown:hover .dropdown-menu {
@@ -110,7 +111,7 @@
             position: absolute;
             top: 0;
             left: 100%;
-            background-color: #53cc40;
+            background-color: #16A34A;
             list-style: none;
             padding: 0;
             min-width: 150px;
@@ -612,8 +613,14 @@
                     <li><a href="#">BBA Professional</a></li>
                 </ul>
             </li>
-            <li><a href="#">Academic Calender</a></li>
-            <li><a href="#">Notice</a></li>
+            <li class="dropdown">
+                <a href="#">Academic <i class="fa-solid fa-angle-down" style="color: #ffffff;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Calendar</a></li>
+                    <li><a href="#">Class Routine</a></li>
+                </ul>
+            </li>
+            <li><a href="#notice-board-column">Notice</a></li>
             <li><a href="#">Club Activity</a></li>
         </ul>
 
@@ -687,8 +694,7 @@
         </div>
 
         <!-- Notice Board Column -->
-        <!-- Notice Board Column -->
-        <div class="notice-board-column">
+        <div class="notice-board-column" id="notice-board-column">
             <h2>Notice Board</h2>
             <table class="notice-board-table">
                 <thead>

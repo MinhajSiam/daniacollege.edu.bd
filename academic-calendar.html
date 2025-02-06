@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Calendar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px;
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .calendar {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            /* Added gap to keep spacing consistent */
+        }
+
+        .month {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 48%;
+            /* Ensures months take 48% of the available space */
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .month:hover {
+            transform: translateY(-10px);
+        }
+
+        .month h2 {
+            font-size: 2.5em;
+            color: #2980b9;
+            margin-bottom: 20px;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .day {
+            background-color: #ecf0f1;
+            padding: 15px;
+            font-size: 1.5em;
+            color: #34495e;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .day:hover {
+            background-color: #2980b9;
+            color: #fff;
+        }
+
+        .week-day {
+            font-weight: bold;
+            background-color: #2980b9;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .inactive {
+            background-color: #e0e0e0;
+        }
+
+        @media (max-width: 1024px) {
+            .calendar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .month {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .days {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .month {
+                width: 100%;
+            }
+
+            .days {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            .day {
+                padding: 10px;
+                font-size: 1.2em;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .days {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .day {
+                padding: 8px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Academic Calendar - February & March 2025</h1>
+        </header>
+        <div class="calendar">
+            <!-- February -->
+            <div class="month">
+                <h2>February 2025</h2>
+                <div class="days">
+                    <div class="day week-day">Sun</div>
+                    <div class="day week-day">Mon</div>
+                    <div class="day week-day">Tue</div>
+                    <div class="day week-day">Wed</div>
+                    <div class="day week-day">Thu</div>
+                    <div class="day week-day">Fri</div>
+                    <div class="day week-day">Sat</div>
+
+                    <div class="day inactive">1</div>
+                    <div class="day inactive">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5</div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9</div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15</div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19</div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26</div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                </div>
+            </div>
+
+            <!-- March -->
+            <div class="month">
+                <h2>March 2025</h2>
+                <div class="days">
+                    <div class="day week-day">Sun</div>
+                    <div class="day week-day">Mon</div>
+                    <div class="day week-day">Tue</div>
+                    <div class="day week-day">Wed</div>
+                    <div class="day week-day">Thu</div>
+                    <div class="day week-day">Fri</div>
+                    <div class="day week-day">Sat</div>
+
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5</div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9</div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15</div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19</div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26</div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30</div>
+                    <div class="day">31</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
