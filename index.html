@@ -411,17 +411,30 @@
             }
         }
 
+
         /* Notice Board Table */
+        .notice-board-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
         .notice-board-table th,
         .notice-board-table td {
             padding: 10px;
             border: 1px solid #ddd;
             text-align: left;
+            white-space: nowrap;
+            /* Prevent text wrapping */
         }
 
         .notice-board-table th {
             background-color: #2c3e50;
             color: white;
+        }
+
+        .notice-board-table td:first-child {
+            min-width: 100px;
+            /* Set a minimum width for the date column */
         }
 
         .notice-board-table tr:nth-child(even) {
@@ -430,6 +443,15 @@
 
         .notice-board-table tr:hover {
             background-color: #f1f1f1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .notice-board-table {
+                display: block;
+                overflow-x: auto;
+                /* Enable horizontal scrolling on small screens */
+            }
         }
 
         /* Download Icon */
@@ -665,6 +687,7 @@
         </div>
 
         <!-- Notice Board Column -->
+        <!-- Notice Board Column -->
         <div class="notice-board-column">
             <h2>Notice Board</h2>
             <table class="notice-board-table">
@@ -694,7 +717,8 @@
                     <tr>
                         <td>04-02-2025</td>
                         <td><a href="#" class="notice-link">[ <span style="color: red; font-weight: 700;">সংশোধিত</span>
-                                ] উচ্চমাধ্যমিক নির্বাচনি (ব্যবহারিক)
+                                ]
+                                উচ্চমাধ্যমিক নির্বাচনি (ব্যবহারিক)
                                 পরীক্ষা ২০২৫
                                 রুটিন।</a></td>
                         <td><a class="download-btn"
