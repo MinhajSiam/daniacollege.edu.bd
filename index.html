@@ -495,7 +495,7 @@
         /* Three-Column Section */
         .three-column-section {
             display: flex;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 20px auto;
             padding: 20px;
             gap: 20px;
@@ -513,7 +513,7 @@
 
         /* Notice Board Column */
         .notice-board-column {
-            flex: 3;
+            flex: 5.5;
             /* Takes 3 parts of the available space (wider) */
         }
 
@@ -567,6 +567,73 @@
             .department-column,
             .notice-board-column {
                 flex: 1;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #ff0000;
+        }
+
+        .modal iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        /* Responsive Design for Modal */
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 10% auto;
+                width: 95%;
+            }
+
+            .modal iframe {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal-content {
+                margin: 15% auto;
+                width: 100%;
+            }
+
+            .modal iframe {
+                height: 300px;
             }
         }
     </style>
@@ -719,7 +786,9 @@
                 <tbody>
                     <tr>
                         <td>06-02-2025</td>
-                        <td><a href="#" class="notice-link">বিবিএ (প্রফেশনাল) ২য় সেমিস্টার পরীক্ষার ফরম পূরণের
+                        <td><a href="#" class="notice-link"
+                                data-pdf="Notices/2025 February/06.02.2025-বিবিএ (প্রফেশনাল) ২য় সেমিস্টার পরীক্ষার ফরম পূরণের বিজ্ঞপ্তি।.pdf">বিবিএ
+                                (প্রফেশনাল) ২য় সেমিস্টার পরীক্ষার ফরম পূরণের
                                 বিজ্ঞপ্তি।</a></td>
                         <td><a class="download-btn"
                                 href="Notices/2025 February/06.02.2025-বিবিএ (প্রফেশনাল) ২য় সেমিস্টার পরীক্ষার ফরম পূরণের বিজ্ঞপ্তি।.pdf"
@@ -826,6 +895,14 @@
         </div>
     </div>
 
+    <!-- Modal for PDF Viewer -->
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="pdfViewer" src=""></iframe>
+        </div>
+    </div>
+
     <!-- JavaScript for Carousel and Toggler -->
     <script>
 
@@ -879,6 +956,44 @@
             colorInterval = setInterval(() => {
                 noticeSection.style.backgroundColor = noticeSection.style.backgroundColor === '#FFA516' ? '#f9f9f9' : '#FFA516';
             }, 1000);
+        });
+
+
+        // Get the modal
+        const modal = document.getElementById('pdfModal');
+        const pdfViewer = document.getElementById('pdfViewer');
+        const closeBtn = document.querySelector('.close');
+
+        // Function to open the modal with the PDF
+        function openModal(pdfUrl) {
+            pdfViewer.src = pdfUrl;
+            modal.style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            modal.style.display = 'none';
+            pdfViewer.src = ''; // Clear the iframe source
+        }
+
+        // Add click event listeners to notice links
+        const noticeLinks = document.querySelectorAll('.notice-link');
+        noticeLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pdfUrl = link.getAttribute('data-pdf');
+                openModal(pdfUrl);
+            });
+        });
+
+        // Close modal when the close button is clicked
+        closeBtn.addEventListener('click', closeModal);
+
+        // Close modal when clicking outside the modal content
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
         });
     </script>
 </body>
