@@ -685,6 +685,18 @@
             color: #0056b3;
         }
 
+        .event a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .event a:hover h3 {
+            text-decoration: underline;
+        }
+
         @media (max-width: 600px) {
             .event {
                 flex-direction: column;
@@ -1122,25 +1134,36 @@
         // Event Section
         const events = [
             {
+                title: "নবীন বরণ  2025",
+                date: "February 22, 2025",
+                time: "10:00 AM - 2:00 PM",
+                venue: "Auditorium Hall, Campus",
+                image: "cover 2.jpg",
+                link: "#"
+            },
+            {
                 title: "Science Seminar 2025",
                 date: "March 15, 2025",
                 time: "10:00 AM - 2:00 PM",
                 venue: "Auditorium Hall, Campus",
-                image: "cover 2.jpg"
+                image: "cover 2.jpg",
+                link: "event1.html"
             },
             {
                 title: "Cultural Fest 2025",
                 date: "April 10, 2025",
                 time: "5:00 PM - 10:00 PM",
                 venue: "Main Ground, University",
-                image: "cover 2.jpg"
+                image: "cover 2.jpg",
+                link: "event2.html"
             },
             {
                 title: "Tech Meetup",
                 date: "January 20, 2024",
                 time: "3:00 PM - 6:00 PM",
                 venue: "Innovation Lab, IT Building",
-                image: "cover 2.jpg"
+                image: "cover 2.jpg",
+                link: "event3.html"
             }
         ];
 
@@ -1150,12 +1173,14 @@
             const eventElement = document.createElement("div");
             eventElement.classList.add("event");
             eventElement.innerHTML = `
-                <img src="${event.image}" alt="Event Image">
-                <div class="event-details">
-                    <h3>${event.title}</h3>
-                    <p class="date-time">${event.date} | ${event.time}</p>
-                    <p><strong>Venue:</strong> ${event.venue}</p>
-                </div>
+                <a href="${event.link}" target="_blank">
+                    <img src="${event.image}" alt="Event Image">
+                    <div class="event-details">
+                        <h3>${event.title}</h3>
+                        <p class="date-time">${event.date} | ${event.time}</p>
+                        <p><strong>Venue:</strong> ${event.venue}</p>
+                    </div>
+                </a>
             `;
             eventsList.appendChild(eventElement);
         });
