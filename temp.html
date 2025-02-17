@@ -25,7 +25,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffffff;
+            background-color: #e0f7fa;
             color: #333;
             line-height: 1.6;
         }
@@ -633,27 +633,15 @@
             flex: 2;
         }
 
-        /* Academic Calendar Table Styles */
         .calendar-section {
             flex: 1.2;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
         }
 
         .calendar-section h2 {
-            color: #2e7d32;
-            /* Green theme */
-            font-weight: 700;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 3px solid #2c3e50;
-            /* Light green underline */
-            padding-bottom: 0.5em;
-            display: inline-block;
+            text-align: center;
         }
 
         .calendar-table {
@@ -663,56 +651,25 @@
             margin-top: 20px;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         .calendar-table th,
         .calendar-table td {
-            padding: 16px;
+            border: none;
+            padding: 14px 16px;
             text-align: left;
             font-size: 15px;
-            border-bottom: 1px solid #e0e0e0;
-            /* Light gray border */
         }
 
         .calendar-table th {
-            background-color: #2c3e50;
-            /* Vibrant teal */
-            color: #ffffff;
-            font-weight: 600;
+            background-color: #00bcd4;
+            color: #fff;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.03em;
         }
 
-        .calendar-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-            /* Light gray for even rows */
-        }
-
-        .calendar-table tr:hover {
-            background-color: #f1f1f1;
-            /* Slightly darker gray on hover */
-        }
-
-        .calendar-table td:first-child {
-            font-weight: 600;
-            /* Bold for the first column (Month) */
-            color: #2e7d32;
-            /* Green theme */
-        }
-
-        .calendar-table td:nth-child(2) {
-            color: #333;
-            /* Darker text for event names */
-        }
-
-        .calendar-table td:nth-child(3) {
-            color: #666;
-            /* Lighter text for details */
-            font-size: 14px;
-        }
-
-        /* Rounded corners for the table */
         .calendar-table th:first-child {
             border-top-left-radius: 12px;
         }
@@ -721,12 +678,25 @@
             border-top-right-radius: 12px;
         }
 
+        .calendar-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
         .calendar-table tr:last-child td:first-child {
             border-bottom-left-radius: 12px;
         }
 
         .calendar-table tr:last-child td:last-child {
             border-bottom-right-radius: 12px;
+        }
+
+        .calendar-table td {
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .calendar-table tr:last-child td {
+            border-bottom: none;
         }
 
         .event {
@@ -789,13 +759,13 @@
 
         .event-section h2,
         .calendar-section h2 {
-            color: #2c3e50;
+            color: #2e7d32;
             font-weight: 700;
             margin-top: 0;
             margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            border-bottom: 3px solid #2c3e50;
+            border-bottom: 3px solid #80cbc4;
             padding-bottom: 0.5em;
             display: inline-block;
         }
@@ -1163,44 +1133,33 @@
             <h2>Upcoming & Recent Events</h2>
             <div id="events-list"></div>
         </div>
-        <!-- Academic Calendar Section -->
         <div class="calendar-section">
             <h2>Academic Calendar</h2>
             <table class="calendar-table">
-                <thead>
-                    <tr>
-                        <th>Month</th>
-                        <th>Event</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>January</td>
-                        <td>New Semester Begins</td>
-                        <td>Orientation programs and course registration.</td>
-                    </tr>
-                    <tr>
-                        <td>March</td>
-                        <td>Mid-term Exams</td>
-                        <td>Exams for all courses will be held during this period.</td>
-                    </tr>
-                    <tr>
-                        <td>June</td>
-                        <td>Summer Break</td>
-                        <td>No classes; students can participate in internships or workshops.</td>
-                    </tr>
-                    <tr>
-                        <td>September</td>
-                        <td>Fall Semester Starts</td>
-                        <td>New courses begin; students must complete registration.</td>
-                    </tr>
-                    <tr>
-                        <td>December</td>
-                        <td>Final Exams</td>
-                        <td>End-of-semester exams for all courses.</td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <th>Estimated Date</th>
+                    <th>Event</th>
+                </tr>
+                <tr>
+                    <td>January</td>
+                    <td>New Semester Begins</td>
+                </tr>
+                <tr>
+                    <td>March</td>
+                    <td>Mid-term Exams</td>
+                </tr>
+                <tr>
+                    <td>June</td>
+                    <td>Summer Break</td>
+                </tr>
+                <tr>
+                    <td>September</td>
+                    <td>Fall Semester Starts</td>
+                </tr>
+                <tr>
+                    <td>December</td>
+                    <td>Final Exams</td>
+                </tr>
             </table>
         </div>
     </div>
