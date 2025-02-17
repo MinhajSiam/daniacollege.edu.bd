@@ -635,6 +635,69 @@
                 height: 300px;
             }
         }
+
+        /* event section start from here */
+        .event-section {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .event {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .event:last-child {
+            border-bottom: none;
+        }
+
+        .event img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .event-details {
+            flex: 1;
+        }
+
+        .event h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .event p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .date-time {
+            font-weight: bold;
+            color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .event {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .event img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* event section ends here */
     </style>
 </head>
 
@@ -951,6 +1014,13 @@
     </div>
 
 
+    <!-- Event Section -->
+    <div class="event-section">
+        <h2 style="margin-bottom: 20px;">Upcoming & Recent Events</h2>
+        <div id="events-list"></div>
+    </div>
+
+
     <!-- JavaScript for Carousel and Toggler -->
     <script>
 
@@ -1045,8 +1115,49 @@
         });
 
         // Lazy Loading
-        const lazyLoad = new LazyLoad({
-            elements_selector: ".lazyload"
+        // const lazyLoad = new LazyLoad({
+        //     elements_selector: ".lazyload"
+        // });
+
+        // Event Section
+        const events = [
+            {
+                title: "Science Seminar 2025",
+                date: "March 15, 2025",
+                time: "10:00 AM - 2:00 PM",
+                venue: "Auditorium Hall, Campus",
+                image: "cover 2.jpg"
+            },
+            {
+                title: "Cultural Fest 2025",
+                date: "April 10, 2025",
+                time: "5:00 PM - 10:00 PM",
+                venue: "Main Ground, University",
+                image: "cover 2.jpg"
+            },
+            {
+                title: "Tech Meetup",
+                date: "January 20, 2024",
+                time: "3:00 PM - 6:00 PM",
+                venue: "Innovation Lab, IT Building",
+                image: "cover 2.jpg"
+            }
+        ];
+
+        const eventsList = document.getElementById("events-list");
+
+        events.forEach(event => {
+            const eventElement = document.createElement("div");
+            eventElement.classList.add("event");
+            eventElement.innerHTML = `
+                <img src="${event.image}" alt="Event Image">
+                <div class="event-details">
+                    <h3>${event.title}</h3>
+                    <p class="date-time">${event.date} | ${event.time}</p>
+                    <p><strong>Venue:</strong> ${event.venue}</p>
+                </div>
+            `;
+            eventsList.appendChild(eventElement);
         });
     </script>
 </body>
