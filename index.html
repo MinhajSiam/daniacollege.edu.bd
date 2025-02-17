@@ -637,13 +637,54 @@
         }
 
         /* event section start from here */
-        .event-section {
-            max-width: 900px;
+        .container {
+            display: flex;
+            max-width: 1200px;
             margin: 50px auto;
+            gap: 20px;
+        }
+
+        .event-section,
+        .calendar-section {
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-section {
+            flex: 2;
+        }
+
+        .calendar-section {
+            flex: 1;
+            text-align: center;
+        }
+
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .calendar-table th,
+        .calendar-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .calendar-table th {
+            background-color: #16A34A;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calendar-table tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
 
         .event {
@@ -697,7 +738,11 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
             .event {
                 flex-direction: column;
                 align-items: flex-start;
@@ -1026,10 +1071,41 @@
     </div>
 
 
-    <!-- Event Section -->
-    <div class="event-section">
-        <h2 style="margin-bottom: 20px;">Upcoming & Recent Events</h2>
-        <div id="events-list"></div>
+    <!-- Event and Academic Calendar Section -->
+    <div class="container">
+        <div class="event-section">
+            <h2>Upcoming & Recent Events</h2>
+            <div id="events-list"></div>
+        </div>
+        <div class="calendar-section">
+            <h2>Academic Calendar</h2>
+            <table class="calendar-table">
+                <tr>
+                    <th>Estimated Date</th>
+                    <th>Event</th>
+                </tr>
+                <tr>
+                    <td>January</td>
+                    <td>New Semester Begins</td>
+                </tr>
+                <tr>
+                    <td>March</td>
+                    <td>Mid-term Exams</td>
+                </tr>
+                <tr>
+                    <td>June</td>
+                    <td>Summer Break</td>
+                </tr>
+                <tr>
+                    <td>September</td>
+                    <td>Fall Semester Starts</td>
+                </tr>
+                <tr>
+                    <td>December</td>
+                    <td>Final Exams</td>
+                </tr>
+            </table>
+        </div>
     </div>
 
 
@@ -1134,19 +1210,11 @@
         // Event Section
         const events = [
             {
-                title: "নবীন বরণ  2025",
-                date: "February 22, 2025",
-                time: "10:00 AM - 2:00 PM",
-                venue: "Auditorium Hall, Campus",
-                image: "cover 2.jpg",
-                link: "#"
-            },
-            {
                 title: "Science Seminar 2025",
                 date: "March 15, 2025",
                 time: "10:00 AM - 2:00 PM",
                 venue: "Auditorium Hall, Campus",
-                image: "cover 2.jpg",
+                image: "https://daniacollege.edu.bd/cover%202.jpg",
                 link: "event1.html"
             },
             {
@@ -1154,7 +1222,7 @@
                 date: "April 10, 2025",
                 time: "5:00 PM - 10:00 PM",
                 venue: "Main Ground, University",
-                image: "cover 2.jpg",
+                image: "https://daniacollege.edu.bd/cover%202.jpg",
                 link: "event2.html"
             },
             {
@@ -1162,7 +1230,7 @@
                 date: "January 20, 2024",
                 time: "3:00 PM - 6:00 PM",
                 venue: "Innovation Lab, IT Building",
-                image: "cover 2.jpg",
+                image: "https://daniacollege.edu.bd/cover%202.jpg",
                 link: "event3.html"
             }
         ];
