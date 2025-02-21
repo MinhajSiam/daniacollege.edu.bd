@@ -845,6 +845,122 @@
                 font-size: 14px;
             }
         }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #2c3e50;
+            /* Dark blue background */
+            color: #ffffff;
+            /* White text */
+            padding: 40px 20px 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-heading {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #16A34A;
+            /* Green accent */
+        }
+
+        .footer-links,
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li,
+        .footer-contact li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a,
+        .footer-contact a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover,
+        .footer-contact a:hover {
+            color: #16A34A;
+            /* Green accent on hover */
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-contact i {
+            color: #16A34A;
+            /* Green accent for icons */
+            font-size: 16px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            color: #ffffff;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .social-link:hover {
+            color: #16A34A;
+            /* Green accent on hover */
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            /* Light border for separation */
+            font-size: 14px;
+            color: #bdc3c7;
+            /* Light gray text */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section {
+                margin-bottom: 20px;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -1204,6 +1320,51 @@
             </table>
         </div>
     </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="https://daniacollege.edu.bd/">Home</a></li>
+                    <li><a href="about_beta.html">About Us</a></li>
+                    <li><a href="#">Programs</a></li>
+                    <li><a href="#">Departments</a></li>
+                    <li><a href="#">Admissions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div class="footer-section">
+                <h3 class="footer-heading">Contact Us</h3>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 College Road, Dhaka, Bangladesh</li>
+                    <li><i class="fas fa-phone"></i> +880 1234 567890</li>
+                    <li><i class="fas fa-envelope"></i> info@daniacollege.edu.bd</li>
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <h3 class="footer-heading">Follow Us</h3>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Dania College. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <!-- JavaScript for Carousel and Toggler -->
     <script>
