@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome for Hamburger Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #16A34A;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        /* Logo */
+        .logo img {
+            width: 60px;
+            height: 60px;
+        }
+
+        /* Hamburger Toggler */
+        .toggler {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            transition: background 0.3s;
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .nav-links a:hover {
+            background-color: #34495e;
+            border-radius: 5px;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #16A34A;
+            list-style: none;
+            padding: 0;
+            min-width: 150px;
+            z-index: 1;
+        }
+
+        .dropdown-menu li a {
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Sub-Dropdown Menu */
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu-list {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: #16A34A;
+            list-style: none;
+            padding: 0;
+            min-width: 150px;
+            z-index: 1;
+        }
+
+        .dropdown-submenu:hover .dropdown-submenu-list {
+            display: block;
+        }
+
+        .dropdown-submenu-list li a {
+            padding: 10px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .dropdown-submenu-list li a:hover {
+            background-color: #34495e;
+        }
+
+        /* Right Side Options */
+        .right-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .right-options .btn {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .right-options .btn:hover {
+            background-color: #2c3e50 !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .toggler {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #2c3e50;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                text-align: center;
+            }
+
+            .dropdown-menu {
+                position: static;
+            }
+
+            .right-options {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <a style="text-decoration: none; color: white; font-weight: 700; font-size: 30px;display: flex; align-items: center; justify-content: center;"
+                href="#"><img src="Semi-Transparent Logo.png" alt="Logo">
+                <span style="padding-left: 10px;">DANIA COLLEGE</span></a>
+        </div>
+
+        <!-- Hamburger Toggler -->
+        <div class="toggler" id="toggler">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="https://daniacollege.edu.bd/">Home</a></li>
+            <li class="dropdown">
+                <a href="#">About <i class="fa-solid fa-angle-down" style="color: #ffffff;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">Governing Body</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Programs <i class="fa-solid fa-angle-down" style="color: #ffffff;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">HSC</a></li>
+                    <li><a href="#">Hon's</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Departments <i class="fa-solid fa-angle-down" style="color: #ffffff;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="bangla.html">Bangla</a></li>
+                    <li><a href="english.html">English</a></li>
+                    <li><a href="ict.html">ICT</a></li>
+                    <li><a href="statistics.html">Statistics</a></li>
+                    <li><a href="accounting.html">Accounting</a></li>
+                    <li><a href="finance.html">Finance</a></li>
+                    <li><a href="management.html">Management</a></li>
+                    <li><a href="marketing.html">Marketing</a></li>
+                    <li><a href="bba.html">BBA Professional</a></li>
+                    <li><a href="economics.html">Economics</a></li>
+                    <li><a href="islamicHistory.html">Islamic History</a></li>
+                    <li><a href="islamicStudies.html">Islamic Studies</a></li>
+                    <li><a href="politicalScience.html">Political Science</a></li>
+                    <li><a href="geography.html">Geography</a></li>
+                    <li><a href="philosophy.html">Philosophy</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Academic <i class="fa-solid fa-angle-down" style="color: #ffffff;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Result</a></li>
+                    <li><a href="academic-calendar.html">Calendar</a></li>
+                    <li><a href="#">Class Routine</a></li>
+                </ul>
+            </li>
+            <li><a href="#notice-board-column">Notice</a></li>
+            <li class="dropdown"><a href="#">Club Activity <i class="fa-solid fa-angle-down"
+                        style="color: #ffffff;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Scout</a></li>
+                    <li><a href="#">IT Club</a></li>
+                    <li><a href="#">English Club</a></li>
+                    <li><a href="#">Debating Club</a></li>
+                    <li><a href="#">Science Club</a></li>
+                    <li><a href="#">Sports Club</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <!-- Right Side Options -->
+        <div class="right-options">
+            <a href="apply.html" class="btn" style="background-color: #FFA516; font-weight: 700;">Admission</a>
+            <a href="https://manage.expresssolutionltd.com/login" class="btn"
+                style="background-color: #53cc40; font-weight: 700;">Portal</a>
+        </div>
+    </nav>
+</body>
+
+</html>
