@@ -41,19 +41,56 @@
             </ul>
         </div>
 
-        <!-- 📷 Image Gallery Section -->
+        <!-- 📷 Event Gallery with Lightbox -->
         <div class="bg-white rounded-xl shadow-md p-6 mb-10">
             <h2 class="text-2xl font-semibold mb-6 text-center">📸 Event Gallery</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <img src="image1.jpg" alt="Gallery Image 1" class="rounded-lg shadow-sm hover:shadow-lg transition">
-                <img src="image2.jpg" alt="Gallery Image 2" class="rounded-lg shadow-sm hover:shadow-lg transition">
-                <img src="image3.jpg" alt="Gallery Image 3" class="rounded-lg shadow-sm hover:shadow-lg transition">
-                <img src="image4.jpg" alt="Gallery Image 4" class="rounded-lg shadow-sm hover:shadow-lg transition">
-                <img src="image5.jpg" alt="Gallery Image 5" class="rounded-lg shadow-sm hover:shadow-lg transition">
-                <img src="image6.jpg" alt="Gallery Image 6" class="rounded-lg shadow-sm hover:shadow-lg transition">
-                <!-- Add more images as needed -->
+            <div id="eventGallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <!-- Start Image List -->
+                <img src="images/photo1.jpg" alt="Gallery Image 1"
+                    class="rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
+                    onclick="openLightbox(this.src)">
+                <img src="images/photo2.jpg" alt="Gallery Image 2"
+                    class="rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
+                    onclick="openLightbox(this.src)">
+                <img src="images/photo3.jpg" alt="Gallery Image 3"
+                    class="rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
+                    onclick="openLightbox(this.src)">
+                <img src="images/photo4.jpg" alt="Gallery Image 4"
+                    class="rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
+                    onclick="openLightbox(this.src)">
+                <img src="images/photo5.jpg" alt="Gallery Image 5"
+                    class="rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
+                    onclick="openLightbox(this.src)">
+                <img src="images/photo6.jpg" alt="Gallery Image 6"
+                    class="rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
+                    onclick="openLightbox(this.src)">
+                <img src="images/photo7.jpg" alt="Gallery Image 7"
+                    class="rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
+                    onclick="openLightbox(this.src)">
+                <img src="images/photo8.jpg" alt="Gallery Image 8"
+                    class="rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
+                    onclick="openLightbox(this.src)">
+                <img src="images/photo9.jpg" alt="Gallery Image 9"
+                    class="rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
+                    onclick="openLightbox(this.src)">
+                <img src="images/photo10.jpg" alt="Gallery Image 10"
+                    class="rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
+                    onclick="openLightbox(this.src)">
+                <!-- ✅ Add more images below just by copying one line -->
+                <!-- Example:
+      <img src="images/photo11.jpg" alt="Gallery Image 11" class="...">
+      -->
             </div>
         </div>
+
+        <!-- 🔍 Lightbox Modal -->
+        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 hidden">
+            <img id="lightboxImage" class="max-w-full max-h-[90vh] rounded shadow-lg" src="" alt="Preview">
+            <button onclick="closeLightbox()"
+                class="absolute top-4 right-6 text-white text-3xl font-bold">&times;</button>
+        </div>
+
+
 
         <!-- 🎬 Video Section -->
         <div class="bg-white rounded-xl shadow-md p-6">
@@ -66,6 +103,27 @@
             </div>
         </div>
     </div>
+
+
+
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightboxImage').src = src;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        document.getElementById('lightbox').addEventListener('click', function (e) {
+            if (e.target.id === 'lightbox') {
+                closeLightbox();
+            }
+        });
+    </script>
+
 
 </body>
 

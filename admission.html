@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Online Admission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .admission-box {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #e0f3eb, #d6f0e5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .admission-header {
+            background: linear-gradient(to right, #0066a2, #00a4c2);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .admission-header::before {
+            content: "🎓";
+            position: absolute;
+            left: 15px;
+        }
+
+        .admission-title {
+            text-align: center;
+            color: #b30000;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .admission-button {
+            display: block;
+            width: 90%;
+            margin: 10px auto;
+            padding: 12px;
+            font-size: 14px;
+            text-align: center;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .btn-sky {
+            background-color: #4cb0e1;
+        }
+
+        .btn-sky:hover {
+            background-color: #3498db;
+        }
+
+        .btn-orange {
+            background-color: #f0a83e;
+        }
+
+        .btn-orange:hover {
+            background-color: #e69500;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Admission sidebar -->
+    <div class="admission-box">
+        <div class="admission-header">ONLINE ADMISSION</div>
+        <div class="admission-title">HONS / MASTERS</div>
+
+        <a href="#" class="admission-button btn-sky">How To Form Fill-Up<br>(Hons/Masters)</a>
+        <a href="#" class="admission-button btn-sky">Honours / Masters Admission<br>(Sign Up for New Students)</a>
+        <a href="#" class="admission-button btn-orange">HONS / Masters Students Login<br>(Registered Applicant)</a>
+    </div>
+
+</body>
+
+</html>

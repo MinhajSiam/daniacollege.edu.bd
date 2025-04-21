@@ -470,7 +470,7 @@
         }
 
         /* Three-Column Section */
-        .three-column-section {
+        .two-column-section {
             display: flex;
             max-width: 1400px;
             margin: 20px auto;
@@ -532,7 +532,7 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .three-column-section {
+            .two-column-section {
                 flex-direction: column;
             }
 
@@ -1063,29 +1063,75 @@
         <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
     </div>
 
-    <!-- Three-Column Section -->
-    <div class="three-column-section">
-        <!-- Left Department Column -->
-        <div class="department-column">
-            <h2 style="margin-bottom: 10px; text-align: center; color: #2c3e50;">Hon's Departments</h2>
-            <div class="department-cards">
-                <a href="bangla.html" class="department-card">Bangla</a>
-                <a href="english.html" class="department-card">English</a>
-                <a href="ict.html" class="department-card">ICT</a>
-                <a href="statistics.html" class="department-card">Statistics</a>
-                <a href="accounting.html" class="department-card">Accounting</a>
-                <a href="management.html" class="department-card">Management</a>
-                <a href="marketing.html" class="department-card">Marketing</a>
-                <a href="finance.html" class="department-card">Finance</a>
-                <a href="bba.html" class="department-card">BBA Professional</a>
-                <a href="economics.html" class="department-card">Economics</a>
-                <a href="islamicHistory.html" class="department-card">Islamic History</a>
-                <a href="islamicStudies.html" class="department-card">Islamic Studies</a>
-                <a href="politicalScience.html" class="department-card">Political Science</a>
-                <a href="geography.html" class="department-card">Geography</a>
-                <a href="philosophy.html" class="department-card">Philosophy</a>
-            </div>
+    <!-- Admission sidebar -->
+    <style>
+        .admission-box {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #e0f3eb, #d6f0e5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .admission-header {
+            background: linear-gradient(to right, #0066a2, #00a4c2);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .admission-header::before {
+            content: "🎓";
+            position: absolute;
+            left: 15px;
+        }
+
+        .admission-title {
+            text-align: center;
+            color: #b30000;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .admission-button {
+            display: block;
+            width: 90%;
+            margin: 10px auto;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            transition: background 0.3s;
+            background-color: #2c3e50;
+        }
+
+        .admission-button:hover {
+            background-color: #e69500;
+        }
+    </style>
+
+    <!-- Two-Column Section -->
+    <div class="two-column-section">
+        <!-- Admission sidebar -->
+        <div class="admission-box">
+            <div class="admission-header">Admission Corner</div>
+            <!-- <div class="admission-title">HONS / MASTERS</div> -->
+
+            <a href="#" class="admission-button btn-orange">HSC Admission</a>
+            <a href="#" class="admission-button btn-orange">Honours Admission</a>
+            <a href="#" class="admission-button btn-orange">BBA Admission</a>
         </div>
+
 
         <!-- Notice Board Column -->
         <div class="notice-board-column" id="notice-board-column">
