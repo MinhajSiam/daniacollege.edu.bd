@@ -1084,11 +1084,11 @@
             position: relative;
         }
 
-        .admission-header::before {
+        /* .admission-header::before {
             content: "🎓";
             position: absolute;
             left: 15px;
-        }
+        } */
 
         .admission-title {
             text-align: center;
@@ -1100,7 +1100,7 @@
 
         .admission-button {
             display: block;
-            width: 90%;
+            width: 100%;
             margin: 10px auto;
             padding: 12px;
             font-size: 18px;
@@ -1123,13 +1123,25 @@
     <!-- Two-Column Section -->
     <div class="two-column-section">
         <!-- Admission sidebar -->
-        <div class="admission-box">
-            <div class="admission-header">Admission Corner</div>
-            <!-- <div class="admission-title">HONS / MASTERS</div> -->
-
-            <a href="#" class="admission-button btn-orange">HSC Admission</a>
-            <a href="#" class="admission-button btn-orange">Honours Admission</a>
-            <a href="#" class="admission-button btn-orange">BBA Admission</a>
+        <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 49px;">
+            <div class="admission-box">
+                <div class="admission-header">Admission Corner</div>
+                <!-- <div class="admission-title">HONS / MASTERS</div> -->
+                <a href="#" class="admission-button btn-orange">HSC Admission</a>
+                <a href="#" class="admission-button btn-orange">Honours Admission</a>
+                <a href="#" class="admission-button btn-orange">BBA Admission</a>
+                <a href="#" class="admission-button btn-orange">Form Fill-up Notices</a>
+            </div>
+            <!-- Admission sidebar -->
+            <div class="admission-box">
+                <div class="admission-header">Student Corner</div>
+                <!-- <div class="admission-title">HONS / MASTERS</div> -->
+                <a href="#" class="admission-button btn-orange">Campus Login</a>
+                <a href="#" class="admission-button btn-orange">Payment Portal</a>
+                <a href="#" class="admission-button btn-orange">Ebook</a>
+                <a href="#" class="admission-button btn-orange">Routines</a>
+                <a href="#" class="admission-button btn-orange">Exam Results</a>
+            </div>
         </div>
 
 
