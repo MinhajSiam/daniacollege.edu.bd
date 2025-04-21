@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .transition {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Hero Section -->
+    <section class="bg-blue-900 text-white py-16 text-center">
+        <h1 class="text-4xl font-bold mb-2">University Events</h1>
+        <p class="text-lg">Stay connected with the latest campus happenings</p>
+    </section>
+
+    <!-- Filter Bar -->
+    <div class="flex justify-center my-6 gap-4">
+        <button onclick="filterEvents('all')"
+            class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">All</button>
+        <button onclick="filterEvents('seminar')"
+            class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-blue-600 hover:text-white">Seminar</button>
+        <button onclick="filterEvents('cultural')"
+            class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-blue-600 hover:text-white">Cultural</button>
+        <button onclick="filterEvents('sports')"
+            class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-blue-600 hover:text-white">Sports</button>
+    </div>
+
+    <!-- Events Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 pb-16" id="eventGrid">
+        <!-- Event Card -->
+        <div class="bg-white rounded-xl shadow-md p-6 transition card" data-type="seminar">
+            <h2 class="text-xl font-semibold mb-2">AI & Machine Learning Seminar</h2>
+            <p class="text-sm text-gray-600 mb-2">Date: April 25, 2025</p>
+            <p class="text-gray-700">An interactive seminar with experts from top tech companies.</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 transition card" data-type="cultural">
+            <h2 class="text-xl font-semibold mb-2">Cultural Night 2025</h2>
+            <p class="text-sm text-gray-600 mb-2">Date: May 10, 2025</p>
+            <p class="text-gray-700">Music, dance, and drama showcasing our campus talent.</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 transition card" data-type="sports">
+            <h2 class="text-xl font-semibold mb-2">Inter-Department Football Tournament</h2>
+            <p class="text-sm text-gray-600 mb-2">Date: June 1, 2025</p>
+            <p class="text-gray-700">Cheer for your department and enjoy the thrill of football!</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 transition card" data-type="seminar">
+            <h2 class="text-xl font-semibold mb-2">Entrepreneurship Bootcamp</h2>
+            <p class="text-sm text-gray-600 mb-2">Date: May 5, 2025</p>
+            <p class="text-gray-700">Learn how to build startups from scratch with mentorship.</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 transition card" data-type="cultural">
+            <h2 class="text-xl font-semibold mb-2">Poetry & Literature Festival</h2>
+            <p class="text-sm text-gray-600 mb-2">Date: May 18, 2025</p>
+            <p class="text-gray-700">A celebration of words, creativity, and expression.</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 transition card" data-type="sports">
+            <h2 class="text-xl font-semibold mb-2">Cricket League - Season 3</h2>
+            <p class="text-sm text-gray-600 mb-2">Date: June 15, 2025</p>
+            <p class="text-gray-700">12 teams. 1 champion. Let the games begin!</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function filterEvents(type) {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const match = card.getAttribute('data-type') === type || type === 'all';
+                card.style.display = match ? 'block' : 'none';
+            });
+        }
+    </script>
+
+</body>
+
+</html>
