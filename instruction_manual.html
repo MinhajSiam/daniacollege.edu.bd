@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Flip Page</title>
+    <style>
+        body {
+            background: #e9e9e9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .book {
+            width: 400px;
+            height: 550px;
+            position: relative;
+            perspective: 1500px;
+            margin-bottom: 20px;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-origin: left;
+            transform-style: preserve-3d;
+            transition: transform 1s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            cursor: default;
+            backface-visibility: hidden;
+        }
+
+        .page img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .flipped {
+            transform: rotateY(-180deg);
+        }
+
+        .controls {
+            display: flex;
+            gap: 20px;
+        }
+
+        .controls button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .controls button:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="book" id="book">
+        <!-- সব পৃষ্ঠা এখানেই থাকবে -->
+        <!-- নিচে JavaScript ব্যবহার করে dynamically add করা হবে -->
+    </div>
+
+    <div class="controls">
+        <button id="prevBtn" disabled>Previous</button>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        const book = document.getElementById('book');
+        const totalPages = 22;
+        const pages = [];
+
+        // পৃষ্ঠা তৈরি ও book div এ যোগ করা
+        for (let i = 1; i <= totalPages; i++) {
+            const page = document.createElement('div');
+            page.classList.add('page');
+            page.style.zIndex = totalPages - i; // z-index কমিয়ে দিয়ে পেছনের পৃষ্ঠা তৈরি
+
+            const img = document.createElement('img');
+            img.src = `media/page${i}.jpg`;
+            img.alt = `Page ${i}`;
+            page.appendChild(img);
+
+            book.appendChild(page);
+            pages.push(page);
+        }
+
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        let currentPage = 0;
+
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < pages.length) {
+                pages[currentPage].classList.add('flipped');
+                currentPage++;
+                updateButtons();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                pages[currentPage].classList.remove('flipped');
+                updateButtons();
+            }
+        });
+
+        function updateButtons() {
+            nextBtn.disabled = currentPage >= pages.length;
+            prevBtn.disabled = currentPage <= 0;
+        }
+    </script>
+
+</body>
+
+</html>
