@@ -1543,7 +1543,7 @@
 
         // Change background color every second
         let colorInterval = setInterval(() => {
-            noticeSection.style.backgroundColor = noticeSection.style.backgroundColor === '#FFA516' ? '#f9f9f9' : '#FFA516';
+            noticeSection.style.backgroundColor = noticeSection.style.backgroundColor === '#fff' ? '#f9f9f9' : '#fff';
         }, 1000);
 
         // Pause background color change on hover
@@ -1554,7 +1554,7 @@
         // Resume background color change on mouse leave
         noticeSection.addEventListener('mouseleave', () => {
             colorInterval = setInterval(() => {
-                noticeSection.style.backgroundColor = noticeSection.style.backgroundColor === '#FFA516' ? '#f9f9f9' : '#FFA516';
+                noticeSection.style.backgroundColor = noticeSection.style.backgroundColor === '#fff' ? '#f9f9f9' : '#fff';
             }, 1000);
         });
 
