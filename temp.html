@@ -89,48 +89,6 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Dropdown Menu */
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #ffffff;
-            list-style: none;
-            padding: 10px;
-            min-width: 200px;
-            z-index: 1;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .dropdown-menu li a {
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-            color: #333;
-        }
-
-        .dropdown-menu li a:hover {
-            background-color: #16A34A;
-            color: white;
-            border-radius: 5px;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        /* Multi-column dropdown menu */
-        .dropdown-menu.multi-column {
-            column-count: 3;
-            column-gap: 20px;
-            width: 450px;
-        }
-
-        .dropdown-menu.multi-column li {
-            break-inside: avoid;
-        }
-
         /* Right Side Options */
         .right-options {
             display: flex;
@@ -165,27 +123,24 @@
             }
 
             .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 85%;
-                height: 100%;
-                background-color: #ffffff;
-                display: flex;
+                display: none;
                 flex-direction: column;
-                justify-content: flex-start;
-                padding-top: 60px;
-                box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
-                transition: right 0.5s ease;
+                width: 100%;
+                background-color: #ffffff;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                border-radius: 15px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 10px;
             }
 
             .nav-links.active {
-                right: 0;
+                display: flex;
             }
 
             .nav-links li {
                 text-align: center;
-                border-bottom: 1px solid #dedede;
             }
 
             .dropdown-menu {
@@ -203,20 +158,15 @@
                 display: none;
             }
 
-            /* Close Button */
-            .close-btn {
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                font-size: 30px;
-                cursor: pointer;
-                color: #333;
+            /* Hide close button on desktop */
+            #close-btn {
+                display: block;
             }
         }
 
-        /* Add styles for dropdown toggle */
-        .dropdown.active .dropdown-menu {
-            display: block;
+        /* Default state - Show Close Button on Mobile View */
+        #close-btn {
+            display: none;
         }
     </style>
 </head>
@@ -234,68 +184,19 @@
             <i class="fas fa-bars"></i>
         </div>
 
+        <!-- Close Button for Mobile -->
+        <div id="close-btn" style="cursor: pointer; font-size: 24px; color: #16A34A;">
+            <i class="fas fa-times"></i>
+        </div>
+
         <!-- Navigation Menu -->
         <ul class="nav-links" id="nav-links">
-            <!-- Close Button -->
-            <span class="close-btn" id="close-btn">&times;</span>
-
             <li><a href="https://daniacollege.edu.bd/">Home</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)">About <i class="fa-solid fa-angle-down" style="color: #333;"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Governing Body</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="javascript:void(0)">Programs <i class="fa-solid fa-angle-down" style="color: #333;"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">HSC</a></li>
-                    <li><a href="#">Hon's</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="javascript:void(0)">Departments <i class="fa-solid fa-angle-down" style="color: #333;"></i></a>
-                <ul class="dropdown-menu multi-column">
-                    <li><a href="bangla.html">Bangla</a></li>
-                    <li><a href="english.html">English</a></li>
-                    <li><a href="ict.html">ICT</a></li>
-                    <li><a href="statistics.html">Statistics</a></li>
-                    <li><a href="accounting.html">Accounting</a></li>
-                    <li><a href="finance.html">Finance</a></li>
-                    <li><a href="management.html">Management</a></li>
-                    <li><a href="marketing.html">Marketing</a></li>
-                    <li><a href="bba.html">BBA Professional</a></li>
-                    <li><a href="economics.html">Economics</a></li>
-                    <li><a href="islamicHistory.html">Islamic History</a></li>
-                    <li><a href="islamicStudies.html">Islamic Studies</a></li>
-                    <li><a href="politicalScience.html">Political Science</a></li>
-                    <li><a href="geography.html">Geography</a></li>
-                    <li><a href="philosophy.html">Philosophy</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="javascript:void(0)">Academic <i class="fa-solid fa-angle-down" style="color: #333;"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Result</a></li>
-                    <li><a href="academic-calendar.html">Calendar</a></li>
-                    <li><a href="#">Class Routine</a></li>
-                </ul>
-            </li>
-            <li><a href="#notice-board-column">Notice</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)">Club Activity <i class="fa-solid fa-angle-down"
-                        style="color: #333;"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Scout</a></li>
-                    <li><a href="#">IT Club</a></li>
-                    <li><a href="#">English Club</a></li>
-                    <li><a href="#">Debating Club</a></li>
-                    <li><a href="#">Science Club</a></li>
-                    <li><a href="#">Sports Club</a></li>
-                </ul>
-            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Programs</a></li>
+            <li><a href="#">Departments</a></li>
+            <li><a href="#">Academic</a></li>
+            <li><a href="#">Notice</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
 
@@ -310,7 +211,6 @@
         const toggler = document.getElementById('toggler');
         const navLinks = document.getElementById('nav-links');
         const closeBtn = document.getElementById('close-btn');
-        const dropdowns = document.querySelectorAll('.dropdown');
 
         toggler.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -318,16 +218,6 @@
 
         closeBtn.addEventListener('click', () => {
             navLinks.classList.remove('active');
-        });
-
-        // Toggle dropdown on tap
-        dropdowns.forEach(dropdown => {
-            dropdown.addEventListener('click', (e) => {
-                // Prevent click from propagating to parent
-                e.stopPropagation();
-
-                dropdown.classList.toggle('active');
-            });
         });
     </script>
 </body>
