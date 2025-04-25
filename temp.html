@@ -165,24 +165,27 @@
             }
 
             .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 85%;
+                height: 100%;
                 background-color: #ffffff;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                border-radius: 15px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 60px;
+                box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+                transition: right 0.5s ease;
             }
 
             .nav-links.active {
-                display: flex;
+                right: 0;
             }
 
             .nav-links li {
                 text-align: center;
+                border-bottom: 1px solid #dedede;
             }
 
             .dropdown-menu {
@@ -199,6 +202,21 @@
             .right-options {
                 display: none;
             }
+
+            /* Close Button */
+            .close-btn {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                font-size: 30px;
+                cursor: pointer;
+                color: #333;
+            }
+        }
+
+        /* Add styles for dropdown toggle */
+        .dropdown.active .dropdown-menu {
+            display: block;
         }
     </style>
 </head>
@@ -218,9 +236,12 @@
 
         <!-- Navigation Menu -->
         <ul class="nav-links" id="nav-links">
+            <!-- Close Button -->
+            <span class="close-btn" id="close-btn">&times;</span>
+
             <li><a href="https://daniacollege.edu.bd/">Home</a></li>
             <li class="dropdown">
-                <a href="#">About <i class="fa-solid fa-angle-down" style="color: #333;"></i></a>
+                <a href="javascript:void(0)">About <i class="fa-solid fa-angle-down" style="color: #333;"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="#">About</a></li>
                     <li><a href="#">History</a></li>
@@ -228,14 +249,14 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#">Programs <i class="fa-solid fa-angle-down" style="color: #333;"></i></a>
+                <a href="javascript:void(0)">Programs <i class="fa-solid fa-angle-down" style="color: #333;"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="#">HSC</a></li>
                     <li><a href="#">Hon's</a></li>
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#">Departments <i class="fa-solid fa-angle-down" style="color: #333;"></i></a>
+                <a href="javascript:void(0)">Departments <i class="fa-solid fa-angle-down" style="color: #333;"></i></a>
                 <ul class="dropdown-menu multi-column">
                     <li><a href="bangla.html">Bangla</a></li>
                     <li><a href="english.html">English</a></li>
@@ -255,7 +276,7 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#">Academic <i class="fa-solid fa-angle-down" style="color: #333;"></i></a>
+                <a href="javascript:void(0)">Academic <i class="fa-solid fa-angle-down" style="color: #333;"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="#">Result</a></li>
                     <li><a href="academic-calendar.html">Calendar</a></li>
@@ -264,7 +285,8 @@
             </li>
             <li><a href="#notice-board-column">Notice</a></li>
             <li class="dropdown">
-                <a href="#">Club Activity <i class="fa-solid fa-angle-down" style="color: #333;"></i></a>
+                <a href="javascript:void(0)">Club Activity <i class="fa-solid fa-angle-down"
+                        style="color: #333;"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="#">Scout</a></li>
                     <li><a href="#">IT Club</a></li>
@@ -283,6 +305,31 @@
             <a href="https://manage.expresssolutionltd.com/login" class="btn">Portal</a>
         </div>
     </nav>
+
+    <script>
+        const toggler = document.getElementById('toggler');
+        const navLinks = document.getElementById('nav-links');
+        const closeBtn = document.getElementById('close-btn');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        toggler.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+
+        // Toggle dropdown on tap
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
+                // Prevent click from propagating to parent
+                e.stopPropagation();
+
+                dropdown.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
