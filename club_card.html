@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>দনিয়া কলেজ ক্লাব রেজিস্ট্রেশন</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f7f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #003366;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h2 {
+            color: #003366;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: #444;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card button {
+            background: #003366;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .card button:hover {
+            background: #00509e;
+        }
+
+        @media screen and (max-width: 500px) {
+            header h1 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>দনিয়া কলেজ - ক্লাব রেজিস্ট্রেশন</h1>
+        <p>নতুন সদস্য নিবন্ধন এখন চলছে!</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>ডিবেটিং ক্লাব (DCDC)</h2>
+            <p>যৌক্তিক চিন্তা ও যুক্তি উপস্থাপনার চর্চা করো এই ক্লাবের মাধ্যমে।</p>
+            <button onclick="register('debate')">রেজিস্টার করো</button>
+        </div>
+
+        <div class="card">
+            <h2>বিজনেস ক্লাব (DCBC)</h2>
+            <p>উদ্যোক্তা হবার স্বপ্ন বাস্তবে রূপ দিতে বিজনেস ক্লাব তোমার পাশে।</p>
+            <button onclick="register('business')">রেজিস্টার করো</button>
+        </div>
+
+        <div class="card">
+            <h2>আইটি ক্লাব (DCITC)</h2>
+            <p>প্রযুক্তির জগতে দক্ষ হতে এখনই যোগ দাও আইটি ক্লাবে।</p>
+            <button onclick="register('it')">রেজিস্টার করো</button>
+        </div>
+
+        <div class="card">
+            <h2>সায়েন্স ক্লাব (DCSC)</h2>
+            <p>বিজ্ঞানভিত্তিক কার্যক্রম ও উদ্ভাবনে আগ্রহীদের জন্য সেরা স্থান।</p>
+            <button onclick="register('science')">রেজিস্টার করো</button>
+        </div>
+
+        <div class="card">
+            <h2>ইংলিশ ল্যাঙ্গুয়েজ ক্লাব (DCELC)</h2>
+            <p>ইংরেজি দক্ষতা বৃদ্ধির মাধ্যমে আত্মবিশ্বাস গড়ে তোলার অনন্য সুযোগ।</p>
+            <button onclick="register('english')">রেজিস্টার করো</button>
+        </div>
+    </div>
+
+    <script>
+        function register(club) {
+            const links = {
+                debate: "https://example.com/debate-form",
+                business: "https://example.com/business-form",
+                it: "https://example.com/it-form",
+                science: "https://example.com/science-form",
+                english: "https://example.com/english-form"
+            };
+            window.open(links[club], "_blank");
+        }
+    </script>
+
+</body>
+
+</html>
