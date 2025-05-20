@@ -108,43 +108,58 @@
         <label>নাম</label>
         <input type="text" name="entry.1069896619" required>
 
-        <label>Father's Name</label>
+        <label>পিতার নাম</label>
         <input type="text" name="entry.208089388" required>
 
-        <label>Mother's Name</label>
+        <label>মাতার নাম</label>
         <input type="text" name="entry.999048099" required>
 
-        <label>Current Address</label>
+        <label>বর্তমান ঠিকানা</label>
         <input type="text" name="entry.654648927" required>
 
-        <label>Permanent Address</label>
+        <label>স্থায়ী ঠিকানা</label>
         <input type="text" name="entry.1606405028" required>
 
-        <label>Department</label>
+        <label>শ্রেণি/ডিপার্টমেন্ট</label>
         <input type="text" name="entry.2061569383" required>
 
-        <label>Student ID</label>
+        <label>স্টুডেন্ট আইডি</label>
         <input type="text" name="entry.1359884176" required>
 
-        <label>Semester/Year</label>
+        <label>সেমিস্টার/বর্ষ</label>
         <input type="text" name="entry.981534359" required>
 
-        <label>Email</label>
+        <label>ইমেইল</label>
         <input type="email" name="entry.428045795" required>
 
-        <label>Phone</label>
+        <label>ফোন</label>
         <input type="tel" name="entry.1452652960" required>
 
-        <label>IT Skills and Experiences (if any)</label>
+        <label>পূর্ব অভিজ্ঞতা</label>
         <textarea name="entry.1463392544" rows="3"></textarea>
 
-        <label>Date of Birth</label>
+        <label>জন্ম তারিখ</label>
         <input type="date" name="entry.105301702" required>
 
         <!-- <label>Photo (link from Drive, Imgur, etc.)</label>
         <input type="url" name="entry.2028238870" required> -->
 
+        <!-- Declaration Checkbox -->
+        <label style="margin-top: 20px;">
+            <input type="checkbox" id="declarationCheckbox" style="margin-right: 8px;" />
+            <h3>অঙ্গীকারনামা:</h3>
+            <p>আমি (নিম্ন স্বাক্ষরকারী) ক্লাবের বিধি-বিধান ও নিয়মনীতি মেনে সদস্যভুক্ত হওয়ার জন্য আবেদন করছি। সার্বিক
+                বিবেচনায় আমাকে সদস্যভূক্ত করার জন্য অনুরোধ করছি।</p>
+        </label>
         <button type="submit">জমা দিন</button>
+        <script>
+            const checkbox = document.getElementById('declarationCheckbox');
+            const submitButton = document.getElementById('submitButton');
+
+            checkbox.addEventListener('change', function () {
+                submitButton.disabled = !this.checked;
+            });
+        </script>
     </form>
 
 </body>
