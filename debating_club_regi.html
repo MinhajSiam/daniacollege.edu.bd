@@ -146,20 +146,11 @@
 
         <!-- Declaration Checkbox -->
         <label style="margin-top: 20px;">
-            <input type="checkbox" id="declarationCheckbox" style="margin-right: 8px;" />
             <h3>অঙ্গীকারনামা:</h3>
             <p>আমি (নিম্ন স্বাক্ষরকারী) ক্লাবের বিধি-বিধান ও নিয়মনীতি মেনে সদস্যভুক্ত হওয়ার জন্য আবেদন করছি। সার্বিক
                 বিবেচনায় আমাকে সদস্যভূক্ত করার জন্য অনুরোধ করছি।</p>
         </label>
         <button type="submit">জমা দিন</button>
-        <script>
-            const checkbox = document.getElementById('declarationCheckbox');
-            const submitButton = document.getElementById('submitButton');
-
-            checkbox.addEventListener('change', function () {
-                submitButton.disabled = !this.checked;
-            });
-        </script>
     </form>
 
 </body>
