@@ -42,6 +42,247 @@
     <!-- ✅ Favicon -->
     <link rel="icon" href="Semi-Transparent Logo.png" type="image/x-icon" />
     <style>
+        /* Navigation Bar */
+        .navbar {
+            /* display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #16A34A;
+            background-color: #fff;
+            padding: 10px 20px;
+            color: white;
+            color: #000; */
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* border-radius: 15px; */
+            margin: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Logo */
+        .logo img {
+            width: 60px;
+            height: 60px;
+        }
+
+        /* Hamburger Toggler */
+        .toggler {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            color: #000;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            transition: background 0.3s;
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .nav-links a:hover {
+            background-color: #16A34A;
+            border-radius: 3px;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            list-style: none;
+            padding: 0;
+            min-width: 150px;
+            z-index: 1;
+        }
+
+        .dropdown-menu li a {
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Sub-Dropdown Menu */
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu-list {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: #16A34A;
+            list-style: none;
+            padding: 0;
+            min-width: 150px;
+            z-index: 1;
+        }
+
+        .dropdown-submenu:hover .dropdown-submenu-list {
+            display: block;
+        }
+
+        .dropdown-submenu-list li a {
+            padding: 10px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .dropdown-submenu-list li a:hover {
+            background-color: #34495e;
+        }
+
+        /* Multi-column dropdown menu */
+        .dropdown-menu.multi-column {
+            column-count: 3;
+            column-gap: 20px;
+            width: 450px;
+        }
+
+        .dropdown-menu.multi-column li {
+            break-inside: avoid;
+        }
+
+        /* Right Side Options */
+        .right-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .right-options .btn {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .right-options .btn:hover {
+            background-color: #2c3e50 !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .toggler {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #ececec;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                text-align: center;
+            }
+
+            .dropdown-menu {
+                position: static;
+            }
+
+            .right-options {
+                display: none;
+            }
+
+            .dropdown-menu.multi-column {
+                column-count: 1;
+                width: 100%;
+            }
+        }
+
+        /* Navbar end */
+
+        /* Horizontal Scrolling Notice Section */
+        .notice-section {
+            width: 100%;
+            background-color: #f9f9f9;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: background-color 0.5s ease;
+        }
+
+        .notice-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .notice-ticker {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: scrollTicker 60s linear infinite;
+        }
+
+        .notice-item {
+            display: inline-block;
+            padding: 0 20px;
+            font-size: 18px;
+            color: #2c3e50;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .notice-item:hover {
+            color: #3498db;
+        }
+
+        /* Pause scrolling on hover */
+        .notice-container:hover .notice-ticker {
+            animation-play-state: paused;
+        }
+
+        /* Keyframes for continuous scrolling */
+        @keyframes scrollTicker {
+            0% {
+                transform: translateX(5%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
         body {
             font-family: 'Segoe UI', sans-serif;
             background: #f4f7f9;
@@ -120,47 +361,157 @@
 </head>
 
 <body>
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <a style="text-decoration: none; color: #16A34A; font-weight: 700; font-size: 30px;display: flex; align-items: center; justify-content: center;"
+                href="#"><img src="Semi-Transparent Logo.png" alt="Logo">
+                <span style="padding-left: 10px; font-family: 'Poppins', sans-serif;">DANIA COLLEGE</span></a>
+        </div>
+
+        <!-- Hamburger Toggler -->
+        <div class="toggler" id="toggler">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="https://daniacollege.edu.bd/">Home</a></li>
+            <li class="dropdown">
+                <a href="#">About <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="#">Governing Body</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Programs <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">HSC</a></li>
+                    <li><a href="#">Hon's</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Departments <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+                <ul class="dropdown-menu multi-column">
+                    <li><a href="bangla.html">Bangla</a></li>
+                    <li><a href="english.html">English</a></li>
+                    <li><a href="ict.html">ICT</a></li>
+                    <li><a href="statistics.html">Statistics</a></li>
+                    <li><a href="accounting.html">Accounting</a></li>
+                    <li><a href="finance.html">Finance</a></li>
+                    <li><a href="management.html">Management</a></li>
+                    <li><a href="marketing.html">Marketing</a></li>
+                    <li><a href="bba.html">BBA Professional</a></li>
+                    <li><a href="economics.html">Economics</a></li>
+                    <li><a href="islamicHistory.html">Islamic History</a></li>
+                    <li><a href="islamicStudies.html">Islamic Studies</a></li>
+                    <li><a href="politicalScience.html">Political Science</a></li>
+                    <li><a href="geography.html">Geography</a></li>
+                    <li><a href="philosophy.html">Philosophy</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Academic <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Result</a></li>
+                    <li><a href="academic-calendar.html">Calendar</a></li>
+                    <li><a href="#">Class Routine</a></li>
+                </ul>
+            </li>
+            <li><a href="#notice-board-column">Notice</a></li>
+            <li class="dropdown"><a href="#">Activity <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Scout</a></li>
+                    <li><a href="alumni2.html">Alumni</a></li>
+                    <li><a href="club_card/index.html">Club Activity</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <!-- Right Side Options -->
+        <div class="right-options">
+            <a href="apply.html" class="btn" style="background-color: #FFA516; font-weight: 700;">Admission</a>
+            <a href="https://manage.expresssolutionltd.com/login" class="btn"
+                style="background-color: #53cc40; font-weight: 700;">Portal</a>
+        </div>
+    </nav>
+
+    <!-- Horizontal Scrolling Notice Section -->
+    <div class="notice-section">
+        <div class="notice-container">
+            <div class="notice-ticker" id="notice-ticker">
+                <a href="#" class="notice-item" data-pdf="Notices/2025 February/notice-12.02.2025-01.pdf">Latest: [
+                    <span style="color: red; font-weight: 700;">জরুরী বিজ্ঞপ্তি</span>
+                    ] (২০২৪-২০২৫) শিক্ষাবর্ষে একাদশ শ্রেণিতে ম্যানুয়ালের মাধ্যমে ভর্তিকৃত শিক্ষার্থীদের জন্য
+                    জরুরী বিজ্ঞপ্তি।</a>
+                <a href="#" class="notice-item" data-pdf="Notices/2025 February/notice-10.02.2025-02.jpg">10-02-2025: [
+                    <span style="color: red; font-weight: 700;">সংশোধিত রুটিন</span>
+                    ] উচ্চমাধ্যমিক ১ম বর্ষ অর্ধবার্ষিক পরীক্ষা ২০২৫।</a>
+                <a href="#" class="notice-item">10-02-2025: মাঘী পূর্ণিমা উপলক্ষ্যে আগামী
+                    ১১-০২-২০২৫ তারিখ মঙ্গলবার কলেজ বন্ধ থাকবে।</a>
+                <a href="#" class="notice-item">06-02-2025: বিবিএ (প্রফেশনাল) ২য় সেমিস্টার পরীক্ষার ফরম পূরণের
+                    বিজ্ঞপ্তি।</a>
+                <a href="#" class="notice-item">05-02-2025: প্রতিষ্ঠানের নিরাপত্তা সংক্রান্ত জরুরী বিজ্ঞপ্তি।</a>
+                <a href="#" class="notice-item">05-02-2025: বিবিএ (অনার্স) প্রফেশনাল ভর্তি কার্যক্রমে ২য় ও সর্বশেষ রিলিজ
+                    স্লিপের মেধা তালিকা প্রকাশ ও ভর্তি বিজ্ঞপ্তি।</a>
+                <a href="#" class="notice-item">04-02-2025: [ <span style="color: red; font-weight: 700;">সংশোধিত</span>
+                    ] উচ্চমাধ্যমিক নির্বাচনি (ব্যবহারিক)
+                    পরীক্ষা ২০২৫
+                    রুটিন।</a>
+                <a href="#" class="notice-item">02-02-2025: ২০২৩-২০২৪ শিক্ষাবর্ষে ১ম বর্ষ ডিগ্রী (পাস) কোর্সে ২য় রিলিজ
+                    স্লিপের মাধ্যমে ভর্তি বিজ্ঞপ্তি।</a>
+                <a href="#" class="notice-item">02-02-2025: ২০২৩ সালের অনার্স তৃতীয় বর্ষ পরীক্ষার ফরম পূরণের সম্পূরক
+                    বিজ্ঞপ্তি।</a>
+                <a href="#" class="notice-item">02-02-2025: অনার্স ৩য় বর্ষ পরীক্ষার ফরম পূরনের সময় বৃদ্ধির
+                    বিজ্ঞপ্তি।</a>
+            </div>
+        </div>
+    </div>
+
 
     <header>
         <h1>Dania College Club Registration</h1>
-        <p>Registration ongoing!</p>
+        <p style="font-size: 18px;">Complete you registration by: <b>31 May 2025</b></p>
     </header>
 
     <div class="container">
         <div class="card">
             <h2>ডিবেটিং ক্লাব (DCDC)</h2>
             <p>যৌক্তিক চিন্তা ও যুক্তি উপস্থাপনার চর্চা করো এই ক্লাবের মাধ্যমে।</p>
-            <button onclick="register('debate')">রেজিস্টার করো</button>
+            <button onclick="register('debate')">রেজিস্ট্রেশন করো</button>
         </div>
 
         <div class="card">
             <h2>বিজনেস ক্লাব (DCBC)</h2>
             <p>উদ্যোক্তা হবার স্বপ্ন বাস্তবে রূপ দিতে বিজনেস ক্লাব তোমার পাশে।</p>
-            <button onclick="register('business')">রেজিস্টার করো</button>
+            <button onclick="register('business')">রেজিস্ট্রেশন করো</button>
         </div>
 
         <div class="card">
             <h2>আইটি ক্লাব (DCITC)</h2>
             <p>প্রযুক্তির জগতে দক্ষ হতে এখনই যোগ দাও আইটি ক্লাবে।</p>
-            <button onclick="register('it')">রেজিস্টার করো</button>
+            <button onclick="register('it')">রেজিস্ট্রেশন করো</button>
         </div>
 
         <div class="card">
             <h2>সায়েন্স ক্লাব (DCSC)</h2>
             <p>বিজ্ঞানভিত্তিক কার্যক্রম ও উদ্ভাবনে আগ্রহীদের জন্য সেরা স্থান।</p>
-            <button onclick="register('science')">রেজিস্টার করো</button>
+            <button onclick="register('science')">রেজিস্ট্রেশন করো</button>
         </div>
 
         <div class="card">
             <h2>ইংলিশ ল্যাঙ্গুয়েজ ক্লাব (DCELC)</h2>
             <p>ইংরেজি দক্ষতা বৃদ্ধির মাধ্যমে আত্মবিশ্বাস গড়ে তোলার অনন্য সুযোগ।</p>
-            <button onclick="register('english')">রেজিস্টার করো</button>
+            <button onclick="register('english')">রেজিস্ট্রেশন করো</button>
         </div>
 
         <div class="card">
             <h2>সাংস্কৃতিক ক্লাব (DCCC)</h2>
             <p>নৃত্য, সংগীত, আবৃত্তি ও নাটকে আগ্রহীদের জন্য সৃজনশীল মঞ্চ।</p>
-            <button onclick="register('cultural')">রেজিস্টার করো</button>
+            <button onclick="register('cultural')">রেজিস্ট্রেশন করো</button>
         </div>
     </div>
 
@@ -177,6 +528,15 @@
             window.open(links[club], "_blank");
         }
     </script>
+
+    <footer>
+        <div style="text-align: center; padding: 20px; background-color: #16A34A; color: white;">
+            <p>&copy; 2025 দনিয়া কলেজ। সকল অধিকার সংরক্ষিত।
+                Developed by <a href="https://github.com/minhajsiam" target="_blank"
+                    style="text-decoration: none; color: white;"><b>A.
+                        K. M Minhajur
+                        Rahman Siam</b></a>
+    </footer>
 
 </body>
 
