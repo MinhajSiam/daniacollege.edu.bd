@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .notice-table {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .notice-row {
+            display: table-row;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .cell {
+            display: table-cell;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .header {
+            background-color: #1a2a3a;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* মোবাইল রেসপন্সিভ */
+        @media screen and (max-width: 768px) {
+            .notice-table {
+                display: block;
+            }
+
+            .notice-row {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .cell {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .cell::before {
+                content: attr(data-label);
+                font-weight: bold;
+                flex-basis: 40%;
+                color: #555;
+            }
+
+            .header {
+                display: none;
+                /* মোবাইলে হেডার লুকিয়ে রাখা হবে */
+            }
+        }
+    </style>
+
+    <div class="notice-table">
+        <div class="notice-row header">
+            <div class="cell">Date</div>
+            <div class="cell">Notice</div>
+            <div class="cell">Download</div>
+        </div>
+
+        <div class="notice-row">
+            <div class="cell" data-label="Date">27-05-2025</div>
+            <div class="cell" data-label="Notice">[ জরুরী বিজ্ঞপ্তি ] Hon's Admission Test 2024-2025 Seat Plan</div>
+            <div class="cell" data-label="Download"><button>⬇</button></div>
+        </div>
+
+        <!-- আরও row এখানে থাকবে -->
+    </div>
+
+</body>
+
+</html>
