@@ -1014,7 +1014,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="about.html">About</a></li>
                     <li><a href="history.html">History</a></li>
-                    <li><a href="#">Principal</a></li>
+                    <li><a href="principal.html">Principal</a></li>
                     <li><a href="#">Governing Body</a></li>
                 </ul>
             </li>
@@ -1038,7 +1038,7 @@
                     <li><a href="marketing.html">Marketing</a></li>
                     <li><a href="bba.html">BBA Professional</a></li>
                     <li><a href="economics.html">Economics</a></li>
-                    <li><a href="islamicHistory.html">Islamic History</a></li>
+                    <li><a href="islamicHistory.html">Islamic History & Culture</a></li>
                     <li><a href="islamicStudies.html">Islamic Studies</a></li>
                     <li><a href="politicalScience.html">Political Science</a></li>
                     <li><a href="geography.html">Geography</a></li>
@@ -1115,16 +1115,16 @@
     </div>
 
 
-    <!-- Carousel এর পর এই সেকশন যুক্ত করো -->
+    <!-- ===== Video Section Start ===== -->
     <section class="promo-video-section">
         <div class="video-container">
             <h2 class="video-title">আমাদের কলেজ পরিচিতি</h2>
             <div class="video-wrapper">
-                <video id="promoVideo" autoplay muted loop playsinline>
-                    <source src="video/promo.mp4" type="video/mp4">
+                <video autoplay muted loop controls playsinline>
+                    <source src="assets/videos/promo.mp4" type="video/mp4">
                     আপনার ব্রাউজার ভিডিও চালাতে সক্ষম নয়।
                 </video>
-                <!-- Overlay Text -->
+                <!-- Overlay Text (Optional) -->
                 <div class="video-overlay">
                     <h3>শিক্ষা, সংস্কৃতি ও উন্নয়নের এক অনন্য স্থান</h3>
                 </div>
@@ -1169,24 +1169,18 @@
         /* Overlay Text */
         .video-overlay {
             position: absolute;
-            top: 50%;
+            bottom: 15px;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 10px;
             color: #fff;
-            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.2rem;
+            font-weight: 500;
         }
     </style>
 
-    <script>
-        // Optional: ভিডিও mute না থাকলে autoplay সমস্যা হতে পারে
-        document.addEventListener("DOMContentLoaded", function () {
-            let video = document.getElementById("promoVideo");
-            video.muted = true; // নিশ্চিত করে যে ভিডিও autoplay হবে
-            video.play();
-        });
-    </script>
 
 
     <!-- Admission sidebar -->
