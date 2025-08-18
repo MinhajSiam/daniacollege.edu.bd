@@ -1114,6 +1114,81 @@
         <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
     </div>
 
+
+    <!-- Carousel এর পর এই সেকশন যুক্ত করো -->
+    <section class="promo-video-section">
+        <div class="video-container">
+            <h2 class="video-title">আমাদের কলেজ পরিচিতি</h2>
+            <div class="video-wrapper">
+                <video id="promoVideo" autoplay muted loop playsinline>
+                    <source src="video/promo.mp4" type="video/mp4">
+                    আপনার ব্রাউজার ভিডিও চালাতে সক্ষম নয়।
+                </video>
+                <!-- Overlay Text -->
+                <div class="video-overlay">
+                    <h3>শিক্ষা, সংস্কৃতি ও উন্নয়নের এক অনন্য স্থান</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Video Section Styling */
+        .promo-video-section {
+            background: #f9f9f9;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .video-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .video-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+        }
+
+        /* Overlay Text */
+        .video-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+    </style>
+
+    <script>
+        // Optional: ভিডিও mute না থাকলে autoplay সমস্যা হতে পারে
+        document.addEventListener("DOMContentLoaded", function () {
+            let video = document.getElementById("promoVideo");
+            video.muted = true; // নিশ্চিত করে যে ভিডিও autoplay হবে
+            video.play();
+        });
+    </script>
+
+
     <!-- Admission sidebar -->
     <style>
         .admission-box {
@@ -1690,6 +1765,9 @@
             eventsList.appendChild(eventElement);
         });
     </script>
+
+
+
 </body>
 
 </html>
