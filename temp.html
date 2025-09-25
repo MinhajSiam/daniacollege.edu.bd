@@ -1,351 +1,288 @@
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
-    rel="stylesheet">
-
-
 <style>
-    body {
-        font-family: 'Roboto', sans-serif;
-        color: #1f2937;
+    :root {
+        --card-gap: 20px;
+        --dot-size: 10px;
     }
 
-    .card h3 {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        font-size: 20px;
+    .events-section {
+        padding: 40px 24px;
+        background: #f7f8fb;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 20px;
+        font-weight: 700;
         color: #111827;
     }
 
-    .card p {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        font-size: 15px;
-        color: #4b5563;
-    }
-
-    /* Layout */
-    .carousel-section {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        align-items: stretch;
-        max-width: 98%;
-        margin: 0 auto 20px auto;
-    }
-
-    /* Carousel */
-    .carousel {
+    .event-carousel-container {
         position: relative;
-        flex: 4;
-        /* Desktop এ Carousel বড় */
-        min-width: 300px;
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .carousel-inner {
         display: flex;
-        transition: transform 0.5s ease-in-out;
-        width: 100%;
+        align-items: center;
+        overflow: hidden;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    .carousel-item {
-        min-width: 100%;
+    .event-carousel {
+        display: flex;
+        gap: var(--card-gap);
+        transition: transform 0.45s cubic-bezier(.22, .9, .35, 1);
+        will-change: transform;
+        padding: 10px 4px;
+    }
+
+    .event-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+        overflow: hidden;
+        width: 280px;
         flex-shrink: 0;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .carousel-item img {
+    .event-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.09);
+    }
+
+    .event-card img {
         width: 100%;
-        max-height: 550px;
-        object-fit: cover;
-        border-radius: 12px;
-    }
-
-    .carousel-item.active {
-        display: block;
-    }
-
-    .carousel-item img {
-        width: 100%;
-        max-height: 550px;
+        height: 170px;
         object-fit: cover;
         display: block;
-        border-radius: 12px;
     }
 
-    /* Navigation Buttons */
-    .carousel-control {
+    .event-info {
+        padding: 14px 16px 18px;
+        text-align: left;
+    }
+
+    .event-info h3 {
+        font-size: 1.02rem;
+        margin: 0 0 8px 0;
+        color: #0f172a;
+    }
+
+    .event-info p {
+        margin: 0;
+        color: #6b7280;
+        font-size: 0.92rem;
+    }
+
+    .event-nav {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 48px;
-        height: 48px;
+        background: #ffffff;
+        border: none;
+        padding: 10px;
+        font-size: 20px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.08);
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(6px);
-        color: #fff;
-        font-size: 24px;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        z-index: 10;
+        z-index: 30;
     }
 
-    .carousel-control.prev {
-        left: 15px;
+    .event-nav.prev {
+        left: 6px;
     }
 
-    .carousel-control.next {
-        right: 15px;
+    .event-nav.next {
+        right: 6px;
     }
 
-    .carousel-control:hover {
-        background: rgba(255, 255, 255, 0.4);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        transform: translateY(-50%) scale(1.1);
-    }
-
-    /* Indicators */
-    .carousel-indicators {
-        position: absolute;
-        bottom: 15px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 6px;
-        width: 80%;
-        justify-content: center;
-        z-index: 11;
-    }
-
-    .carousel-indicators div {
-        flex: 1;
-        height: 4px;
-        background: rgba(255, 255, 255, 0.4);
-        border-radius: 2px;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .carousel-indicators div span {
-        display: block;
-        height: 100%;
-        width: 0%;
-        background: #ffffff;
-        transition: width 5s linear;
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
-
-    .carousel-indicators button {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        border: none;
-        background: rgba(255, 255, 255, 0.5);
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .carousel-indicators button.active {
+    .event-nav:hover {
         background: #16A34A;
-        /* নীল বা ব্র্যান্ড কালার */
+        transition: 0.7s ease;
+    }
+
+    .event-nav:disabled {
+        opacity: 0.45;
+        cursor: default;
+        pointer-events: none;
+    }
+
+    /* Pagination Dots */
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+        gap: 8px;
+    }
+
+    .carousel-dot {
+        width: var(--dot-size);
+        height: var(--dot-size);
+        background: #d1d5db;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .carousel-dot.active {
+        background: #16A34A;
         transform: scale(1.2);
     }
 
-
-    /* Side Cards */
-    .side-cards {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+    /* responsive card widths */
+    @media (max-width: 1200px) {
+        .event-card {
+            width: 250px;
+        }
     }
 
-    .card {
-        flex: 1;
-        background: #fff;
-        border-radius: 14px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        text-align: center;
-        padding: 25px 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    @media (max-width: 1024px) {
+        .event-card {
+            width: 220px;
+        }
     }
 
-    .card::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: #16A34A;
-        border-bottom-left-radius: 14px;
-        border-bottom-right-radius: 14px;
-    }
-
-    .card:hover {
-        transform: translateY(-5px) scale(1.02);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .card img {
-        width: 120px;
-        height: 120px;
-        border-radius: 8px;
-        /* বর্গাকৃতি */
-        object-fit: cover;
-        margin: 0 auto 15px auto;
-        border: 3px solid #e5e7eb;
-        transition: transform 0.3s ease;
-    }
-
-    .card:hover img {
-        transform: scale(1.05);
-    }
-
-    .card h3 {
-        margin: 8px 0;
-        font-size: 20px;
-        font-weight: 700;
-        color: #1f2937;
-    }
-
-    .card p {
-        margin: 0;
-        font-size: 15px;
-        color: #555;
-        font-weight: 500;
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-        .carousel-section {
-            flex-direction: column;
+        .event-card {
+            width: 180px;
         }
+    }
 
-        .carousel {
-            flex: 1;
-        }
-
-        .carousel-item img {
-            max-height: 300px;
-            /* মোবাইল এ height কম */
-        }
-
-        .side-cards {
-            flex-direction: column;
-        }
-
-        .card {
-            width: 100%;
-            max-width: 100%;
-        }
-
-        .carousel-control {
-            width: 40px;
-            height: 40px;
-            font-size: 20px;
+    @media (max-width: 480px) {
+        .event-card {
+            width: calc(100% - 48px);
         }
     }
 </style>
 
+<section class="events-section">
+    <h2 class="section-title">Upcoming Events</h2>
 
-<!-- Carousel + Side Cards Section -->
-<div class="carousel-section">
-    <!-- Carousel -->
-    <div class="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="cover 2.jpg" alt="Dania College Cover Photo">
+    <div class="event-carousel-container">
+        <button class="event-nav prev" aria-label="Previous events">&#10094;</button>
+
+        <div class="event-carousel">
+            <div class="event-card">
+                <img src="assets/images/event1.jpg" alt="Annual Cultural Fest">
+                <div class="event-info">
+                    <h3>Annual Cultural Fest</h3>
+                    <p>📅 12 October 2025</p>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="cover 2.jpg" alt="Dania College Cover Photo">
+            <div class="event-card">
+                <img src="assets/images/event2.jpg" alt="Science Fair">
+                <div class="event-info">
+                    <h3>Science Fair</h3>
+                    <p>📅 20 October 2025</p>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="cover 2.jpg" alt="Dania College Cover Photo">
+            <div class="event-card">
+                <img src="assets/images/event3.jpg" alt="Sports Week">
+                <div class="event-info">
+                    <h3>Sports Week</h3>
+                    <p>📅 5 November 2025</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="assets/images/event4.jpg" alt="Debate Competition">
+                <div class="event-info">
+                    <h3>Debate Competition</h3>
+                    <p>📅 18 November 2025</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="assets/images/event5.jpg" alt="Study Tour">
+                <div class="event-info">
+                    <h3>Study Tour</h3>
+                    <p>📅 30 November 2025</p>
+                </div>
             </div>
         </div>
 
-        <!-- Navigation Buttons -->
-        <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
-        <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
-
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-            <div><span></span></div>
-            <div><span></span></div>
-            <div><span></span></div>
-        </div>
-
+        <button class="event-nav next" aria-label="Next events">&#10095;</button>
     </div>
 
-    <!-- Side Cards -->
-    <div class="side-cards">
-        <div class="card">
-            <img src="president.jpg" alt="President">
-            <h3></h3>
-            <p>President (Governing Body)</p>
-        </div>
-        <div class="card">
-            <img src="principal.jpg" alt="Principal">
-            <h3>Juela Zebunnessa Khan</h3>
-            <p>Principal (Acting)</p>
-        </div>
-    </div>
-</div>
-
+    <div class="carousel-dots"></div>
+</section>
 
 <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-item');
-    const indicators = document.querySelectorAll('.carousel-indicators div');
-    const carouselInner = document.querySelector('.carousel-inner');
-    let interval;
+    (function () {
+        const container = document.querySelector('.event-carousel-container');
+        const carousel = container.querySelector('.event-carousel');
+        const cards = Array.from(carousel.querySelectorAll('.event-card'));
+        const prevBtn = container.querySelector('.event-nav.prev');
+        const nextBtn = container.querySelector('.event-nav.next');
+        const dotsContainer = document.querySelector('.carousel-dots');
 
-    function showSlide(index) {
-        currentSlide = (index + slides.length) % slides.length;
-        carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+        let cardWidth = 0, gap = 20, visibleCount = 4, maxIndex = 0, currentIndex = 0;
+        let autoplayInterval = null;
+        const autoplayDelay = 3000;
 
-        // Reset all progress bars
-        indicators.forEach((bar, i) => {
-            bar.querySelector('span').style.width = '0%';
-        });
+        // --- Pagination dots ---
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i <= maxIndex; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
+                dot.addEventListener('click', () => { currentIndex = i; updateCarousel(); updateButtons(); });
+                dotsContainer.appendChild(dot);
+            }
+        }
 
-        // Animate current progress bar
-        setTimeout(() => {
-            indicators[currentSlide].querySelector('span').style.transition = 'width 5s linear';
-            indicators[currentSlide].querySelector('span').style.width = '100%';
-        }, 50);
-    }
+        function updateDots() {
+            Array.from(dotsContainer.children).forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
 
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
+        function calculateSizes() {
+            gap = parseFloat(getComputedStyle(carousel).gap) || 20;
+            cardWidth = cards[0].getBoundingClientRect().width;
+            const containerWidth = container.getBoundingClientRect().width;
+            const step = cardWidth + gap;
+            visibleCount = Math.floor(containerWidth / step) || 1;
+            maxIndex = Math.max(0, cards.length - visibleCount);
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            updateCarousel(false);
+            updateButtons();
+            createDots();
+        }
 
-    // Auto-play
-    interval = setInterval(nextSlide, 5000);
+        function updateCarousel(animate = true) {
+            const step = cardWidth + gap;
+            const x = step * currentIndex;
+            if (!animate) { carousel.style.transition = 'none'; requestAnimationFrame(() => { carousel.style.transform = `translateX(-${x}px)`; requestAnimationFrame(() => carousel.style.transition = ''); }); }
+            else carousel.style.transform = `translateX(-${x}px)`;
+            updateDots();
+        }
 
-    // First slide
-    showSlide(currentSlide);
+        function updateButtons() {
+            prevBtn.disabled = currentIndex <= 0;
+            nextBtn.disabled = currentIndex >= maxIndex;
+        }
 
-    // Optional: navigation buttons
-    function prevSlide() {
-        showSlide(currentSlide - 1);
-    }
+        // Navigation
+        nextBtn.addEventListener('click', () => { if (currentIndex < maxIndex) { currentIndex++; updateCarousel(); updateButtons(); } });
+        prevBtn.addEventListener('click', () => { if (currentIndex > 0) { currentIndex--; updateCarousel(); updateButtons(); } });
 
-    function goToSlide(index) {
-        showSlide(index);
-    }
+        // Autoplay
+        function startAutoplay() { stopAutoplay(); autoplayInterval = setInterval(() => { if (currentIndex < maxIndex) { currentIndex++; } else { currentIndex = 0; } updateCarousel(); updateButtons(); }, autoplayDelay); }
+        function stopAutoplay() { if (autoplayInterval) { clearInterval(autoplayInterval); autoplayInterval = null; } }
+        container.addEventListener('mouseenter', stopAutoplay);
+        container.addEventListener('mouseleave', startAutoplay);
 
+        // Swipe Support
+        let startX = 0, isDown = false;
+        carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; isDown = true; stopAutoplay(); });
+        carousel.addEventListener('touchmove', e => { if (!isDown) return; const diff = startX - e.touches[0].clientX; if (diff > 30) { nextBtn.click(); isDown = false; } else if (diff < -30) { prevBtn.click(); isDown = false; } });
+        carousel.addEventListener('touchend', e => { isDown = false; startAutoplay(); });
+
+        // Initial calculations
+        window.addEventListener('resize', () => { calculateSizes(); });
+        window.addEventListener('load', () => { calculateSizes(); startAutoplay(); });
+    })();
 </script>
