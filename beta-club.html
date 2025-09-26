@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Club</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9fafb;
+            color: #111827;
+        }
+
+        /* Header */
+        .club-header {
+            background: #16A34A;
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .club-header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        .club-header p {
+            opacity: 0.9;
+        }
+
+        /* About */
+        .about-section {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            color: #16A34A;
+        }
+
+        .about-section p {
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        /* Committee */
+        .committee-section {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .committee-section h2 {
+            text-align: center;
+            color: #16A34A;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .member-card {
+            background: white;
+            padding: 1.2rem;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-card img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Join Button */
+        .join-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .join-btn {
+            background: #16A34A;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .join-btn:hover {
+            background: #15803d;
+        }
+
+        /* Events */
+        .events-section {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 1rem;
+        }
+
+        .events-section h2 {
+            text-align: center;
+            color: #16A34A;
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .event-info {
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .event-info h3 {
+            margin: 0 0 8px;
+            font-size: 1.1rem;
+            color: #111827;
+        }
+
+        .event-info p {
+            margin: 0 0 12px;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .details-btn {
+            display: inline-block;
+            background: #16A34A;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .details-btn:hover {
+            background: #15803d;
+        }
+
+        /* Gallery */
+        .gallery-section {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 1rem;
+        }
+
+        .gallery-section h2 {
+            text-align: center;
+            color: #16A34A;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <section class="club-header">
+        <h1>Science Club</h1>
+        <p>Exploring Science Beyond Books</p>
+    </section>
+
+    <!-- About -->
+    <section class="about-section">
+        <h2>About the Club</h2>
+        <p>
+            The Science Club inspires students to explore the wonders of science
+            through experiments, projects, and competitions. We aim to nurture
+            curiosity and critical thinking.
+        </p>
+    </section>
+
+    <!-- Committee Section -->
+    <section class="committee-section">
+        <h2>Executive Committee</h2>
+        <div class="members-grid">
+            <div class="member-card">
+                <img src="assets/clubs/science/president.jpg" alt="President">
+                <h3>Dr. A. Rahman</h3>
+                <p>President</p>
+            </div>
+            <div class="member-card">
+                <img src="assets/clubs/science/vp.jpg" alt="Vice President">
+                <h3>Ms. S. Karim</h3>
+                <p>Vice President</p>
+            </div>
+            <div class="member-card">
+                <img src="assets/clubs/science/gs.jpg" alt="General Secretary">
+                <h3>Mr. J. Alam</h3>
+                <p>General Secretary</p>
+            </div>
+        </div>
+
+        <!-- Approval Letter Button -->
+        <div style="text-align:center; margin-top: 1.5rem;">
+            <button class="approval-btn" id="openApproval">View Approval Letter</button>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="approvalModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Executive Committee Approval Letter</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <iframe src="assets/clubs/science/approval_letter.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Approval Button */
+        .approval-btn {
+            background: #16A34A;
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .approval-btn:hover {
+            background: #15803d;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            border-radius: 12px;
+            max-width: 900px;
+            width: 90%;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #16A34A;
+            color: #fff;
+            padding: 1rem 1.5rem;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .modal-header .close {
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .modal-header .close:hover {
+            color: #f3f4f6;
+        }
+
+        .modal-body {
+            padding: 0.5rem;
+            height: 600px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive */
+        @media(max-width:768px) {
+            .modal-body {
+                height: 400px;
+            }
+        }
+
+        @media(max-width:480px) {
+            .modal-body {
+                height: 300px;
+            }
+
+            .modal-header h3 {
+                font-size: 1rem;
+            }
+
+            .approval-btn {
+                padding: 0.5rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    <script>
+        const modal = document.getElementById("approvalModal");
+        const btn = document.getElementById("openApproval");
+        const span = document.querySelector(".modal-header .close");
+
+        btn.onclick = () => modal.style.display = "block";
+        span.onclick = () => modal.style.display = "none";
+        window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; }
+    </script>
+
+
+
+
+    <!-- Join -->
+    <section class="join-section">
+        <button class="join-btn">Join This Club</button>
+    </section>
+
+    <!-- Events -->
+    <section class="events-section">
+        <h2>Club Events</h2>
+        <div class="event-carousel-container">
+            <button class="event-nav prev">&#10094;</button>
+
+            <div class="event-carousel">
+                <div class="event-card">
+                    <img src="assets/clubs/science/event1.jpg" alt="Event 1">
+                    <div class="event-info">
+                        <h3>Science Fair 2025</h3>
+                        <p>📅 15 October 2025</p>
+                        <a href="event1.html" class="details-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="assets/clubs/science/event2.jpg" alt="Event 2">
+                    <div class="event-info">
+                        <h3>Robotics Workshop</h3>
+                        <p>📅 25 November 2025</p>
+                        <a href="event2.html" class="details-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="assets/clubs/science/event3.jpg" alt="Event 3">
+                    <div class="event-info">
+                        <h3>Astronomy Night</h3>
+                        <p>📅 10 December 2025</p>
+                        <a href="event3.html" class="details-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="assets/clubs/science/event4.jpg" alt="Event 4">
+                    <div class="event-info">
+                        <h3>Physics Quiz</h3>
+                        <p>📅 22 December 2025</p>
+                        <a href="event4.html" class="details-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="assets/clubs/science/event5.jpg" alt="Event 5">
+                    <div class="event-info">
+                        <h3>Chemistry Lab Day</h3>
+                        <p>📅 5 January 2026</p>
+                        <a href="event5.html" class="details-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="event-nav next">&#10095;</button>
+        </div>
+    </section>
+
+    <style>
+        .events-section {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 1rem;
+        }
+
+        .events-section h2 {
+            text-align: center;
+            color: #16A34A;
+        }
+
+        .event-carousel-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            margin-top: 1.5rem;
+        }
+
+        .event-carousel {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s ease-in-out;
+            cursor: grab;
+        }
+
+        .event-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 260px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .event-info {
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .event-info h3 {
+            margin: 0 0 8px;
+            font-size: 1.1rem;
+            color: #111827;
+        }
+
+        .event-info p {
+            margin: 0 0 12px;
+            color: #16A34A;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .details-btn {
+            display: inline-block;
+            background: #16A34A;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .details-btn:hover {
+            background: #15803d;
+        }
+
+        .event-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #16A34A;
+            border: none;
+            padding: 10px;
+            font-size: 22px;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.3s;
+        }
+
+        .event-nav:hover {
+            background: #15803d;
+        }
+
+        .event-nav.prev {
+            left: -15px;
+        }
+
+        .event-nav.next {
+            right: -15px;
+        }
+
+        @media(max-width: 1024px) {
+            .event-card {
+                width: 220px;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .event-card {
+                width: 180px;
+            }
+        }
+
+        @media(max-width: 480px) {
+            .event-card {
+                width: 80%;
+            }
+        }
+    </style>
+
+    <script>
+        const carousel = document.querySelector('.event-carousel');
+        const cards = document.querySelectorAll('.event-card');
+        const prevBtn = document.querySelector('.event-nav.prev');
+        const nextBtn = document.querySelector('.event-nav.next');
+
+        let index = 0;
+        const visibleCards = 4;
+        const cardWidth = cards[0].offsetWidth + 20; // include gap
+
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${index * cardWidth}px)`;
+        }
+
+        // Buttons
+        nextBtn.addEventListener('click', () => {
+            if (index < cards.length - visibleCards) { index++; updateCarousel(); }
+        });
+        prevBtn.addEventListener('click', () => {
+            if (index > 0) { index--; updateCarousel(); }
+        });
+
+        // Auto-play
+        let autoSlide = setInterval(() => {
+            if (index < cards.length - visibleCards) { index++; }
+            else { index = 0; }
+            updateCarousel();
+        }, 3000);
+
+        // Pause on hover
+        const container = document.querySelector('.event-carousel-container');
+        container.addEventListener('mouseenter', () => clearInterval(autoSlide));
+        container.addEventListener('mouseleave', () => {
+            autoSlide = setInterval(() => {
+                if (index < cards.length - visibleCards) { index++; }
+                else { index = 0; }
+                updateCarousel();
+            }, 3000);
+        });
+
+        // Swipe / Touch Support
+        let startX = 0;
+        let isDragging = false;
+
+        carousel.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        });
+
+        carousel.addEventListener('touchmove', e => {
+            if (!isDragging) return;
+            const x = e.touches[0].clientX;
+            const diff = startX - x;
+            if (diff > 50) { // swipe left
+                if (index < cards.length - visibleCards) { index++; updateCarousel(); }
+                isDragging = false;
+            } else if (diff < -50) { // swipe right
+                if (index > 0) { index--; updateCarousel(); }
+                isDragging = false;
+            }
+        });
+
+        carousel.addEventListener('touchend', () => { isDragging = false; });
+    </script>
+
+
+    <!-- Gallery -->
+    <section class="gallery-section">
+        <h2>Event Gallery</h2>
+        <div class="gallery-grid">
+            <img src="assets/images/principal-acting.jpeg" alt="Gallery 1">
+            <img src="assets/images/principal-acting.jpeg" alt="Gallery 2">
+            <img src="assets/images/principal-acting.jpeg" alt="Gallery 3">
+        </div>
+    </section>
+
+</body>
+
+</html>
