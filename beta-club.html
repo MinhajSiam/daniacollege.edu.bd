@@ -370,12 +370,183 @@
     </script>
 
 
-
-
     <!-- Join -->
     <section class="join-section">
         <button class="join-btn">Join This Club</button>
     </section>
+
+
+    <!-- Notice Board Section -->
+    <section class="notice-section">
+        <h2 class="section-title">Notice Board</h2>
+        <div class="notice-list">
+            <div class="notice-card" data-title="Science Fair Registration"
+                data-content="Students can register for the Science Fair till 15th October. Contact the committee for details.">
+                <h3>Science Fair Registration</h3>
+                <p class="notice-date">📅 10 October 2025</p>
+            </div>
+            <div class="notice-card" data-title="Club Meeting"
+                data-content="Executive Committee meeting on 12th October at 4 PM in Room 205.">
+                <h3>Club Meeting</h3>
+                <p class="notice-date">📅 08 October 2025</p>
+            </div>
+            <div class="notice-card" data-title="New Workshop Announcement"
+                data-content="A Robotics Workshop will be held on 20th October. Limited seats available, register early.">
+                <h3>New Workshop Announcement</h3>
+                <p class="notice-date">📅 05 October 2025</p>
+            </div>
+            <div class="notice-card" data-title="Volunteer Opportunity"
+                data-content="Looking for volunteers for the upcoming Science Exhibition. Contact the President.">
+                <h3>Volunteer Opportunity</h3>
+                <p class="notice-date">📅 01 October 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notice Modal -->
+    <div id="noticeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle"></h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="modalContent"></p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .notice-section {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #16A34A;
+            margin-bottom: 2rem;
+        }
+
+        .notice-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .notice-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .notice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .notice-card h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+            color: #111827;
+        }
+
+        .notice-date {
+            font-size: 0.9rem;
+            color: #16A34A;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            background: #fff;
+            margin: 5% auto;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #16A34A;
+            color: #fff;
+            padding: 0.8rem 1rem;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .modal-header .close {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 1rem;
+            color: #111827;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media(max-width:768px) {
+            .notice-list {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media(max-width:480px) {
+            .modal-body {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Modal Functionality
+        document.querySelectorAll('.notice-card').forEach(card => {
+            card.addEventListener('click', function () {
+                document.getElementById('modalTitle').textContent = this.dataset.title;
+                document.getElementById('modalContent').textContent = this.dataset.content;
+                document.getElementById('noticeModal').style.display = 'block';
+            });
+        });
+
+        document.querySelector('#noticeModal .close').onclick = function () {
+            document.getElementById('noticeModal').style.display = 'none';
+        }
+
+        window.onclick = function (event) {
+            if (event.target == document.getElementById('noticeModal')) {
+                document.getElementById('noticeModal').style.display = 'none';
+            }
+        }
+    </script>
+
+
 
     <!-- Events -->
     <section class="events-section">
