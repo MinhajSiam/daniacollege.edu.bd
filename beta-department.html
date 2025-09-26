@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Science</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9fafb;
+            color: #111827;
+        }
+
+        header {
+            background: #16A34A;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .teachers-section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .teacher-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            padding: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .teacher-photo {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            /* Square but slightly rounded */
+            margin-bottom: 1rem;
+        }
+
+        .teacher-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0.3rem 0;
+            color: #111827;
+        }
+
+        .teacher-title {
+            font-size: 0.95rem;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Department Header -->
+    <header>
+        <h1>Department of Science</h1>
+    </header>
+
+    <!-- Teachers Section -->
+    <section class="teachers-section">
+        <div class="teachers-grid">
+
+            <!-- Teacher Card -->
+            <div class="teacher-card">
+                <img src="assets/teachers/teacher1.jpg" alt="Teacher 1" class="teacher-photo">
+                <h3 class="teacher-name">Dr. A. Rahman</h3>
+                <p class="teacher-title">Professor & Head of Department</p>
+            </div>
+
+            <div class="teacher-card">
+                <img src="Teachers Picture/ABDUL JABBAR.jpg" alt="Teacher 2" class="teacher-photo">
+                <h3 class="teacher-name">Ms. S. Karim</h3>
+                <p class="teacher-title">Assistant Professor</p>
+            </div>
+
+            <div class="teacher-card">
+                <img src="assets/teachers/teacher3.jpg" alt="Teacher 3" class="teacher-photo">
+                <h3 class="teacher-name">Mr. J. Alam</h3>
+                <p class="teacher-title">Lecturer</p>
+            </div>
+
+            <div class="teacher-card">
+                <img src="assets/teachers/teacher4.jpg" alt="Teacher 4" class="teacher-photo">
+                <h3 class="teacher-name">Dr. M. Akter</h3>
+                <p class="teacher-title">Senior Lecturer</p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

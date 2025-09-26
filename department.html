@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9fafb;
+            color: #111827;
+        }
+
+        header {
+            background: #16A34A;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .teacher-card {
+            background: white;
+            border-radius: 12px;
+            text-align: center;
+            padding: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .teacher-photo {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .teacher-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0.3rem 0;
+        }
+
+        .teacher-title {
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="dept-title">Department</h1>
+    </header>
+
+    <section class="teachers-grid" id="teachers-container">
+        <!-- Teachers will load dynamically -->
+    </section>
+
+    <script>
+        // Department data
+        const departments = {
+            science: {
+                title: "Department of Science",
+                teachers: [
+                    { name: "Dr. A. Rahman", title: "Professor & Head", photo: "assets/teachers/teacher1.jpg" },
+                    { name: "Ms. S. Karim", title: "Assistant Professor", photo: "assets/teachers/teacher2.jpg" },
+                    { name: "Mr. J. Alam", title: "Lecturer", photo: "assets/teachers/teacher3.jpg" }
+                ]
+            },
+            business: {
+                title: "Department of Business Studies",
+                teachers: [
+                    { name: "Dr. T. Chowdhury", title: "Professor", photo: "assets/teachers/teacher4.jpg" },
+                    { name: "Mr. K. Hasan", title: "Lecturer", photo: "assets/teachers/teacher5.jpg" }
+                ]
+            },
+            arts: {
+                title: "Department of Arts",
+                teachers: [
+                    { name: "Ms. L. Nahar", title: "Professor", photo: "assets/teachers/teacher6.jpg" }
+                ]
+            },
+            english: {
+                title: "Department of English",
+                teachers: [
+                    { name: "Mr. J. Williams", title: "Senior Lecturer", photo: "assets/teachers/teacher7.jpg" }
+                ]
+            }
+        };
+
+        // Get department id from URL
+        const params = new URLSearchParams(window.location.search);
+        const deptId = params.get("id");
+
+        if (deptId && departments[deptId]) {
+            document.getElementById("dept-title").innerText = departments[deptId].title;
+            const container = document.getElementById("teachers-container");
+            departments[deptId].teachers.forEach(teacher => {
+                container.innerHTML += `
+          <div class="teacher-card">
+            <img src="${teacher.photo}" alt="${teacher.name}" class="teacher-photo">
+            <h3 class="teacher-name">${teacher.name}</h3>
+            <p class="teacher-title">${teacher.title}</p>
+          </div>
+        `;
+            });
+        } else {
+            document.getElementById("dept-title").innerText = "Department Not Found";
+        }
+    </script>
+</body>
+
+</html>

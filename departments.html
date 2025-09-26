@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9fafb;
+        }
+
+        header {
+            background: #16A34A;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .department-list {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .dept-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .dept-card:hover {
+            background: #f0fdf4;
+            transform: translateY(-5px);
+        }
+
+        .dept-card a {
+            text-decoration: none;
+            color: #16A34A;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>All Departments</h1>
+    </header>
+
+    <section class="department-list">
+        <div class="dept-card"><a href="department.html?id=science">Department of Science</a></div>
+        <div class="dept-card"><a href="department.html?id=business">Department of Business Studies</a></div>
+        <div class="dept-card"><a href="department.html?id=arts">Department of Arts</a></div>
+        <div class="dept-card"><a href="department.html?id=english">Department of English</a></div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Cultural Fest - Event Details</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9fafb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(90deg, #16A34A, #22c55e);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Event Details */
+        .event-details {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .event-details h2 {
+            margin-bottom: 15px;
+            color: #16A34A;
+        }
+
+        .event-meta {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .event-meta span {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        /* Registration */
+        .registration {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .registration h2 {
+            margin-bottom: 20px;
+            color: #16A34A;
+        }
+
+        .registration form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .registration input,
+        .registration select,
+        .registration button {
+            padding: 12px 5px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .registration button {
+            background: #16A34A;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s;
+        }
+
+        .registration button:hover {
+            background: #15803d;
+        }
+
+        /* Gallery */
+        .gallery {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery h2 {
+            margin-bottom: 20px;
+            color: #16A34A;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+            height: 180px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+
+        .lightbox.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .lightbox:after {
+            content: "✕";
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Annual Cultural Fest 2025</h1>
+        <p>Celebrate creativity, culture, and unity with our grand annual fest!</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Event Details -->
+        <div class="event-details">
+            <h2>Event Details</h2>
+            <div class="event-meta">
+                <span>📅 Date: 12 October 2025</span>
+                <span>⏰ Time: 10:00 AM - 6:00 PM</span>
+                <span>📍 Venue: Dania College Auditorium</span>
+            </div>
+            <p>
+                Join us for the Annual Cultural Fest 2025 filled with music, dance, drama, art exhibitions, and much
+                more.
+                Students from different departments will showcase their creativity and talents. The event is open for
+                everyone to attend and enjoy!
+            </p>
+        </div>
+
+        <!-- Registration -->
+        <div class="registration">
+            <h2>Register for the Event</h2>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Select Role</option>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="guest">Guest</option>
+                </select>
+                <button type="submit">Register Now</button>
+            </form>
+        </div>
+
+        <!-- Gallery -->
+        <div class="gallery">
+            <h2>Event Photo Gallery</h2>
+            <div class="gallery-grid">
+                <img src="assets/images/gallery1.jpg" alt="Gallery 1">
+                <img src="assets/images/gallery2.jpg" alt="Gallery 2">
+                <img src="assets/images/gallery3.jpg" alt="Gallery 3">
+                <img src="assets/images/gallery4.jpg" alt="Gallery 4">
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Preview">
+    </div>
+
+    <script>
+        // Gallery Lightbox
+        const lightbox = document.getElementById("lightbox");
+        const galleryImgs = document.querySelectorAll(".gallery-grid img");
+
+        galleryImgs.forEach(img => {
+            img.addEventListener("click", () => {
+                lightbox.querySelector("img").src = img.src;
+                lightbox.classList.add("active");
+            });
+        });
+
+        lightbox.addEventListener("click", () => {
+            lightbox.classList.remove("active");
+        });
+
+        // Registration Submit Demo
+        document.querySelector(".registration form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("✅ Registration Successful!");
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
