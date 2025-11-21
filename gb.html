@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>গভর্নিং বডি - দানিয়া কলেজ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- CSS Variables for Theme --- */
+        :root {
+            --primary-color: #2563EB;
+            /* Professional Blue */
+            --secondary-color: #1E40AF;
+            --bg-color: #F3F4F6;
+            --card-bg: #ffffff;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* --- Reset & Global Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Header Section --- */
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* --- Search Bar --- */
+        .search-container {
+            max-width: 600px;
+            margin: -25px auto 40px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #searchInput:focus {
+            box-shadow: var(--hover-shadow);
+            transform: scale(1.02);
+        }
+
+        /* --- Grid Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            /* Responsive Grid */
+            gap: 30px;
+        }
+
+        /* --- Member Card Design --- */
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .image-wrapper {
+            height: 220px;
+            width: 100%;
+            background: #e5e7eb;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .member-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            background: rgba(37, 99, 235, 0.1);
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .member-bio {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- Animation for Cards --- */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 40px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* --- Responsive Tweaks --- */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .members-grid {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>দানিয়া কলেজ</h1>
+        <p>গভর্নিং বডি সদস্যবৃন্দ</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="সদস্যের নাম বা পদবি খুঁজুন...">
+    </div>
+
+    <div class="container">
+        <div class="members-grid" id="membersContainer">
+        </div>
+    </div>
+
+    <footer>
+        &copy; ২০২৫ দানিয়া কলেজ | সর্বস্বত্ব সংরক্ষিত
+    </footer>
+
+    <script>
+        // --- Data: 14 Members (Placeholder Images Used) ---
+        // আপনি আসল ছবি ব্যবহার করতে চাইলে image ফিল্ডে ছবির পাথ (e.g., 'images/pic1.jpg') দিন।
+        const members = [
+            { id: 1, name: "জনাব মো: সভাপতি", role: "সভাপতি", image: "https://ui-avatars.com/api/?name=Chairman&background=2563EB&color=fff&size=300" },
+            { id: 2, name: "অধ্যক্ষ মহোদয়", role: "সদস্য সচিব", image: "https://ui-avatars.com/api/?name=Principal&background=1E40AF&color=fff&size=300" },
+            { id: 3, name: "সদস্য ১", role: "শিক্ষানুরাগী সদস্য", image: "https://ui-avatars.com/api/?name=Member+1&background=random&size=300" },
+            { id: 4, name: "সদস্য ২", role: "দাতা সদস্য", image: "https://ui-avatars.com/api/?name=Member+2&background=random&size=300" },
+            { id: 5, name: "সদস্য ৩", role: "অভিভাবক সদস্য", image: "https://ui-avatars.com/api/?name=Member+3&background=random&size=300" },
+            { id: 6, name: "সদস্য ৪", role: "অভিভাবক সদস্য", image: "https://ui-avatars.com/api/?name=Member+4&background=random&size=300" },
+            { id: 7, name: "সদস্য ৫", role: "শিক্ষক প্রতিনিধি", image: "https://ui-avatars.com/api/?name=Member+5&background=random&size=300" },
+            { id: 8, name: "সদস্য ৬", role: "শিক্ষক প্রতিনিধি", image: "https://ui-avatars.com/api/?name=Member+6&background=random&size=300" },
+            { id: 9, name: "সদস্য ৭", role: "বিশ্ববিদ্যালয় প্রতিনিধি", image: "https://ui-avatars.com/api/?name=Member+7&background=random&size=300" },
+            { id: 10, name: "সদস্য ৮", role: "বিদ্যোৎসাহী সদস্য", image: "https://ui-avatars.com/api/?name=Member+8&background=random&size=300" },
+            { id: 11, name: "সদস্য ৯", role: "কো-অপ্ট সদস্য", image: "https://ui-avatars.com/api/?name=Member+9&background=random&size=300" },
+            { id: 12, name: "সদস্য ১০", role: "সদস্য", image: "https://ui-avatars.com/api/?name=Member+10&background=random&size=300" },
+            { id: 13, name: "সদস্য ১১", role: "সদস্য", image: "https://ui-avatars.com/api/?name=Member+11&background=random&size=300" },
+            { id: 14, name: "সদস্য ১২", role: "সদস্য", image: "https://ui-avatars.com/api/?name=Member+12&background=random&size=300" },
+        ];
+
+        const container = document.getElementById('membersContainer');
+        const searchInput = document.getElementById('searchInput');
+
+        // --- Function to Render Cards ---
+        function renderMembers(data) {
+            container.innerHTML = ''; // Clear previous content
+
+            if (data.length === 0) {
+                container.innerHTML = `<div style="text-align:center; grid-column: 1/-1; color: #888;">কোনো তথ্য পাওয়া যায়নি</div>`;
+                return;
+            }
+
+            data.forEach((member, index) => {
+                // Stagger animation delay for a smooth loading effect
+                const delay = index * 0.1;
+
+                const cardHTML = `
+                    <div class="card" style="animation-delay: ${delay}s">
+                        <div class="image-wrapper">
+                            <img src="${member.image}" alt="${member.name}">
+                        </div>
+                        <div class="card-content">
+                            <span class="member-role">${member.role}</span>
+                            <h3 class="member-name">${member.name}</h3>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHTML;
+            });
+        }
+
+        // --- Initial Render ---
+        renderMembers(members);
+
+        // --- Search Functionality ---
+        searchInput.addEventListener('input', (e) => {
+            const searchText = e.target.value.toLowerCase();
+            const filteredMembers = members.filter(member =>
+                member.name.toLowerCase().includes(searchText) ||
+                member.role.toLowerCase().includes(searchText)
+            );
+            renderMembers(filteredMembers);
+        });
+
+    </script>
+</body>
+
+</html>
