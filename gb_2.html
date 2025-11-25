@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Dania College – Governing Body</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-alt: #020617;
+            --card-bg: rgba(15, 23, 42, 0.9);
+            --accent: #22c55e;
+            --accent-soft: rgba(34, 197, 94, 0.15);
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --border-subtle: rgba(148, 163, 184, 0.25);
+            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.7);
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+            --transition-fast: 180ms ease-out;
+            --transition-med: 240ms ease;
+        }
+
+        body.light {
+            --bg: #f4f4f5;
+            --bg-alt: #e5e7eb;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --accent: #16a34a;
+            --accent-soft: rgba(22, 163, 74, 0.12);
+            --text: #111827;
+            --muted: #6b7280;
+            --border-subtle: rgba(148, 163, 184, 0.35);
+            --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.18);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top left, #1d4ed8 0, transparent 55%),
+                radial-gradient(circle at bottom right, #22c55e 0, transparent 45%),
+                var(--bg-alt);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .shell {
+            width: 100%;
+            max-width: 1200px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.75));
+            backdrop-filter: blur(24px);
+            border-radius: 30px;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            box-shadow: var(--shadow-soft);
+            padding: 24px;
+        }
+
+        body.light .shell {
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.98), rgba(241, 245, 249, 0.98));
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .title-block {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: var(--accent);
+            box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
+        }
+
+        h1 {
+            font-size: clamp(22px, 3vw, 26px);
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1 span.en {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--muted);
+            border-left: 1px solid rgba(148, 163, 184, 0.45);
+            padding-left: 10px;
+        }
+
+        .meta {
+            font-size: 12px;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .pill {
+            padding: 2px 9px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 11px;
+            border: 1px solid rgba(34, 197, 94, 0.35);
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .view-toggle,
+        .theme-toggle {
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            background: rgba(15, 23, 42, 0.8);
+            padding: 6px 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            color: var(--muted);
+            transition: background var(--transition-fast), transform var(--transition-fast), border var(--transition-fast);
+        }
+
+        body.light .view-toggle,
+        body.light .theme-toggle {
+            background: rgba(248, 250, 252, 0.95);
+        }
+
+        .view-toggle:hover,
+        .theme-toggle:hover {
+            transform: translateY(-1px);
+            border-color: var(--accent);
+        }
+
+        .theme-toggle-icon {
+            width: 18px;
+            height: 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-toggle-icon::before {
+            content: "";
+            position: absolute;
+            inset: 2px;
+            border-radius: inherit;
+            background: radial-gradient(circle at 30% 20%, #facc15 0, #facc15 40%, transparent 60%);
+            transform: translate(0, 0);
+            transition: transform var(--transition-med);
+        }
+
+        body.light .theme-toggle-icon::before {
+            transform: translate(6px, 6px);
+        }
+
+        /* Controls */
+
+        .controls {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+            gap: 12px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+                grid-template-rows: auto auto;
+            }
+
+            .view-toggle {
+                grid-column: 1 / -1;
+                justify-content: center;
+                order: 3;
+            }
+        }
+
+        .field-wrap {
+            position: relative;
+        }
+
+        .field-label {
+            position: absolute;
+            left: 12px;
+            top: 7px;
+            font-size: 11px;
+            color: var(--muted);
+            opacity: 0.9;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            pointer-events: none;
+        }
+
+        .input,
+        .select {
+            width: 100%;
+            border-radius: 999px;
+            border: 1px solid var(--border-subtle);
+            background: rgba(15, 23, 42, 0.8);
+            padding: 22px 14px 8px 12px;
+            font-size: 13px;
+            color: var(--text);
+            outline: none;
+            appearance: none;
+            transition: border var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+        }
+
+        body.light .input,
+        body.light .select {
+            background: rgba(248, 250, 252, 0.95);
+        }
+
+        .input::placeholder {
+            color: rgba(148, 163, 184, 0.8);
+        }
+
+        .input:focus,
+        .select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.4);
+        }
+
+        .select {
+            padding-right: 32px;
+            cursor: pointer;
+            background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+                linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+            background-position: calc(100% - 14px) 18px, calc(100% - 9px) 18px;
+            background-size: 6px 6px, 6px 6px;
+            background-repeat: no-repeat;
+        }
+
+        .stats {
+            margin-top: 14px;
+            font-size: 12px;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stats span strong {
+            color: var(--accent);
+        }
+
+        .stats-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 999px;
+            background: var(--accent);
+            margin: 0 4px;
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.7);
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 11px;
+        }
+
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+        }
+
+        body.light .legend-item {
+            background: rgba(248, 250, 252, 0.9);
+        }
+
+        .legend-color {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+        }
+
+        .legend-color--chair {
+            background: linear-gradient(135deg, #22c55e, #4ade80);
+        }
+
+        .legend-color--teacher {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+        }
+
+        .legend-color--guardian {
+            background: linear-gradient(135deg, #f97316, #fdba74);
+        }
+
+        .legend-color--other {
+            background: linear-gradient(135deg, #a855f7, #e879f9);
+        }
+
+        /* Layout switch */
+
+        .members {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            list-style: none;
+            transition: transform var(--transition-med);
+        }
+
+        .members.list-layout {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Card */
+
+        .card {
+            position: relative;
+            background: var(--card-bg);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            padding: 14px 14px 14px 14px;
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            gap: 12px;
+            align-items: center;
+            overflow: hidden;
+            cursor: default;
+            transform-origin: center;
+            transition:
+                transform var(--transition-med),
+                box-shadow var(--transition-med),
+                border var(--transition-fast),
+                background var(--transition-med);
+        }
+
+        .members.list-layout .card {
+            border-radius: 18px;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: -40%;
+            background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.10) 0, transparent 55%);
+            opacity: 0;
+            transition: opacity var(--transition-med);
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
+            border-color: rgba(34, 197, 94, 0.7);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .avatar-wrap {
+            position: relative;
+            width: 72px;
+            height: 72px;
+            border-radius: 999px;
+            padding: 2px;
+            background: conic-gradient(from 210deg, #22c55e, #22c55e, #0ea5e9, #a855f7, #22c55e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            overflow: hidden;
+            background: #020617;
+            border: 2px solid #020617;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: saturate(1.05);
+        }
+
+        .status-dot {
+            position: absolute;
+            right: 2px;
+            bottom: 4px;
+            width: 11px;
+            height: 11px;
+            border-radius: 999px;
+            border: 2px solid var(--card-bg);
+            background: #22c55e;
+            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.22);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            min-width: 0;
+        }
+
+        .name-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 4px;
+        }
+
+        .name {
+            font-size: 15px;
+            font-weight: 600;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .tag-role {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 7px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+        }
+
+        .tag-role--chair {
+            border-color: rgba(34, 197, 94, 0.9);
+            background: rgba(22, 163, 74, 0.14);
+            color: #bbf7d0;
+        }
+
+        .tag-role--teacher {
+            border-color: rgba(59, 130, 246, 0.9);
+            background: rgba(37, 99, 235, 0.14);
+            color: #bfdbfe;
+        }
+
+        .tag-role--guardian {
+            border-color: rgba(249, 115, 22, 0.9);
+            background: rgba(234, 88, 12, 0.14);
+            color: #fed7aa;
+        }
+
+        .tag-role--other {
+            border-color: rgba(168, 85, 247, 0.9);
+            background: rgba(147, 51, 234, 0.16);
+            color: #e9d5ff;
+        }
+
+        .meta-row {
+            font-size: 12px;
+            color: var(--muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .meta-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 2px 7px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+        }
+
+        body.light .meta-chip {
+            background: rgba(248, 250, 252, 0.9);
+        }
+
+        .meta-chip svg {
+            width: 10px;
+            height: 10px;
+        }
+
+        .small-label {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .footer-row {
+            margin-top: 4px;
+            font-size: 11px;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .id-pill {
+            padding: 1px 7px;
+            border-radius: 999px;
+            border: 1px dashed rgba(148, 163, 184, 0.6);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .contact-hint {
+            opacity: 0.9;
+        }
+
+        .contact-hint strong {
+            color: var(--accent);
+        }
+
+        .no-results {
+            margin-top: 30px;
+            padding: 18px;
+            border-radius: var(--radius-lg);
+            border: 1px dashed rgba(148, 163, 184, 0.7);
+            background: rgba(15, 23, 42, 0.9);
+            font-size: 14px;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        body.light .no-results {
+            background: rgba(248, 250, 252, 0.96);
+        }
+
+        /* Scrollbar subtle styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.4);
+            border-radius: 999px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body class="dark">
+    <div class="shell">
+        <header>
+            <div class="title-block">
+                <div class="badge">
+                    <div class="badge-dot"></div>
+                    DANIA COLLEGE, DHAKA
+                    <span style="opacity:0.55;">Governing Body Portal</span>
+                </div>
+                <h1>
+                    দানিয়া কলেজ পরিচালনা পর্ষদ
+                    <span class="en">Governing Body – Member Directory</span>
+                </h1>
+                <div class="meta">
+                    <span>তালিকাভুক্ত সদস্য: <strong id="totalCount">14</strong> জন</span>
+                    <span class="stats-dot"></span>
+                    <span>ডাটা আপডেট করা যাবে সরাসরি কোড থেকে</span>
+                    <span class="pill">Static Single Page</span>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="theme-toggle" id="themeToggle" type="button">
+                    <div class="theme-toggle-icon"></div>
+                    <span>ডার্ক / লাইট মোড</span>
+                </button>
+            </div>
+        </header>
+
+        <section class="controls">
+            <div class="field-wrap">
+                <div class="field-label">Search</div>
+                <input id="searchInput" class="input" type="text" placeholder="নাম / পদবি দিয়ে খুঁজুন…" />
+            </div>
+
+            <div class="field-wrap">
+                <div class="field-label">Member Type</div>
+                <select id="typeFilter" class="select">
+                    <option value="all">সব ধরনের সদস্য</option>
+                    <option value="chair">সভাপতি / সহ-সভাপতি</option>
+                    <option value="teacher">শিক্ষক প্রতিনিধি</option>
+                    <option value="guardian">অভিভাবক প্রতিনিধি</option>
+                    <option value="other">অন্যান্য সদস্য</option>
+                </select>
+            </div>
+
+            <button id="viewToggle" class="view-toggle" type="button">
+                <span>Grid View</span>
+            </button>
+        </section>
+
+        <div class="stats">
+            <span>
+                মোট প্রদর্শিত সদস্য: <strong id="visibleCount">14</strong> জন
+            </span>
+            <div class="legend">
+                <span class="legend-item">
+                    <span class="legend-color legend-color--chair"></span>
+                    <span>সভাপতি / সহ-সভাপতি</span>
+                </span>
+                <span class="legend-item">
+                    <span class="legend-color legend-color--teacher"></span>
+                    <span>শিক্ষক প্রতিনিধি</span>
+                </span>
+                <span class="legend-item">
+                    <span class="legend-color legend-color--guardian"></span>
+                    <span>অভিভাবক প্রতিনিধি</span>
+                </span>
+                <span class="legend-item">
+                    <span class="legend-color legend-color--other"></span>
+                    <span>অন্যান্য সদস্য</span>
+                </span>
+            </div>
+        </div>
+
+        <ul id="memberList" class="members"></ul>
+        <div id="noResults" class="no-results" style="display:none;">
+            আপনার অনুসন্ধানের সাথে মিল থাকা কোনো সদস্য পাওয়া যায়নি।
+            <br />
+            <span style="font-size:12px; opacity:0.9;">
+                ভিন্ন শব্দ ব্যবহার করে আবার চেষ্টা করুন।
+            </span>
+        </div>
+    </div>
+
+    <script>
+        // ---- DATA (14 members) ----
+        // NOTE: নিচের name, role, image ইত্যাদি আপনার আসল তথ্য দিয়ে পরিবর্তন করুন।
+        const members = [
+            {
+                id: 1,
+                name: "জনাব মো. আলী আহমেদ",
+                role: "সভাপতি",
+                type: "chair",
+                category: "দাতা সদস্য",
+                image: "images/member-1.jpg",
+                tenure: "২০২৩–২০২৬"
+            },
+            {
+                id: 2,
+                name: "প্রফেসর মোছা. শারমিন আক্তার",
+                role: "সহ-সভাপতি",
+                type: "chair",
+                category: "শিক্ষক প্রতিনিধি",
+                image: "images/member-2.jpg",
+                tenure: "২০২৩–২০২৬"
+            },
+            {
+                id: 3,
+                name: "মো. রাশেদুল ইসলাম",
+                role: "সদস্য",
+                type: "teacher",
+                category: "শিক্ষক প্রতিনিধি",
+                image: "images/member-3.jpg",
+                tenure: "২০২৩–২০২৬"
+            },
+            {
+                id: 4,
+                name: "ড. ফারহানা ইয়াসমিন",
+                role: "সদস্য",
+                type: "teacher",
+                category: "শিক্ষক প্রতিনিধি",
+                image: "images/member-4.jpg",
+                tenure: "২০২৩–২০২৬"
+            },
+            {
+                id: 5,
+                name: "মো. হুমায়ুন কবির",
+                role: "সদস্য",
+                type: "teacher",
+                category: "শিক্ষক প্রতিনিধি",
+                image: "images/member-5.jpg",
+                tenure: "২০২৩–২০২৬"
+            },
+            {
+                id: 6,
+                name: "মোছা. নাজমুন নাহার",
+                role: "সদস্য",
+                type: "guardian",
+                category: "অভিভাবক প্রতিনিধি",
+                image: "images/member-6.jpg",
+                tenure: "২০২৩–২০২৬"
+            },
+            {
+                id: 7,
+                name: "জনাব আব্দুল্লাহ আল মামুন",
+                role: "সদস্য",
+                type: "guardian",
+                category: "অভিভাবক প্রতিনিধি",
+                image: "images/member-7.jpg",
+                tenure: "২০২৩–২০২৬"
+            },
+            {
+                id: 8,
+                name: "মোছা. জেসমিন আরা",
+                role: "সদস্য",
+                type: "guardian",
+                category: "অভিভাবক প্রতিনিধি",
+                image: "images/member-8.jpg",
+                tenure: "২০২৩–২০২৬"
+            },
+            {
+                id: 9,
+                name: "মো. সালমান কবির",
+                role: "সদস্য",
+                type: "other",
+                category: "স্থানীয় সমাজ প্রতিনিধি",
+                image: "images/member-9.jpg",
+                tenure: "২০২৩–২০২৬"
+            },
+            {
+                id: 10,
+                name: "মোছা. তানজিলা হক",
+                role: "সদস্য",
+                type: "other",
+                category: "স্থানীয় সমাজ প্রতিনিধি",
+                image: "images/member-10.jpg",
+                tenure: "২০২৩–২০২৬"
+            },
+            {
+                id: 11,
+                name: "অধ্যক্ষ মো. রহিম উদ্দিন",
+                role: "পদাধিকারবলে সদস্য সচিব",
+                type: "other",
+                category: "অধ্যক্ষ",
+                image: "images/member-11.jpg",
+                tenure: "বর্তমান"
+            },
+            {
+                id: 12,
+                name: "মো. সাইফুল ইসলাম",
+                role: "সদস্য",
+                type: "other",
+                category: "দাতা সদস্য",
+                image: "images/member-12.jpg",
+                tenure: "২০২৩–২০২৬"
+            },
+            {
+                id: 13,
+                name: "মোছা. ফারজানা রহমান",
+                role: "সদস্য",
+                type: "other",
+                category: "বিশিষ্ট ব্যক্তিত্ব",
+                image: "images/member-13.jpg",
+                tenure: "২০২৩–২০২৬"
+            },
+            {
+                id: 14,
+                name: "মো. আরিফুল হক",
+                role: "সদস্য",
+                type: "other",
+                category: "বিশিষ্ট ব্যক্তিত্ব",
+                image: "images/member-14.jpg",
+                tenure: "২০২৩–২০২৬"
+            }
+        ];
+
+        // ---- DOM refs ----
+        const memberListEl = document.getElementById("memberList");
+        const totalCountEl = document.getElementById("totalCount");
+        const visibleCountEl = document.getElementById("visibleCount");
+        const searchInputEl = document.getElementById("searchInput");
+        const typeFilterEl = document.getElementById("typeFilter");
+        const noResultsEl = document.getElementById("noResults");
+        const viewToggleEl = document.getElementById("viewToggle");
+        const themeToggleEl = document.getElementById("themeToggle");
+
+        let isListLayout = false;
+
+        // ---- Helpers ----
+
+        function getRoleClass(type) {
+            switch (type) {
+                case "chair":
+                    return "tag-role--chair";
+                case "teacher":
+                    return "tag-role--teacher";
+                case "guardian":
+                    return "tag-role--guardian";
+                default:
+                    return "tag-role--other";
+            }
+        }
+
+        function getFallbackInitial(name) {
+            const trimmed = (name || "").trim();
+            return trimmed ? trimmed[0] : "?";
+        }
+
+        // ---- Render ----
+
+        function renderMembers() {
+            const query = searchInputEl.value.trim().toLowerCase();
+            const filterType = typeFilterEl.value;
+
+            const filtered = members.filter((m) => {
+                const matchesType = filterType === "all" || m.type === filterType;
+                const text = (m.name + " " + m.role + " " + m.category)
+                    .toLowerCase()
+                    .replace(/[।]/g, " ");
+                const matchesSearch = query === "" || text.includes(query);
+                return matchesType && matchesSearch;
+            });
+
+            memberListEl.innerHTML = "";
+
+            if (filtered.length === 0) {
+                noResultsEl.style.display = "block";
+                visibleCountEl.textContent = "0";
+                return;
+            }
+
+            noResultsEl.style.display = "none";
+            visibleCountEl.textContent = filtered.length.toString();
+
+            filtered.forEach((m) => {
+                const li = document.createElement("li");
+                const card = document.createElement("article");
+                card.className = "card";
+
+                const avatarWrap = document.createElement("div");
+                avatarWrap.className = "avatar-wrap";
+
+                const avatar = document.createElement("div");
+                avatar.className = "avatar";
+
+                const img = document.createElement("img");
+                img.src = m.image;
+                img.alt = m.name;
+                // যদি ছবি লোড না হয়, তখন শুধু initial দেখানোর জন্য:
+                img.onerror = () => {
+                    avatar.innerHTML =
+                        '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:26px;color:#9ca3af;background:#020617;">' +
+                        getFallbackInitial(m.name) +
+                        "</div>";
+                };
+
+                avatar.appendChild(img);
+                avatarWrap.appendChild(avatar);
+
+                const statusDot = document.createElement("div");
+                statusDot.className = "status-dot";
+                avatarWrap.appendChild(statusDot);
+
+                const content = document.createElement("div");
+                content.className = "content";
+
+                const nameRow = document.createElement("div");
+                nameRow.className = "name-row";
+
+                const nameEl = document.createElement("div");
+                nameEl.className = "name";
+                nameEl.textContent = m.name;
+
+                const roleTag = document.createElement("div");
+                roleTag.className = "tag-role " + getRoleClass(m.type);
+                roleTag.textContent = m.role;
+
+                nameRow.appendChild(nameEl);
+                nameRow.appendChild(roleTag);
+
+                const metaRow = document.createElement("div");
+                metaRow.className = "meta-row";
+
+                const chipType = document.createElement("div");
+                chipType.className = "meta-chip";
+                chipType.innerHTML = `
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" fill="currentColor"></circle>
+          </svg>
+          <span class="small-label">${m.category}</span>
+        `;
+
+                const chipTenure = document.createElement("div");
+                chipTenure.className = "meta-chip";
+                chipTenure.innerHTML = `
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M5 8h8M5 16h6" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"></path>
+          </svg>
+          <span class="small-label">মেয়াদ: ${m.tenure}</span>
+        `;
+
+                metaRow.appendChild(chipType);
+                metaRow.appendChild(chipTenure);
+
+                const footerRow = document.createElement("div");
+                footerRow.className = "footer-row";
+
+                const idPill = document.createElement("div");
+                idPill.className = "id-pill";
+                idPill.textContent = `Member ID: ${String(m.id).padStart(2, "0")}`;
+
+                const contactHint = document.createElement("div");
+                contactHint.className = "contact-hint";
+                contactHint.innerHTML =
+                    '<span>যোগাযোগের তথ্য <strong>প্রিন্টেড নথি</strong>তে সংরক্ষিত।</span>';
+
+                footerRow.appendChild(idPill);
+                footerRow.appendChild(contactHint);
+
+                content.appendChild(nameRow);
+                content.appendChild(metaRow);
+                content.appendChild(footerRow);
+
+                card.appendChild(avatarWrap);
+                card.appendChild(content);
+
+                li.appendChild(card);
+                memberListEl.appendChild(li);
+            });
+        }
+
+        // ---- Layout toggle ----
+        viewToggleEl.addEventListener("click", () => {
+            isListLayout = !isListLayout;
+            if (isListLayout) {
+                memberListEl.classList.add("list-layout");
+                viewToggleEl.querySelector("span").textContent = "List View";
+            } else {
+                memberListEl.classList.remove("list-layout");
+                viewToggleEl.querySelector("span").textContent = "Grid View";
+            }
+        });
+
+        // ---- Theme toggle + persistence ----
+        function setTheme(theme) {
+            document.body.className = theme === "light" ? "light" : "dark";
+            try {
+                localStorage.setItem("dania-theme", theme);
+            } catch (e) { }
+        }
+
+        themeToggleEl.addEventListener("click", () => {
+            const isCurrentlyLight = document.body.classList.contains("light");
+            setTheme(isCurrentlyLight ? "dark" : "light");
+        });
+
+        (function initTheme() {
+            try {
+                const stored = localStorage.getItem("dania-theme");
+                if (stored === "light" || stored === "dark") {
+                    setTheme(stored);
+                }
+            } catch (e) { }
+        })();
+
+        // ---- Filters ----
+        searchInputEl.addEventListener("input", () => renderMembers());
+        typeFilterEl.addEventListener("change", () => renderMembers());
+
+        // ---- Init ----
+        totalCountEl.textContent = members.length.toString();
+        renderMembers();
+    </script>
+</body>
+
+</html>

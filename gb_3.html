@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dania College - Governing Body</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #e53e3e;
+            --light: #f7fafc;
+            --gray: #a0aec0;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .member-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .member-photo {
+            height: 250px;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .member-card:hover .member-photo img {
+            transform: scale(1.05);
+        }
+
+        .placeholder-photo {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .member-info {
+            padding: 1.5rem;
+        }
+
+        .member-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .member-position {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .member-bio {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            opacity: 0.8;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.2rem;
+            background: white;
+            border: 1px solid var(--gray);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            border: 1px solid var(--gray);
+            font-size: 1rem;
+            padding-left: 3rem;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        footer {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .members-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .controls {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <header>
+        <div class="logo-container">
+            <div class="logo">DC</div>
+            <div>
+                <h1>Dania College</h1>
+                <p class="subtitle">Governing Body Members</p>
+            </div>
+        </div>
+    </header> -->
+
+    <div class="container">
+        <!-- <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search members by name or position...">
+        </div> -->
+
+        <div class="controls">
+            <button class="filter-btn active" data-filter="all">All Members</button>
+            <button class="filter-btn" data-filter="chairman">Chairman</button>
+            <button class="filter-btn" data-filter="member">Members</button>
+            <button class="filter-btn" data-filter="secretary">Secretary</button>
+        </div>
+
+        <div class="members-grid" id="membersContainer">
+            <!-- Member cards will be dynamically generated here -->
+        </div>
+    </div>
+
+    <!-- <footer>
+        <div class="footer-content">
+            <h3>Dania College</h3>
+            <p>Excellence in Education Since 1965</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2023 Dania College. All Rights Reserved.</p>
+        </div>
+    </footer> -->
+
+    <script>
+        // Sample data for 14 governing body members
+        const members = [
+            {
+                id: 1,
+                name: "সভাপতি",
+                position: "জনাব রমিজ উদ্দিন আহমেদ",
+                photo: "assets/images/gb/রমিজ_উদ্দিন_আহমেদ.jpg"
+            },
+            {
+                id: 2,
+                name: "সদস্য সচিব ও অধ্যক্ষ (ভারপ্রাপ্ত)",
+                position: "জুয়েলা জেবুননেসা খান",
+                photo: "assets/images/gb/জুয়েলা_জেবুননেসা_খান.jpg"
+            },
+            {
+                id: 3,
+                name: "দাতা সদস্য ও সাবেক সংসদ সদস্য (ঢাকা-৪ ও ঢাকা-৫)",
+                position: "আলহাজ্ব সালাহউদ্দিন আহমেদ",
+                photo: "assets/images/gb/সালাহউদ্দিন_আহমেদ_2.jpg"
+            },
+            {
+                id: 4,
+                name: "বিদ্যোৎসাহী সদস্য (জাতীয় বিশ্ববিদ্যালয় প্রতিনিধি) ও অধ্যাপক, ফার্মাসিউটিকাল কেমিস্ট্রি বিভাগ, ঢাকা বিশ্ববিদ্যালয়",
+                position: "ড. মো. শাহ্ এমরান",
+                photo: "assets/images/gb/ড._মো._শাহ_এমরান.jpg"
+            },
+            {
+                id: 5,
+                name: "বিদ্যোৎসাহী সদস্য (মাউশি কর্তৃক মনোনিত প্রতিনিধি) ও অধ্যাপক, উদ্ভিদবিজ্ঞান বিভাগ, ঢাকা বিশ্ববিদ্যালয়",
+                position: "ড. মোহাম্মদ আলমোজাদ্দেদী আলফেছানী",
+                photo: "assets/images/gb/ড._মোহাম্মদ_আলমোজাদ্দেদী_আলফেছানী.jpg"
+            },
+            {
+                id: 6,
+                name: "বিদ্যোৎসাহী সদস্য (শিক্ষাবোর্ড কর্তৃক মনোনিত প্রতিনিধি) ও সাবেক ভারপ্রাপ্ত অধ্যক্ষ, দনিয়া কলেজ",
+                position: "খাদেম আশরাফুল আলম",
+                photo: "assets/images/gb/খাদেম_আশরাফুল_আলম.jpg"
+            },
+            {
+                id: 7,
+                name: "হিতৈষী সদস্য ও সদস্য সচিব, বিএনপি, ঢাকা মহানগর দক্ষিণ",
+                position: "তানভীর আহমেদ রবিন",
+                photo: "assets/images/gb/তানভীর_আহমেদ_রবিন_2.jpg"
+            },
+            {
+                id: 8,
+                name: "চিকিৎসক প্রতিনিধি",
+                position: "ডা. মো. নূরুল হক",
+                photo: "assets/images/gb/ডা._মো._নূরুল_হক.jpeg"
+            },
+            {
+                id: 9,
+                name: "অভিভাবক প্রতিনিধি",
+                position: "মো. মাসুদ আলী",
+                photo: "assets/images/gb/মো._মাসুদ_আলী.jpg"
+            },
+            {
+                id: 10,
+                name: "অভিভাবক প্রতিনিধি",
+                position: "দিল মোহাম্মদ",
+                photo: "assets/images/gb/দিল_মোহাম্মদ.jpg"
+            },
+            {
+                id: 11,
+                name: "অভিভাবক প্রতিনিধি",
+                position: "শামীমা আক্তার",
+                photo: "assets/images/gb/Portrait_Placeholder.png"
+            },
+            {
+                id: 12,
+                name: "শিক্ষক প্রতিনিধি ও সহযোগী অধ্যাপক এবং বিভাগীয় প্রধান, বাংলা বিভাগ",
+                position: "আবুল কালাম আজাদ",
+                photo: "assets/images/gb/আবুল_কালাম_আজাদ.jpg"
+            },
+            {
+                id: 13,
+                name: "শিক্ষক প্রতিনিধি ও সহযোগী অধ্যাপক এবং বিভাগীয় প্রধান, উদ্ভিদবিজ্ঞান বিভাগ",
+                position: "মো. রফিকুল ইসলাম",
+                photo: "assets/images/gb/মো._রফিকুল_ইসলাম.jpg"
+            },
+            {
+                id: 14,
+                name: "শিক্ষক প্রতিনিধি ও সহযোগী অধ্যাপক এবং বিভাগীয় প্রধান, ইসলামের ইতিহাস ও সংস্কৃতি বিভাগ",
+                position: "ফারহানা নাহার",
+                photo: "assets/images/gb/ফারহানা_নাহার.jpg"
+            }
+        ];
+
+        // Function to generate member cards
+        function generateMemberCards(membersArray) {
+            const container = document.getElementById('membersContainer');
+            container.innerHTML = '';
+
+            membersArray.forEach(member => {
+                const card = document.createElement('div');
+                card.className = 'member-card';
+                card.setAttribute('data-category', getCategory(member.position));
+
+                card.innerHTML = `
+                    <div class="member-photo">
+                        <div class="placeholder-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">${member.name}</h3>
+                        <p class="member-position">${member.position}</p>
+                        
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        // Helper function to determine category based on position
+        function getCategory(position) {
+            if (position.toLowerCase().includes('chairman')) return 'chairman';
+            if (position.toLowerCase().includes('secretary')) return 'secretary';
+            return 'member';
+        }
+
+        // Filter functionality
+        function setupFilters() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+                    filterMembers(filter);
+                });
+            });
+        }
+
+        // Filter members based on category
+        function filterMembers(category) {
+            const allCards = document.querySelectorAll('.member-card');
+
+            allCards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Search functionality
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                const allCards = document.querySelectorAll('.member-card');
+
+                allCards.forEach(card => {
+                    const name = card.querySelector('.member-name').textContent.toLowerCase();
+                    const position = card.querySelector('.member-position').textContent.toLowerCase();
+
+                    if (name.includes(searchTerm) || position.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            generateMemberCards(members);
+            setupFilters();
+            setupSearch();
+        });
+    </script>
+</body>
+
+</html>
