@@ -36,39 +36,6 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 1rem;
-        }
-
-        .logo {
-            width: 70px;
-            height: 70px;
-            background-color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -78,6 +45,7 @@
         .members-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(4, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -88,6 +56,8 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .member-card:hover {
@@ -96,44 +66,46 @@
         }
 
         .member-photo {
-            height: 250px;
+            height: 280px;
+            /* উচ্চতা একটু বাড়ানো হয়েছে */
+            width: 100%;
             background-color: var(--light);
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
             overflow: hidden;
+            position: relative;
         }
 
+        /* ইমেজ ট্যাগ স্টাইল */
         .member-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
+            display: block;
         }
 
         .member-card:hover .member-photo img {
             transform: scale(1.05);
         }
 
-        .placeholder-photo {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+        /* যদি ছবি না থাকে তখন দেখানোর জন্য */
+        .placeholder-icon {
             font-size: 4rem;
+            color: var(--gray);
+            display: none;
+            /* ডিফল্টভাবে লুকানো */
         }
 
         .member-info {
             padding: 1.5rem;
+            text-align: center;
         }
 
         .member-name {
-            font-size: 1.3rem;
-            font-weight: 600;
+            font-size: 1.2rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
             color: var(--primary);
         }
@@ -142,41 +114,13 @@
             color: var(--accent);
             font-weight: 500;
             margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-        }
-
-        .member-bio {
             font-size: 0.9rem;
-            color: var(--secondary);
-            opacity: 0.8;
         }
 
-        .controls {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .filter-btn {
-            padding: 0.6rem 1.2rem;
-            background: white;
-            border: 1px solid var(--gray);
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .filter-btn.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
+        /* Controls / Search Box (Optional styles kept) */
         .search-box {
             max-width: 500px;
-            margin: 2rem auto;
+            margin: 0 auto 2rem;
             position: relative;
         }
 
@@ -185,7 +129,6 @@
             padding: 0.8rem 1.5rem;
             border-radius: 30px;
             border: 1px solid var(--gray);
-            font-size: 1rem;
             padding-left: 3rem;
         }
 
@@ -197,169 +140,124 @@
             color: var(--gray);
         }
 
-        footer {
-            background: var(--secondary);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: var(--accent);
-        }
-
         @media (max-width: 768px) {
             .members-grid {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 1.5rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .controls {
-                flex-wrap: wrap;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- <header>
-        <div class="logo-container">
-            <div class="logo">DC</div>
-            <div>
-                <h1>Dania College</h1>
-                <p class="subtitle">Governing Body Members</p>
-            </div>
+
+    <header>
+        <div class="container">
+            <h1>Dania College</h1>
+            <p>Governing Body Members</p>
         </div>
-    </header> -->
+    </header>
 
     <div class="container">
-
-
-        <div style="display: none;" class="controls">
-            <button class="filter-btn active" data-filter="all">All Members</button>
-            <button class="filter-btn" data-filter="chairman">Chairman</button>
-            <button class="filter-btn" data-filter="member">Members</button>
-            <button class="filter-btn" data-filter="secretary">Secretary</button>
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search members...">
         </div>
 
         <div class="members-grid" id="membersContainer">
-            <!-- Member cards will be dynamically generated here -->
         </div>
     </div>
 
     <script>
-        // Sample data for 14 governing body members
+        // অনলাইনে ছবি দেখার জন্য আমি UI Avatars ব্যবহার করছি। 
+        // আপনি যখন আপনার আসল ছবি দেবেন, তখন 'photo' ফিল্ডে আপনার লোকাল পাথ দেবেন।
         const members = [
             {
                 id: 1,
                 name: "জনাব রমিজ উদ্দিন আহমেদ",
                 position: "সভাপতি",
-                photo: "assets/images/gb/রমিজ_উদ্দিন_আহমেদ.jpg"
+                // photo: "assets/images/gb/রমিজ_উদ্দিন_আহমেদ.jpg" // আপনার আসল পাথ
+                photo: "assets/images/gb/রমিজ_উদ্দিন_আহমেদ.jpg" // ডেমো ছবি
             },
             {
                 id: 2,
                 name: "জুয়েলা জেবুননেসা খান",
                 position: "সদস্য সচিব ও অধ্যক্ষ (ভারপ্রাপ্ত)",
-                photo: "assets/images/gb/জুয়েলা_জেবুননেসা_খান.jpg"
+                photo: "assets/images/gb/জুয়েলা_জেবুননেসা_খান.jpg" // আপনার আসল পাথ
             },
             {
                 id: 3,
                 name: "আলহাজ্ব সালাহউদ্দিন আহমেদ",
-                position: "দাতা সদস্য ও সাবেক সংসদ সদস্য (ঢাকা-৪ ও ঢাকা-৫)",
-                photo: "assets/images/gb/সালাহউদ্দিন_আহমেদ_2.jpg"
+                position: "দাতা সদস্য ও সাবেক সংসদ সদস্য",
+                photo: "assets/images/gb/সালাহউদ্দিন_আহমেদ_2.jpg" // আপনার আসল পাথ
             },
             {
                 id: 4,
-                name: "বিদ্যোৎসাহী সদস্য (জাতীয় বিশ্ববিদ্যালয় প্রতিনিধি) ও অধ্যাপক, ফার্মাসিউটিকাল কেমিস্ট্রি বিভাগ, ঢাকা বিশ্ববিদ্যালয়",
-                position: "ড. মো. শাহ্ এমরান",
-                photo: "assets/images/gb/ড._মো._শাহ_এমরান.jpg"
+                name: "ড. মো. শাহ্ এমরান",
+                position: "বিদ্যোৎসাহী সদস্য (জাতীয় বিশ্ববিদ্যালয়)",
+                photo: "assets/images/gb/ড._মো._শাহ_এমরান.jpg" // আপনার আসল পাথ
             },
             {
                 id: 5,
-                name: "বিদ্যোৎসাহী সদস্য (মাউশি কর্তৃক মনোনিত প্রতিনিধি) ও অধ্যাপক, উদ্ভিদবিজ্ঞান বিভাগ, ঢাকা বিশ্ববিদ্যালয়",
-                position: "ড. মোহাম্মদ আলমোজাদ্দেদী আলফেছানী",
-                photo: "assets/images/gb/ড._মোহাম্মদ_আলমোজাদ্দেদী_আলফেছানী.jpg"
+                name: "ড. মোহাম্মদ আলমোজাদ্দেদী",
+                position: "বিদ্যোৎসাহী সদস্য (মাউশি প্রতিনিধি)",
+                photo: "assets/images/gb/ড._মোহাম্মদ_আলমোজাদ্দেদী_আলফেছানী.jpg" // আপনার আসল পাথ
             },
             {
                 id: 6,
-                name: "বিদ্যোৎসাহী সদস্য (শিক্ষাবোর্ড কর্তৃক মনোনিত প্রতিনিধি) ও সাবেক ভারপ্রাপ্ত অধ্যক্ষ, দনিয়া কলেজ",
-                position: "খাদেম আশরাফুল আলম",
-                photo: "assets/images/gb/খাদেম_আশরাফুল_আলম.jpg"
+                name: "খাদেম আশরাফুল আলম",
+                position: "বিদ্যোৎসাহী সদস্য (শিক্ষাবোর্ড)",
+                photo: "assets/images/gb/খাদেম_আশরাফুল_আলম_2.jpg" // আপনার আসল পাথ
             },
             {
                 id: 7,
-                name: "হিতৈষী সদস্য ও সদস্য সচিব, বিএনপি, ঢাকা মহানগর দক্ষিণ",
-                position: "তানভীর আহমেদ রবিন",
-                photo: "assets/images/gb/তানভীর_আহমেদ_রবিন_2.jpg"
+                name: "তানভীর আহমেদ রবিন",
+                position: "হিতৈষী সদস্য",
+                photo: "assets/images/gb/তানভীর_আহমেদ_রবিন_2.jpg" // আপনার আসল পাথ
             },
             {
                 id: 8,
-                name: "চিকিৎসক প্রতিনিধি",
-                position: "ডা. মো. নূরুল হক",
-                photo: "assets/images/gb/ডা._মো._নূরুল_হক.jpeg"
+                name: "ডা. মো. নূরুল হক",
+                position: "চিকিৎসক প্রতিনিধি",
+                photo: "assets/images/gb/ডা_মো_নূরুল_হক.jpeg" // আপনার আসল পাথ
             },
             {
                 id: 9,
-                name: "অভিভাবক প্রতিনিধি",
-                position: "মো. মাসুদ আলী",
-                photo: "assets/images/gb/মো._মাসুদ_আলী.jpg"
+                name: "মো. মাসুদ আলী",
+                position: "অভিভাবক প্রতিনিধি",
+                photo: "assets/images/gb/মো._মাসুদ_আলী.jpg" // আপনার আসল পাথ
             },
             {
                 id: 10,
-                name: "অভিভাবক প্রতিনিধি",
-                position: "দিল মোহাম্মদ",
-                photo: "assets/images/gb/দিল_মোহাম্মদ.jpg"
+                name: "দিল মোহাম্মদ",
+                position: "অভিভাবক প্রতিনিধি",
+                photo: "assets/images/gb/দিল_মোহাম্মদ.jpg" // আপনার আসল পাথ
             },
             {
                 id: 11,
-                name: "অভিভাবক প্রতিনিধি",
-                position: "শামীমা আক্তার",
-                photo: "assets/images/gb/Portrait_Placeholder.png"
+                name: "শামীমা আক্তার",
+                position: "অভিভাবক প্রতিনিধি",
+                photo: "assets/images/gb/Portrait_Placeholder.jpg" // আপনার আসল পাথ
             },
             {
                 id: 12,
-                name: "শিক্ষক প্রতিনিধি ও সহযোগী অধ্যাপক এবং বিভাগীয় প্রধান, বাংলা বিভাগ",
-                position: "আবুল কালাম আজাদ",
-                photo: "assets/images/gb/আবুল_কালাম_আজাদ.jpg"
+                name: "আবুল কালাম আজাদ",
+                position: "শিক্ষক প্রতিনিধি",
+                photo: "assets/images/gb/আবুল_কালাম_আজাদ.jpg" // আপনার আসল পাথ
             },
             {
                 id: 13,
-                name: "শিক্ষক প্রতিনিধি ও সহযোগী অধ্যাপক এবং বিভাগীয় প্রধান, উদ্ভিদবিজ্ঞান বিভাগ",
-                position: "মো. রফিকুল ইসলাম",
-                photo: "assets/images/gb/মো._রফিকুল_ইসলাম.jpg"
+                name: "মো. রফিকুল ইসলাম",
+                position: "শিক্ষক প্রতিনিধি",
+                photo: "assets/images/gb/মো._রফিকুল_ইসলাম.jpg" // আপনার আসল পাথ
             },
             {
                 id: 14,
-                name: "শিক্ষক প্রতিনিধি ও সহযোগী অধ্যাপক এবং বিভাগীয় প্রধান, ইসলামের ইতিহাস ও সংস্কৃতি বিভাগ",
-                position: "ফারহানা নাহার",
-                photo: "assets/images/gb/ফারহানা_নাহার.jpg"
+                name: "ফারহানা নাহার",
+                position: "শিক্ষক প্রতিনিধি",
+                photo: "assets/images/gb/ফারহানা_নাহার.jpg" // আপনার আসল পাথ
             }
         ];
 
-        // Function to generate member cards
         function generateMemberCards(membersArray) {
             const container = document.getElementById('membersContainer');
             container.innerHTML = '';
@@ -367,18 +265,16 @@
             membersArray.forEach(member => {
                 const card = document.createElement('div');
                 card.className = 'member-card';
-                card.setAttribute('data-category', getCategory(member.position));
 
+                // ফিক্স: এখানে <img> ট্যাগ যোগ করা হয়েছে এবং onerror হ্যান্ডেল করা হয়েছে
                 card.innerHTML = `
                     <div class="member-photo">
-                        <div class="placeholder-photo">
-                            <i class="fas fa-user"></i>
-                        </div>
+                        <img src="${member.photo}" alt="${member.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-user placeholder-icon"></i>
                     </div>
                     <div class="member-info">
                         <h3 class="member-name">${member.name}</h3>
                         <p class="member-position">${member.position}</p>
-                        
                     </div>
                 `;
 
@@ -386,47 +282,9 @@
             });
         }
 
-        // Helper function to determine category based on position
-        function getCategory(position) {
-            if (position.toLowerCase().includes('chairman')) return 'chairman';
-            if (position.toLowerCase().includes('secretary')) return 'secretary';
-            return 'member';
-        }
-
-        // Filter functionality
-        function setupFilters() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    btn.classList.add('active');
-
-                    const filter = btn.getAttribute('data-filter');
-                    filterMembers(filter);
-                });
-            });
-        }
-
-        // Filter members based on category
-        function filterMembers(category) {
-            const allCards = document.querySelectorAll('.member-card');
-
-            allCards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
         // Search functionality
         function setupSearch() {
             const searchInput = document.getElementById('searchInput');
-
             searchInput.addEventListener('input', () => {
                 const searchTerm = searchInput.value.toLowerCase();
                 const allCards = document.querySelectorAll('.member-card');
@@ -436,7 +294,7 @@
                     const position = card.querySelector('.member-position').textContent.toLowerCase();
 
                     if (name.includes(searchTerm) || position.includes(searchTerm)) {
-                        card.style.display = 'block';
+                        card.style.display = 'flex';
                     } else {
                         card.style.display = 'none';
                     }
@@ -444,10 +302,8 @@
             });
         }
 
-        // Initialize the page
         document.addEventListener('DOMContentLoaded', () => {
             generateMemberCards(members);
-            setupFilters();
             setupSearch();
         });
     </script>
