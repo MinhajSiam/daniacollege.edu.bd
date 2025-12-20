@@ -1,0 +1,328 @@
+<nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+        <a style="text-decoration: none; color: #16A34A; font-weight: 700; font-size: 30px;display: flex; align-items: center; justify-content: center;"
+            href="https://daniacollege.edu.bd/"><img src="Semi-Transparent Logo.png" alt="Dania College Logo">
+            <span style="padding-left: 10px; font-family: 'Poppins', sans-serif;">DANIA COLLEGE</span></a>
+    </div>
+
+    <!-- Hamburger Toggler -->
+    <div class="toggler" id="toggler">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Navigation Menu -->
+    <ul class="nav-links" id="nav-links">
+        <li><a href="https://daniacollege.edu.bd/">Home</a></li>
+        <li class="dropdown">
+            <a href="#">About <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="about.html" style="font-size: 14px;">About</a></li>
+                <li><a href="history.html" style="font-size: 14px;">History</a></li>
+                <li><a href="principal.html" style="font-size: 14px;">Principal</a></li>
+                <li><a href="gb.html" style="font-size: 14px;">Governing Body</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Programs <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="#" style="font-size: 14px;">HSC</a></li>
+                <li><a href="#" style="font-size: 14px;">Hon's</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Departments <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+            <ul class="dropdown-menu multi-column">
+                <li><a href="bangla.html" style="font-size: 14px;">Bangla</a></li>
+                <li><a href="english.html" style="font-size: 14px;">English</a></li>
+                <li><a href="ict.html" style="font-size: 14px;">ICT</a></li>
+                <li><a href="statistics.html" style="font-size: 14px;">Statistics</a></li>
+                <li><a href="economics.html" style="font-size: 14px;">Economics</a></li>
+                <li><a href="logic.html" style="font-size: 14px;">Logic</a></li>
+                <li><a href="geography.html" style="font-size: 14px;">Geography</a></li>
+                <li><a href="islamichistory.html" style="font-size: 14px;">Islamic History</a></li>
+                <li><a href="civics.html" style="font-size: 14px;">Civics</a></li>
+                <li><a href="socialwork.html" style="font-size: 14px;">Social Work</a></li>
+                <li><a href="economics.html" style="font-size: 14px;">Economics</a></li>
+                <li><a href="history.html" style="font-size: 14px;">History</a></li>
+                <li><a href="psychology.html" style="font-size: 14px;">Psychology</a></li>
+                <li><a href="islamicstudies.html" style="font-size: 14px;">Islamic Studies</a></li>
+                <li><a href="homescience.html" style="font-size: 14px;">Home Science</a></li>
+                <li><a href="physics.html" style="font-size: 14px;">Physics</a></li>
+                <li><a href="chemistry.html" style="font-size: 14px;">Chemistry</a></li>
+                <li><a href="biology.html" style="font-size: 14px;">Biology</a></li>
+                <li><a href="highermath.html" style="font-size: 14px;">Higher Math</a></li>
+                <li><a href="accounting.html" style="font-size: 14px;">Accounting</a></li>
+                <li><a href="management.html" style="font-size: 14px;">Management</a></li>
+                <li><a href="marketing.html" style="font-size: 14px;">Marketing</a></li>
+                <li><a href="finance.html" style="font-size: 14px;">Finance</a></li>
+                <li><a href="professionals.html" style="font-size: 14px;">BBA Professional</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Academic <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="#" style="font-size: 14px;">Result</a></li>
+                <li><a href="academic-calendar.html" style="font-size: 14px;">Calendar</a></li>
+                <li><a href="#" style="font-size: 14px;">Class Routine</a></li>
+            </ul>
+        </li>
+        <li><a href="#notice-board-column">Notice</a></li>
+        <li class="dropdown"><a href="#">Activity <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="#" style="font-size: 14px;">Scout</a></li>
+                <li><a href="alumni2.html" style="font-size: 14px;">Alumni</a></li>
+                <li><a href="club_card/index.html" style="font-size: 14px;">Club Activity</a></li>
+            </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Right Side Options -->
+    <div class="right-options">
+        <a href="apply.html" class="btn" style="background-color: #FFA516; font-weight: 700;">Admission</a>
+        <a href="https://manage.expresssolutionltd.com/login" class="btn"
+            style="background-color: #53cc40; font-weight: 700;">Portal</a>
+    </div>
+</nav>
+
+<!-- chatbot start -->
+<style>
+    /* Chat Button (Floating) */
+    .chat-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #004d40;
+        /* Dania College Green theme approx */
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transition: transform 0.3s;
+    }
+
+    .chat-btn:hover {
+        transform: scale(1.1);
+    }
+
+    /* Chat Box */
+    .chat-box {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 350px;
+        height: 450px;
+        background-color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        display: none;
+        /* Hidden by default */
+        flex-direction: column;
+        overflow: hidden;
+        z-index: 1000;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Header */
+    .chat-header {
+        background-color: #004d40;
+        color: white;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    .chat-header button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    /* Body */
+    .chat-body {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        background-color: #f1f1f1;
+    }
+
+    /* Messages */
+    .bot-message,
+    .user-message {
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        max-width: 80%;
+    }
+
+    .bot-message {
+        background-color: #e0e0e0;
+        color: black;
+        align-self: flex-start;
+    }
+
+    .user-message {
+        background-color: #004d40;
+        color: white;
+        align-self: flex-end;
+        margin-left: auto;
+        /* Push to right */
+        text-align: right;
+    }
+
+    /* Footer */
+    .chat-footer {
+        display: flex;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+        background-color: white;
+    }
+
+    .chat-footer input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        outline: none;
+    }
+
+    .chat-footer button {
+        background-color: #004d40;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        margin-left: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+</style>
+<button class="chat-btn" onclick="toggleChat()">
+    <i class="fas fa-comment-dots"></i>
+</button>
+
+<div class="chat-box" id="chatBox">
+    <div class="chat-header">
+        <span>Dania College Assistant</span>
+        <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chat-body" id="chatBody">
+        <div class="bot-message">
+            আসসালামু আলাইকুম! আমি দনিয়া কলেজের ভার্চুয়াল অ্যাসিস্ট্যান্ট। আমি আপনাকে কীভাবে সাহায্য করতে পারি?
+            <br><br>
+            উদাহরণ: "ভর্তি", "বিষয়", "যোগাযোগ", "নোটিশ"।
+        </div>
+    </div>
+    <div class="chat-footer">
+        <input type="text" id="userInput" placeholder="আপনার প্রশ্ন লিখুন..." onkeypress="handleEnter(event)">
+        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+<script>
+    // Toggle Chatbox Visibility
+    function toggleChat() {
+        const chatBox = document.getElementById("chatBox");
+        if (chatBox.style.display === "none" || chatBox.style.display === "") {
+            chatBox.style.display = "flex";
+        } else {
+            chatBox.style.display = "none";
+        }
+    }
+
+    // Handle Enter Key
+    function handleEnter(event) {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    }
+
+    // Send Message Logic
+    function sendMessage() {
+        const inputField = document.getElementById("userInput");
+        const userText = inputField.value.trim();
+        const chatBody = document.getElementById("chatBody");
+
+        if (userText === "") return;
+
+        // 1. Show User Message
+        const userDiv = document.createElement("div");
+        userDiv.className = "user-message";
+        userDiv.innerText = userText;
+        chatBody.appendChild(userDiv);
+
+        // Clear Input
+        inputField.value = "";
+        chatBody.scrollTop = chatBody.scrollHeight; // Auto scroll to bottom
+
+        // 2. Bot Response Logic (Artificial Delay for realism)
+        setTimeout(() => {
+            const botDiv = document.createElement("div");
+            botDiv.className = "bot-message";
+            botDiv.innerHTML = getBotResponse(userText); // Get answer based on logic
+            chatBody.appendChild(botDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }, 500);
+    }
+
+    // Bot Intelligence (Rules)
+    function getBotResponse(input) {
+        input = input.toLowerCase();
+
+        // Keywords matching for Dania College
+        if (input.includes("ভর্তি") || input.includes("admission")) {
+            return "একাদশ শ্রেণির ভর্তি কার্যক্রম সাধারণত এস.এস.সি ফলাফলের পরে শুরু হয়। বিস্তারিত জানতে আমাদের নোটিশ বোর্ড দেখুন অথবা কলেজে যোগাযোগ করুন।";
+        }
+        else if (input.includes("বিষয়") || input.includes("subject") || input.includes("group")) {
+            return "আমাদের কলেজে বিজ্ঞান, ব্যবসায় শিক্ষা এবং মানবিক বিভাগ চালু আছে।";
+        }
+        else if (input.includes("ঠিকানা") || input.includes("location") || input.includes("address")) {
+            return "দনিয়া কলেজ, দনিয়া, যাত্রাবাড়ী, ঢাকা-১২৩৬।";
+        }
+        else if (input.includes("যোগাযোগ") || input.includes("phone") || input.includes("contact")) {
+            return "আমাদের হেল্পলাইন: +৮৮০-XXXXXXXXXX (অফিস চলাকালীন)। ইমেইল: info@daniacollege.edu.bd";
+        }
+        else if (input.includes("প্রিন্সিপাল") || input.includes("principal")) {
+            return "অধ্যক্ষ মহোদয়ের তথ্য জানতে 'গভর্নিং বডি' বা 'শিক্ষক তথ্য' পেজটি ভিজিট করুন।";
+        }
+        else if (input.includes("হ্যালো") || input.includes("hi") || input.includes("hello") || input.includes("সালাম")) {
+            return "আসসালামু আলাইকুম! আপনাকে কীভাবে সাহায্য করতে পারি?";
+        }
+        else {
+            return "দুঃখিত, আমি এই বিষয়টি বুঝতে পারছি না। দয়া করে অফিসে যোগাযোগ করুন অথবা অন্যভাবে প্রশ্নটি করুন।";
+        }
+    }
+</script>
+<!-- chatbot end -->
+
+<!-- Horizontal Scrolling Notice Section -->
+<div class="notice-section">
+    <div class="notice-container">
+        <div class="notice-ticker" id="notice-ticker">
+            <a href="#" class="notice-item" data-pdf="Notices/2025 February/notice-12.02.2025-01.pdf"><span
+                    style="color: red;">[জাতীয় বিশ্ববিদ্যালয়]</span>
+                ১৮/০৬/২০২৫ - অতিরিক্ত ৩০ (ত্রিশ) মিনিট সময় বৃদ্ধি সংক্রান্ত বিজ্ঞপ্তি।</a>
+            <a href="#" class="notice-item" data-pdf="Notices/2025 February/notice-12.02.2025-01.pdf"><span
+                    style="color: red;">[পরীক্ষার ফলাফল]</span>
+                ১৮/০৬/২০২৫ - উচ্চমাধ্যমিক একাদশ শ্রেণির (২০২৪-২০২৫) বার্ষিক পরীক্ষার ফলাফল প্রকাশ।</a>
+            <a href="#" class="notice-item" data-pdf="Notices/2025 February/notice-12.02.2025-01.pdf"><span
+                    style="color: red;">[ক্লাস বন্ধের নোটিশ]</span>
+                ১৭/০৬/২০২৫ - স্নাতক (সম্মান), স্নাতক (পাস) এবং বিবিএ প্রফেশনাল বিভাগের ক্লাস স্থগিত
+                এর নোটিশ।</a>
+            <a href="#" class="notice-item" data-pdf="Notices/2025 February/notice-12.02.2025-01.pdf"><span
+                    style="color: red;">[বিদায় ও দোয়া অনুষ্ঠান]</span>
+                ১৭/০৬/২০২৫ - উচ্চমাধ্যমিক পরীক্ষা ২০২৫ এর পরীক্ষার্থীদের বিদায় ও দোয়ার আয়োজন।</a>
+            <a href="#" class="notice-item" data-pdf="Notices/2025 February/notice-12.02.2025-01.pdf"><span
+                    style="color: red;">[প্রবেশপত্র বিতরন]</span>
+                ১৬/০৬/২০২৩ - উচ্চমাধ্যমিক পরীক্ষা ২০২৫ এর প্রবেশপত্র বিতরন সংক্রান্ত জরুরী বিজ্ঞপ্তি।</a>
+        </div>
+    </div>
+</div>
