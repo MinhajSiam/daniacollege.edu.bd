@@ -2,69 +2,159 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KF11SRQQKK"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-KF11SRQQKK');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History | Dania College</title>
     <link rel="shortcut icon" href="Semi-Transparent Logo.png" type="image/x-icon">
-    <meta property="og:image" content="Semi-Transparent Logo.png" />
-    <meta property="og:image:secure_url" content="Semi-Transparent Logo.png" />
-    <meta property="og:image:type" content="image/jpeg/png" />
-    <meta property="og:image:width" content="400" />
-    <meta property="og:image:height" content="300" />
-    <meta property="og:image:alt" content="Dania College" />
-    <!-- Google Fonts - Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Hamburger Icon -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
         body {
-            background-color: #f9f9fb;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+            margin: 0;
+            color: #333;
         }
 
+        /* --- Custom Grid System --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+            align-items: center;
+        }
+
+        .col-lg-6 {
+            flex: 0 0 50%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .col-12 {
+            flex: 0 0 100%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 992px) {
+            .col-lg-6 {
+                flex: 0 0 100%;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        /* --- History Image Styling --- */
+        .history-hero {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .history-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(60%);
+        }
+
+        .hero-text-overlay {
+            position: absolute;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-text-overlay h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .history-img-card {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .history-img-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* --- Text & Section Styling --- */
         .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .history-section {
-            padding: 60px 20px;
+            font-size: 2.2rem;
+            color: #0f5132;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #16A34A;
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
         .history-text {
             font-size: 1.1rem;
-            color: #343a40;
-            line-height: 1.8;
+            line-height: 1.9;
+            text-align: justify;
+            color: #444;
+        }
+
+        .subheading {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-top: 40px;
+            color: #16A34A;
+            border-left: 5px solid #16A34A;
+            padding-left: 15px;
+        }
+
+        /* List Styling */
+        .list-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
         }
 
         .teacher-list ul,
         .staff-list ul {
-            padding-left: 1.2rem;
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
         }
 
         .teacher-list li,
         .staff-list li {
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-        }
-
-        .subheading {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            color: #0f5132;
+            background: #f9f9f9;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #16A34A;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -642,194 +732,184 @@
             </div>
         </div>
     </header>
-    <section class="history-section container">
-        <div class="row">
-            <img src="history.webp" alt="">
-            <div class="col-12">
-                <h2 class="section-title">দনিয়া কলেজের সূচনা</h2>
-                <p class="history-text" style="text-align: justify;">
-                    <!-- History of Dania College in Bengali -->
-                    রাজধানী ঢাকার প্রবেশ দ্বার ঢাকা-চট্টগ্রাম মহাসড়কের কোল ঘেষে যাত্রাবাড়ি থানায় অবস্থিত দনিয়া কলেজ
-                    বাংলাদেশের উচ্চমাধ্যমিক ও উচ্চ শিক্ষা বিস্তাবের একটি অনন্য বিদ্যাপিঠ। ঢাকার দক্ষিণ-পূর্ব অঞ্চলের
-                    বৃহত্তম এই কলেজটি ইতোমধ্যেই জাতীয় বিশ্ববিদ্যালয়ের কলেজ র‍্যাংকিং এর তালিকার প্রথম দিকে স্থান করে
-                    নিয়েছে। কলেজের পাঠ দানে কার্যকর পদ্ধতি অবলম্বন, সুশৃঙ্খল ব্যবস্থাপনা, সহ-শিক্ষা কার্যক্রমে সাফল্য,
-                    শিক্ষা বোর্ড ও জাতীয় বিশ্ববিদ্যালয়ের পরীক্ষায় আশাব্যঞ্জক ফলাফলসহ ৩১টি সূচক মূল্যায়নে জাতীয়
-                    বিশ্ববিদ্যালয়ের কলেজ র‍্যাংকিং-এ ইতোপূর্বে দেশের বেসরকারি কলেজের মধ্যে ৪র্থ ছা মহানগরীর সরকারি ও
-                    বেসরকারি কলেজের মধ্যে ৯ম স্থান এবং জাতীয় পর্যায় ২২০০ টি কলেজের মা ২২তম স্থান অর্জন করেছে।
-                    <br><br>
-                    আশির দশকে ঢাকার যাত্রাবাড়ি কদমতলী, শ্যামপুর, দনিয়া, রায়েরবাগ, মাতুয়াইলসহ বিভিন্ন এলাকায় অর্থাৎ ডেমরা
-                    অঞ্চলে উচ্চ শিক্ষার জন্য কোনো শিক্ষা প্রতিষ্ঠান ছিল না। এই এলাকার বেশিরভাগ পরিবার ছিল মধ্যবিত্ত,
-                    নিম্নবিত্ত ও দরিদ্র। এলাকার শিক্ষার্থীদের উচ্চমাধ্যমিক ও উচ্চ শিক্ষা গ্রহণের সুযোগ ছিল খুবই সীমিত। এ
-                    বাস্তবতায় এলাকায় শিক্ষা সম্প্রসারণের জন্য শিক্ষানুরাগী ও বিশিষ্টজনদের উদ্যোগে একটি মহাবিদ্যালয়
-                    প্রতিষ্ঠার লক্ষ্যে ১৯৮৪ সালের ২২শে নভেম্বর দনিয়া এ কে হাই স্কুলে প্রথম একটি সভার আয়োজন করা হয়। এ
-                    সভায় এলাকার গণ্যমান্য ব্যাক্তিদের পরামর্শে একটি কলেজ প্রতিষ্ঠা করার প্রস্তাব অনুমোদন করা হয়। এ
-                    উদ্যোগ বাস্তবায়নের জন্য সভায় ১৭ সদস্য বিশিষ্ট একটি কমিটি গঠন করা হয়। একই বছর নভেম্বর মাসের ২৬ তারিখ
-                    কলেজের ঘর নির্মাণের জন্য খুঁটি স্থাপন করা হয়। এ কারণে ২৬শে নভেম্বর দনিয়া কলেজের জন্মদিন হিসেবে
-                    বিবেচনা করেছেন কলেজের প্রতিষ্ঠাকালীন অধ্যক্ষ জনাব এস এম কাজী আনোয়ারুল ইসলাম।
-                    <br><br>
-                    ৩০শে নভেম্বর ১৯৮৪ তারিখে কলেজ প্রতিষ্ঠা কমিটির পরবর্তী সভা অনুষ্ঠিত হয়। কলেজ প্রতিষ্ঠার জন্য এলাকার
-                    অধিকসংখ্যক উদ্যোক্তাদের অংশগ্রহণ বৃদ্ধি করার লক্ষ্যে এই সভায় ১৭ সদস্য বিশিষ্ট কমিটিকে ৫১ সদস্য
-                    বিশিষ্ট কমিটিতে উন্নীত করা হয়। সভায় আরো সিদ্ধান্ত হয় যে ৬ ডিসেম্বর ১৯৮৪, ১২ রবিউল আউয়াল পবিত্র ঈদে
-                    মিলাদুন্নবীর শুভলগ্নে একটি মিলাদ মাহফিল আয়োজন করে আনুষ্ঠানিকভাবে কলেজের সাইনবোর্ড স্থাপন করা হবে এবং
-                    সিদ্ধান্ত অনুসারে সাইনবোর্ড স্থাপন করা হয়। এভাবেই এলাকার বিভিন্ন স্তরের উৎসাহী শিক্ষানুরাগী মানুষের
-                    আন্তরিক সহযোগিতায় শুরু হয় দনিয়া কলেজের পথ চলা।
-                    <br><br>
-                    ৩১শে মে ১৯৮৫ তারিখে এক সুধী সমাবেশ অনুষ্ঠিত হয়। এ সভায় প্রধান অতিথি হিসেবে উপস্থিত ছিলেন ঢাকা জেলার
-                    তৎকালীন জেলা প্রশাসক জনাব বদিউর রহমান। সমাবেশে আরো উপস্থিত ছিলেন ডেমরা থানার তিন জন ইউনিয়ন পরিষদ
-                    চেয়ারম্যান, ঢাকা পৌরসভার তিন জন ওয়ার্ড কমিশনার, এলাকার রাজনৈতিক ও সামাজিক সংগঠনের নেতৃবৃন্দসহ
-                    গণ্যমান্য ব্যাক্তিবর্গ। এই কলেজের উন্নয়নের জন্য সভার প্রধান অতিথি জেলা প্রশাসক মহোদয় এক লক্ষ টাকার
-                    অনুদান ঘোষণা করেন।
-                    <br><br>
-                    এরপর ১৯৮৫ সালের ১৮ই জুন জেলা প্রশাসক মহোদয়ের কার্যালয়ে এক সভায় কলেজের কাজ সুচারু রূপে সম্পাদনের জন্য
-                    নিম্নলিখিত তিনটি কমিটি গঠন করা হয়।
-                <ul>
-                    <li>কার্যনির্বাহী কমিটি</li>
-                    <li>ফাইন্যান্স কমিটি</li>
-                    <li>নির্মাণ কমিটি</li>
-                </ul>
-                </p>
-                <p class="history-text" style="text-align: justify;">
-                    তখন কলেজ পরিচালনা পর্ষদের সভাপতির দায়িত্ব পালন করেন তৎকালীন অতিরিক্ত জেলা প্রশাসক (প্রশাসন) জনাৰ
-                    ধীরাজ মালাকার। অধ্যক্ষসহ ১২ জন শিক্ষক, এক জন হিসাব রক্ষক, দুই জন পিয়ন ও দুই জন নৈশ প্রহরী কলেজ
-                    প্রতিষ্ঠাকালীন সময়ে কাজে যোগদান করেন। টিনের চালা বিশিষ্ট একটি অফিস কক্ষ ছিল। এ কক্ষেই অফিসের কাজ
-                    পরিচালনার পাশাপাশি শিক্ষকগণের বসার ব্যবস্থা ছিল। একই সাথে অফিস কক্ষের এক পাশে একটি ছোট্ট
-                    লাইব্রেরিও
-                    স্থাপন করা হয়। বড় একটি কক্ষকে তিনভাগ করে সেখানে বিজ্ঞান, মানবিক ও ব্যবসায় শিক্ষার ক্লাস পরিচালিত
-                    হতো।
-                    <br><br>
-                    একটি ছোট্ট টিনের ঘরে ৬৭ জন শিক্ষার্থী নিয়ে ১৯৮৫ সালে উচ্চমাধ্যমিক পর্যায় পাঠ প্রদানের মাধ্যমে
-                    কলেজটির যাত্রা শুরু হয়। উচ্চমাধ্যমিকের পাশাপাশি ১৯৯২-৯৩ শিক্ষা বর্ষ থেকে স্নাতক (পাস) এবং
-                    ২০০০-২০০১
-                    শিক্ষাবর্ষে স্নাতক সম্মান কোর্স চালু হয়। এলাকার শিক্ষার্থীদের চাহিদার আলোকে বর্তমানে মোট ১২টি
-                    বিষয়ে
-                    স্নাতক সম্মান কোর্স চালু রয়েছে। ২০১১-১২ শিক্ষাবর্ষে কলেজে বিবিএ প্রফেশনাল কোর্স চালু হয়।
-                    বর্তমানে
-                    কলেজের শিক্ষার্থীর সংখ্যা প্রায় ১০,০০০ হাজার। একটি ছোট্ট টিনের ঘরের হানে নির্মিত হয়েছে একটি ১০
-                    তলা ও
-                    দুটি ৫ তলা বিশিষ্ট আধুনিক ভবন এবং ৮ তলা বিশিষ্ট আইসিটি ভবন।
-                    <br><br>
-                    শিক্ষা বোর্ড ও জাতীয় বিশ্ববিদ্যালয়ের বিভিন্ন পরীক্ষায় দনিয়া কলেজের শিক্ষার্থীরা আশাব্যঞ্জক ফলাফল
-                    অর্জন করে থাকে। দনিয়া কলেজ থেকে পাশ করা শিক্ষার্থীদের মধ্যে উল্লেখযোগ্য সংখ্যক ঢাকা
-                    বিশ্ববিদ্যালয়,
-                    বাংলাদেশ প্রকৌশল বিশ্ববিদ্যালয়, মেডিকেল কলেজ ও বিভিন্ন পাবলিক বিশ্ববিদ্যালয়ে ভর্তি হওয়ার সুযোগ
-                    পাচ্ছে। দনিয়া কলেজের শিক্ষার্থীদের মধ্যে অনেকেই শিক্ষা জীবন শেষ করে ঢাকা বিশ্ববিদ্যালয় ও
-                    বাংলাদেশ
-                    প্রকৌশল বিশ্ববিদ্যালয়সহ বিভিন্ন খ্যাতনামা শিক্ষা প্রতিষ্ঠানে শিক্ষক হিসেবে যোগদান করেছেন।
-                    একইসাথে
-                    সরকারের প্রশাসন ক্যাডারসহ বিভিন্ন ক্যাডার ও সামরিক বাহিনীর কর্মকর্তা হিসেবে কাজ করছেন। বেশ
-                    কয়েকজন
-                    প্রাক্তন শিক্ষার্থী রাজনৈতিক নেতা হিসেবে জাতীয় পর্যায়ে অবদান রাখছেন।
-                </p>
-            </div>
+    <section class="history-hero">
+        <img src="history.webp" alt="Dania College Campus">
+        <div class="hero-text-overlay">
+            <h1>আমাদের গৌরবময় ইতিহাস</h1>
         </div>
     </section>
 
-    <section class="history-section container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="section-title">The Beginning of Dania College</h2>
-                <p class="history-text" style="text-align: justify;">
-                    <!-- History of Dania College in English -->
-                    Donia College, located in the Jatrabari police precinct beside the Dhaka-Chattogram highway—the
-                    gateway to the capital city Dhaka—is a distinguished institution for higher secondary and tertiary
-                    education in Bangladesh. As one of the largest colleges in the southeastern region of Dhaka, it has
-                    already secured a top position in the National University’s college rankings. Owing to its effective
-                    teaching methods, well-organized administration, success in co-curricular activities, and consistent
-                    academic performance, the college ranked 4th among private colleges, 9th among all government and
-                    private colleges in metropolitan areas, and 22nd out of 2,200 colleges nationwide—based on 31
-                    evaluation criteria set by the National University.
-                    <br><br>
-                    In the 1980s, areas like Jatrabari, Kadamtali, Shyampur, Donia, Rayerbagh, and Matuail—collectively
-                    known as the Demra region—had no institutions for higher education. The majority of residents in
-                    this region were from middle-class, lower-middle-class, and underprivileged backgrounds. As a
-                    result, students had very limited access to higher secondary and tertiary education. In response,
-                    local education enthusiasts and prominent citizens convened a meeting on November 22, 1984, at Donia
-                    A.K. High School to establish a college. The meeting approved the proposal to establish a college
-                    and formed a 17-member committee to realize the initiative. On November 26 of the same year, the
-                    foundation was laid for the college building. For this reason, the founding principal, Mr. S.M. Kazi
-                    Anwarul Islam, considered November 26 the official founding day of Donia College.
-                    <br><br>
-                    A follow-up meeting of the college establishment committee was held on November 30, 1984, where the
-                    original 17-member committee was expanded to 51 members to involve more community stakeholders. It
-                    was also decided that on December 6, 1984—12 Rabi' al-Awwal, the holy occasion of
-                    Eid-e-Milad-un-Nabi—a Milad Mahfil (religious gathering) would be held, and the college’s signboard
-                    would be formally installed, which was done accordingly. Thus, with enthusiastic participation and
-                    heartfelt support from people of all walks of life, Donia College took its first steps.
-                    <br><br>
-                    On May 31, 1985, a grand assembly was held, graced by then-Dhaka District Commissioner Mr. Badiur
-                    Rahman as the chief guest. Also present were three union parishad chairmen from Demra Thana, three
-                    ward commissioners of Dhaka Municipality, and many local political and social leaders. At the event,
-                    the district commissioner generously announced a grant of one lakh taka for the development of the
-                    college.
-                    <br><br>
-                    Later, on June 18, 1985, a meeting at the District Commissioner’s office resulted in the formation
-                    of three committees to oversee smooth college operations:
-                <ul>
-                    <li>Executive Committee</li>
-                    <li>Finance Committee</li>
-                    <li>Construction Committee</li>
-                </ul>
-                </p>
+    <main class="container">
+        <section class="list-card teacher-list">
+            <h2 class="section-title">দনিয়া কলেজের সূচনা</h2>
+            <p class="history-text" style="text-align: justify;">
+                <!-- History of Dania College in Bengali -->
+                রাজধানী ঢাকার প্রবেশ দ্বার ঢাকা-চট্টগ্রাম মহাসড়কের কোল ঘেষে যাত্রাবাড়ি থানায় অবস্থিত দনিয়া কলেজ
+                বাংলাদেশের উচ্চমাধ্যমিক ও উচ্চ শিক্ষা বিস্তাবের একটি অনন্য বিদ্যাপিঠ। ঢাকার দক্ষিণ-পূর্ব অঞ্চলের
+                বৃহত্তম এই কলেজটি ইতোমধ্যেই জাতীয় বিশ্ববিদ্যালয়ের কলেজ র‍্যাংকিং এর তালিকার প্রথম দিকে স্থান করে
+                নিয়েছে। কলেজের পাঠ দানে কার্যকর পদ্ধতি অবলম্বন, সুশৃঙ্খল ব্যবস্থাপনা, সহ-শিক্ষা কার্যক্রমে সাফল্য,
+                শিক্ষা বোর্ড ও জাতীয় বিশ্ববিদ্যালয়ের পরীক্ষায় আশাব্যঞ্জক ফলাফলসহ ৩১টি সূচক মূল্যায়নে জাতীয়
+                বিশ্ববিদ্যালয়ের কলেজ র‍্যাংকিং-এ ইতোপূর্বে দেশের বেসরকারি কলেজের মধ্যে ৪র্থ ছা মহানগরীর সরকারি ও
+                বেসরকারি কলেজের মধ্যে ৯ম স্থান এবং জাতীয় পর্যায় ২২০০ টি কলেজের মা ২২তম স্থান অর্জন করেছে।
+                <br><br>
+                আশির দশকে ঢাকার যাত্রাবাড়ি কদমতলী, শ্যামপুর, দনিয়া, রায়েরবাগ, মাতুয়াইলসহ বিভিন্ন এলাকায় অর্থাৎ ডেমরা
+                অঞ্চলে উচ্চ শিক্ষার জন্য কোনো শিক্ষা প্রতিষ্ঠান ছিল না। এই এলাকার বেশিরভাগ পরিবার ছিল মধ্যবিত্ত,
+                নিম্নবিত্ত ও দরিদ্র। এলাকার শিক্ষার্থীদের উচ্চমাধ্যমিক ও উচ্চ শিক্ষা গ্রহণের সুযোগ ছিল খুবই সীমিত। এ
+                বাস্তবতায় এলাকায় শিক্ষা সম্প্রসারণের জন্য শিক্ষানুরাগী ও বিশিষ্টজনদের উদ্যোগে একটি মহাবিদ্যালয়
+                প্রতিষ্ঠার লক্ষ্যে ১৯৮৪ সালের ২২শে নভেম্বর দনিয়া এ কে হাই স্কুলে প্রথম একটি সভার আয়োজন করা হয়। এ
+                সভায় এলাকার গণ্যমান্য ব্যাক্তিদের পরামর্শে একটি কলেজ প্রতিষ্ঠা করার প্রস্তাব অনুমোদন করা হয়। এ
+                উদ্যোগ বাস্তবায়নের জন্য সভায় ১৭ সদস্য বিশিষ্ট একটি কমিটি গঠন করা হয়। একই বছর নভেম্বর মাসের ২৬ তারিখ
+                কলেজের ঘর নির্মাণের জন্য খুঁটি স্থাপন করা হয়। এ কারণে ২৬শে নভেম্বর দনিয়া কলেজের জন্মদিন হিসেবে
+                বিবেচনা করেছেন কলেজের প্রতিষ্ঠাকালীন অধ্যক্ষ জনাব এস এম কাজী আনোয়ারুল ইসলাম।
+                <br><br>
+                ৩০শে নভেম্বর ১৯৮৪ তারিখে কলেজ প্রতিষ্ঠা কমিটির পরবর্তী সভা অনুষ্ঠিত হয়। কলেজ প্রতিষ্ঠার জন্য এলাকার
+                অধিকসংখ্যক উদ্যোক্তাদের অংশগ্রহণ বৃদ্ধি করার লক্ষ্যে এই সভায় ১৭ সদস্য বিশিষ্ট কমিটিকে ৫১ সদস্য
+                বিশিষ্ট কমিটিতে উন্নীত করা হয়। সভায় আরো সিদ্ধান্ত হয় যে ৬ ডিসেম্বর ১৯৮৪, ১২ রবিউল আউয়াল পবিত্র ঈদে
+                মিলাদুন্নবীর শুভলগ্নে একটি মিলাদ মাহফিল আয়োজন করে আনুষ্ঠানিকভাবে কলেজের সাইনবোর্ড স্থাপন করা হবে এবং
+                সিদ্ধান্ত অনুসারে সাইনবোর্ড স্থাপন করা হয়। এভাবেই এলাকার বিভিন্ন স্তরের উৎসাহী শিক্ষানুরাগী মানুষের
+                আন্তরিক সহযোগিতায় শুরু হয় দনিয়া কলেজের পথ চলা।
+                <br><br>
+                ৩১শে মে ১৯৮৫ তারিখে এক সুধী সমাবেশ অনুষ্ঠিত হয়। এ সভায় প্রধান অতিথি হিসেবে উপস্থিত ছিলেন ঢাকা জেলার
+                তৎকালীন জেলা প্রশাসক জনাব বদিউর রহমান। সমাবেশে আরো উপস্থিত ছিলেন ডেমরা থানার তিন জন ইউনিয়ন পরিষদ
+                চেয়ারম্যান, ঢাকা পৌরসভার তিন জন ওয়ার্ড কমিশনার, এলাকার রাজনৈতিক ও সামাজিক সংগঠনের নেতৃবৃন্দসহ
+                গণ্যমান্য ব্যাক্তিবর্গ। এই কলেজের উন্নয়নের জন্য সভার প্রধান অতিথি জেলা প্রশাসক মহোদয় এক লক্ষ টাকার
+                অনুদান ঘোষণা করেন।
+                <br><br>
+                এরপর ১৯৮৫ সালের ১৮ই জুন জেলা প্রশাসক মহোদয়ের কার্যালয়ে এক সভায় কলেজের কাজ সুচারু রূপে সম্পাদনের জন্য
+                নিম্নলিখিত তিনটি কমিটি গঠন করা হয়।
+            <ul>
+                <li>কার্যনির্বাহী কমিটি</li>
+                <li>ফাইন্যান্স কমিটি</li>
+                <li>নির্মাণ কমিটি</li>
+            </ul>
+            </p>
+            <p class="history-text" style="text-align: justify;">
+                তখন কলেজ পরিচালনা পর্ষদের সভাপতির দায়িত্ব পালন করেন তৎকালীন অতিরিক্ত জেলা প্রশাসক (প্রশাসন) জনাৰ
+                ধীরাজ মালাকার। অধ্যক্ষসহ ১২ জন শিক্ষক, এক জন হিসাব রক্ষক, দুই জন পিয়ন ও দুই জন নৈশ প্রহরী কলেজ
+                প্রতিষ্ঠাকালীন সময়ে কাজে যোগদান করেন। টিনের চালা বিশিষ্ট একটি অফিস কক্ষ ছিল। এ কক্ষেই অফিসের কাজ
+                পরিচালনার পাশাপাশি শিক্ষকগণের বসার ব্যবস্থা ছিল। একই সাথে অফিস কক্ষের এক পাশে একটি ছোট্ট
+                লাইব্রেরিও
+                স্থাপন করা হয়। বড় একটি কক্ষকে তিনভাগ করে সেখানে বিজ্ঞান, মানবিক ও ব্যবসায় শিক্ষার ক্লাস পরিচালিত
+                হতো।
+                <br><br>
+                একটি ছোট্ট টিনের ঘরে ৬৭ জন শিক্ষার্থী নিয়ে ১৯৮৫ সালে উচ্চমাধ্যমিক পর্যায় পাঠ প্রদানের মাধ্যমে
+                কলেজটির যাত্রা শুরু হয়। উচ্চমাধ্যমিকের পাশাপাশি ১৯৯২-৯৩ শিক্ষা বর্ষ থেকে স্নাতক (পাস) এবং
+                ২০০০-২০০১
+                শিক্ষাবর্ষে স্নাতক সম্মান কোর্স চালু হয়। এলাকার শিক্ষার্থীদের চাহিদার আলোকে বর্তমানে মোট ১২টি
+                বিষয়ে
+                স্নাতক সম্মান কোর্স চালু রয়েছে। ২০১১-১২ শিক্ষাবর্ষে কলেজে বিবিএ প্রফেশনাল কোর্স চালু হয়।
+                বর্তমানে
+                কলেজের শিক্ষার্থীর সংখ্যা প্রায় ১০,০০০ হাজার। একটি ছোট্ট টিনের ঘরের হানে নির্মিত হয়েছে একটি ১০
+                তলা ও
+                দুটি ৫ তলা বিশিষ্ট আধুনিক ভবন এবং ৮ তলা বিশিষ্ট আইসিটি ভবন।
+                <br><br>
+                শিক্ষা বোর্ড ও জাতীয় বিশ্ববিদ্যালয়ের বিভিন্ন পরীক্ষায় দনিয়া কলেজের শিক্ষার্থীরা আশাব্যঞ্জক ফলাফল
+                অর্জন করে থাকে। দনিয়া কলেজ থেকে পাশ করা শিক্ষার্থীদের মধ্যে উল্লেখযোগ্য সংখ্যক ঢাকা
+                বিশ্ববিদ্যালয়,
+                বাংলাদেশ প্রকৌশল বিশ্ববিদ্যালয়, মেডিকেল কলেজ ও বিভিন্ন পাবলিক বিশ্ববিদ্যালয়ে ভর্তি হওয়ার সুযোগ
+                পাচ্ছে। দনিয়া কলেজের শিক্ষার্থীদের মধ্যে অনেকেই শিক্ষা জীবন শেষ করে ঢাকা বিশ্ববিদ্যালয় ও
+                বাংলাদেশ
+                প্রকৌশল বিশ্ববিদ্যালয়সহ বিভিন্ন খ্যাতনামা শিক্ষা প্রতিষ্ঠানে শিক্ষক হিসেবে যোগদান করেছেন।
+                একইসাথে
+                সরকারের প্রশাসন ক্যাডারসহ বিভিন্ন ক্যাডার ও সামরিক বাহিনীর কর্মকর্তা হিসেবে কাজ করছেন। বেশ
+                কয়েকজন
+                প্রাক্তন শিক্ষার্থী রাজনৈতিক নেতা হিসেবে জাতীয় পর্যায়ে অবদান রাখছেন।
+            </p>
+            <hr style="margin: 50px 0; border: 0; border-top: 1px solid #ddd;">
+            <h2 class="section-title">The Beginning of Dania College</h2>
+            <p class="history-text" style="text-align: justify;">
+                <!-- History of Dania College in English -->
+                Donia College, located in the Jatrabari police precinct beside the Dhaka-Chattogram highway—the
+                gateway to the capital city Dhaka—is a distinguished institution for higher secondary and tertiary
+                education in Bangladesh. As one of the largest colleges in the southeastern region of Dhaka, it has
+                already secured a top position in the National University’s college rankings. Owing to its effective
+                teaching methods, well-organized administration, success in co-curricular activities, and consistent
+                academic performance, the college ranked 4th among private colleges, 9th among all government and
+                private colleges in metropolitan areas, and 22nd out of 2,200 colleges nationwide—based on 31
+                evaluation criteria set by the National University.
+                <br><br>
+                In the 1980s, areas like Jatrabari, Kadamtali, Shyampur, Donia, Rayerbagh, and Matuail—collectively
+                known as the Demra region—had no institutions for higher education. The majority of residents in
+                this region were from middle-class, lower-middle-class, and underprivileged backgrounds. As a
+                result, students had very limited access to higher secondary and tertiary education. In response,
+                local education enthusiasts and prominent citizens convened a meeting on November 22, 1984, at Donia
+                A.K. High School to establish a college. The meeting approved the proposal to establish a college
+                and formed a 17-member committee to realize the initiative. On November 26 of the same year, the
+                foundation was laid for the college building. For this reason, the founding principal, Mr. S.M. Kazi
+                Anwarul Islam, considered November 26 the official founding day of Donia College.
+                <br><br>
+                A follow-up meeting of the college establishment committee was held on November 30, 1984, where the
+                original 17-member committee was expanded to 51 members to involve more community stakeholders. It
+                was also decided that on December 6, 1984—12 Rabi' al-Awwal, the holy occasion of
+                Eid-e-Milad-un-Nabi—a Milad Mahfil (religious gathering) would be held, and the college’s signboard
+                would be formally installed, which was done accordingly. Thus, with enthusiastic participation and
+                heartfelt support from people of all walks of life, Donia College took its first steps.
+                <br><br>
+                On May 31, 1985, a grand assembly was held, graced by then-Dhaka District Commissioner Mr. Badiur
+                Rahman as the chief guest. Also present were three union parishad chairmen from Demra Thana, three
+                ward commissioners of Dhaka Municipality, and many local political and social leaders. At the event,
+                the district commissioner generously announced a grant of one lakh taka for the development of the
+                college.
+                <br><br>
+                Later, on June 18, 1985, a meeting at the District Commissioner’s office resulted in the formation
+                of three committees to oversee smooth college operations:
+            <ul>
+                <li>Executive Committee</li>
+                <li>Finance Committee</li>
+                <li>Construction Committee</li>
+            </ul>
+            </p>
 
-                <p class="history-text" style="text-align: justify;">
-                    At the time, the President of the Governing Body was the then-Additional Deputy Commissioner
-                    (Administration), Mr. Dhiraj Malakar. The college began with 12 teachers, one accountant, two peons,
-                    and two night guards. The administration operated from a single tin-roofed office room, which also
-                    served as a common staff room and housed a small library. A large room was partitioned to
-                    accommodate classes for the Science, Humanities, and Business Studies streams.
-                    <br><br>
-                    The college formally began its academic journey in 1985 with 67 students enrolled at the higher
-                    secondary level in a modest tin-roofed building. Over time, the institution expanded its academic
-                    programs, introducing Bachelor’s Pass courses in the 1992–93 academic year and Honours programs in
-                    2000–2001. Currently, the college offers Honours degrees in 12 subjects to meet growing demand. A
-                    BBA Professional course was launched in 2011–12. Today, the college serves nearly 10,000 students
-                    and features a 10-story main academic building, two 5-story buildings, and an 8-story ICT facility.
-                    <br><br>
-                    Students of Donia College consistently perform well in Board and National University exams. A
-                    significant number of alumni have gone on to study at prestigious institutions such as the
-                    University of Dhaka, BUET, and medical colleges across the country. Many have returned to serve as
-                    faculty members in top universities, joined the civil service in various cadres, or taken positions
-                    in the armed forces. Several former students have also made a mark as national political leaders.
-                </p>
-            </div>
-        </div>
-    </section>
+            <p class="history-text" style="text-align: justify;">
+                At the time, the President of the Governing Body was the then-Additional Deputy Commissioner
+                (Administration), Mr. Dhiraj Malakar. The college began with 12 teachers, one accountant, two peons,
+                and two night guards. The administration operated from a single tin-roofed office room, which also
+                served as a common staff room and housed a small library. A large room was partitioned to
+                accommodate classes for the Science, Humanities, and Business Studies streams.
+                <br><br>
+                The college formally began its academic journey in 1985 with 67 students enrolled at the higher
+                secondary level in a modest tin-roofed building. Over time, the institution expanded its academic
+                programs, introducing Bachelor’s Pass courses in the 1992–93 academic year and Honours programs in
+                2000–2001. Currently, the college offers Honours degrees in 12 subjects to meet growing demand. A
+                BBA Professional course was launched in 2011–12. Today, the college serves nearly 10,000 students
+                and features a 10-story main academic building, two 5-story buildings, and an 8-story ICT facility.
+                <br><br>
+                Students of Donia College consistently perform well in Board and National University exams. A
+                significant number of alumni have gone on to study at prestigious institutions such as the
+                University of Dhaka, BUET, and medical colleges across the country. Many have returned to serve as
+                faculty members in top universities, joined the civil service in various cadres, or taken positions
+                in the armed forces. Several former students have also made a mark as national political leaders.
+            </p>
+        </section>
+        <hr style="margin: 50px 0; border: 0; border-top: 1px solid #ddd;">
 
-    <section class="history-section container teacher-list">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="section-title">প্রতিষ্ঠাকালীন শিক্ষক কর্মচারী</h2>
+        <section class="list-card teacher-list" style="margin-bottom: 20px;">
+            <h2 class="section-title">প্রতিষ্ঠাকালীন শিক্ষক ও কর্মচারী</h2>
 
-                <h3 class="subheading">প্রতিষ্ঠাকালীন শিক্ষকবৃন্দ</h3>
-                <ul>
-                    <li>এস এম কাজী আনোয়ারুল ইসলাম – অধ্যক্ষ</li>
-                    <li>মোঃ ইরশাদুল্লাহ – ইংরেজি বিভাগ</li>
-                    <li>কাজল ভট্টাচার্য্য – বাংলা বিভাগ</li>
-                    <li>মোঃ খালেকউজজামান – অর্থনীতি বিভাগ</li>
-                    <li>মোঃ নজরুল ইসলাম – রাষ্ট্রবিজ্ঞান বিভাগ</li>
-                    <li>মিরাসুল ফাতিমা – ইসলামের ইতিহাস বিভাগ</li>
-                    <li>মোঃ জিলুর রহমান – যুক্তিবিদ্যা বিভাগ</li>
-                    <li>ড. দিরাজুর রহমান খান – ইতিহাস বিভাগ</li>
-                    <li>শেখ মোঃ ইসরাইল – হিসাব বিজ্ঞান বিভাগ</li>
-                    <li>মোঃ আবুল কালাম – পদার্থ বিজ্ঞান বিভাগ</li>
-                    <li>জ্যোতিশ চন্দ্র সাহা – গণিত বিভাগ</li>
-                    <li>হাসনা হেনা – রসায়ন বিভাগ</li>
-                    <li>মোঃ মঞ্জুরুল ইসলাম – প্রাণিবিদ্যা বিভাগ</li>
-                </ul>
+            <h3 class="subheading" style="margin-top: 0; border-left-color: #FFA516;">প্রতিষ্ঠাকালীন শিক্ষকবৃন্দ</h3>
+            <ul>
+                <li>এস এম কাজী আনোয়ারুল ইসলাম – অধ্যক্ষ</li>
+                <li>মোঃ ইরশাদুল্লাহ – ইংরেজি বিভাগ</li>
+                <li>কাজল ভট্টাচার্য্য – বাংলা বিভাগ</li>
+                <li>মোঃ খালেকউজজামান – অর্থনীতি বিভাগ</li>
+                <li>মোঃ নজরুল ইসলাম – রাষ্ট্রবিজ্ঞান বিভাগ</li>
+                <li>মিরাসুল ফাতিমা – ইসলামের ইতিহাস বিভাগ</li>
+                <li>ড. দিরাজুর রহমান খান – ইতিহাস বিভাগ</li>
+                <li>হাসনা হেনা – রসায়ন বিভাগ</li>
+                <li>মোঃ মঞ্জুরুল ইসলাম – প্রাণিবিদ্যা বিভাগ</li>
+            </ul>
 
-                <h3 class="subheading">প্রতিষ্ঠাকালীন কর্মচারীবৃন্দ</h3>
-                <ul class="staff-list">
-                    <li>মোঃ মুনছুর আলী ভূঁঞা – হিসাব রক্ষক</li>
-                    <li>মোঃ শফিক মিয়া – পিয়ন</li>
-                    <li>মোঃ জাহাঙ্গীর আলী – পিয়ন</li>
-                    <li>নুরজাহান বেগম – আয়া</li>
-                    <li>মোঃ আব্দুর রহিম – দারোয়ন</li>
-                    <li>মোঃ নুরুল ইসলাম – দারোয়ান</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+            <h3 class="subheading" style="border-left-color: #53cc40;">প্রতিষ্ঠাকালীন কর্মচারীবৃন্দ</h3>
+            <ul class="staff-list">
+                <li>মোঃ মুনছুর আলী ভূঁঞা – হিসাব রক্ষক</li>
+                <li>মোঃ শফিক মিয়া – পিয়ন</li>
+                <li>মোঃ জাহাঙ্গীর আলী – পিয়ন</li>
+                <li>নুরজাহান বেগম – আয়া</li>
+                <li>মোঃ আব্দুর রহিম – দারোয়ান</li>
+            </ul>
+        </section>
 
+    </main>
     <footer>
         <style>
             /* Footer Styles */
@@ -988,7 +1068,6 @@
                     href="https://github.com/minhajsiam">A. K. M Minhajur Rahman Siam</a></p>
         </div>
     </footer>
-
 </body>
 
 </html>

@@ -1,206 +1,1180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Calendar - February & March 2025</title>
+    <title>একাডেমিক ক্যালেন্ডার (2025-2026)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+        /* General Styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #eef2f6;
+            /* Lighter, modern background */
+            color: #333;
+            padding: 30px;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            line-height: 1.6;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
+        h1 {
             text-align: center;
-            margin-bottom: 20px;
+            color: #2c3e50;
+            /* Darker, more professional blue-grey */
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
         }
 
-        .calendar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+        /* Calendar Container - Using CSS Grid for better responsiveness and control */
+        .calendar-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            /* Responsive grid */
+            gap: 25px;
+            /* Increased gap */
+            max-width: 1300px;
+            /* Max width for the whole calendar */
+            margin: 0 auto;
+            /* Center the container */
+            padding: 10px;
         }
 
+        /* Individual Month Card Styling */
         .month {
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            margin: 10px;
-            flex: 1 1 calc(50% - 20px);
-            min-width: 300px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            border-radius: 12px;
+            /* More rounded corners */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            /* Softer, deeper shadow */
+            /* overflow: hidden; */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Smooth hover effect */
+        }
+
+        .month:hover {
+            transform: translateY(-5px);
+            /* Lift card slightly on hover */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            /* Enhanced shadow on hover */
         }
 
         .month h2 {
-            background: #16A34A;
+            text-align: center;
+            background-color: #3498db;
+            /* Brighter blue for month header */
             color: white;
-            padding: 10px;
+            padding: 15px 0;
+            /* More padding */
+            margin: 0;
+            font-size: 1.4em;
+            /* Slightly larger font */
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            /* Ensures columns are equal width */
+        }
+
+        th,
+        td {
             text-align: center;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
+            padding: 10px 5px;
+            /* Adjusted padding */
+            font-size: 0.9em;
+            border: none;
+            /* Remove inner borders */
+            transition: background-color 0.2s ease;
         }
 
-        .days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            padding: 10px;
+        /* Header Row (Days of the week) */
+        thead th {
+            background-color: #f8fbfd;
+            /* Very light grey */
+            color: #557a95;
+            /* Softer dark blue */
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            padding: 12px 5px;
+            border-bottom: 1px solid #eee;
+            /* Subtle bottom border */
         }
 
-        .day {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #e0e0e0;
+        /* Dates */
+        tbody td {
+            height: 40px;
+            /* Fixed height for date cells */
+            vertical-align: middle;
+            color: #4a4a4a;
+            /* Slightly softer date color */
+            /* border-radius: 4px; */
+            /* Slight roundness for date cells */
         }
 
-        .day.empty {
-            background: #f9f9f9;
-        }
-
-        .day:hover {
-            background: #e0e0e0;
+        tbody td:not(.empty):not(.holiday):hover {
+            background-color: #e0f2f7;
+            /* Light blue on hover for normal days */
             cursor: pointer;
         }
 
-        .event {
-            background: #ffeb3b;
-            border: 1px solid #fbc02d;
+        /* Empty cells */
+        tbody .empty {
+            background-color: #fdfdfd;
+            visibility: hidden;
+            /* Hide empty cells completely for cleaner look */
         }
 
-        .event span {
-            display: block;
-            font-size: 0.8em;
-            color: #333;
+        /* Holiday Styling */
+        .holiday {
+            color: #e74c3c;
+            /* Striking red for holidays */
+            font-weight: 700;
+            /* Bolder for holidays */
+            background-color: #ffebe9;
+            /* Very light red background for holidays */
+            position: relative;
         }
 
+        /* Optional: Add a small indicator for holidays */
+        .holiday::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 6px;
+            height: 6px;
+            background-color: #e74c3c;
+            /* border-radius: 50%; */
+            opacity: 0.7;
+        }
+
+        /* Header holiday (Friday/Saturday) */
+        th.holiday {
+            color: #e74c3c;
+            /* Red color for Friday/Saturday header */
+        }
+
+        /* Current Day (if you wish to highlight it manually) */
+        /* .today {
+    background-color: #f9d923;
+    color: #333;
+    font-weight: bold;
+    border: 2px solid #f9d923;
+    border-radius: 50%;
+} */
+
+        /* Responsive Adjustments */
         @media (max-width: 768px) {
+            .calendar-container {
+                grid-template-columns: 1fr;
+                /* Stack months on smaller screens */
+                padding: 15px;
+            }
+
             .month {
-                flex: 1 1 calc(50% - 20px);
+                width: 100%;
+                max-width: 350px;
+                /* Optional: limit width on very small screens */
+                margin: 0 auto;
+            }
+
+            h1 {
+                font-size: 1.8em;
             }
         }
 
         @media (max-width: 480px) {
-            .month {
-                flex: 1 1 100%;
+            body {
+                padding: 15px;
             }
+
+            th,
+            td {
+                padding: 8px 2px;
+                font-size: 0.8em;
+            }
+
+            .month h2 {
+                font-size: 1.2em;
+                padding: 12px 0;
+            }
+        }
+
+        /* --- প্রফেশনাল টুলটিপ স্টাইল --- */
+
+        /* ১. যে সেলে (td) টুলটিপ আছে, সেটিকে প্রস্তুত করা।
+  'position: relative' টুলটিপটিকে এই সেলের ওপর ভিত্তি করে ভাসতে সাহায্য করবে।
+  'cursor: help' ব্যবহারকারীকে বুঝতে সাহায্য করবে যে এখানে অতিরিক্ত তথ্য আছে।
+*/
+        tbody td[data-tooltip] {
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* ২. টুলটিপ বক্স (::after) ডিজাইন করা।
+  'content: attr(data-tooltip)' - এই কমান্ডটি HTML-এর 'data-tooltip' অ্যাট্রিবিউট থেকে লেখা এনে দেখায়।
+*/
+        tbody td[data-tooltip]::after {
+            content: attr(data-tooltip);
+            /* মূল লেখা এখানে আসে */
+            position: absolute;
+            bottom: 125%;
+            /* তারিখের সেল থেকে কতটা উপরে ভাসবে */
+            left: 50%;
+            transform: translateX(-50%);
+            /* ঠিক মাঝখানে আনার জন্য */
+            z-index: 10;
+            /* অন্য সবকিছুর উপরে দেখাবে */
+
+            /* নান্দনিক ডিজাইন */
+            background-color: #3a3a3a;
+            /* প্রফেশনাল ডার্ক রঙ */
+            color: #ffffff;
+            padding: 12px 12px;
+            border-radius: 5px;
+            font-size: 0.95em;
+            font-weight: 500;
+            line-height: 1;
+            white-space: normal;
+            text-align: center;
+            width: 200px;
+            /* লেখা যেন এক লাইনে থাকে */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+            /* "সুন্দরভাবে ভেসে ওঠা" - অ্যানিমেশন */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            transition-delay: 0.1s;
+            /* হোভার করার সাথে সাথে যেন লাফ না দেয় */
+            pointer-events: none;
+            /* টুলটিপ যেন মাউসকে বাধা না দেয় */
+        }
+
+        /* ৩. টুলটিপের অ্যারো বা তীর (::before) ডিজাইন করা।
+  এটি টুলটিপটিকে সেলের সাথে সংযুক্ত দেখায়।
+*/
+
+
+        /* ৪. হোভার করলে টুলটিপ দৃশ্যমান করা।
+  যখন ব্যবহারকারী 'data-tooltip' থাকা সেলে মাউস আনবে,
+  তখন বক্স (::after) এবং অ্যারো (::before) দুটোই দৃশ্যমান হবে।
+*/
+        tbody td[data-tooltip]:hover::after,
+        tbody td[data-tooltip]:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* --- ছুটির দিনেও হোভার ইফেক্ট --- */
+
+        /* এই রুলটি নিশ্চিত করে যে ছুটির দিনগুলোতেও হোভার করা যাবে 
+   এবং ব্যাকগ্রাউন্ডটি সামান্য গাঢ় হবে। */
+        tbody td.holiday:hover {
+            background-color: #fddbd9;
+            /* #ffebe9 (আগের) থেকে সামান্য গাঢ় */
+            cursor: pointer;
+            /* যেহেতু টুলটিপ আছে */
+        }
+
+        /* --- নতুন পরীক্ষার স্টাইল (আপডেটেড - হাই ভিজিবিলিটি) --- */
+
+        /* ১. সিটি (Class Test) - সলিড বেগুনি */
+        .exam-ct {
+            background-color: #8e44ad;
+            /* সলিড বেগুনি ব্যাকগ্রাউন্ড */
+            color: #ffffff;
+            /* সাদা টেক্সট */
+            font-weight: 700;
+            /* border-radius: 4px; */
+            /* সেলের সাথে মিল রেখে */
+            position: relative;
+            /* টুলটিপের জন্য */
+        }
+
+        .exam-ct:hover {
+            background-color: #9b59b6;
+            /* হোভারে সামান্য উজ্জ্বল বেগুনি */
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        /* ২. অর্ধবার্ষিক (Half-Yearly) - সলিড সবুজ */
+        .exam-half-yearly {
+            background-color: #27ae60;
+            /* সলিড সবুজ ব্যাকগ্রাউন্ড */
+            color: #ffffff;
+            /* সাদা টেক্সট */
+            font-weight: 700;
+            /* border-radius: 4px; */
+            position: relative;
+        }
+
+        .exam-half-yearly:hover {
+            background-color: #2ecc71;
+            /* হোভারে সামান্য উজ্জ্বল সবুজ */
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        /* ৩. বার্ষিক (Annual) - সলিড কমলা */
+        .exam-annual {
+            background-color: #e67e22;
+            /* সলিড কমলা ব্যাকগ্রাউন্ড */
+            color: #ffffff;
+            /* সাদা টেক্সট */
+            font-weight: 700;
+            /* border-radius: 4px; */
+            position: relative;
+        }
+
+        .exam-annual:hover {
+            background-color: #f39c12;
+            /* হোভারে সামান্য উজ্জ্বল কমলা */
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        /* --- টুলটিপ ফিক্স (নতুন ক্লাসের জন্য) --- */
+        /* এটি নিশ্চিত করে যে টুলটিপের অ্যারো নতুন রঙগুলোর সাথে খাপ খাবে */
+        .exam-ct[data-tooltip]::before {
+            border-top-color: #3a3a3a;
+        }
+
+        .exam-half-yearly[data-tooltip]::before {
+            border-top-color: #3a3a3a;
+        }
+
+        .exam-annual[data-tooltip]::before {
+            border-top-color: #3a3a3a;
+        }
+
+
+        /* --- ক্যালেন্ডার লেজেন্ড (নির্দেশিকা) --- */
+        .calendar-legend {
+            display: flex;
+            flex-wrap: wrap;
+            /* ছোট স্ক্রিনে যেন ভেঙে নিচে নামে */
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            /* প্রতিটি আইটেমের মধ্যে ফাঁকা */
+            max-width: 1200px;
+            /* ক্যালেন্ডারের সাথে সামঞ্জস্যপূর্ণ */
+            margin: 40px auto 20px auto;
+            /* উপরে-নিচে ফাঁকা */
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            /* রঙের বক্স এবং লেখার মধ্যে ফাঁকা */
+        }
+
+        .legend-color-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            /* একটি সূক্ষ্ম বর্ডার */
+        }
+
+        .legend-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95em;
+            font-weight: 500;
+            color: #333;
+        }
+
+        /* --- লেজেন্ডের রঙগুলো ক্যালেন্ডারের সাথে ম্যাচ করানো --- */
+
+        /* ছুটির দিন (এর স্টাইলটি ভিন্ন, তাই আলাদাভাবে করতে হবে) */
+        .legend-color-box.holiday {
+            background-color: #ffebe9;
+            /* হালকা লাল */
+            border: 1px solid #e74c3c;
+            /* গাঢ় লাল বর্ডার */
+        }
+
+        /* সিটি পরীক্ষা */
+        .legend-color-box.exam-ct {
+            background-color: #8e44ad;
+            /* সলিড বেগুনি */
+        }
+
+        /* অর্ধবার্ষিক পরীক্ষা */
+        .legend-color-box.exam-half-yearly {
+            background-color: #27ae60;
+            /* সলিড সবুজ */
+        }
+
+        /* বার্ষিক পরীক্ষা */
+        .legend-color-box.exam-annual {
+            background-color: #e67e22;
+            /* সলিড কমলা */
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Academic Calendar 2025</h1>
-            <h2>February & March</h2>
-        </header>
-        <div class="calendar">
-            <div class="month">
-                <h2>February 2025</h2>
-                <div class="days">
-                    <div class="day">Sun</div>
-                    <div class="day">Mon</div>
-                    <div class="day">Tue</div>
-                    <div class="day">Wed</div>
-                    <div class="day">Thu</div>
-                    <div class="day">Fri</div>
-                    <div class="day">Sat</div>
-                    <div class="day empty"></div>
-                    <div class="day empty"></div>
-                    <div class="day empty"></div>
-                    <div class="day empty"></div>
-                    <div class="day">1</div>
-                    <div class="day">2</div>
-                    <div class="day">3</div>
-                    <div class="day">4</div>
-                    <div class="day event">5<br><span>Midterm Exams Begin</span></div>
-                    <div class="day">6</div>
-                    <div class="day">7</div>
-                    <div class="day">8</div>
-                    <div class="day">9</div>
-                    <div class="day">10</div>
-                    <div class="day">11</div>
-                    <div class="day event">12<br><span>Guest Lecture: Dr. Smith</span></div>
-                    <div class="day">13</div>
-                    <div class="day">14</div>
-                    <div class="day">15</div>
-                    <div class="day">16</div>
-                    <div class="day">17</div>
-                    <div class="day">18</div>
-                    <div class="day event">19<br><span>Project Submission Deadline</span></div>
-                    <div class="day">20</div>
-                    <div class="day">21</div>
-                    <div class="day">22</div>
-                    <div class="day">23</div>
-                    <div class="day">24</div>
-                    <div class="day">25</div>
-                    <div class="day event">26<br><span>Final Exams Begin</span></div>
-                    <div class="day">27</div>
-                    <div class="day">28</div>
-                    <div class="day empty"></div>
-                </div>
-            </div>
-            <div class="month">
-                <h2>March 2025</h2>
-                <div class="days">
-                    <div class="day">Sun</div>
-                    <div class="day">Mon</div>
-                    <div class="day">Tue</div>
-                    <div class="day">Wed</div>
-                    <div class="day">Thu</div>
-                    <div class="day">Fri</div>
-                    <div class="day">Sat</div>
-                    <div class="day empty"></div>
-                    <div class="day empty"></div>
-                    <div class="day empty"></div>
-                    <div class="day empty"></div>
-                    <div class="day empty"></div>
-                    <div class="day">1</div>
-                    <div class="day">2</div>
-                    <div class="day">3</div>
-                    <div class="day">4</div>
-                    <div class="day event">5<br><span>Spring Break Begins</span></div>
-                    <div class="day">6</div>
-                    <div class="day">7</div>
-                    <div class="day">8</div>
-                    <div class="day">9</div>
-                    <div class="day">10</div>
-                    <div class="day">11</div>
-                    <div class="day event">12<br><span>Classes Resume</span></div>
-                    <div class="day">13</div>
-                    <div class="day">14</div>
-                    <div class="day">15</div>
-                    <div class="day"> 16</div>
-                    <div class="day">17</div>
-                    <div class="day">18</div>
-                    <div class="day event">19<br><span>Career Fair</span></div>
-                    <div class="day">20</div>
-                    <div class="day">21</div>
-                    <div class="day">22</div>
-                    <div class="day">23</div>
-                    <div class="day">24</div>
-                    <div class="day">25</div>
-                    <div class="day event">26<br><span>Research Symposium</span></div>
-                    <div class="day">27</div>
-                    <div class="day">28</div>
-                    <div class="day">29</div>
-                    <div class="day">30</div>
-                    <div class="day">31</div>
-                </div>
-            </div>
+
+    <h1>একাডেমিক ক্যালেন্ডার (সেপ্টেম্বর 2025 - জুলাই 2026)</h1>
+
+    <div class="calendar-legend">
+        <div class="legend-item">
+            <span class="legend-color-box holiday"></span>
+            <span class="legend-text">ছুটির দিন</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color-box exam-ct"></span>
+            <span class="legend-text">সিটি পরীক্ষা</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color-box exam-half-yearly"></span>
+            <span class="legend-text">অর্ধবার্ষিক পরীক্ষা</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color-box exam-annual"></span>
+            <span class="legend-text">বার্ষিক পরীক্ষা</span>
         </div>
     </div>
+
+
+
+    <div class="calendar-container">
+
+        <div class="month">
+            <h2>সেপ্টেম্বর 2025</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>রবি</th>
+                        <th>সোম</th>
+                        <th>মঙ্গল</th>
+                        <th>বুধ</th>
+                        <th>বৃহঃ</th>
+                        <th class="holiday">শুক্র</th>
+                        <th class="holiday">শনি</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="empty"></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td class="holiday" data-tooltip="বিশেষ ছুটি (৫ সেপ্টেম্বর)">5</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">6</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">12</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">13</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">19</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">20</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">26</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">27</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday" data-tooltip="শ্রী শ্রী দুর্গা পূজা">28</td>
+                        <td class="holiday" data-tooltip="শ্রী শ্রী দুর্গা পূজা">29</td>
+                        <td class="holiday" data-tooltip="শ্রী শ্রী দুর্গা পূজা">30</td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="month">
+            <h2>অক্টোবর 2025</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>রবি</th>
+                        <th>সোম</th>
+                        <th>মঙ্গল</th>
+                        <th>বুধ</th>
+                        <th>বৃহঃ</th>
+                        <th class="holiday">শুক্র</th>
+                        <th class="holiday">শনি</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="holiday" data-tooltip="শ্রী শ্রী দুর্গা পূজা">1</td>
+                        <td class="holiday" data-tooltip="বিজয়া দশমী">2</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">3</td>
+                        <td class="holiday" data-tooltip="ফাতেহা-ই-">4</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday" data-tooltip="প্রবারণা পূর্ণিমা">5</td>
+                        <td class="holiday" data-tooltip="শ্রী শ্রী লক্ষ্মী পূজা ">6</td>
+                        <td class="holiday" data-tooltip=" ছুটি">7</td>
+                        <td class="holiday" data-tooltip=" ছুটি">8</td>
+                        <td class="holiday" data-tooltip=" ছুটি">9</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">10</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">11</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">17</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">18</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td class="holiday" data-tooltip="শ্রী শ্রী শ্যামা পূজা">20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">24</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">25</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">31</td>
+                        <td class="empty"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="month">
+            <h2>নভেম্বর 2025</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>রবি</th>
+                        <th>সোম</th>
+                        <th>মঙ্গল</th>
+                        <th>বুধ</th>
+                        <th>বৃহঃ</th>
+                        <th class="holiday">শুক্র</th>
+                        <th class="holiday">শনি</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3</td>
+                        <td class="exam-ct" data-tooltip="সিটি ১">4</td>
+                        <td class="exam-ct" data-tooltip="সিটি ১">5</td>
+                        <td class="exam-ct" data-tooltip="সিটি ১">6</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">7</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">8</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">14</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">15</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">21</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">22</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">28</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">29</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="month">
+            <h2>ডিসেম্বর 2025</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>রবি</th>
+                        <th>সোম</th>
+                        <th>মঙ্গল</th>
+                        <th>বুধ</th>
+                        <th>বৃহঃ</th>
+                        <th class="holiday"> শুক্র </th>
+                        <th class="holiday">শনি</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="empty"></td>
+                        <td>1</td>
+                        <td class="exam-ct" data-tooltip="সিটি ২">2</td>
+                        <td class="exam-ct" data-tooltip="সিটি ২">3</td>
+                        <td class="exam-ct" data-tooltip="সিটি ২">4</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">5</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">6</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">12</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">13</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">14</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">15</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">16</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">17</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">18</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">19</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">20</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">21</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">22</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">23</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">24</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">25</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">26</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">27</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">28</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">29</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">30</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি (শীতকালীন)">31</td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="month">
+            <h2>জানুয়ারি 2026</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>রবি</th>
+                        <th>সোম</th>
+                        <th>মঙ্গল</th>
+                        <th>বুধ</th>
+                        <th>বৃহঃ</th>
+                        <th class="holiday"> শুক্র </th>
+                        <th class="holiday">শনি</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td>1</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">2</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">9</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">10</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">16</td>
+                        <td class="holiday" data-tooltip="বিশেষ ছুটি (১৭ জানুয়ারি)">17</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td class="holiday" data-tooltip="বিশেষ ছুটি (২৩ জানুয়ারি)">23</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">24</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">30</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">31</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="month">
+            <h2>ফেব্রুয়ারি 2026</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>রবি</th>
+                        <th>সোম</th>
+                        <th>মঙ্গল</th>
+                        <th>বুধ</th>
+                        <th>বৃহঃ</th>
+                        <th class="holiday"> শুক্র </th>
+                        <th class="holiday">শনি</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="exam-half-yearly" data-tooltip="অর্ধবার্ষিক পরীক্ষা">1</td>
+                        <td class="exam-half-yearly" data-tooltip="অর্ধবার্ষিক পরীক্ষা">2</td>
+                        <td class="exam-half-yearly" data-tooltip="অর্ধবার্ষিক পরীক্ষা">3</td>
+                        <td class="holiday" data-tooltip="শব-ই-বরাত">4</td>
+                        <td class="exam-half-yearly" data-tooltip="অর্ধবার্ষিক পরীক্ষা">5</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">6</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">7</td>
+                    </tr>
+                    <tr>
+                        <td class="exam-half-yearly" data-tooltip="অর্ধবার্ষিক পরীক্ষা">8</td>
+                        <td class="exam-half-yearly" data-tooltip="অর্ধবার্ষিক পরীক্ষা">9</td>
+                        <td class="exam-half-yearly" data-tooltip="অর্ধবার্ষিক পরীক্ষা">10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">13</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">14</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">20</td>
+                        <td class="holiday" data-tooltip="বিশেষ ছুটি (২১ ফেব্রুয়ারি)">21</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">27</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">28</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="month">
+            <h2>মার্চ 2026</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>রবি</th>
+                        <th>সোম</th>
+                        <th>মঙ্গল</th>
+                        <th>বুধ</th>
+                        <th>বৃহঃ</th>
+                        <th class="holiday"> শুক্র </th>
+                        <th class="holiday">শনি</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">6</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">7</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">8</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">9</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">10</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">11</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">12</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">13</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">14</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">15</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">16</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">17</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">18</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">19</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">20</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">21</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">22</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">23</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">24</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">25</td>
+                        <td class="holiday" data-tooltip="বিশেষ ছুটি (২৬ মার্চ)">26</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">27</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">28</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="month">
+            <h2>এপ্রিল 2026</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>রবি</th>
+                        <th>সোম</th>
+                        <th>মঙ্গল</th>
+                        <th>বুধ</th>
+                        <th>বৃহঃ</th>
+                        <th class="holiday"> শুক্র </th>
+                        <th class="holiday">শনি</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">3</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td class="exam-ct" data-tooltip="সিটি ৩">8</td>
+                        <td class="exam-ct" data-tooltip="সিটি ৩">9</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">10</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">11</td>
+                    </tr>
+                    <tr>
+                        <td class="exam-ct" data-tooltip="সিটি ৩">12</td>
+                        <td>13</td>
+                        <td class="holiday" data-tooltip="বিশেষ ছুটি (১৪ এপ্রিল)">14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">17</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">18</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">24</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">25</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="month">
+            <h2>মে 2026</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>রবি</th>
+                        <th>সোম</th>
+                        <th>মঙ্গল</th>
+                        <th>বুধ</th>
+                        <th>বৃহঃ</th>
+                        <th class="holiday"> শুক্র </th>
+                        <th class="holiday">শনি</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="holiday" data-tooltip="বিশেষ ছুটি (১ মে)">1</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">8</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">9</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td class="exam-annual" data-tooltip="বার্ষিক পরীক্ষা">11</td>
+                        <td class="exam-annual" data-tooltip="বার্ষিক পরীক্ষা">12</td>
+                        <td class="exam-annual" data-tooltip="বার্ষিক পরীক্ষা">13</td>
+                        <td class="exam-annual" data-tooltip="বার্ষিক পরীক্ষা">14</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">15</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">16</td>
+                    </tr>
+                    <tr>
+                        <td class="exam-annual" data-tooltip="বার্ষিক পরীক্ষা">17</td>
+                        <td class="exam-annual" data-tooltip="বার্ষিক পরীক্ষা">18</td>
+                        <td class="exam-annual" data-tooltip="বার্ষিক পরীক্ষা">19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">22</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">23</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">24</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">25</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">26</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">27</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">28</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">29</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">30</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">31</td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="month">
+            <h2>জুন 2026</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>রবি</th>
+                        <th>সোম</th>
+                        <th>মঙ্গল</th>
+                        <th>বুধ</th>
+                        <th>বৃহঃ</th>
+                        <th class="holiday"> শুক্র </th>
+                        <th class="holiday">শনি</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="empty"></td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">1</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">2</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">3</td>
+                        <td class="holiday" data-tooltip="দীর্ঘ ছুটি">4</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">5</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">6</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">12</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">13</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">19</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">20</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">26</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">27</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="month">
+            <h2>জুলাই 2026</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>রবি</th>
+                        <th>সোম</th>
+                        <th>মঙ্গল</th>
+                        <th>বুধ</th>
+                        <th>বৃহঃ</th>
+                        <th class="holiday"> শুক্র </th>
+                        <th class="holiday">শনি</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">3</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">10</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">11</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">17</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">18</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">24</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">25</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td class="holiday" data-tooltip="সাপ্তাহিক ছুটি">31</td>
+                        <td class="empty"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
 </body>
 
 </html>
