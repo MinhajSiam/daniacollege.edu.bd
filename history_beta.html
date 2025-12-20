@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KF11SRQQKK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KF11SRQQKK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History | Dania College</title>
+    <link rel="shortcut icon" href="Semi-Transparent Logo.png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+            margin: 0;
+            color: #333;
+        }
+
+        /* --- Custom Grid System --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+            align-items: center;
+        }
+
+        .col-lg-6 {
+            flex: 0 0 50%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .col-12 {
+            flex: 0 0 100%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 992px) {
+            .col-lg-6 {
+                flex: 0 0 100%;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        /* --- History Image Styling --- */
+        .history-hero {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .history-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(60%);
+        }
+
+        .hero-text-overlay {
+            position: absolute;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-text-overlay h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .history-img-card {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .history-img-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* --- Text & Section Styling --- */
+        .section-title {
+            font-size: 2.2rem;
+            color: #0f5132;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #16A34A;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .history-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            text-align: justify;
+            color: #444;
+        }
+
+        .subheading {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-top: 40px;
+            color: #16A34A;
+            border-left: 5px solid #16A34A;
+            padding-left: 15px;
+        }
+
+        /* List Styling */
+        .list-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+        }
+
+        .teacher-list ul,
+        .staff-list ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .teacher-list li,
+        .staff-list li {
+            background: #f9f9f9;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #16A34A;
+            font-weight: 500;
+        }
+
+        /* --- Navbar & Notice CSS from your code (Optimized) --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #16A34A;
+        }
+
+        .right-options .btn {
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+
+        .notice-section {
+            background: #f1f1f1;
+            padding: 8px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .notice-ticker {
+            display: inline-block;
+            animation: scrollTicker 40s linear infinite;
+        }
+
+        @keyframes scrollTicker {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <style>
+            /* Navigation Bar */
+            .navbar {
+                /* display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #16A34A;
+            background-color: #fff;
+            padding: 10px 20px;
+            color: white;
+            color: #000; */
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #ffffff;
+                padding: 10px 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                /* border-radius: 15px; */
+                margin: 0;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+
+            /* Logo */
+            .logo img {
+                width: 60px;
+                height: 60px;
+            }
+
+            /* Hamburger Toggler */
+            .toggler {
+                display: none;
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            /* Navigation Links */
+            .nav-links {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .nav-links li {
+                position: relative;
+            }
+
+            .nav-links a {
+                color: white;
+                color: #000;
+                text-decoration: none;
+                padding: 10px 15px;
+                display: block;
+                transition: background 0.3s;
+                font-weight: 700;
+                font-size: 17px;
+            }
+
+            .nav-links a:hover {
+                background-color: #16A34A;
+                border-radius: 3px;
+            }
+
+            /* Dropdown Menu */
+            .dropdown-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #fff;
+                list-style: none;
+                padding: 0;
+                min-width: 150px;
+                z-index: 1;
+            }
+
+            .dropdown-menu li a {
+                padding: 10px;
+                border-bottom: 1px solid #fff;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+
+            /* Sub-Dropdown Menu */
+            .dropdown-submenu {
+                position: relative;
+            }
+
+            .dropdown-submenu-list {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 100%;
+                background-color: #16A34A;
+                list-style: none;
+                padding: 0;
+                min-width: 150px;
+                z-index: 1;
+            }
+
+            .dropdown-submenu:hover .dropdown-submenu-list {
+                display: block;
+            }
+
+            .dropdown-submenu-list li a {
+                padding: 10px;
+                display: block;
+                color: white;
+                text-decoration: none;
+                transition: background 0.3s;
+            }
+
+            .dropdown-submenu-list li a:hover {
+                background-color: #34495e;
+            }
+
+            /* Multi-column dropdown menu */
+            .dropdown-menu.multi-column {
+                column-count: 3;
+                column-gap: 20px;
+                width: 450px;
+            }
+
+            .dropdown-menu.multi-column li {
+                break-inside: avoid;
+            }
+
+            /* Right Side Options */
+            .right-options {
+                display: flex;
+                gap: 10px;
+            }
+
+            .right-options .btn {
+                color: white;
+                padding: 10px 15px;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background 0.3s;
+            }
+
+            .right-options .btn:hover {
+                background-color: #2c3e50 !important;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .toggler {
+                    display: block;
+                }
+
+                .nav-links {
+                    display: none;
+                    flex-direction: column;
+                    width: 100%;
+                    background-color: #ececec;
+                    position: absolute;
+                    top: 60px;
+                    left: 0;
+                }
+
+                .nav-links.active {
+                    display: flex;
+                }
+
+                .nav-links li {
+                    text-align: center;
+                }
+
+                .dropdown-menu {
+                    position: static;
+                }
+
+                .right-options {
+                    display: none;
+                }
+
+                .dropdown-menu.multi-column {
+                    column-count: 1;
+                    width: 100%;
+                }
+            }
+
+            /* Navbar end */
+            /* Horizontal Scrolling Notice Section */
+            .notice-section {
+                width: 100%;
+                background-color: #f9f9f9;
+                padding: 10px 0;
+                overflow: hidden;
+                white-space: nowrap;
+                transition: background-color 0.5s ease;
+            }
+
+            .notice-container {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .notice-ticker {
+                display: inline-block;
+                white-space: nowrap;
+                padding-left: 100%;
+                animation: scrollTicker 60s linear infinite;
+            }
+
+            .notice-item {
+                display: inline-block;
+                padding: 0 20px;
+                font-size: 18px;
+                color: #2c3e50;
+                font-weight: bold;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            .notice-item:hover {
+                color: #3498db;
+            }
+
+            /* Pause scrolling on hover */
+            .notice-container:hover .notice-ticker {
+                animation-play-state: paused;
+            }
+
+            /* Keyframes for continuous scrolling */
+            @keyframes scrollTicker {
+                0% {
+                    transform: translateX(5%);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+        </style>
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <a style="text-decoration: none; color: #16A34A; font-weight: 700; font-size: 30px;display: flex; align-items: center; justify-content: center;"
+                    href="https://daniacollege.edu.bd/"><img src="Semi-Transparent Logo.png" alt="Dania College Logo">
+                    <span style="padding-left: 10px; font-family: 'Poppins', sans-serif;">DANIA COLLEGE</span></a>
+            </div>
+
+            <!-- Hamburger Toggler -->
+            <div class="toggler" id="toggler">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <!-- Navigation Menu -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="https://daniacollege.edu.bd/">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">About <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html" style="font-size: 14px;">About</a></li>
+                        <li><a href="history.html" style="font-size: 14px;">History</a></li>
+                        <li><a href="principal.html" style="font-size: 14px;">Principal</a></li>
+                        <li><a href="gb.html" style="font-size: 14px;">Governing Body</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Programs <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" style="font-size: 14px;">HSC</a></li>
+                        <li><a href="#" style="font-size: 14px;">Hon's</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Departments <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+                    <ul class="dropdown-menu multi-column">
+                        <li><a href="bangla.html" style="font-size: 14px;">Bangla</a></li>
+                        <li><a href="english.html" style="font-size: 14px;">English</a></li>
+                        <li><a href="ict.html" style="font-size: 14px;">ICT</a></li>
+                        <li><a href="statistics.html" style="font-size: 14px;">Statistics</a></li>
+                        <li><a href="economics.html" style="font-size: 14px;">Economics</a></li>
+                        <li><a href="logic.html" style="font-size: 14px;">Logic</a></li>
+                        <li><a href="geography.html" style="font-size: 14px;">Geography</a></li>
+                        <li><a href="islamichistory.html" style="font-size: 14px;">Islamic History</a></li>
+                        <li><a href="civics.html" style="font-size: 14px;">Civics</a></li>
+                        <li><a href="socialwork.html" style="font-size: 14px;">Social Work</a></li>
+                        <li><a href="economics.html" style="font-size: 14px;">Economics</a></li>
+                        <li><a href="history.html" style="font-size: 14px;">History</a></li>
+                        <li><a href="psychology.html" style="font-size: 14px;">Psychology</a></li>
+                        <li><a href="islamicstudies.html" style="font-size: 14px;">Islamic Studies</a></li>
+                        <li><a href="homescience.html" style="font-size: 14px;">Home Science</a></li>
+                        <li><a href="physics.html" style="font-size: 14px;">Physics</a></li>
+                        <li><a href="chemistry.html" style="font-size: 14px;">Chemistry</a></li>
+                        <li><a href="biology.html" style="font-size: 14px;">Biology</a></li>
+                        <li><a href="highermath.html" style="font-size: 14px;">Higher Math</a></li>
+                        <li><a href="accounting.html" style="font-size: 14px;">Accounting</a></li>
+                        <li><a href="management.html" style="font-size: 14px;">Management</a></li>
+                        <li><a href="marketing.html" style="font-size: 14px;">Marketing</a></li>
+                        <li><a href="finance.html" style="font-size: 14px;">Finance</a></li>
+                        <li><a href="professionals.html" style="font-size: 14px;">BBA Professional</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Academic <i class="fa-solid fa-angle-down" style="color: #000;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" style="font-size: 14px;">Result</a></li>
+                        <li><a href="academic-calendar.html" style="font-size: 14px;">Calendar</a></li>
+                        <li><a href="#" style="font-size: 14px;">Class Routine</a></li>
+                    </ul>
+                </li>
+                <li><a href="#notice-board-column">Notice</a></li>
+                <li class="dropdown"><a href="#">Activity <i class="fa-solid fa-angle-down"
+                            style="color: #000;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" style="font-size: 14px;">Scout</a></li>
+                        <li><a href="alumni2.html" style="font-size: 14px;">Alumni</a></li>
+                        <li><a href="club_card/index.html" style="font-size: 14px;">Club Activity</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Right Side Options -->
+            <div class="right-options">
+                <a href="apply.html" class="btn" style="background-color: #FFA516; font-weight: 700;">Admission</a>
+                <a href="https://manage.expresssolutionltd.com/login" class="btn"
+                    style="background-color: #53cc40; font-weight: 700;">Portal</a>
+            </div>
+        </nav>
+
+        <!-- chatbot start -->
+        <style>
+            /* Chat Button (Floating) */
+            .chat-btn {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: #004d40;
+                /* Dania College Green theme approx */
+                color: white;
+                border: none;
+                padding: 15px;
+                border-radius: 50%;
+                font-size: 24px;
+                cursor: pointer;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+                transition: transform 0.3s;
+            }
+
+            .chat-btn:hover {
+                transform: scale(1.1);
+            }
+
+            /* Chat Box */
+            .chat-box {
+                position: fixed;
+                bottom: 80px;
+                right: 20px;
+                width: 350px;
+                height: 450px;
+                background-color: white;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                display: none;
+                /* Hidden by default */
+                flex-direction: column;
+                overflow: hidden;
+                z-index: 1000;
+                font-family: 'Arial', sans-serif;
+            }
+
+            /* Header */
+            .chat-header {
+                background-color: #004d40;
+                color: white;
+                padding: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: bold;
+            }
+
+            .chat-header button {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 18px;
+                cursor: pointer;
+            }
+
+            /* Body */
+            .chat-body {
+                flex: 1;
+                padding: 15px;
+                overflow-y: auto;
+                background-color: #f1f1f1;
+            }
+
+            /* Messages */
+            .bot-message,
+            .user-message {
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+                max-width: 80%;
+            }
+
+            .bot-message {
+                background-color: #e0e0e0;
+                color: black;
+                align-self: flex-start;
+            }
+
+            .user-message {
+                background-color: #004d40;
+                color: white;
+                align-self: flex-end;
+                margin-left: auto;
+                /* Push to right */
+                text-align: right;
+            }
+
+            /* Footer */
+            .chat-footer {
+                display: flex;
+                padding: 10px;
+                border-top: 1px solid #ddd;
+                background-color: white;
+            }
+
+            .chat-footer input {
+                flex: 1;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 20px;
+                outline: none;
+            }
+
+            .chat-footer button {
+                background-color: #004d40;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                margin-left: 5px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+        </style>
+        <button class="chat-btn" onclick="toggleChat()">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <span>Dania College Assistant</span>
+                <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="bot-message">
+                    আসসালামু আলাইকুম! আমি দনিয়া কলেজের ভার্চুয়াল অ্যাসিস্ট্যান্ট। আমি আপনাকে কীভাবে সাহায্য করতে পারি?
+                    <br><br>
+                    উদাহরণ: "ভর্তি", "বিষয়", "যোগাযোগ", "নোটিশ"।
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="userInput" placeholder="আপনার প্রশ্ন লিখুন..." onkeypress="handleEnter(event)">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <script>
+            // Toggle Chatbox Visibility
+            function toggleChat() {
+                const chatBox = document.getElementById("chatBox");
+                if (chatBox.style.display === "none" || chatBox.style.display === "") {
+                    chatBox.style.display = "flex";
+                } else {
+                    chatBox.style.display = "none";
+                }
+            }
+
+            // Handle Enter Key
+            function handleEnter(event) {
+                if (event.key === "Enter") {
+                    sendMessage();
+                }
+            }
+
+            // Send Message Logic
+            function sendMessage() {
+                const inputField = document.getElementById("userInput");
+                const userText = inputField.value.trim();
+                const chatBody = document.getElementById("chatBody");
+
+                if (userText === "") return;
+
+                // 1. Show User Message
+                const userDiv = document.createElement("div");
+                userDiv.className = "user-message";
+                userDiv.innerText = userText;
+                chatBody.appendChild(userDiv);
+
+                // Clear Input
+                inputField.value = "";
+                chatBody.scrollTop = chatBody.scrollHeight; // Auto scroll to bottom
+
+                // 2. Bot Response Logic (Artificial Delay for realism)
+                setTimeout(() => {
+                    const botDiv = document.createElement("div");
+                    botDiv.className = "bot-message";
+                    botDiv.innerHTML = getBotResponse(userText); // Get answer based on logic
+                    chatBody.appendChild(botDiv);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 500);
+            }
+
+            // Bot Intelligence (Rules)
+            function getBotResponse(input) {
+                input = input.toLowerCase();
+
+                // Keywords matching for Dania College
+                if (input.includes("ভর্তি") || input.includes("admission")) {
+                    return "একাদশ শ্রেণির ভর্তি কার্যক্রম সাধারণত এস.এস.সি ফলাফলের পরে শুরু হয়। বিস্তারিত জানতে আমাদের নোটিশ বোর্ড দেখুন অথবা কলেজে যোগাযোগ করুন।";
+                }
+                else if (input.includes("বিষয়") || input.includes("subject") || input.includes("group")) {
+                    return "আমাদের কলেজে বিজ্ঞান, ব্যবসায় শিক্ষা এবং মানবিক বিভাগ চালু আছে।";
+                }
+                else if (input.includes("ঠিকানা") || input.includes("location") || input.includes("address")) {
+                    return "দনিয়া কলেজ, দনিয়া, যাত্রাবাড়ী, ঢাকা-১২৩৬।";
+                }
+                else if (input.includes("যোগাযোগ") || input.includes("phone") || input.includes("contact")) {
+                    return "আমাদের হেল্পলাইন: +৮৮০-XXXXXXXXXX (অফিস চলাকালীন)। ইমেইল: info@daniacollege.edu.bd";
+                }
+                else if (input.includes("প্রিন্সিপাল") || input.includes("principal")) {
+                    return "অধ্যক্ষ মহোদয়ের তথ্য জানতে 'গভর্নিং বডি' বা 'শিক্ষক তথ্য' পেজটি ভিজিট করুন।";
+                }
+                else if (input.includes("হ্যালো") || input.includes("hi") || input.includes("hello") || input.includes("সালাম")) {
+                    return "আসসালামু আলাইকুম! আপনাকে কীভাবে সাহায্য করতে পারি?";
+                }
+                else {
+                    return "দুঃখিত, আমি এই বিষয়টি বুঝতে পারছি না। দয়া করে অফিসে যোগাযোগ করুন অথবা অন্যভাবে প্রশ্নটি করুন।";
+                }
+            }
+        </script>
+        <!-- chatbot end -->
+
+        <!-- Horizontal Scrolling Notice Section -->
+        <div class="notice-section">
+            <div class="notice-container">
+                <div class="notice-ticker" id="notice-ticker">
+                    <a href="#" class="notice-item" data-pdf="Notices/2025 February/notice-12.02.2025-01.pdf"><span
+                            style="color: red;">[জাতীয় বিশ্ববিদ্যালয়]</span>
+                        ১৮/০৬/২০২৫ - অতিরিক্ত ৩০ (ত্রিশ) মিনিট সময় বৃদ্ধি সংক্রান্ত বিজ্ঞপ্তি।</a>
+                    <a href="#" class="notice-item" data-pdf="Notices/2025 February/notice-12.02.2025-01.pdf"><span
+                            style="color: red;">[পরীক্ষার ফলাফল]</span>
+                        ১৮/০৬/২০২৫ - উচ্চমাধ্যমিক একাদশ শ্রেণির (২০২৪-২০২৫) বার্ষিক পরীক্ষার ফলাফল প্রকাশ।</a>
+                    <a href="#" class="notice-item" data-pdf="Notices/2025 February/notice-12.02.2025-01.pdf"><span
+                            style="color: red;">[ক্লাস বন্ধের নোটিশ]</span>
+                        ১৭/০৬/২০২৫ - স্নাতক (সম্মান), স্নাতক (পাস) এবং বিবিএ প্রফেশনাল বিভাগের ক্লাস স্থগিত
+                        এর নোটিশ।</a>
+                    <a href="#" class="notice-item" data-pdf="Notices/2025 February/notice-12.02.2025-01.pdf"><span
+                            style="color: red;">[বিদায় ও দোয়া অনুষ্ঠান]</span>
+                        ১৭/০৬/২০২৫ - উচ্চমাধ্যমিক পরীক্ষা ২০২৫ এর পরীক্ষার্থীদের বিদায় ও দোয়ার আয়োজন।</a>
+                    <a href="#" class="notice-item" data-pdf="Notices/2025 February/notice-12.02.2025-01.pdf"><span
+                            style="color: red;">[প্রবেশপত্র বিতরন]</span>
+                        ১৬/০৬/২০২৩ - উচ্চমাধ্যমিক পরীক্ষা ২০২৫ এর প্রবেশপত্র বিতরন সংক্রান্ত জরুরী বিজ্ঞপ্তি।</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="history-hero">
+        <img src="history.webp" alt="Dania College Campus">
+        <div class="hero-text-overlay">
+            <h1>আমাদের গৌরবময় ইতিহাস</h1>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="list-card teacher-list">
+            <h2 class="section-title">দনিয়া কলেজের সূচনা</h2>
+            <p class="history-text" style="text-align: justify;">
+                <!-- History of Dania College in Bengali -->
+                রাজধানী ঢাকার প্রবেশ দ্বার ঢাকা-চট্টগ্রাম মহাসড়কের কোল ঘেষে যাত্রাবাড়ি থানায় অবস্থিত দনিয়া কলেজ
+                বাংলাদেশের উচ্চমাধ্যমিক ও উচ্চ শিক্ষা বিস্তাবের একটি অনন্য বিদ্যাপিঠ। ঢাকার দক্ষিণ-পূর্ব অঞ্চলের
+                বৃহত্তম এই কলেজটি ইতোমধ্যেই জাতীয় বিশ্ববিদ্যালয়ের কলেজ র‍্যাংকিং এর তালিকার প্রথম দিকে স্থান করে
+                নিয়েছে। কলেজের পাঠ দানে কার্যকর পদ্ধতি অবলম্বন, সুশৃঙ্খল ব্যবস্থাপনা, সহ-শিক্ষা কার্যক্রমে সাফল্য,
+                শিক্ষা বোর্ড ও জাতীয় বিশ্ববিদ্যালয়ের পরীক্ষায় আশাব্যঞ্জক ফলাফলসহ ৩১টি সূচক মূল্যায়নে জাতীয়
+                বিশ্ববিদ্যালয়ের কলেজ র‍্যাংকিং-এ ইতোপূর্বে দেশের বেসরকারি কলেজের মধ্যে ৪র্থ ছা মহানগরীর সরকারি ও
+                বেসরকারি কলেজের মধ্যে ৯ম স্থান এবং জাতীয় পর্যায় ২২০০ টি কলেজের মা ২২তম স্থান অর্জন করেছে।
+                <br><br>
+                আশির দশকে ঢাকার যাত্রাবাড়ি কদমতলী, শ্যামপুর, দনিয়া, রায়েরবাগ, মাতুয়াইলসহ বিভিন্ন এলাকায় অর্থাৎ ডেমরা
+                অঞ্চলে উচ্চ শিক্ষার জন্য কোনো শিক্ষা প্রতিষ্ঠান ছিল না। এই এলাকার বেশিরভাগ পরিবার ছিল মধ্যবিত্ত,
+                নিম্নবিত্ত ও দরিদ্র। এলাকার শিক্ষার্থীদের উচ্চমাধ্যমিক ও উচ্চ শিক্ষা গ্রহণের সুযোগ ছিল খুবই সীমিত। এ
+                বাস্তবতায় এলাকায় শিক্ষা সম্প্রসারণের জন্য শিক্ষানুরাগী ও বিশিষ্টজনদের উদ্যোগে একটি মহাবিদ্যালয়
+                প্রতিষ্ঠার লক্ষ্যে ১৯৮৪ সালের ২২শে নভেম্বর দনিয়া এ কে হাই স্কুলে প্রথম একটি সভার আয়োজন করা হয়। এ
+                সভায় এলাকার গণ্যমান্য ব্যাক্তিদের পরামর্শে একটি কলেজ প্রতিষ্ঠা করার প্রস্তাব অনুমোদন করা হয়। এ
+                উদ্যোগ বাস্তবায়নের জন্য সভায় ১৭ সদস্য বিশিষ্ট একটি কমিটি গঠন করা হয়। একই বছর নভেম্বর মাসের ২৬ তারিখ
+                কলেজের ঘর নির্মাণের জন্য খুঁটি স্থাপন করা হয়। এ কারণে ২৬শে নভেম্বর দনিয়া কলেজের জন্মদিন হিসেবে
+                বিবেচনা করেছেন কলেজের প্রতিষ্ঠাকালীন অধ্যক্ষ জনাব এস এম কাজী আনোয়ারুল ইসলাম।
+                <br><br>
+                ৩০শে নভেম্বর ১৯৮৪ তারিখে কলেজ প্রতিষ্ঠা কমিটির পরবর্তী সভা অনুষ্ঠিত হয়। কলেজ প্রতিষ্ঠার জন্য এলাকার
+                অধিকসংখ্যক উদ্যোক্তাদের অংশগ্রহণ বৃদ্ধি করার লক্ষ্যে এই সভায় ১৭ সদস্য বিশিষ্ট কমিটিকে ৫১ সদস্য
+                বিশিষ্ট কমিটিতে উন্নীত করা হয়। সভায় আরো সিদ্ধান্ত হয় যে ৬ ডিসেম্বর ১৯৮৪, ১২ রবিউল আউয়াল পবিত্র ঈদে
+                মিলাদুন্নবীর শুভলগ্নে একটি মিলাদ মাহফিল আয়োজন করে আনুষ্ঠানিকভাবে কলেজের সাইনবোর্ড স্থাপন করা হবে এবং
+                সিদ্ধান্ত অনুসারে সাইনবোর্ড স্থাপন করা হয়। এভাবেই এলাকার বিভিন্ন স্তরের উৎসাহী শিক্ষানুরাগী মানুষের
+                আন্তরিক সহযোগিতায় শুরু হয় দনিয়া কলেজের পথ চলা।
+                <br><br>
+                ৩১শে মে ১৯৮৫ তারিখে এক সুধী সমাবেশ অনুষ্ঠিত হয়। এ সভায় প্রধান অতিথি হিসেবে উপস্থিত ছিলেন ঢাকা জেলার
+                তৎকালীন জেলা প্রশাসক জনাব বদিউর রহমান। সমাবেশে আরো উপস্থিত ছিলেন ডেমরা থানার তিন জন ইউনিয়ন পরিষদ
+                চেয়ারম্যান, ঢাকা পৌরসভার তিন জন ওয়ার্ড কমিশনার, এলাকার রাজনৈতিক ও সামাজিক সংগঠনের নেতৃবৃন্দসহ
+                গণ্যমান্য ব্যাক্তিবর্গ। এই কলেজের উন্নয়নের জন্য সভার প্রধান অতিথি জেলা প্রশাসক মহোদয় এক লক্ষ টাকার
+                অনুদান ঘোষণা করেন।
+                <br><br>
+                এরপর ১৯৮৫ সালের ১৮ই জুন জেলা প্রশাসক মহোদয়ের কার্যালয়ে এক সভায় কলেজের কাজ সুচারু রূপে সম্পাদনের জন্য
+                নিম্নলিখিত তিনটি কমিটি গঠন করা হয়।
+            <ul>
+                <li>কার্যনির্বাহী কমিটি</li>
+                <li>ফাইন্যান্স কমিটি</li>
+                <li>নির্মাণ কমিটি</li>
+            </ul>
+            </p>
+            <p class="history-text" style="text-align: justify;">
+                তখন কলেজ পরিচালনা পর্ষদের সভাপতির দায়িত্ব পালন করেন তৎকালীন অতিরিক্ত জেলা প্রশাসক (প্রশাসন) জনাৰ
+                ধীরাজ মালাকার। অধ্যক্ষসহ ১২ জন শিক্ষক, এক জন হিসাব রক্ষক, দুই জন পিয়ন ও দুই জন নৈশ প্রহরী কলেজ
+                প্রতিষ্ঠাকালীন সময়ে কাজে যোগদান করেন। টিনের চালা বিশিষ্ট একটি অফিস কক্ষ ছিল। এ কক্ষেই অফিসের কাজ
+                পরিচালনার পাশাপাশি শিক্ষকগণের বসার ব্যবস্থা ছিল। একই সাথে অফিস কক্ষের এক পাশে একটি ছোট্ট
+                লাইব্রেরিও
+                স্থাপন করা হয়। বড় একটি কক্ষকে তিনভাগ করে সেখানে বিজ্ঞান, মানবিক ও ব্যবসায় শিক্ষার ক্লাস পরিচালিত
+                হতো।
+                <br><br>
+                একটি ছোট্ট টিনের ঘরে ৬৭ জন শিক্ষার্থী নিয়ে ১৯৮৫ সালে উচ্চমাধ্যমিক পর্যায় পাঠ প্রদানের মাধ্যমে
+                কলেজটির যাত্রা শুরু হয়। উচ্চমাধ্যমিকের পাশাপাশি ১৯৯২-৯৩ শিক্ষা বর্ষ থেকে স্নাতক (পাস) এবং
+                ২০০০-২০০১
+                শিক্ষাবর্ষে স্নাতক সম্মান কোর্স চালু হয়। এলাকার শিক্ষার্থীদের চাহিদার আলোকে বর্তমানে মোট ১২টি
+                বিষয়ে
+                স্নাতক সম্মান কোর্স চালু রয়েছে। ২০১১-১২ শিক্ষাবর্ষে কলেজে বিবিএ প্রফেশনাল কোর্স চালু হয়।
+                বর্তমানে
+                কলেজের শিক্ষার্থীর সংখ্যা প্রায় ১০,০০০ হাজার। একটি ছোট্ট টিনের ঘরের হানে নির্মিত হয়েছে একটি ১০
+                তলা ও
+                দুটি ৫ তলা বিশিষ্ট আধুনিক ভবন এবং ৮ তলা বিশিষ্ট আইসিটি ভবন।
+                <br><br>
+                শিক্ষা বোর্ড ও জাতীয় বিশ্ববিদ্যালয়ের বিভিন্ন পরীক্ষায় দনিয়া কলেজের শিক্ষার্থীরা আশাব্যঞ্জক ফলাফল
+                অর্জন করে থাকে। দনিয়া কলেজ থেকে পাশ করা শিক্ষার্থীদের মধ্যে উল্লেখযোগ্য সংখ্যক ঢাকা
+                বিশ্ববিদ্যালয়,
+                বাংলাদেশ প্রকৌশল বিশ্ববিদ্যালয়, মেডিকেল কলেজ ও বিভিন্ন পাবলিক বিশ্ববিদ্যালয়ে ভর্তি হওয়ার সুযোগ
+                পাচ্ছে। দনিয়া কলেজের শিক্ষার্থীদের মধ্যে অনেকেই শিক্ষা জীবন শেষ করে ঢাকা বিশ্ববিদ্যালয় ও
+                বাংলাদেশ
+                প্রকৌশল বিশ্ববিদ্যালয়সহ বিভিন্ন খ্যাতনামা শিক্ষা প্রতিষ্ঠানে শিক্ষক হিসেবে যোগদান করেছেন।
+                একইসাথে
+                সরকারের প্রশাসন ক্যাডারসহ বিভিন্ন ক্যাডার ও সামরিক বাহিনীর কর্মকর্তা হিসেবে কাজ করছেন। বেশ
+                কয়েকজন
+                প্রাক্তন শিক্ষার্থী রাজনৈতিক নেতা হিসেবে জাতীয় পর্যায়ে অবদান রাখছেন।
+            </p>
+            <hr style="margin: 50px 0; border: 0; border-top: 1px solid #ddd;">
+            <p class="history-text" style="text-align: justify;">
+                <!-- History of Dania College in English -->
+                Donia College, located in the Jatrabari police precinct beside the Dhaka-Chattogram highway—the
+                gateway to the capital city Dhaka—is a distinguished institution for higher secondary and tertiary
+                education in Bangladesh. As one of the largest colleges in the southeastern region of Dhaka, it has
+                already secured a top position in the National University’s college rankings. Owing to its effective
+                teaching methods, well-organized administration, success in co-curricular activities, and consistent
+                academic performance, the college ranked 4th among private colleges, 9th among all government and
+                private colleges in metropolitan areas, and 22nd out of 2,200 colleges nationwide—based on 31
+                evaluation criteria set by the National University.
+                <br><br>
+                In the 1980s, areas like Jatrabari, Kadamtali, Shyampur, Donia, Rayerbagh, and Matuail—collectively
+                known as the Demra region—had no institutions for higher education. The majority of residents in
+                this region were from middle-class, lower-middle-class, and underprivileged backgrounds. As a
+                result, students had very limited access to higher secondary and tertiary education. In response,
+                local education enthusiasts and prominent citizens convened a meeting on November 22, 1984, at Donia
+                A.K. High School to establish a college. The meeting approved the proposal to establish a college
+                and formed a 17-member committee to realize the initiative. On November 26 of the same year, the
+                foundation was laid for the college building. For this reason, the founding principal, Mr. S.M. Kazi
+                Anwarul Islam, considered November 26 the official founding day of Donia College.
+                <br><br>
+                A follow-up meeting of the college establishment committee was held on November 30, 1984, where the
+                original 17-member committee was expanded to 51 members to involve more community stakeholders. It
+                was also decided that on December 6, 1984—12 Rabi' al-Awwal, the holy occasion of
+                Eid-e-Milad-un-Nabi—a Milad Mahfil (religious gathering) would be held, and the college’s signboard
+                would be formally installed, which was done accordingly. Thus, with enthusiastic participation and
+                heartfelt support from people of all walks of life, Donia College took its first steps.
+                <br><br>
+                On May 31, 1985, a grand assembly was held, graced by then-Dhaka District Commissioner Mr. Badiur
+                Rahman as the chief guest. Also present were three union parishad chairmen from Demra Thana, three
+                ward commissioners of Dhaka Municipality, and many local political and social leaders. At the event,
+                the district commissioner generously announced a grant of one lakh taka for the development of the
+                college.
+                <br><br>
+                Later, on June 18, 1985, a meeting at the District Commissioner’s office resulted in the formation
+                of three committees to oversee smooth college operations:
+            <ul>
+                <li>Executive Committee</li>
+                <li>Finance Committee</li>
+                <li>Construction Committee</li>
+            </ul>
+            </p>
+
+            <p class="history-text" style="text-align: justify;">
+                At the time, the President of the Governing Body was the then-Additional Deputy Commissioner
+                (Administration), Mr. Dhiraj Malakar. The college began with 12 teachers, one accountant, two peons,
+                and two night guards. The administration operated from a single tin-roofed office room, which also
+                served as a common staff room and housed a small library. A large room was partitioned to
+                accommodate classes for the Science, Humanities, and Business Studies streams.
+                <br><br>
+                The college formally began its academic journey in 1985 with 67 students enrolled at the higher
+                secondary level in a modest tin-roofed building. Over time, the institution expanded its academic
+                programs, introducing Bachelor’s Pass courses in the 1992–93 academic year and Honours programs in
+                2000–2001. Currently, the college offers Honours degrees in 12 subjects to meet growing demand. A
+                BBA Professional course was launched in 2011–12. Today, the college serves nearly 10,000 students
+                and features a 10-story main academic building, two 5-story buildings, and an 8-story ICT facility.
+                <br><br>
+                Students of Donia College consistently perform well in Board and National University exams. A
+                significant number of alumni have gone on to study at prestigious institutions such as the
+                University of Dhaka, BUET, and medical colleges across the country. Many have returned to serve as
+                faculty members in top universities, joined the civil service in various cadres, or taken positions
+                in the armed forces. Several former students have also made a mark as national political leaders.
+            </p>
+        </section>
+        <hr style="margin: 50px 0; border: 0; border-top: 1px solid #ddd;">
+
+        <section class="list-card teacher-list">
+            <h2 class="section-title">প্রতিষ্ঠাকালীন শিক্ষক ও কর্মচারী</h2>
+
+            <h3 class="subheading" style="margin-top: 0; border-left-color: #FFA516;">প্রতিষ্ঠাকালীন শিক্ষকবৃন্দ</h3>
+            <ul>
+                <li>এস এম কাজী আনোয়ারুল ইসলাম – অধ্যক্ষ</li>
+                <li>মোঃ ইরশাদুল্লাহ – ইংরেজি বিভাগ</li>
+                <li>কাজল ভট্টাচার্য্য – বাংলা বিভাগ</li>
+                <li>মোঃ খালেকউজজামান – অর্থনীতি বিভাগ</li>
+                <li>মোঃ নজরুল ইসলাম – রাষ্ট্রবিজ্ঞান বিভাগ</li>
+                <li>মিরাসুল ফাতিমা – ইসলামের ইতিহাস বিভাগ</li>
+                <li>ড. দিরাজুর রহমান খান – ইতিহাস বিভাগ</li>
+                <li>হাসনা হেনা – রসায়ন বিভাগ</li>
+                <li>মোঃ মঞ্জুরুল ইসলাম – প্রাণিবিদ্যা বিভাগ</li>
+            </ul>
+
+            <h3 class="subheading" style="border-left-color: #53cc40;">প্রতিষ্ঠাকালীন কর্মচারীবৃন্দ</h3>
+            <ul class="staff-list">
+                <li>মোঃ মুনছুর আলী ভূঁঞা – হিসাব রক্ষক</li>
+                <li>মোঃ শফিক মিয়া – পিয়ন</li>
+                <li>মোঃ জাহাঙ্গীর আলী – পিয়ন</li>
+                <li>নুরজাহান বেগম – আয়া</li>
+                <li>মোঃ আব্দুর রহিম – দারোয়ান</li>
+            </ul>
+        </section>
+
+    </main>
+    <footer>
+        <style>
+            /* Footer Styles */
+            footer {
+                background-color: #1a1a1a;
+                background-color: #23313f;
+                color: #fff;
+                padding: 40px 0;
+                font-family: 'Arial', sans-serif;
+            }
+
+            .footer-container {
+                width: 90%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .footer-section {
+                flex: 1;
+                min-width: 220px;
+                margin: 20px 0;
+            }
+
+            .footer-section.logo h2 {
+                font-size: 2em;
+                color: #f9a825;
+                margin-bottom: 10px;
+            }
+
+            .footer-section p {
+                line-height: 1.6;
+                color: #ccc;
+                font-size: 1em;
+            }
+
+            .footer-section h3 {
+                font-size: 1.4em;
+                margin-bottom: 15px;
+                color: #f9a825;
+            }
+
+            .footer-section ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .footer-section ul li {
+                margin-bottom: 10px;
+            }
+
+            .footer-section ul li a {
+                color: #ccc;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-section ul li a:hover {
+                color: #f9a825;
+            }
+
+            /* Social Media Icons */
+            .social-links {
+                display: flex;
+                gap: 15px;
+                margin-top: 10px;
+            }
+
+            .social-links a {
+                color: #ccc;
+                font-size: 1.5em;
+                transition: color 0.3s ease;
+            }
+
+            .social-links a:hover {
+                color: #f9a825;
+            }
+
+            /* Footer Bottom */
+            .footer-bottom {
+                text-align: center;
+                padding-top: 20px;
+                border-top: 1px solid #333;
+                font-size: 0.9em;
+                color: #ccc;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .footer-container {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                .footer-section {
+                    margin: 10px 0;
+                }
+            }
+
+            .footer-credit {
+                text-decoration: none;
+                font-weight: 700;
+                color: #f9a825;
+            }
+        </style>
+
+        <div class="footer-container">
+            <!-- Branding Section -->
+            <div class="footer-section logo">
+                <h2>Dania College</h2>
+                <!-- <p>Your trusted academic companion for a brighter future.</p> -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.230368552454!2d90.44491137511362!3d23.70346607870241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9d77be74dc3%3A0x646d24d57449ff39!2sDania%20College!5e0!3m2!1sen!2sbd!4v1740332618584!5m2!1sen!2sbd"
+                    width="250" height="250" style="border:0; border-radius: 7px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <!-- <li><a href="#">Home</a></li> -->
+                    <!-- <li><a href="#">About</a></li> -->
+                    <!-- <li><a href="#">Events</a></li> -->
+                    <!-- <li><a href="#">Contact</a></li> -->
+                </ul>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jatrabari, Dhaka-1236</p>
+                <p><i class="fas fa-phone"></i> +88 01 55 42 43 49 7</p>
+                <p><i class="fas fa-envelope"></i> info.dania.uc@gmail.com</p>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/OfficialDUC/" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@DaniaCollege" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Dania College. All rights reserved | Developed by: <a class="footer-credit"
+                    href="https://github.com/minhajsiam">A. K. M Minhajur Rahman Siam</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
