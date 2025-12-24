@@ -1,0 +1,248 @@
+<footer>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Modern Footer Styles */
+        footer {
+            background-color: #1a252f;
+            /* Deep Navy */
+            color: #ffffff;
+            padding: 70px 0 20px;
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+            position: relative;
+            border-top: 5px solid #16A34A;
+            /* Green Accent Top Border */
+        }
+
+        .footer-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: #f9a825;
+            /* Accent Yellow/Orange */
+            position: relative;
+            font-weight: 600;
+        }
+
+        /* Heading Underline Effect */
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50px;
+            height: 2px;
+            background-color: #16A34A;
+        }
+
+        /* Branding Section */
+        .footer-section.logo h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .footer-section.logo p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .map-frame {
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .map-frame:hover {
+            border-color: #f9a825;
+        }
+
+        /* Links Section */
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-section ul li a i {
+            font-size: 0.7rem;
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #f9a825;
+            padding-left: 8px;
+        }
+
+        .footer-section ul li a:hover i {
+            color: #16A34A;
+        }
+
+        /* Contact Section */
+        .footer-section.contact p {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .footer-section.contact i {
+            color: #16A34A;
+            font-size: 1.1rem;
+        }
+
+        /* Social Media Icons */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: 0.4s;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background-color: #16A34A;
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            margin-top: 50px;
+            padding-top: 25px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .footer-credit {
+            text-decoration: none;
+            font-weight: 600;
+            color: #f9a825;
+            transition: 0.3s;
+        }
+
+        .footer-credit:hover {
+            color: #16A34A;
+            text-decoration: underline;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            footer {
+                padding: 50px 0 20px;
+            }
+
+            .footer-container {
+                text-align: center;
+            }
+
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-section ul li a {
+                justify-content: center;
+            }
+
+            .footer-section.contact p {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <div class="footer-container">
+        <div class="footer-section logo">
+            <h2>Dania College</h2>
+            <p>উচ্চশিক্ষা বিস্তারে একটি অনন্য বিদ্যাপিঠ। মানসম্মত শিক্ষা ও শৃঙ্খলা আমাদের মূল লক্ষ্য।</p>
+            <div class="map-frame">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.223594897262!2d90.44855877589667!3d23.70371997870198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b99182333757%3A0x6339bc077b960c1d!2sDania%20College!5e0!3m2!1sen!2sbd!4v1703426000000!5m2!1sen!2sbd"
+                    width="100%" height="160" style="border:0; display: block;" allowfullscreen=""
+                    loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                <li><a href="#"><i class="fas fa-chevron-right"></i> Academic Info</a></li>
+                <li><a href="#"><i class="fas fa-chevron-right"></i> Notice Board</a></li>
+                <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Shonir Akhra, Jatrabari, Dhaka-1236</p>
+            <p><i class="fas fa-phone-alt"></i> +88 01554 243497</p>
+            <p><i class="fas fa-envelope"></i> info.dania.uc@gmail.com</p>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/OfficialDUC/" target="_blank" title="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@DaniaCollege" target="_blank" title="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 <strong>Dania College</strong>. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px;">Developed by: <a class="footer-credit"
+                href="https://github.com/minhajsiam">A. K. M Minhajur Rahman Siam</a></p>
+    </div>
+</footer>
