@@ -1,0 +1,250 @@
+<section class="events-section">
+    <div class="events-container">
+
+        <div class="events-header">
+            <div class="header-text">
+                <h2 class="events-title">সাম্প্রতিক ইভেন্টসমূহ</h2>
+                <p class="events-subtitle">কলেজ প্রাঙ্গনে অনুষ্ঠিত সর্বশেষ কার্যক্রমের একঝলক</p>
+            </div>
+            <a href="events.html" class="desktop-view-all">সবগুলো দেখুন <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="events-grid">
+
+            <div class="event-card">
+                <div class="event-image-wrapper">
+                    <img src="events/event1.jpg" alt="Event 1" class="event-image">
+                    <div class="event-date-badge">২০ জানুয়ারি ২০২৫</div>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-name">পবিত্র ঈদে মিলাদুন্নবী ও দোয়া মাহফিল ২০২৫</h3>
+                    <p class="event-desc">কলেজ মিলনায়তনে অত্যন্ত ভাবগাম্ভীর্যের সাথে পালিত হলো বার্ষিক দোয়া মাহফিল।</p>
+                    <a href="#" class="read-more">বিস্তারিত পড়ুন</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-image-wrapper">
+                    <img src="events/event2.jpg" alt="Event 2" class="event-image">
+                    <div class="event-date-badge">১৫ জানুয়ারি ২০২৫</div>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-name">বার্ষিক আন্তঃকক্ষ ক্রীড়া প্রতিযোগিতা</h3>
+                    <p class="event-desc">শিক্ষার্থীদের স্বতঃস্ফূর্ত অংশগ্রহণে অনুষ্ঠিত হলো সপ্তাহব্যাপী ক্রীড়া উৎসব।
+                    </p>
+                    <a href="#" class="read-more">বিস্তারিত পড়ুন</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-image-wrapper">
+                    <img src="events/event3.jpg" alt="Event 3" class="event-image">
+                    <div class="event-date-badge">১০ জানুয়ারি ২০২৫</div>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-name">একাদশ শ্রেণির নবীন বরণ উৎসব</h3>
+                    <p class="event-desc">২০২৪-২৫ শিক্ষাবর্ষের নতুন শিক্ষার্থীদের ফুল দিয়ে বরণ করে নিলো দনিয়া কলেজ।</p>
+                    <a href="#" class="read-more">বিস্তারিত পড়ুন</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-image-wrapper">
+                    <img src="events/event4.jpg" alt="Event 4" class="event-image">
+                    <div class="event-date-badge">০৫ জানুয়ারি ২০২৫</div>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-name">সাংস্কৃতিক প্রতিযোগিতা ও পুরস্কার বিতরণী</h3>
+                    <p class="event-desc">মেধাবী শিক্ষার্থীদের মাঝে পুরস্কার বিতরণের মাধ্যমে শেষ হলো সাংস্কৃতিক সপ্তাহ।
+                    </p>
+                    <a href="#" class="read-more">বিস্তারিত পড়ুন</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="view-all-wrapper">
+            <a href="events.html" class="btn-all-events">
+                সব ইভেন্ট <i class="fas fa-calendar-alt"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Section General Styles */
+    .events-section {
+        background-color: #f8fafc;
+        padding: 80px 20px;
+        font-family: 'Hind Siliguri', sans-serif;
+    }
+
+    .events-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Header Styles */
+    .events-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 40px;
+    }
+
+    .events-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1e293b;
+        border-left: 6px solid #16a34a;
+        padding-left: 15px;
+        margin: 0;
+    }
+
+    .events-subtitle {
+        color: #64748b;
+        margin-top: 8px;
+        font-size: 16px;
+    }
+
+    .desktop-view-all {
+        color: #16a34a;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.3s;
+    }
+
+    .desktop-view-all:hover {
+        color: #15803d;
+        text-decoration: underline;
+    }
+
+    /* Grid and Card Styles */
+    .events-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+    }
+
+    .event-card {
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        border: 1px solid #f1f5f9;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .event-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .event-image-wrapper {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .event-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .event-card:hover .event-image {
+        transform: scale(1.1);
+    }
+
+    .event-date-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background-color: #16a34a;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 5px 12px;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .event-content {
+        padding: 20px;
+    }
+
+    .event-name {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0 0 10px 0;
+        line-height: 1.4;
+        height: 50px;
+        /* Limits title to 2 lines */
+        overflow: hidden;
+    }
+
+    .event-desc {
+        font-size: 14px;
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .read-more {
+        font-size: 14px;
+        font-weight: 700;
+        color: #16a34a;
+        text-decoration: none;
+    }
+
+    /* Bottom Button Styles */
+    .view-all-wrapper {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .btn-all-events {
+        display: inline-block;
+        background-color: #16a34a;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 14px 40px;
+        border-radius: 50px;
+        box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .btn-all-events:hover {
+        background-color: #15803d;
+        transform: translateY(-3px);
+        box-shadow: 0 20px 25px -5px rgba(22, 163, 74, 0.4);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .desktop-view-all {
+            display: none;
+        }
+
+        .events-header {
+            text-align: center;
+            justify-content: center;
+        }
+
+        .events-title {
+            border-left: none;
+            border-bottom: 4px solid #16a34a;
+            display: inline-block;
+            padding-left: 0;
+            padding-bottom: 5px;
+        }
+    }
+</style>
