@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Dania College Notice Board</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        .sidebar {
+            width: 260px;
+            background-color: #2c3e50;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            padding: 20px 0;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #16A34A;
+            font-size: 22px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 15px 25px;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+        }
+
+        .sidebar ul li:hover,
+        .sidebar ul li.active {
+            background-color: #1a252f;
+            border-left: 4px solid #16A34A;
+        }
+
+        .main-content {
+            margin-left: 260px;
+            padding: 30px;
+            width: 100%;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+            border-bottom: 2px solid #16A34A;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #16A34A;
+        }
+
+        .btn-submit {
+            background-color: #16A34A;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #12873d;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .btn-delete {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-delete:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2><i class="fas fa-user-shield"></i> Admin Panel</h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li class="active"><a href="#"><i class="fas fa-bullhorn"></i> Manage Notices</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h2>নোটিশ বোর্ড ম্যানেজমেন্ট</h2>
+            <div>Admin <i class="fas fa-user-circle fa-lg"></i></div>
+        </div>
+
+        <div class="card">
+            <h3>নতুন নোটিশ যোগ করুন</h3>
+            <form id="noticeForm">
+                <div class="form-group">
+                    <label>তারিখ:</label>
+                    <input type="date" id="noticeDate" required>
+                </div>
+                <div class="form-group">
+                    <label>নোটিশের ধরন (Optional):</label>
+                    <input type="text" id="noticeType" placeholder="যেমন: জরুরী বিজ্ঞপ্তি, পরীক্ষার ফলাফল">
+                </div>
+                <div class="form-group">
+                    <label>নোটিশের শিরোনাম:</label>
+                    <input type="text" id="noticeTitle" required placeholder="নোটিশের বিস্তারিত শিরোনাম লিখুন">
+                </div>
+                <div class="form-group">
+                    <label>পিডিএফ ফাইলের লিংক:</label>
+                    <input type="text" id="noticeLink" required
+                        placeholder="যেমন: Notices/2025/example.pdf বা গুগল ড্রাইভ লিংক">
+                </div>
+                <button type="submit" class="btn-submit" id="submitBtn"><i class="fas fa-plus"></i> নোটিশ প্রকাশ
+                    করুন</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h3>প্রকাশিত নোটিশসমূহ</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>তারিখ</th>
+                        <th>ধরন</th>
+                        <th>শিরোনাম</th>
+                        <th>অ্যাকশন</th>
+                    </tr>
+                </thead>
+                <tbody id="noticeTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, serverTimestamp, query, orderBy }
+            from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        // TODO: আপনার Firebase প্রজেক্টের কনফিগারেশন এখানে বসান
+        const firebaseConfig = {
+            apiKey: "AIzaSyAvLVmeid9ngIQMPgTIlj1qhx1hEyVDAsU",
+            authDomain: "dania-college-admin-panel.firebaseapp.com",
+            projectId: "dania-college-admin-panel",
+            storageBucket: "dania-college-admin-panel.firebasestorage.app",
+            messagingSenderId: "99612366902",
+            appId: "1:99612366902:web:4dd2f5804ef8d06b8d2097",
+            measurementId: "G-G3QDJQBKVR"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // ডেটা সেভ করার ফাংশন
+        document.getElementById('noticeForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const date = document.getElementById('noticeDate').value;
+            const type = document.getElementById('noticeType').value;
+            const title = document.getElementById('noticeTitle').value;
+            const link = document.getElementById('noticeLink').value; // লিংক নেওয়া হচ্ছে
+            const formattedDate = date.split('-').reverse().join('-');
+
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerHTML = "সংরক্ষণ করা হচ্ছে...";
+            submitBtn.disabled = true;
+
+            try {
+                await addDoc(collection(db, "notices"), {
+                    date: formattedDate,
+                    type: type,
+                    title: title,
+                    link: link,
+                    createdAt: serverTimestamp()
+                });
+                alert('নোটিশ সফলভাবে যোগ করা হয়েছে!');
+                document.getElementById('noticeForm').reset();
+                loadNotices(); // টেবিল আপডেট
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                alert('ডেটা সেভ করতে সমস্যা হয়েছে!');
+            } finally {
+                submitBtn.innerHTML = '<i class="fas fa-plus"></i> নোটিশ প্রকাশ করুন';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // ডেটা দেখানোর ফাংশন
+        async function loadNotices() {
+            const tableBody = document.getElementById('noticeTableBody');
+            tableBody.innerHTML = "<tr><td colspan='4'>লোডিং...</td></tr>";
+
+            const q = query(collection(db, "notices"), orderBy("createdAt", "desc"));
+            const querySnapshot = await getDocs(q);
+
+            tableBody.innerHTML = "";
+            querySnapshot.forEach((docSnap) => {
+                const data = docSnap.data();
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${data.date}</td>
+                    <td><span style="color: red; font-weight: bold;">[${data.type}]</span></td>
+                    <td><a href="${data.link}" target="_blank">${data.title}</a></td>
+                    <td>
+                        <button class="btn-delete" data-id="${docSnap.id}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            // ডিলিট বাটন কাজ করানো
+            document.querySelectorAll('.btn-delete').forEach(btn => {
+                btn.addEventListener('click', async (e) => {
+                    const id = e.currentTarget.getAttribute('data-id');
+                    if (confirm("আপনি কি নিশ্চিত যে নোটিশটি ডিলিট করতে চান?")) {
+                        await deleteDoc(doc(db, "notices", id));
+                        loadNotices();
+                    }
+                });
+            });
+        }
+
+        // পেজ লোড হলে নোটিশ লোড হবে
+        window.onload = loadNotices;
+    </script>
+</body>
+
+</html>
