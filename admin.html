@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - Dania College Notice Board</title>
+    <title>Admin Panel - Dania College</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -28,6 +28,7 @@
             height: 100vh;
             position: fixed;
             padding: 20px 0;
+            overflow-y: auto;
         }
 
         .sidebar h2 {
@@ -103,7 +104,8 @@
         }
 
         input[type="text"],
-        input[type="date"] {
+        input[type="date"],
+        textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
@@ -111,7 +113,8 @@
             outline: none;
         }
 
-        input:focus {
+        input:focus,
+        textarea:focus {
             border-color: #16A34A;
         }
 
@@ -165,6 +168,16 @@
         .btn-delete:hover {
             background-color: #c0392b;
         }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 40px 0 20px 0;
+            border-bottom: 3px solid #16A34A;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -173,58 +186,83 @@
     <div class="sidebar">
         <h2><i class="fas fa-user-shield"></i> Admin Panel</h2>
         <ul>
-            <li><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
-            <li class="active"><a href="#"><i class="fas fa-bullhorn"></i> Manage Notices</a></li>
-            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="#notice-section"><i class="fas fa-bullhorn"></i> Manage Notices</a></li>
+            <li><a href="#event-section"><i class="fas fa-calendar-alt"></i> Manage Events</a></li>
             <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
     </div>
 
     <div class="main-content">
         <div class="header">
-            <h2>নোটিশ বোর্ড ম্যানেজমেন্ট</h2>
+            <h2>Dania College Dashboard</h2>
             <div>Admin <i class="fas fa-user-circle fa-lg"></i></div>
         </div>
 
-        <div class="card">
-            <h3>নতুন নোটিশ যোগ করুন</h3>
-            <form id="noticeForm">
-                <div class="form-group">
-                    <label>তারিখ:</label>
-                    <input type="date" id="noticeDate" required>
-                </div>
-                <div class="form-group">
-                    <label>নোটিশের ধরন (Optional):</label>
-                    <input type="text" id="noticeType" placeholder="যেমন: জরুরী বিজ্ঞপ্তি, পরীক্ষার ফলাফল">
-                </div>
-                <div class="form-group">
-                    <label>নোটিশের শিরোনাম:</label>
-                    <input type="text" id="noticeTitle" required placeholder="নোটিশের বিস্তারিত শিরোনাম লিখুন">
-                </div>
-                <div class="form-group">
-                    <label>পিডিএফ ফাইলের লিংক:</label>
-                    <input type="text" id="noticeLink" required
-                        placeholder="যেমন: Notices/2025/example.pdf বা গুগল ড্রাইভ লিংক">
-                </div>
-                <button type="submit" class="btn-submit" id="submitBtn"><i class="fas fa-plus"></i> নোটিশ প্রকাশ
-                    করুন</button>
-            </form>
+        <div id="notice-section">
+            <h2 class="section-title">নোটিশ বোর্ড ম্যানেজমেন্ট</h2>
+            <div class="card">
+                <h3>নতুন নোটিশ যোগ করুন</h3>
+                <form id="noticeForm">
+                    <div class="form-group"><label>তারিখ:</label><input type="date" id="noticeDate" required></div>
+                    <div class="form-group"><label>নোটিশের ধরন (Optional):</label><input type="text" id="noticeType"
+                            placeholder="যেমন: জরুরী বিজ্ঞপ্তি"></div>
+                    <div class="form-group"><label>নোটিশের শিরোনাম:</label><input type="text" id="noticeTitle" required>
+                    </div>
+                    <div class="form-group"><label>পিডিএফ ফাইলের লিংক:</label><input type="text" id="noticeLink"
+                            required></div>
+                    <button type="submit" class="btn-submit" id="submitNoticeBtn"><i class="fas fa-plus"></i> নোটিশ
+                        প্রকাশ করুন</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>প্রকাশিত নোটিশসমূহ</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>তারিখ</th>
+                            <th>শিরোনাম</th>
+                            <th>অ্যাকশন</th>
+                        </tr>
+                    </thead>
+                    <tbody id="noticeTableBody"></tbody>
+                </table>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>প্রকাশিত নোটিশসমূহ</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>তারিখ</th>
-                        <th>ধরন</th>
-                        <th>শিরোনাম</th>
-                        <th>অ্যাকশন</th>
-                    </tr>
-                </thead>
-                <tbody id="noticeTableBody">
-                </tbody>
-            </table>
+        <div id="event-section">
+            <h2 class="section-title" style="margin-top: 60px;">ইভেন্ট ম্যানেজমেন্ট</h2>
+            <div class="card">
+                <h3>নতুন ইভেন্ট যোগ করুন</h3>
+                <form id="eventForm">
+                    <div class="form-group"><label>ইভেন্টের তারিখ:</label><input type="text" id="eventDate" required
+                            placeholder="যেমন: ২০ জানুয়ারি ২০২৫"></div>
+                    <div class="form-group"><label>ইভেন্টের শিরোনাম:</label><input type="text" id="eventTitle" required
+                            placeholder="যেমন: একাদশ শ্রেণির নবীন বরণ উৎসব"></div>
+                    <div class="form-group"><label>সংক্ষিপ্ত বিবরণ:</label><textarea id="eventDesc" rows="3" required
+                            placeholder="ইভেন্ট সম্পর্কে ২-৩ লাইন লিখুন..."></textarea></div>
+                    <div class="form-group"><label>ছবির লিংক:</label><input type="text" id="eventImage" required
+                            placeholder="যেমন: events/event2.png বা যেকোনো ইমেজ লিংক"></div>
+                    <div class="form-group"><label>বিস্তারিত পড়ার লিংক (Optional):</label><input type="text"
+                            id="eventDetailsLink" placeholder="যেমন: details.html (ফাঁকা রাখলে # সেট হবে)"></div>
+                    <button type="submit" class="btn-submit" id="submitEventBtn"><i class="fas fa-plus"></i> ইভেন্ট
+                        প্রকাশ করুন</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>প্রকাশিত ইভেন্টসমূহ</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>তারিখ</th>
+                            <th>শিরোনাম</th>
+                            <th>অ্যাকশন</th>
+                        </tr>
+                    </thead>
+                    <tbody id="eventTableBody"></tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -233,7 +271,7 @@
         import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, serverTimestamp, query, orderBy }
             from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-        // TODO: আপনার Firebase প্রজেক্টের কনফিগারেশন এখানে বসান
+        // TODO: আপনার Firebase কনফিগারেশন এখানে বসান
         const firebaseConfig = {
             apiKey: "AIzaSyAvLVmeid9ngIQMPgTIlj1qhx1hEyVDAsU",
             authDomain: "dania-college-admin-panel.firebaseapp.com",
@@ -242,85 +280,89 @@
             messagingSenderId: "99612366902",
             appId: "1:99612366902:web:4dd2f5804ef8d06b8d2097",
             measurementId: "G-G3QDJQBKVR"
+
         };
 
-        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        // ডেটা সেভ করার ফাংশন
+        // ================= NOTICE LOGIC =================
         document.getElementById('noticeForm').addEventListener('submit', async function (e) {
             e.preventDefault();
+            const btn = document.getElementById('submitNoticeBtn');
+            btn.innerHTML = "সংরক্ষণ করা হচ্ছে..."; btn.disabled = true;
 
             const date = document.getElementById('noticeDate').value;
-            const type = document.getElementById('noticeType').value;
-            const title = document.getElementById('noticeTitle').value;
-            const link = document.getElementById('noticeLink').value; // লিংক নেওয়া হচ্ছে
-            const formattedDate = date.split('-').reverse().join('-');
-
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.innerHTML = "সংরক্ষণ করা হচ্ছে...";
-            submitBtn.disabled = true;
-
             try {
                 await addDoc(collection(db, "notices"), {
-                    date: formattedDate,
-                    type: type,
-                    title: title,
-                    link: link,
+                    date: date.split('-').reverse().join('-'),
+                    type: document.getElementById('noticeType').value,
+                    title: document.getElementById('noticeTitle').value,
+                    link: document.getElementById('noticeLink').value,
                     createdAt: serverTimestamp()
                 });
-                alert('নোটিশ সফলভাবে যোগ করা হয়েছে!');
-                document.getElementById('noticeForm').reset();
-                loadNotices(); // টেবিল আপডেট
-            } catch (error) {
-                console.error("Error adding document: ", error);
-                alert('ডেটা সেভ করতে সমস্যা হয়েছে!');
-            } finally {
-                submitBtn.innerHTML = '<i class="fas fa-plus"></i> নোটিশ প্রকাশ করুন';
-                submitBtn.disabled = false;
-            }
+                alert('নোটিশ যোগ করা হয়েছে!'); document.getElementById('noticeForm').reset(); loadNotices();
+            } catch (error) { alert('সমস্যা হয়েছে!'); } finally { btn.innerHTML = '<i class="fas fa-plus"></i> নোটিশ প্রকাশ করুন'; btn.disabled = false; }
         });
 
-        // ডেটা দেখানোর ফাংশন
         async function loadNotices() {
-            const tableBody = document.getElementById('noticeTableBody');
-            tableBody.innerHTML = "<tr><td colspan='4'>লোডিং...</td></tr>";
-
+            const tbody = document.getElementById('noticeTableBody');
+            tbody.innerHTML = "<tr><td colspan='3'>লোডিং...</td></tr>";
             const q = query(collection(db, "notices"), orderBy("createdAt", "desc"));
-            const querySnapshot = await getDocs(q);
-
-            tableBody.innerHTML = "";
-            querySnapshot.forEach((docSnap) => {
+            const snapshot = await getDocs(q);
+            tbody.innerHTML = "";
+            snapshot.forEach((docSnap) => {
                 const data = docSnap.data();
                 const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${data.date}</td>
-                    <td><span style="color: red; font-weight: bold;">[${data.type}]</span></td>
-                    <td><a href="${data.link}" target="_blank">${data.title}</a></td>
-                    <td>
-                        <button class="btn-delete" data-id="${docSnap.id}">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </td>
-                `;
-                tableBody.appendChild(row);
-            });
-
-            // ডিলিট বাটন কাজ করানো
-            document.querySelectorAll('.btn-delete').forEach(btn => {
-                btn.addEventListener('click', async (e) => {
-                    const id = e.currentTarget.getAttribute('data-id');
-                    if (confirm("আপনি কি নিশ্চিত যে নোটিশটি ডিলিট করতে চান?")) {
-                        await deleteDoc(doc(db, "notices", id));
-                        loadNotices();
-                    }
-                });
+                row.innerHTML = `<td>${data.date}</td><td>${data.title}</td>
+                    <td><button class="btn-delete" onclick="deleteData('notices', '${docSnap.id}')"><i class="fas fa-trash"></i></button></td>`;
+                tbody.appendChild(row);
             });
         }
 
-        // পেজ লোড হলে নোটিশ লোড হবে
-        window.onload = loadNotices;
+        // ================= EVENT LOGIC =================
+        document.getElementById('eventForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitEventBtn');
+            btn.innerHTML = "সংরক্ষণ করা হচ্ছে..."; btn.disabled = true;
+
+            try {
+                await addDoc(collection(db, "events"), {
+                    date: document.getElementById('eventDate').value,
+                    title: document.getElementById('eventTitle').value,
+                    description: document.getElementById('eventDesc').value,
+                    imageLink: document.getElementById('eventImage').value,
+                    detailsLink: document.getElementById('eventDetailsLink').value || "#",
+                    createdAt: serverTimestamp()
+                });
+                alert('ইভেন্ট যোগ করা হয়েছে!'); document.getElementById('eventForm').reset(); loadEvents();
+            } catch (error) { alert('সমস্যা হয়েছে!'); } finally { btn.innerHTML = '<i class="fas fa-plus"></i> ইভেন্ট প্রকাশ করুন'; btn.disabled = false; }
+        });
+
+        async function loadEvents() {
+            const tbody = document.getElementById('eventTableBody');
+            tbody.innerHTML = "<tr><td colspan='3'>লোডিং...</td></tr>";
+            const q = query(collection(db, "events"), orderBy("createdAt", "desc"));
+            const snapshot = await getDocs(q);
+            tbody.innerHTML = "";
+            snapshot.forEach((docSnap) => {
+                const data = docSnap.data();
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${data.date}</td><td>${data.title}</td>
+                    <td><button class="btn-delete" onclick="deleteData('events', '${docSnap.id}')"><i class="fas fa-trash"></i></button></td>`;
+                tbody.appendChild(row);
+            });
+        }
+
+        // ================= GLOBAL DELETE LOGIC =================
+        window.deleteData = async function (collectionName, id) {
+            if (confirm("আপনি কি নিশ্চিত?")) {
+                await deleteDoc(doc(db, collectionName, id));
+                collectionName === 'notices' ? loadNotices() : loadEvents();
+            }
+        };
+
+        window.onload = () => { loadNotices(); loadEvents(); };
     </script>
 </body>
 
