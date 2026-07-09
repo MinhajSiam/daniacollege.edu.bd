@@ -1886,7 +1886,6 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getFirestore, collection, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-        // TODO: আপনার ফায়ারবেস প্রজেক্টের কনফিগারেশন এখানে বসান
         const firebaseConfig = {
             apiKey: "AIzaSyAvLVmeid9ngIQMPgTIlj1qhx1hEyVDAsU",
             authDomain: "dania-college-admin-panel.firebaseapp.com",
@@ -1927,7 +1926,6 @@
                     ticker.appendChild(a);
                 });
 
-                // নোটিশ বোর্ডে ১৮টি নোটিশ
                 tbody.innerHTML = "";
                 notices.forEach((data) => {
                     const typeHtml = data.type ? `<span style="color: red; font-weight: 700;">[${data.type}]</span>` : "";
@@ -1963,7 +1961,7 @@
             eventsGrid.innerHTML = "<p style='text-align:center; grid-column: 1 / -1;'>ইভেন্ট লোড হচ্ছে...</p>";
 
             try {
-                // সর্বশেষ ৪টি ইভেন্ট ফেচ করা হচ্ছে
+
                 const q = query(collection(db, "events"), orderBy("createdAt", "desc"), limit(4));
                 const querySnapshot = await getDocs(q);
 
@@ -2003,5 +2001,8 @@
     </script>
 
 </body>
+
+</html>
+<html lang="en">
 
 </html>
